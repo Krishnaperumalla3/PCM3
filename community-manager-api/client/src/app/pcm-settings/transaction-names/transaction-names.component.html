@@ -1,0 +1,30 @@
+<div class="pcm-content centralize application">
+  <mat-card>
+    <div class="col-6 d-inline-flex">
+      <h4 class="font-weight-bold">Transactions</h4>
+    </div>
+    <button class="float-right btn btn-primary" (click)="addTransaction()">Add</button>
+    <form [formGroup]="transactionForm" class="mt-5">
+      <mat-card  class="form-row" formArrayName="transactions">
+        <ng-container  *ngFor="let names of transactionName.controls; let i = index;" [formGroupName]="i">
+          <div class="form-group col-md-4 d-inline-flex">
+            <div class=" col-md-10">
+              <mat-form-field>
+                <input matInput type="text" placeholder="Transactions" formControlName="transactionName">
+              </mat-form-field>
+            </div>
+            <div class="col-md-1 pt-5">
+              <mat-icon *ngIf="i > 0" style="font-size: 24px !important;"
+                (click)="removeTransaction(i)">
+                delete
+              </mat-icon>
+            </div>
+          </div>
+        </ng-container>
+      </mat-card>
+    </form>
+    <div class="btn-grp mt-3">
+      <button type="button" (click)="onSubmit(transactionForm)" class="btn btn-primary">Update</button>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,98 @@
+{
+  "CERT_TITL": "Certificats",
+  "XCHGE_CRT": {
+    "LABEL": "Certificat d'échange *"
+  },
+  "SIGN_CERT": {
+    "LABEL": "Certificat de signature *"
+  },
+  "IN_CERT_ID": {
+    "LABEL": "Identifiant du certificat *"
+  },
+  "IN_UPLD_CRT": {
+    "LABEL": "Télécharger le certificat"
+  },
+  "IN_CA_CERT": {
+    "LABEL": "Certification CA"
+  },
+  "IN_CERT_NME": {
+    "LABEL": "Nom du certificat"
+  },
+  "IN_CA_CERT_NME": {
+    "LABEL": "Nom CACert"
+  },
+  "IN_CIPHER_SUITS": {
+    "LABEL": "Suites de chiffrement"
+  },
+  "IN_USR_IDNT_KY_NME": {
+    "LABEL": "Nom de la clé d'identité utilisateur"
+  },
+  "IN_XCHNGE_CERT_UPLD": {
+    "LABEL": "Téléchargement de certificat d'échange"
+  },
+  "IN_KEY_CERT": {
+    "LABEL": "Certificat de clé *"
+  },
+  "IN_PVT_KEY_CERT": {
+    "LABEL": "Mot de passe de la clé privée *"
+  },
+  "IN_SING_CRT_UPLD": {
+    "LABEL": "Téléchargement du certificat de signature:"
+  },
+  "IN_XCHANGE_CERT": {
+    "LABEL": "Certificat d'échange"
+  },
+  "IN_EXCERT_NME": {
+    "LABEL": "Nom ExchCert"
+  },
+  "IN_SIGN_CERT": {
+    "LABEL": "Certificat de signature"
+  },
+  "IN_SIGN_CERT_NME": {
+    "LABEL": "Nom de signature"
+  },
+  "IN_KEY_CERT_PASS": {
+    "LABEL": "Phrase de passe du certificat de clé"
+  },
+  "IN_SSL_TYPE": {
+    "LABEL": "Type SSL *"
+  },
+  "IN_PAYLOAD_SEC": {
+    "LABEL": "Sécurité de la charge utile *"
+  },
+  "IN_ENCRYPT_ALG": {
+    "LABEL": "Algorithme de cryptage *"
+  },
+  "IN_SIGN_ALG": {
+    "LABEL": "Algorithme de signature *"
+  },
+  "IN_MDN_REQ": {
+    "LABEL": "MDN requis *"
+  },
+  "IN_MDN_TYPE": {
+    "LABEL": "Type MDN *"
+  },
+  "IN_MDN_ENCRYPT": {
+    "LABEL": "Chiffrement MDN *"
+  },
+  "IN_RECPT_ADDR": {
+    "LABEL": "Adresse de réception"
+  },
+  "IN_USR_IDNTY_KY_NME": {
+    "LABEL": "Nom de la clé d'identité utilisateur"
+  },
+  "IN_SSH_AUTH_USR_KEY": {
+    "LABEL": "Clé d'utilisateur autorisé SSH"
+  },
+  "NOTE": "REMARQUE",
+  "UPLOAD_NOTE_1": "L'importation vérifie uniquement les noms des actions de workflow, pas les propriétés.",
+  "UPLOAD_NOTE_2": "Veuillez télécharger le certificat / clé de données cryptées Base64.",
+  "BUTTONS": {
+    "UPLOAD_CA_CRT": "TÉLÉCHARGER CA CERT",
+    "UPLOAD_CERT": "TÉLÉCHARGER CERT",
+    "UPLOAD_SYS_CERT": "TÉLÉCHARGER LE CERT SYSTÈME",
+    "UPLOAD_EXCH_CERT": "TÉLÉCHARGER UN CERT D'ÉCHANGE",
+    "UPLOAD": "TÉLÉCHARGER",
+    "CLOSE": "Fermer"
+  }
+}

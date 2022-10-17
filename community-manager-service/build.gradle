@@ -1,0 +1,33 @@
+group 'com.pe.pcm'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+configurations {
+    implementation {
+        fileTree(excludes: ['**/*.jar'], dir: "libs")
+    }
+}
+
+dependencies {
+    implementation 'org.passay:passay:1.6.1'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.15'
+    implementation 'commons-net:commons-net:3.6'
+    implementation 'org.jsoup:jsoup:1.14.3'
+    implementation project(':community-manager-common')
+    implementation project(':community-manager-repository')
+
+//    implementation('com.sendgrid:sendgrid-java:4.4.8')
+
+    //SEAS dependent jars
+//    implementation fileTree(includes: ['**/*.jar'], dir: "libs") //Comment this line while building the Jar
+    compileOnly fileTree(includes: ['**/*.jar'], dir: "libs")
+
+        //GoogleDrive Dependencies
+    //    implementation group: 'com.google.api-client', name: 'google-api-client', version: '1.23.0'
+    //    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.33.2'
+    //    implementation group: 'com.google.apis', name: 'google-api-services-drive', version: 'v3-rev188-1.25.0'
+}
+
+

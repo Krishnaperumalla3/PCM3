@@ -1,0 +1,972 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import '~ngx-toastr/toastr.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+@import "helper";
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  //font-size: 1.4rem;
+  height: 100%;
+  background-color: #efefef;
+  font: 400 14px/20px Roboto, "Helvetica Neue", sans-serif !important;
+}
+app-root {
+  display: block;
+  height: 100vh;
+}
+
+$left-nav-bg-color: #263238;
+$left-nav-txt-color: #fff;
+$pcm-main-bg-color: #eeeded;
+$btn-primary: #002e56; //2196F3
+$btn-primary-hover: #002e56; //0069d9
+
+$btn-info: #00539b; // 26A69A
+$btn-info-hover: #00539b; // 117a8b
+
+$btn-success: #4CAF50;
+$btn-success-hover: #218838;
+
+$btn-1: #007176;
+$btn-hover-1: #007176;
+
+$btn-2: #00bcd4;
+$btn-hover-2: #0ba9bd;
+
+$btn-3: #03A9F4;
+$btn-hover-3: #03A9F4;
+
+$btn-4: #8d6e63;
+$btn-hover-4: #926f63;
+
+$btn-5: #00539b; // 26a69a
+$btn-6: #0c85b3;
+
+$btn-7: #9a8181;
+$btn-hover-5: #22a095;
+
+$btn-disabled: #6c757d;
+$btn-disabled-hover: #5a6268;
+
+$pcm-link: #1E88E5;
+
+.pcm-main {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr;
+  grid-template-columns: 15% 1fr;
+  justify-content: stretch;
+
+  @media (min-width: 769px) {
+    .navbar-collapse {
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+.swal2-popup {
+  font-size: 13px !important;
+}
+
+.pcm-container {
+  display: flex;
+  /* grid-template-rows: 55px auto; */
+  height: 100%;
+  flex-direction: column;
+}
+
+.pcm-container.page__login {
+  grid-template-rows: auto;
+}
+
+.pcm-main-noLft {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  position: relative;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 769px) {
+    .navbar-collapse {
+      width: auto;
+      border-top: 0;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.pcm-left-menu {
+  height: 100%;
+  background-color: $left-nav-bg-color;
+  color: $left-nav-txt-color;
+  position: relative;
+  transition: left 2ms ease;
+}
+
+.pcm-content {
+  min-height: 100%;
+  font-size: 13px;
+  margin-top: -12px !important;
+  line-height: 1.5;
+  color: #333333;
+  background-color: $pcm-main-bg-color;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.centralize {
+  position: relative;
+  padding: 1%;
+  background-color: #ECEBEB;
+
+  .section-header {
+    position: absolute;
+    font-size: inherit;
+    margin-top: 6px !important;
+    margin-left: 2%;
+    top: 18%;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin: 4px;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  background-image: none;
+  border: .1rem solid transparent;
+  white-space: nowrap;
+  padding: 3px 17px !important;
+  font-size: 12px !important;
+  line-height: 1.5384616;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600 !important;
+  height: 38px;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  min-width: 140px;
+  cursor: pointer !important;
+
+  &:hover {
+    cursor: pointer !important;
+  }
+  &:disabled {
+    cursor: not-allowed !important;
+    color: #002e56 !important; //
+    background-color: #e6e6e6 !important;
+    border-color: #e6e6e6 !important;
+  }
+
+  &-pcm-danger{
+    color: #fff !important;
+    background-color: #F44336 !important;
+
+    &:hover {
+      background-color: #F44336;
+    }
+  }
+
+  &-pcm-delete{
+    color: #fff !important;
+    background-color: #EC407A !important;
+
+    &:hover {
+      background-color: #EC407A;
+    }
+  }
+
+  &-pcm-edit{
+    color: #fff !important;
+    background-color: #26A69A !important;
+
+    &:hover {
+      background-color: #26A69A;
+    }
+  }
+
+  &-pcm-view{
+    color: #fff !important;
+    background-color: #00BCD4 !important;
+
+    &:hover {
+      background-color: #00BCD4;
+    }
+  }
+
+  &-pcm-1 {
+    color: #fff !important;
+    background-color: $btn-1 !important;
+
+    &:hover {
+      background-color: $btn-1;
+    }
+  }
+
+  &-pcm-2 {
+    color: #fff !important;
+    background-color: $btn-2 !important;
+
+    &:hover {
+      background-color: $btn-2;
+    }
+  }
+
+  &-pcm-3 {
+    color: #fff !important;
+    background-color: $btn-3 !important;
+
+    &:hover {
+      background-color: $btn-3;
+    }
+  }
+
+  &-pcm-4 {
+    color: #fff !important;
+    background-color: $btn-4 !important;
+
+    &:hover {
+      background-color: $btn-4;
+    }
+  }
+
+  &-pcm-5 {
+    color: #fff !important;
+    background-color: $btn-5 !important;
+
+    &:hover {
+      background-color: $btn-5;
+    }
+  }
+
+  &-pcm-6 {
+    color: #fff !important;
+    background-color: $btn-6 !important;
+
+    &:hover {
+      background-color: #78c3e0;
+    }
+  }
+
+  &-pcm-7 {
+    color: #fff !important;
+    background-color: $btn-7 !important;
+  }
+  &-pcm-8 {
+    color: #fff !important;
+    background-color: #05ab9b !important;
+  }
+
+  &-primary {
+    background-color: $btn-primary !important;
+    border-color: $btn-primary !important;
+
+    &:hover {
+      background-color: $btn-primary-hover !important;
+      border-color: $btn-primary-hover !important;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      color: #002e56 !important; //
+      background-color: #e6e6e6 !important;
+      border-color: #e6e6e6 !important;
+    }
+  }
+
+  &-info {
+    background-color: $btn-info !important;
+    border-color: $btn-info !important;
+
+    &:hover {
+      background-color: $btn-info-hover !important;
+      border-color: $btn-info-hover !important;
+    }
+  }
+
+  &-disabled {
+    background-color: $btn-disabled;
+    border-color: $btn-disabled;
+
+    &:hover {
+      background-color: $btn-disabled-hover;
+      border-color: $btn-disabled-hover;
+    }
+  }
+
+  &-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    &:hover {
+      background-color: #d42a3b;
+      border-color: #d42a3b;
+    }
+  }
+
+}
+
+.form-fields {
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &-itm {
+    width: 80%;
+  }
+}
+.fields {
+  flex: 0 24% !important;
+}
+
+.pcm-app {
+  height: 100%;
+}
+
+button:focus {
+  outline: none !important;
+  border: 0;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #FFFFFF;
+  color: #263238;
+  border-bottom: 1px solid #fff;
+
+  &-user {
+    //position: absolute;
+    //display: flex;
+    //justify-content: center;
+    //left: 90%;
+    //top: 10px;
+    //width: 78%;
+    text-align: right;
+    padding: 0 1%;
+    flex: 4;
+  }
+}
+.module-header {
+  background-color: #ECEBEB;
+  padding: 1%;
+}
+
+.logo-holder {
+  //position: absolute;
+  height: inherit;
+  background-color: #263238;
+  //width: 18%;
+  padding-left: 2%;
+  padding-top: 10px; //Comment for Precisely
+  flex: 1;
+  //left: -1%;
+  top: 0;
+  .logo-img {
+    height: 2.5rem;
+  }
+}
+
+.logo-ibm-holder {
+  //position: absolute;
+  height: inherit;
+  background-color: #263238;
+  //width: 18%;
+  padding-left: 2%;
+  flex: 1;
+  //left: -1%;
+  top: 0;
+  .logo-ibm {
+    height: 5.7rem;
+  }
+}
+
+.main {
+  &-container {
+    height: inherit;
+  }
+}
+
+.black-side-nav {
+  width: 18% !important;
+  color: #fff;
+  font-weight: 400;
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+  background-color: #263238 !important;
+
+  &-itm {
+    color: #fff;
+    margin-left: 1rem;
+    width: 64%;
+    font-size: 16px;  }
+
+  &-drp-menu {
+    color: #fff;
+    transition: .15s;
+    transition-timing-function: ease-in;
+    transform: rotate(0deg);
+  }
+
+  &-sub-menu {
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #343a4080 !important;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+  }
+  .active-black {
+    background: #1b272d !important;
+  }
+}
+
+.green-side-nav {
+  width: 18% !important;
+  color: #fff;
+  font-weight: 400;
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+  background-color: #55d284 !important;
+
+  &-itm {
+    color: #fff;
+    margin-left: 1rem;
+    width: 64%;
+    font-size: 16px;  }
+
+  &-drp-menu {
+    color: #fff;
+    transition: .15s;
+    transition-timing-function: ease-in;
+    transform: rotate(0deg);
+  }
+
+  &-sub-menu {
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #343a4080 !important;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+  }
+  .active-green {
+    background: rgba(0, 0, 0, 0.04)
+  }
+}
+
+.red-side-nav {
+  width: 18% !important;
+  color: #fff;
+  font-weight: 400;
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+  background-color: #da898c;
+  background-image: linear-gradient(147deg, #da898c 0%, #59090c 74%);
+
+
+  &-itm {
+    color: #fff;
+    margin-left: 1rem;
+    width: 64%;
+    font-size: 16px;  }
+
+  &-drp-menu {
+    color: #fff;
+    transition: .15s;
+    transition-timing-function: ease-in;
+    transform: rotate(0deg);
+  }
+
+  &-sub-menu {
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #343a4080 !important;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+  }
+  .active-red {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.grey-side-nav {
+  width: 18% !important;
+  color: #fff;
+  font-weight: 400;
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+  background-color: #7f8c8d !important;
+
+  &-itm {
+    color: #fff;
+    margin-left: 1rem;
+    width: 64%;
+    font-size: 16px;  }
+
+  &-drp-menu {
+    color: #fff;
+    transition: .15s;
+    transition-timing-function: ease-in;
+    transform: rotate(0deg);
+  }
+
+  &-sub-menu {
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #343a4080 !important;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+  }
+  .active-grey {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.yellow-side-nav {
+  width: 18% !important;
+  color: #fff;
+  font-weight: 400;
+  scrollbar-width: none; /* Also needed to disable scrollbar Firefox */
+  -ms-overflow-style: none;  /* Disable scrollbar IE 10+ */
+  overflow-y: scroll;
+  background-color: #c39a28 !important;
+
+  &-itm {
+    color: #fff;
+    margin-left: 1rem;
+    width: 64%;
+    font-size: 16px;  }
+
+  &-drp-menu {
+    color: #fff;
+    transition: .15s;
+    transition-timing-function: ease-in;
+    transform: rotate(0deg);
+  }
+
+  &-sub-menu {
+    font-size: 14px;
+    font-weight: 300;
+    background-color: #343a4080 !important;
+    transition-duration: .15s;
+    transition-timing-function: ease-in;
+  }
+  .active-yellow {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+mat-icon {
+  font-size: 1.6rem !important;
+  cursor: pointer !important;
+}
+
+.side-sub--menu {
+  transition: height .15s;
+  transition-timing-function: ease-in;
+}
+
+.rotate-menu {
+  transition: .15s;
+  transition-timing-function: ease-in;
+  transform: rotate(90deg);
+}
+.mat-drawer-container {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  overflow: auto;
+  flex: 1;
+}
+.mat-drawer {
+  //overflow-y: scroll;
+  &::-webkit-scrollbar-track
+  {
+    visibility: hidden !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    border-radius: 10px !important;
+
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 0px !important;
+    background-color: #253036;
+  }
+  &::-webkit-scrollbar-thumb
+  {
+    visibility: hidden !important;
+    border-radius: 10px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3) !important;
+    background-color: #AAAAAA !important;
+  }
+
+  &::-webkit-scrollbar-thumb:hover
+  {
+    visibility: visible !important;
+    border-radius: 10px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3) !important;
+    background-color: #AAAAAA !important;
+  }
+}
+.mat-toolbar-single-row {
+  padding: 0 !important;
+}
+.mat-drawer-inner-container {
+  overflow: initial !important;
+  width: 100% !important;
+}
+mat-drawer {
+  //background: #263238 !important;
+  color: #FFFFFF !important;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #efefef;
+  color: black;
+  border-radius: 6px;
+  margin-top: 3%;
+  width: 40%;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.upload-btn {
+  display: flex !important;
+  align-items: flex-end;
+}
+
+.pcm-link {
+  color: $pcm-link;
+  cursor: pointer;
+}
+
+.user-holder {
+  position: relative;
+
+  .user-detail {
+    &-logo {
+      position: absolute;
+      top: 10%;
+      font-size: 5rem !important;
+      text-align: center;
+      width: 100%;
+
+      &-1 {
+        font-size: 1.4rem !important;
+        top: 44%;
+        font-weight: 500;
+        //left: 31%;
+        left: unset;
+        text-align: center;
+        width: 100%;
+      }
+
+      &-2 {
+        font-size: 1.4rem !important;
+        top: 57%;
+        font-weight: 500;
+        //left: 5%;
+        left: unset;
+        text-align: center;
+        width: 100%;
+      }
+      &-3 {
+        font-size: 1.4rem !important;
+        top: 80%;
+        font-weight: 500;
+        left: unset;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.user-img {
+  width: 100%;
+  margin-top: -2%;
+}
+
+.btn-grp {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.backdrop {
+  height: 100% !important;
+}
+
+.mat-list-base{
+  &:focus{
+    outline: none !important;
+  }
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.partner-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+mat-form-field {
+  width: 100%;
+}
+ng2-smart-table {
+  font-size: 16px !important;
+}
+.ng2-smart-action {
+  margin-right: 4px !important;
+}
+
+ng2-smart-table-pager {
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-top: 1% !important;
+}
+
+
+/*start toaster css */
+
+.toast-top-center {
+  top: 5% !important;
+}
+.toast-container .ngx-toastr {
+  font-size: 14px !important;
+}
+
+.toast-container.toast-top-center .ngx-toastr {
+  width: 40% !important;
+}
+
+// Button center hack
+//.mat-button-wrapper {
+//  padding-left: 25px;
+//}
+.mat-flat-button .mat-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ngx-dropdown-button {
+  border: none !important;
+  border-bottom: 1px solid #000 !important;
+  border-radius: 0px !important;
+}
+/*end toaster css */
+
+.ngx-dropdown-container {
+  width: 90% !important;
+  li {
+    padding: 2% !important;
+    font-size: inherit !important;
+    line-height: 3em !important;
+    height: 3em !important;
+    &:hover {
+      background: rgba(0,0,0,.04) !important;
+    }
+  }
+}
+.copy-wf-form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 30px;
+  font-size: 14px !important;
+}
+
+.ng-select-container {
+  width: 90% !important;
+  border: none !important;
+  border-bottom: 1px solid !important;
+  border-radius: 0px !important;
+}
+.ng-dropdown-panel {
+  width: 90% !important;
+}
+
+/*select dropdown search*/
+
+.cdk-overlay-pane.cdk-overlay-pane-select-search {
+  transform: none !important;
+}
+
+/* end select dropdown search*/
+
+/*START datepicker css*/
+
+.owl-dt-popup-container {
+  width: 22.5em !important;
+}
+
+.owl-dt-container {
+  height: 35em !important;
+}
+
+.owl-dt-popup-container .owl-dt-calendar {
+  height: 25.25em !important;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-content {
+  font-size: 1.2em !important;
+}
+
+.owl-dt-calendar-control {
+  font-size: 1.2em !important;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-header .owl-dt-weekdays th{
+  font-size: 1.2em !important;
+}
+.owl-dt-container-buttons {
+  height: 2.8em;
+}
+.owl-dt-container-control-button {
+  font-size: 1.2em !important;
+}
+
+span.owl-dt-control-content.owl-dt-control-button-content {
+  font-weight: 700 !important;
+  font-size: 13px !important;
+}
+/*END datepicker css*/
+ng2-smart-table-title a {
+  color: #002e56 !important;
+}
+.ng2-smart-action {
+  color: #002e56 !important;
+}
+
+.form__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+:host /deep/  mat-cell {
+  flex: 1 0 200px;
+  border-bottom: 1px solid rgba(0,0,0, .22);
+}
+
+.password_pannel > .mat-dialog-container {
+  padding: 0px !important;
+}
+.file_activity > .mat-dialog-container {
+  overflow: hidden !important;
+  padding: 0px !important;
+}
+.file_activity > .mat-dialog-container > .mat-dialog-content {
+  margin: 0px !important;
+}
+
+
+.mat-form-field-appearance-legacy.mat-form-field-disabled .mat-form-field-underline {
+  background: rgba(0,0,0,.42) !important;
+}
+.mat-tab-body-wrapper {
+  margin-top: 10px !important;
+}
+
+.mat-select-disabled .mat-select-value {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.mat-radio-button.mat-radio-disabled .mat-radio-label-content {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+.mat-checkbox-disabled .mat-checkbox-label {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+.mat-checkbox-layout {
+  //padding-top: 26px;
+}
+.mat-expansion-panel-spacing {
+  margin: 5px 0 !important;
+}
+.side-nav-itm {
+  width: 75% !important;
+}
+
+.sub-nav-icon {
+  color: #fff;
+  margin-left: 24px;
+}
+@media only screen and (max-width: 1214px) {
+  .mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0 8px !important;
+  }
+  .side-nav-itm {
+    width: 82% !important;
+    margin-left: 2px !important;
+  }
+
+  .sub-nav-icon {
+    margin-left: 23px !important;
+  }
+
+  .user-holder .user-detail-logo-3 {
+    top: 85% !important;
+  }
+}
+.mat-form-field {
+  font-size: 16px !important;
+}
+.pt_check > label {
+  padding-top: 26px;
+}

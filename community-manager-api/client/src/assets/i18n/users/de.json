@@ -1,0 +1,88 @@
+{
+  "CREATE_USER": "Benutzer erstellen",
+  "EDIT_USER": "Benutzer bearbeiten",
+  "SEARCH_USER": "Benutzer suchen",
+  "ASSIGN_PARTNER": "Partner zuweisen",
+  "ASSIGN_GROUP": "Gruppe zuweisen",
+  "CREATE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "Benutzeridentifikation *"
+    },
+    "FIRST_NAME": {
+      "LABEL": "Vorname *"
+    },
+    "MIDDLE_NAME": {
+      "LABEL": "Zweiter Vorname"
+    },
+    "LAST_NAME": {
+      "LABEL": "Nachname *"
+    },
+    "EMAIL": {
+      "LABEL": "Email *"
+    },
+    "PHONE": {
+      "LABEL": "Telefon *"
+    },
+    "ROLE": {
+      "LABEL": "Rolle *"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "SEL_LANG": {
+      "LABEL": "Bevorzugte Sprache"
+    },
+    "USER_TYPE": {
+      "LABEL": "Benutzertyp"
+    },
+    "EXTERNAL_ID": {
+      "LABEL": "Externe ID"
+    }
+  },
+  "MANAGE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "Benutzeridentifikation"
+    },
+    "FIRST_NAME": {
+      "LABEL": "Vorname"
+    },
+    "LAST_NAME": {
+      "LABEL": "Nachname"
+    },
+    "ROLE": {
+      "LABEL": "Rolle"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "SEL_LANG": {
+      "LABEL": "Bevorzugte Sprache"
+    },
+    "USER_TYPE": {
+      "LABEL": "Benutzertyp"
+    },
+    "EXTERNAL_ID": {
+      "LABEL": "Externe ID"
+    }
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "USER_NAME": "Nutzername",
+      "FIRST_NAME": "Vorname",
+      "LAST_NAME": "Nachname",
+      "ROLE": "Rolle",
+      "STATUS": "Status"
+    }
+  },
+  "BUTTONS": {
+    "CREATE_USER": "BENUTZER ERSTELLEN",
+    "EDIT_USER": "BENUTZER BEARBEITEN",
+    "SEARCH_USER": "BENUTZER SUCHEN",
+    "RESET_SEARCH": "SUCHE ZURÜCKSETZEN",
+    "ACTIVATE": "AKTIVIEREN SIE",
+    "DEACTIVATE": "DEAKTIVIEREN",
+    "EDIT": "BEARBEITEN",
+    "DELETE": "LÖSCHEN",
+    "CANCEL": "STORNIEREN"
+  }
+}

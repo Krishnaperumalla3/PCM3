@@ -1,0 +1,18 @@
+{
+  "addressLine1": "string",
+  "addressLine2": "string",
+  "customProfileName": "string",
+  "emailId": "string",
+  "hubInfo": true,
+  "ipWhiteList": "string",
+  "like": true,
+  "onlyPCM": true,
+  "pemIdentifier": "string",
+  "pgpInfo": "string",
+  "phone": "string",
+  "pkId": "string",
+  "profileId": "string",
+  "profileName": "string",
+  "protocol": "string",
+  "status": true
+}

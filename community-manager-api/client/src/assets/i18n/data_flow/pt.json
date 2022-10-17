@@ -1,0 +1,232 @@
+{
+  "TITLE": "Fluxo de dados de construção",
+  "TABS": {
+    "INBOUND": {
+      "LABEL": "Manipulação de arquivo INBOUND"
+    },
+    "OUTBOUND": {
+      "LABEL": "Manuseio de arquivos de saída"
+    },
+    "ACTIVITY": {
+      "LABEL": "ATIVIDADE",
+      "CONTENT": "HISTÓRIA DA ATIVIDADE",
+      "ACTVTY_ON": "Atividade Ligada",
+      "USR_NME": "Nome do usuário",
+      "ACTVTY": "Atividade"
+    }
+  },
+  "LABELS": {
+    "LOADIN": "Carregando guias ...",
+    "PRCING_RL_DTL": "Detalhes da regra de processamento",
+    "NO_DT_FND": "Nenhum fluxo encontrado",
+    "NO_RSLT_FND": "Nenhum resultado encontrado!"
+  },
+  "FIELDS": {
+    "PRTNR_PRDCR": {
+      "LABEL": "Parceiro/Gateway de Front-end"
+    },
+    "APP_CUST": {
+      "LABEL": "Gateway de aplicativo/back-end"
+    }
+  },
+  "MFT": {
+    "IN_FL_NME_REG_EXP": {
+      "LABEL": "Nome do arquivo_ Expressão regular*"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filtro"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Adicionar fluxo"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Nome do arquivo*",
+        "FLTR": "Filtro"
+      }
+    }
+  },
+  "DocHandling": {
+    "IN_FLTR": {
+      "LABEL": "Filtro"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "tipo de documento *"
+    },
+    "IN_VER": {
+      "LABEL": "Versão"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transação"
+    },
+    "IN_SND_ID": {
+      "LABEL": "ID do remetente *"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Id do receptor*"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Adicionar fluxo"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Nome do arquivo",
+        "DOC_TYPE": "Tipo de Documento*",
+        "VERSION": "Versão",
+        "TRNSCTION": "Transação *",
+        "SNDR_ID": "ID do remetente*",
+        "RCVR_ID": "Id do receptor*"
+      }
+    }
+  },
+  "COPY_DATA_FLOW": {
+    "TITLE": "Selecione perfis de parceiros e aplicativos",
+    "IN_BND_LABEL": "De entrada",
+    "OUT_BND_LABEL": "Saída",
+    "FIELDS": {
+      "IN_SND_ID": {
+        "LABEL": "ID do remetente",
+        "REQ_ERR": "O ID do remetente é obrigatório."
+      },
+      "IN_RCR_ID": {
+        "LABEL": "Id do receptor",
+        "REQ_ERR": "O ID do receptor é obrigatório."
+      }
+    }
+  },
+  "SEARCH_WORKFLOW": {
+    "IN_PRT_NME": {
+      "LABEL": "Nome do Parceiro"
+    },
+    "IN_APP_NME": {
+      "LABEL": "Nome da Aplicação"
+    },
+    "IN_SEQ_TYPE": {
+      "LABEL": "Tipo SEQ"
+    },
+    "IN_FLW": {
+      "LABEL": "Fluxo"
+    },
+    "IN_FL_NME": {
+      "LABEL": "Nome do arquivo"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Tipo de Documento"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transação"
+    },
+    "IN_SND_ID": {
+      "LABEL": "ID do remetente"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Id do receptor"
+    }
+  },
+  "SRCH_MUL_WRK_FLW": {
+    "TITLE": " Crie fluxos a partir de vários fluxos de dados.",
+    "SRCH_TITLE": "Fluxos de Pesquisa",
+    "NOTE": "Nota: Continua a selecionar com vários critérios de pesquisa antes de clicar em Avançar.",
+    "FIELDS":{
+      "INBUND_SNDR_ID": {
+        "LABEL": "Id do remetente de entrada"
+      },
+      "INBUN_RCVR_ID": {
+        "LABEL": "Id do receptor de entrada"
+      },
+      "OUTBUND_SNDR_ID": {
+        "LABEL": "ID do remetente de saída"
+      },
+      "OUTBUN_RCVR_ID": {
+        "LABEL": "ID do destinatário de saída"
+      }
+    },
+    "BUTTONS": {
+      "SRCH_WF": "Pesquisar fluxos de dados",
+      "RESET_SRCH": "Reiniciar pesquisa",
+      "NEXT": "PRÓXIMO",
+      "CANCEL": "CANCELAR"
+    },
+    "TABLE": {
+      "COLUMNS": {
+        "SLCT": "Selecione",
+        "PRTNR_NME": "Nome do Parceiro",
+        "APP_NME": "Nome da Aplicação",
+        "SEQ_TYPE": "Tipo SEQ",
+        "FLW": "Fluxo",
+        "FL_NME": "Nome do arquivo",
+        "DOC_TYPE": "Tipo de Documento",
+        "TRNSACTN": "Transação",
+        "SNDR_ID": "ID do remetente",
+        "RCVR_ID": "Id do receptor"
+      },
+      "NO_RSLT_FND": "Nenhum resultado encontrado!"
+    }
+  },
+  "BUTTONS": {
+    "SRCH_WF": "PESQUISA DE FLUXO DE DADOS",
+    "IMPRT_WF": "IMPORTAR FLUXO DE DADOS",
+    "SETUP_WF": "CONFIGURAR FLUXO DE DADOS",
+    "SETUP_WF_MUL_FLW": "CONFIGURAÇÃO DE VÁRIOS FLUXOS",
+    "RESET_SERCH": "RESET SEARCH",
+    "EXPRT_WF": "FLUXO DE DADOS DE EXPORTAÇÃO",
+    "CP_WF": "COPIAR FLUXO DE DADOS",
+    "AD_FRM_MUL_FLW": "ADICIONE DE MÚLTIPLOS FLUXOS",
+    "DEL_WF": "EXCLUIR FLUXO DE DADOS",
+    "SVE_WF": "SALVAR FLUXO DE DADOS",
+    "CANCEL": "CANCELAR",
+    "UPDATE": "ATUALIZAR"
+  },
+  "RULE": {
+    "TITLE": "Detalhes da regra",
+    "CREATE_TITLE": "Criar regra",
+    "EDIT_TITLE": "Editar regra",
+    "RULE_PRPTY_DTL": "Detalhes da propriedade da regra",
+    "RULE_NME": "Nome da regra",
+    "SERCH_RULE": "Regra de Pesquisa",
+    "BUS_PROCSS": "Processo de negócio",
+    "HINT": "Use WildCard * para obter melhores resultados.",
+    "FIELDS": {
+      "PROP_1": "Nome da propriedade1",
+      "PROP_2": "Nome da propriedade2",
+      "PROP_3": "Nome da propriedade3",
+      "PROP_4": "Nome da propriedade4",
+      "PROP_5": "Nome da propriedade5",
+      "PROP_6": "Nome da propriedade6",
+      "PROP_7": "Nome da propriedade7",
+      "PROP_8": "Nome da propriedade8",
+      "PROP_9": "Nome da propriedade9",
+      "PROP_10": "Nome da propriedade10",
+      "PROP_11": "Nome da propriedade11",
+      "PROP_12": "Nome da propriedade12",
+      "PROP_13": "Nome da propriedade13",
+      "PROP_14": "Nome da propriedade14",
+      "PROP_15": "Nome da propriedade15",
+      "PROP_16": "Nome da propriedade16",
+      "PROP_17": "Nome da propriedade17",
+      "PROP_18": "Nome da propriedade18",
+      "PROP_19": "Nome da propriedade19",
+      "PROP_20": "Nome da propriedade20",
+      "PROP_21": "Nome da propriedade21",
+      "PROP_22": "Nome da propriedade22",
+      "PROP_23": "Nome da propriedade23",
+      "PROP_24": "Nome da propriedade24",
+      "PROP_25": "Nome da propriedade25"
+    },
+    "MANGE_RULE": {
+      "HEADER": {
+        "RULE": "Regra",
+        "BP_ID": "Id do BP"
+      }
+    },
+    "BUTTONS": {
+      "CREATE_RULE": "CRIAR REGRA",
+      "UPDATE_RULE": "REGRA DE ATUALIZAÇÃO",
+      "SRCH_ACTN": "PESQUISA AÇÃO",
+      "RSET_SRCH": "RESET SEARCH",
+      "CANCEL": "CANCELAR"
+    }
+  }
+}

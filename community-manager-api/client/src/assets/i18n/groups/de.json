@@ -1,0 +1,26 @@
+{
+  "CREATE_GROUP": "Gruppe erstellen",
+  "EDIT_GROUP": "Gruppe bearbeiten",
+  "SEARCH_GROUP": "Suchgruppe",
+  "ASSIGN_PARTNER": "Partner zuweisen",
+
+  "FIELDS": {
+    "LABEL": "Gruppenname"
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "GROUP_NAME": "Gruppenname"
+    }
+  },
+
+  "BUTTONS": {
+    "CREATE_GROUP": "GRUPPE ERSTELLEN",
+    "UPDATE_GROUP": "UPDATE GROUP",
+    "SEARCH_GROUPS": "SUCHGRUPPEN",
+    "RESET_SEARCH": "SUCHE ZURÜCKSETZEN",
+    "CANCEL": "STORNIEREN",
+    "EDIT": "BEARBEITEN",
+    "DELETE": "LÖSCHEN"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "997_OVERDUE_REPORT": "997 Rapporto scaduto",
+  "DATA_FLOW_REPORT": "Rapporti DataFlow",
+  "TRANS_VAL_REPORT": "Rapporti sul volume delle transazioni",
+  "DOC_TYPE_REPORT": "Report tipo di documento",
+  "PARTNERS_VAL_REPORT": "Rapporti sul volume dei partner",
+  "AD_SRC": "Ricerca avanzata",
+  "SFG": "SFG ·",
+  "SFG_PCD": "SFG ·+PCD ·",
+  "PCD": "PCD ·",
+
+  "FIELDS": {
+    "PARTNER_NAME": {
+      "LABEL": "Nome del partner"
+    },
+    "APP_NAME": {
+      "LABEL": "Nome dell'applicazione"
+    },
+    "SEQ_TYPE": {
+      "LABEL": "Tipo SEQ"
+    },
+    "FLOW": {
+      "LABEL": "Flusso"
+    },
+    "FILE_NAME": {
+      "LABEL": "Nome del file"
+    },
+    "DOC_TYPE": {
+      "LABEL": "Tipo di documento"
+    },
+    "TRANSACTION": {
+      "LABEL": "Transazione"
+    },
+    "SENDER_ID": {
+      "LABEL": "identità del mittente"
+    },
+    "RECEIVER_ID": {
+      "LABEL": "ID destinatario"
+    },
+    "RULE_NAME": {
+      "LABEL": "Nome regola"
+    },
+    "RULE_VALUE": {
+      "LABEL": "Valore regola"
+    },
+    "FILE_ARRIVED_FROM": {
+      "LABEL": "File arrivato da"
+    },
+    "FILE_ARRIVED_TO": {
+      "LABEL": "File arrivato a"
+    },
+    "PARTNER": {
+      "LABEL": "Compagno"
+    },
+    "DEST_FILE_NAME": {
+      "LABEL": "Nome file dest"
+    },
+    "STATUS": {
+      "LABEL": "Stato"
+    },
+    "GROUP_COUNT": {
+      "LABEL": "Conteggio gruppi"
+    },
+    "REPORTS_STARTS_FROM": {
+      "LABEL": "Il rapporto inizia da *"
+    },
+    "REPORTS_END_TO": {
+      "LABEL": "Il rapporto termina a *"
+    },
+    "DOC_TRANS": {
+      "LABEL": "Doc Trans"
+    },
+    "RULE_PRP_NME": {"LABEL": "Nome proprietà regola"},
+    "RULE_PRP_VAL": {"LABEL": "Valore proprietà regola"},
+    "PRODUCER": {"LABEL": "Produttore"},
+    "CONSUMER": {"LABEL": "Consumatore"},
+    "FILESIZE": {"LABEL": "Dimensione del file"},
+    "TOPPRODUCER": {"LABEL": "Top Produttore"},
+    "TOPCONSUMER": {"LABEL": "Top Consumer"},
+    "TOPFILESIZE": {"LABEL": "Dimensione file superiore"},
+    "TOPCHARGEBACK": {"LABEL": "Top Chargeback"},
+    "UID": {"LABEL": "UID"},
+    "APP": {"LABEL": "APP"},
+    "BU": {"LABEL": "BU"},
+    "PNODE": {"LABEL": "PNODE"},
+    "SNODE": {"LABEL": "SNODO"}
+  },
+
+
+  "BUTTONS": {
+    "RESET_SEARCH": "RESETTA LA RICERCA",
+    "GEN_REPORT": "GENERA RAPPORTO",
+    "SEARCH": "RICERCA",
+    "EXPORT_ALL_WORKFLOWS": "ESPORTA TUTTI I FLUSSI DI DATI"
+  },
+
+
+  "TABLE": {
+    "OVERDUE_COLUMNS": {
+      "FILE_ARRIVED": "File arrivato",
+      "DEST_FILE_NAME": "Nome file dest",
+      "PARTNER": "Compagno",
+      "TRANSACTION": "Transazione",
+      "GS_COUNT": "Conte Gs",
+      "SENDER_ID": "Identità del mittente",
+      "RECEIVER_ID": "ID destinatario",
+      "STATUS": "Stato",
+      "OVERDUE": "in ritardo"
+    },
+    "DATAFLOW_COLUMNS": {
+      "PARTNER": "Compagno",
+      "APPLICATION": "Applicazione",
+      "FLOW": "Flusso",
+      "SEQ_TYPE": "Tipo di sequenza",
+      "FILE_NAME": "Nome del file",
+      "DOC_TYPE": "Tipo di documento",
+      "TRANSACTION": "Transazione",
+      "SENDER_ID": "Identità del mittente",
+      "RECEIVER_ID": "ID destinatario",
+      "RULE_NAME": "Nome regola",
+      "BP_ID": "ID processo aziendale",
+      "RP1": "Proprietà regola1",
+      "RP2": "Proprietà regola2",
+      "RP3": "Proprietà regola3",
+      "RP4": "Proprietà regola4",
+      "RP5": "Proprietà regola5",
+      "RP6": "Proprietà regola6",
+      "RP7": "Proprietà regola7",
+      "RP8": "Proprietà regola8",
+      "RP9": "Proprietà regola9",
+      "RP10": "Proprietà regola10",
+      "RP11": "Proprietà regola11",
+      "RP12": "Proprietà regola12",
+      "RP13": "Proprietà regola13",
+      "RP14": "Proprietà regola14",
+      "RP15": "Proprietà regola15",
+      "RP16": "Proprietà regola16",
+      "RP17": "Proprietà regola17",
+      "RP18": "Proprietà regola18",
+      "RP19": "Proprietà regola19",
+      "RP20": "Proprietà regola20",
+      "RP21": "Proprietà regola21",
+      "RP22": "Proprietà regola22",
+      "RP23": "Proprietà regola23",
+      "RP24": "Proprietà regola24",
+      "RP25": "Proprietà regola25"
+    }
+  },
+  "NOTES": {
+    "DF_NOTE": {
+      "NOTE": "Nota: Esporta tutti i flussi di lavoro: - Il download richiederà diversi minuti in base al numero di configurazioni."
+    }
+  }
+}

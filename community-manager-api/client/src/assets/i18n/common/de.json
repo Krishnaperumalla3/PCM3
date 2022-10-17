@@ -1,0 +1,187 @@
+{
+  "CHNGE_PWD":"Ändere das Passwort",
+  "LOGOUT":"Ausloggen",
+  "PCM_TITLE":"PragmaEdge Community Manager",
+  "PAGE_TITLE":{
+    "FL_TRNSFR":"Dateiübertragungen",
+    "REPORTS":"Berichte",
+    "ENVELOP":"Briefumschlag",
+    "PARTNER":"Partner",
+    "APPLICATION":"Anwendung",
+    "DATA_FLW":"Datenflüsse",
+    "ACCESS_MNGNT":"Zugriffsverwaltung",
+    "SETTINGS":"die Einstellungen"
+  },
+  "MENU":{
+    "FL_TRNSFR":{
+      "LABEL":"Dateiübertragungen",
+      "SUB_MENU":{
+        "SRCH":"Suche"
+      },
+      "ACTIONS":{
+        "VIEW_DTL":"DETAILS ANZEIGEN",
+        "COR_DTL":"COR ... DETAILS",
+        "VIEW_ACTVTY":"AKTIVITÄT ANZEIGEN",
+        "PCKUP_NW":"JETZT ABHOLEN",
+        "REPROCESS":"REPROCESS",
+        "DRP_AGN":"TROPFEN SIE WIEDER"
+      }
+    },
+    "REPORTS":{
+      "LABEL":"Berichte",
+      "SUB_MENU":{
+        "DT_FLW":"Datenfluss",
+        "997_OVR_DUE":"997 Überfällig",
+        "TRNSCTN_VOL_RPT":"Transaktionsvolumenbericht",
+        "TRNSCTN_VOL_DOC":"Transaktionsvolumen nach DocType",
+        "VOL_BY_PRTNR":"Bände von Partnern",
+        "CHARGE_BACKS": "sfg",
+        "SFG_PCD": "sfg+pcd",
+        "PCD": "pcd"
+      }
+    },
+    "ENVELOP":{
+      "LABEL":"Briefumschlag",
+      "SUB_MENU":{
+        "CRTE_X12":"Erstellen Sie X12",
+        "MNGE_X12":"X12 verwalten"
+      }
+    },
+    "PARTNER":{
+      "LABEL":"Partner/FG",
+      "SUB_MENU":{
+        "CRTE_PRTNR":"Partner erstellen/FG",
+        "CRTE_AS2_REL":"Erstellen Sie eine AS2-Beziehung",
+        "MNGE_PRTNR":"Partner verwalten/FG"
+      },
+      "ACTIONS":{
+        "VIEW":"Aussicht",
+        "ACTVTE":"aktivieren Sie",
+        "DEACTVTE":"Deaktivieren",
+        "EDIT":"Bearbeiten",
+        "DELETE":"Löschen"
+      }
+    },
+    "APPLICATION":{
+      "LABEL":"Anwendung/BG",
+      "SUB_MENU":{
+        "CRTE_APP":"Anwendung erstellen/BG",
+        "MNGE_APP":"Anwendung verwalten/BG"
+      },
+      "ACTIONS":{
+        "VIEW":"Aussicht",
+        "ACTVTE":"aktivieren Sie",
+        "DEACTVTE":"Deaktivieren",
+        "EDIT":"Bearbeiten",
+        "DELETE":"Löschen"
+      }
+    },
+    "DATA_FLW":{
+      "LABEL":"Datenflüsse",
+      "SUB_MENU":{
+        "BLD_DT_FLW":"Datenfluss erstellen",
+        "CRTE_RULE":"Regel erstellen",
+        "MNGE_RULE":"Regel verwalten"
+      },
+      "ACTIONS":{
+        "VIEW":"Aussicht",
+        "EDIT":"Bearbeiten",
+        "DELETE":"Löschen"
+      }
+    },
+    "ACCESS_MNGNT":{
+      "LABEL":"Zugriffsverwaltung",
+      "SUB_MENU":{
+        "CRTE_USR":"Benutzer erstellen",
+        "MNGE_USR":"Benutzer verwalten",
+        "CRTE_GRP":"Gruppe erstellen",
+        "MNGE_GRP":"Benutzer verwalten",
+        "MNGE_CHB": "charge back no kanri"
+      }
+    },
+    "SETTINGS":{
+      "LABEL":"die Einstellungen",
+      "SUB_MENU":{
+        "CORLTN_NME":"Korrelationsnamen",
+        "PIL_INTRVL":"Abrufintervall",
+        "FILE_SCH": "Programador de trabajos de archivo"
+      }
+    }
+  },
+  "TABLE": {
+    "SRCH": "Suche",
+    "XPRT": "Export",
+    "XPRT_PDF": "PDF exportieren",
+    "XPRT_CSV": "CSV exportieren",
+    "REPROCESS": "Wiederaufbereiten",
+    "CONFG_COL": "Spalten konfigurieren",
+    "ACTN_COL": "Aktion",
+    "NO_RSLT_FND": "Keine Ergebnisse gefunden.",
+    "SELECT_ALL": "Wählen Sie Alle",
+    "BTN_OK": "Ok"
+  },
+  "MODAL":{
+    "CHNAGE_PWD":{
+      "TITLE":"Ändere das Passwort",
+      "FIELDS":{
+        "OLD_PWD":{
+          "LABEL":"Altes Passwort",
+          "HELPER_TEXT":"Altes Passwort ist erforderlich. "
+        },
+        "NEW_PWD":{
+          "LABEL":"Neues Kennwort",
+          "HELPER_TEXT":"Neues Passwort erforderlich."
+        },
+        "CNFRM_PWD":{
+          "LABEL":"Bestätige das Passwort",
+          "HELPER_TEXT":"Nicht übereinstimmende Passwörter."
+        }
+      },
+      "BUTTONS":{
+        "SUBMIT":"einreichen",
+        "CLOSE":"Schließen"
+      }
+    },
+    "FORGOT_PWD":{
+      "TITLE":"Passwort vergessen",
+      "FIELDS":{
+        "IN_EMAIL":{
+          "LABEL":"Email*",
+          "HELPER_TXT_ENTER":"Bitte geben Sie ihre E-Mail-Adresse ein!",
+          "HELPER_TXT_VALID":"Bitte eine gültige E-Mail-Adresse eintragen!"
+        }
+      },
+      "BUTTONS":{
+        "SUBMINT":"einreichen",
+        "CLOSE":"Schließen"
+      }
+    },
+    "VIEW_FLE":{
+      "BUTTONS":{
+        "DOWNLOAD":"Herunterladen",
+        "CLOSE":"Schließen"
+      }
+    },
+    "PWD_SHW":{
+      "TITLE":"Bitte geben Sie Ihre Anmeldedaten ein.",
+      "FIELDS":{
+        "USR_NME":{
+          "LABEL":"Nutzername"
+        },
+        "PWD":{
+          "LABEL":"Passwort"
+        }
+      },
+      "BUTTONS":{
+        "VERIFY":"Überprüfen",
+        "CLOSE":"Schließen"
+      }
+    },
+    "FILE_SRCH":{
+      "TITLE":"Transaktionsdetails"
+    },
+    "ACTVTY":{
+      "TITLE":"Aktivität"
+    }
+  }
+}

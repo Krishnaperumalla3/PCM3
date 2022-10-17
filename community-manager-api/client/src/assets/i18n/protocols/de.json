@@ -1,0 +1,946 @@
+{
+  "CONNECT_DIRECT": {
+    "IN_LCL_ND_NME": {
+      "LABEL": "Name des lokalen Knotens"
+    },
+    "IN_RMTE_ND_NME": {
+      "LABEL": "Name des Remote-Knotens"
+    },
+    "IN_RMTE_HST": {
+      "LABEL": "Remote-Host"
+    },
+    "IN_RMTE_PRT": {
+      "LABEL": "Remote-Port"
+    },
+    "IN_RMTE_USR": {
+      "LABEL": "Remote-Benutzer"
+    },
+    "IN_RMTE_PWD": {
+      "LABEL": "Remote-Passwort"
+    },
+    "IN_DCB_PARAMS": {
+      "LABEL": "DCB-Parameter"
+    },
+    "IN_LCL_X": {
+      "LABEL": "Local X Late"
+    },
+    "IN_SYS_OPTS": {
+      "LABEL": "Sys Opts"
+    },
+    "IN_TRNSFR_NME": {
+      "LABEL": "Übertragungsart"
+    },
+    "IN_CD_PG_FRM": {
+      "LABEL": "Codepage von"
+    },
+    "IN_CD_PG_TO": {
+      "LABEL": "Codepage zu"
+    },
+    "IN_SEC_PRTCL": {
+      "LABEL": "Sicherheitsprotokoll"
+    },
+    "IN_SEC": {
+      "LABEL": "Sicher +"
+    },
+    "IN_CA_CERT": {
+      "LABEL": "CA-Zertifizierung"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "FTP": {
+    "IN_HST_NME": {
+      "LABEL": "Hostname *"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Port-Nummer *"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Übertragungsart"
+    },
+    "IN_USR_ID": {
+      "LABEL": "Benutzeridentifikation*"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD Up"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Zitat"
+    },
+    "IN_SITE": {
+      "LABEL": "Seite? ˅"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Verbindungstyp"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Zielpostfach"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Suche nach Zielpostfächern"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Benutzer in SI erstellen"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Verzeichnis in SI erstellen"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Dateityp"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "FTPS": {
+    "IN_HST_NME": {
+      "LABEL": "Hostname*"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Port-Nummer *"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Übertragungsart"
+    },
+    "IN_USR_ID": {
+      "LABEL": "Benutzeridentifikation*"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD Up"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Zitat"
+    },
+    "IN_SITE": {
+      "LABEL": "Seite? ˅"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Verbindungstyp"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Zielpostfach"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Suche nach Zielpostfächern"
+    },
+    "IN_SSL_SOC": {
+      "LABEL": "SSL-Socket"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Benutzer in SI erstellen"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Dateityp"
+    },
+    "IN_SSL_CIPHER": {
+      "LABEL": "SSL Cipher"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Verzeichnis in SI erstellen"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_CRT_ID": {
+      "LABEL": "Zertifikat-ID *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "SFTP": {
+    "IN_HST_NME": {
+      "LABEL": "Hostname *"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Port-Nummer *"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Übertragungsart"
+    },
+    "IN_USR_ID": {
+      "LABEL": "Benutzeridentifikation *"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_SSH_CIPHER": {
+      "LABEL": "SSH-Chiffre"
+    },
+    "IN_SSH_COMP": {
+      "LABEL": "SSH-Komprimierung"
+    },
+    "IN_SSH_MAC": {
+      "LABEL": "SSH Mac"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD Up"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Zitat"
+    },
+    "IN_SITE": {
+      "LABEL": "Seite? ˅"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Verbindungstyp"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Zielpostfach"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Suche nach Zielpostfächern"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Benutzer in SI erstellen"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Verzeichnis in SI erstellen"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Dateityp"
+    },
+    "IN_SSH_AUTH": {
+      "LABEL": "SSH-Authentifizierung"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_KNWN_HST_KY": {
+      "LABEL": "Bekannter Hostschlüssel"
+    },
+    "IN_SSH_IDNTY_KY": {
+      "LABEL": "SSH-Identitätsschlüssel"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "HTTP": {
+    "IN_IN_MIL_BX": {
+      "LABEL": "In der Mailbox"
+    },
+    "IN_OUTBND_URL_REQ": {
+      "LABEL": "Ausgehende URL *"
+    },
+    "IN_OUTBND_URL": {
+      "LABEL": "Ausgehende URL"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "HTTPS": {
+    "IN_IN_MIL_BX": {
+      "LABEL": "In der Mailbox"
+    },
+    "IN_OUTBND_URL_REQ": {
+      "LABEL": "Ausgehende URL *"
+    },
+    "IN_OUTBND_URL": {
+      "LABEL": "Ausgehende URL"
+    },
+    "IN_CERT_ID": {
+      "LABEL": "Zertifikat-ID *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "SFG_CONNECT_DIRECT": {
+    "IN_LCL_ND_NME": {
+      "LABEL": "Name des lokalen Knotens*"
+    },
+    "IN_ND_NME": {
+      "LABEL": "Knotenname *"
+    },
+    "IN_RMT_FL_NME": {
+      "LABEL": "Remote-Dateiname"
+    },
+    "IN_SNDID": {
+      "LABEL": "SNODEID (falls erforderlich)"
+    },
+    "IN_SNDPW": {
+      "LABEL": "SNODEID-Passwort"
+    },
+    "IN_DIR_FLDR": {
+      "LABEL": "In Verzeichnis / Ordner"
+    },
+    "IN_CN_TYPE": {
+      "LABEL": "Eingehender Push"
+    },
+    "OUT_CN_TYPE": {
+      "LABEL": "Ausgehender Zug"
+    },
+    "OUT_DIR_FLDR": {
+      "LABEL": "Out Directory / Folder"
+    },
+    "IN_OPR_SYS": {
+      "LABEL": "Betriebssystem *"
+    },
+    "IN_DCB_PAR": {
+      "LABEL": "DCB-Parameter"
+    },
+    "IN_DSN_NME": {
+      "LABEL": "DSN-Name"
+    },
+    "IN_UNT": {
+      "LABEL": "Einheit"
+    },
+    "IN_STRG_CLS": {
+      "LABEL": "Speicherklasse"
+    },
+    "IN_SPC": {
+      "LABEL": "Raum"
+    },
+    "IN_HSTNME_IP": {
+      "LABEL": "Hostname / IP *"
+    },
+    "IN_PRT": {
+      "LABEL": "Hafen *"
+    },
+    "IN_CPY_SYS": {
+      "LABEL": "SYSOPTS kopieren"
+    },
+    "IN_CHK_PT": {
+      "LABEL": "Kontrollpunkt"
+    },
+    "IN_COMP_LVL": {
+      "LABEL": "Komprimierungsstufe"
+    },
+    "IN_DISP": {
+      "LABEL": "ANORDNUNG"
+    },
+    "IN_SUB": {
+      "LABEL": "einreichen"
+    },
+    "IN_RN_JB": {
+      "LABEL": "Job ausführen"
+    },
+    "IN_RN_TSK": {
+      "LABEL": "Aufgabe ausführen"
+    },
+    "IN_SRTY_PROT": {
+      "LABEL": "Sicherheitsprotokoll"
+    },
+    "IN_SEC": {
+      "LABEL": "Sicher + *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "FileSystem": {
+    "IN_USR_NME": {
+      "LABEL": "Nutzername"
+    },
+    "IN_PW": {
+      "LABEL": "Passwort"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Dateityp"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_DEL_AFTR_COLL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "ExistingConnection": {
+    "IN_PRTCL": {
+      "LABEL": "Protokoll *"
+    },
+    "IN_PRTCL_REF": {
+      "LABEL": "Protokollreferenz *"
+    }
+  },
+  "AS2": {
+    "RD_ORGNME": {
+      "LABEL": "Organisation"
+    },
+    "IN_PRFL_NME": {
+      "LABEL": "Profile Name"
+    },
+    "IN_AS2_IDNFR": {
+      "LABEL": "AS2-Kennung *"
+    },
+    "IN_EML_ADDR": {
+      "LABEL": "E-Mail-Addresse"
+    },
+    "SENDER_ID": {
+      "LABEL": "Absenderidentität"
+    },
+    "SENDER_QLFR": {
+      "LABEL": "Sender Qualifier"
+    },
+    "END_PT": {
+      "LABEL": "Endpunkt *"
+    },
+    "RESP_TIMEOUT": {
+      "LABEL": "Antwort-Timeout *"
+    },
+    "HTTP_CLNT_ADPTR": {
+      "LABEL": "HTTP-Client-Adapter *"
+    },
+    "CMPRESS_DATA": {
+      "LABEL": "Daten komprimieren *"
+    },
+    "PAYLOAD_TYPE": {
+      "LABEL": "Nutzlasttyp *"
+    },
+    "MIME_TYPE": {
+      "LABEL": "Mime Typ *"
+    },
+    "MIME_SUB_TYPE": {
+      "LABEL": "Mime-Untertyp *"
+    },
+    "CIPHER_STRNGTH": {
+      "LABEL": "Verschlüsselungsstärke *"
+    }
+  },
+  "Webservice": {
+    "IN_NME": {
+      "LABEL": "Name *"
+    },
+    "IN_OUT_BND_URL": {
+      "LABEL": "Ausgehende URL"
+    },
+    "IN_IN_MLBX": {
+      "LABEL": "In der Mailbox *"
+    },
+    "IN_CER_ID": {
+      "LABEL": "Zertifikat-ID*"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "Mailbox": {
+    "IN_IN_MLBX_REQ": {
+      "LABEL": "In der Mailbox *"
+    },
+    "IN_OUT_MLBX": {
+      "LABEL": "Mailbox in SI erstellen"
+    },
+    "IN_IN_MLBX": {
+      "LABEL": "In der Mailbox"
+    },
+    "IN_OUT_MLBX_REQ": {
+      "LABEL": "Mailbox in SI erstellen *"
+    },
+    "IN_CRTE_MLBX_IN_SI": {
+      "LABEL": "Mailbox in SI erstellen"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filter"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    }
+  },
+  "MQ": {
+    "IN_HST_NME": {
+      "LABEL": "Hostname *"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Dateityp"
+    },
+    "IN_PORT": {
+      "LABEL": "Hafen"
+    },
+    "CH_NME": {
+      "LABEL": "Kanal Name"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nutzername"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort"
+    },
+    "IN_QUE_MNGR": {
+      "LABEL": "Warteschlangenmanager *"
+    },
+    "IN_QUE_NME": {
+      "LABEL": "Name der Warteschlange *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "SAP": {
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    },
+    "IN_SAP_RTE": {
+      "LABEL": "SAP Route *"
+    }
+  },
+  "SMTP": {
+    "IN_NME": {
+      "LABEL": "Name"
+    },
+    "IN_ACS_PRTCL": {
+      "LABEL": "Zugriffsprotokoll"
+    },
+    "IN_CON_RETRS": {
+      "LABEL": "Verbindungswiederholungen *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nutzername"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort"
+    },
+    "IN_RTRY_INTRVL": {
+      "LABEL": "Wiederholungsintervall *"
+    },
+    "IN_MAIL_SVR": {
+      "LABEL": "Mail-Server"
+    },
+    "IN_MAIL_SVR_PRT": {
+      "LABEL": "MAIL Server Port"
+    },
+    "IN_MX_MSG": {
+      "LABEL": "Max. Nachrichten *"
+    },
+    "IN_RMV_MAIL": {
+      "LABEL": "Mails entfernen"
+    },
+    "IN_SSL": {
+      "LABEL": "SSL *"
+    },
+    "IN_KY_CRT_PS": {
+      "LABEL": "Key Cert PassPhrase *"
+    },
+    "IN_CPHR_STRGT": {
+      "LABEL": "Verschlüsselungsstärke *"
+    },
+    "IN_KEY_CRT": {
+      "LABEL": "Schlüsselzertifikat *"
+    },
+    "IN_CA_CRT": {
+      "LABEL": "CA-Zertifikate *"
+    },
+    "IN_URI_NME": {
+      "LABEL": "URI-Name *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    }
+  },
+  "SFGFTP": {
+    "IN_CON_TYPE": {
+      "LABEL": "Verbindungstyp *"
+    },
+    "IN_REMT_HST": {
+      "LABEL": "Remote-Host *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Remote-Port *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nutzername *"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort "
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Benutzer zusammenführen"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_NUM_RTRY": {
+      "LABEL": "Anzahl der Wiederholungen *"
+    },
+    "IN_RTRY_INVT": {
+      "LABEL": "Wiederholungsintervall *"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Remote-Dateimuster"
+    },
+    "IN_USR_ID": {
+      "LABEL": "Benutzeridentifikation *"
+    },
+    "IN_TRNSFR_TYPE": {
+      "LABEL": "Übertragungsart *"
+    },
+    "IN_CRTE_MLBX_SI": {
+      "LABEL": "Mailbox in SI erstellen"
+    },
+    "IN_FLE_TYPE": {
+      "LABEL": "Dateityp"
+    },
+    "IN_DL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "SFGFTPS": {
+    "IN_CON_TYPE": {
+      "LABEL": "Connection Type *"
+    },
+    "IN_REMT_HST": {
+      "LABEL": "Remote-Host *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Remote-Port *"
+    },
+    "IN_ENCRYPT_STRNGTH": {
+      "LABEL": "Verschlüsselungsstärke *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nutzername *"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort"
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Benutzer zusammenführen"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_US_CCC": {
+      "LABEL": "Verwenden Sie CCC (Clear Command Channel)"
+    },
+    "IN_RTRY_INTVL": {
+      "LABEL": "Wiederholungsintervall *"
+    },
+    "IN_NUM_RTRY": {
+      "LABEL": "Anzahl der Wiederholungen *"
+    },
+    "IN_USE_IMPLCT_SSL": {
+      "LABEL": "Verwenden Sie implizites SSL"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Remote-Dateimuster"
+    },
+    "IN_CRT_ID": {
+      "LABEL": "Zertifikat-ID *"
+    },
+    "IN_USR_ID": {
+      "LABEL": "Benutzeridentifikation*"
+    },
+    "IN_CRTE_MLBX_IN_SI": {
+      "LABEL": "Mailbox in SI erstellen"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Dateityp"
+    },
+    "IN_TRNSFR_TYP": {
+      "LABEL": "Übertragungsart *"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "SFGSFTP": {
+    "IN_REMT_HST": {
+      "LABEL": "Remote-Host *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Remote-Port *"
+    },
+    "IN_PREFER_MAC_ALG": {
+      "LABEL": "Bevorzugter Mac-Algorithmus"
+    },
+    "IN_REMT_USR": {
+      "LABEL": "Remote-Benutzer *"
+    },
+    "IN_SSH_PWD": {
+      "LABEL": "SSH-Passwort"
+    },
+    "IN_CHAR_ENCOD": {
+      "LABEL": "Zeichenkodierung"
+    },
+    "IN_LCL_PRT": {
+      "LABEL": "Lokaler Portbereich"
+    },
+    "IN_COMP": {
+      "LABEL": "Kompression"
+    },
+    "IN_RTRY_DLY": {
+      "LABEL": "Wiederholen Sie die Verzögerung"
+    },
+    "IN_CON_RTRY_CNT": {
+      "LABEL": "Anzahl der Verbindungswiederholungen"
+    },
+    "IN_PRFRD_CPHR": {
+      "LABEL": "Bevorzugte Chiffre"
+    },
+    "IN_RESP_TME_OUT": {
+      "LABEL": "Antwortzeitüberschreitung"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Remote-Dateimuster"
+    },
+    "IN_USR_IDNTY_KY": {
+      "LABEL": "Benutzeridentitätsschlüssel"
+    },
+    "IN_KNWN_HST_KY": {
+      "LABEL": "Bekannter Hostschlüssel"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nutzername *"
+    },
+    "IN_PWD": {
+      "LABEL": "Passwort"
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Benutzer zusammenführen"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Passwort *"
+    },
+    "IN_TRNSFR_TYPE": {
+      "LABEL": "Übertragungsart *"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "Im Verzeichnis *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Out Verzeichnis"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "Im Verzeichnis"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Out Verzeichnis *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Verzeichnis in SI erstellen"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Dateityp"
+    },
+    "IN_AUTH_TYPE": {
+      "LABEL": "Authentifizierungsart *"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    },
+    "IN_SSH_AUTH_USR_KEYS": {
+      "LABEL": "SSH-autorisierte Benutzerschlüssel"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adaptername *"
+    }
+  },
+  "OracleEBS": {
+    "IN_NME": {
+      "LABEL": "Name *"
+    },
+    "IN_PARTNR_NME": {
+      "LABEL": "Partnername *"
+    },
+    "IN_TIME_OUT": {
+      "LABEL": "Auszeit"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    }
+  },
+  "AWS_S3": {
+    "IN_SRC_PATH": {
+      "LABEL": "Quellpfad"
+    },
+    "IN_BCKT_NME": {
+      "LABEL": "Eimername *"
+    },
+    "IN_FL_NME": {
+      "LABEL": "Dateiname"
+    },
+    "IN_ACS_KEY": {
+      "LABEL": "Zugangsschlüssel *"
+    },
+    "IN_SCRT_KEY": {
+      "LABEL": "Geheimer Schlüssel *"
+    },
+    "IN_MAIL_BOX": {
+      "LABEL": "In der Mailbox"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Abrufintervall *"
+    },
+    "IN_END_PT": {
+      "LABEL": "Endpunkt Url"
+    },
+    "IN_REGN": {
+      "LABEL": "Region"
+    },
+    "IN_CN_TYPE": {
+      "LABEL": "Eingehender Push"
+    },
+    "OUT_CN_TYPE": {
+      "LABEL": "Ausgehender Zug"
+    },
+    "IN_QNAME": {
+      "LABEL": "Queue Name"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adapter Name"
+    },
+    "IN_FOLDER_NAME": {
+      "LABEL": "Folder Name"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Nach der Sammlung löschen"
+    }
+  },
+  "CUSTOM_PROTOC0L": {
+    "PRT_NME": {
+      "LABEL": "Benutzerdefinierter Protokollname *"
+    },
+    "PRT_EXT": {
+      "LABEL": "Benutzerdefinierte Protokollerweiterung *"
+    },
+    "AUTH_TYPE": {
+      "LABEL": "Authentifizierungstyp *"
+    },
+    "USR_NME": {
+      "LABEL": "Benutzername *"
+    },
+    "PWD": {
+      "LABEL": "Passwort *"
+    }
+  },
+  "ManagePartnerFields": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Partnername"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "Partner-ID"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protokoll"
+    },
+    "IN_STATUS": {
+      "LABEL": "Status"
+    }
+  }
+}

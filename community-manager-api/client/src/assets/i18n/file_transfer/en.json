@@ -1,0 +1,47 @@
+{
+    "FILE_TRNSFR_TITLE": "File Transfer Search",
+    "ADVNCE_SRCH": "Advanced Search",
+    "LABELS": {
+        "COR_NAME_NOT_AVL": "Correlation names are not available.",
+        "CNFG_COR_NME": "Configure correlation names."
+    },
+    "BUTTONS": {
+        "SRCH_ACTVTY": "Search Activity",
+        "REST_ACTVTY": "Reset Search"
+    },
+    "FIELDS": {
+        "FL_ARVD_FROM": "File Arrived from",
+        "FL_ARVD_TO": "File Arrived to",
+        "DIRCTN": "Direction",
+        "TRNSFR_TYPE": "Transfer Type",
+        "DOC_TYPE": "Doc Type",
+        "STATUS": "Status",
+        "SRC_PROTOCOL": "Source Protocol",
+        "DEST_PROTOCOL": "Dest. Protocol",
+        "PRTNR": "Partner",
+        "APP": "Application",
+        "SNDR_ID": "Sender Id",
+        "RCVR_ID": "Receiver Id",
+        "TRNS": "Transaction",
+        "ERR_STATUS": "Error Status",
+        "SRC_FL_NME": "Src.File Name",
+        "DEST_FL_NME": "Dest.File Name",
+        "FL_NME_REGX": "FileName RegExp"
+    },
+    "TABLE": {
+        "COLUMNS": {
+            "FL_ARVD": "File Arrived",
+            "PRTNR": "Partner",
+            "APP": "Application",
+            "SRC_FL_NME": "Src. FileName",
+            "DEST_FL_NME": "Dest. FileName",
+            "SRC_FL_SIZE": "Src. FileSize(KB)",
+            "TRNSFR_FL": "Trans. File",
+            "STATUS": "Status",
+            "DIR": "Direction",
+            "TRNSACTN": "Transaction",
+            "SNDR_ID": "Sender ID",
+            "RCVR_ID": "Receiver ID"
+        }
+    }
+}

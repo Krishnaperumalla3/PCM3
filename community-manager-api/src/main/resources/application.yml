@@ -1,0 +1,319 @@
+accept-licence: true
+cm:
+  color: black  # Available Themes: red, green, grey, yellow, black
+  cm-deployment: false # Optional tag, default value is true
+  cmks: #Application shutdown password, default is: .A4(SI@KPa#9-Z
+  api-connect-enabled: true
+  sfg-pcd-reports: false
+  temp-directory: cm_temp_directory
+# =========================================================================================================================
+# To enable TLS in production, generate a certificate using:
+# keytool -genkey -alias community-manager -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+#
+# You can also use Let's Encrypt:
+# https://maximilian-boehm.com/hp2121/Create-a-Java-Keystore-JKS-from-Let-s-Encrypt-Certificates.htm
+#
+# Then, modify the server.ssl properties
+# =========================================================================================================================
+server:
+  port: 8181
+  ports:
+  http-ports:
+  ssl:
+    enabled: false
+    key-store: classpath:config/tls/keystore.p12 #We should provide the absolute of the keystore file EX: /user/test/keystore.p12
+    #    key-store-password: Pragma@05
+    key-store-cmks: Pragma@05
+    key-store-type: PKCS12
+    enabled-protocols: TLSv1.2,TLSv1.3
+  serverHeader: IBM Partner Engagement Manager Community Manager
+  compression:
+    enabled: true
+    min-response-size: 1024
+  ajp:
+    enabled: false
+    port: 8282
+  tomcat:
+    connection-timeout: 8000
+spring:
+  liquibase:
+    enabled: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    #    url: jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCPS)(HOST=internaloracledb.c5vskyivl39w.us-east-1.rds.amazonaws.com)(PORT=2484))(CONNECT_DATA=(SID=ORCL)))
+    #    url: jdbc:oracle:thin:@oracletemp.c5vskyivl39w.us-east-1.rds.amazonaws.com:1521/ORCL
+    #    url: jdbc:oracle:thin:@internaloracledb.c5vskyivl39w.us-east-1.rds.amazonaws.com:1521/ORCL #jdbc:db2://192.168.0.45:50000/SI_S25
+    #    username: POCTESTDB #Pragma05
+    #    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:db2://192.168.0.45:50000/SI_S23
+    username: si_s23 #Pragma007
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+    #    url: jdbc:sqlserver://13.72.76.211:1433;databaseName=MSSQLTEST;encrypt=true;trustServerCertificate=true
+    #    url: jdbc:sqlserver://13.72.76.211:1433;databaseName=mssqltest;trustServerCertificate=true
+    #    username: mssqltest #Pragma05
+    #    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    ssl:
+      enabled: false
+      trust-store: D:\certs\mssql-database\mssqk-keystore.jks
+      trust-store-type: JKS
+      trust-store-cmks: password
+    hikari:
+      connection-timeout: 100000
+      maximum-pool-size: 5
+      auto-commit: false
+  jpa:
+    show_sql: true
+    open-in-view: false
+    database-platform: com.pe.pcm.config.database.dialect.DB2ExtendedDialect  #org.hibernate.dialect.SQLServer2012Dialect #com.pe.pcm.config.database.dialect.Oracle10gExtendedDialect
+    properties:
+      id:
+        new_generator_mappings: true
+    hibernate:
+      naming:
+        physical-strategy: com.pe.pcm.config.database.PhysicalNamingStrategy
+  #      ddl-auto: validate
+  mail:
+    host: email-smtp.us-east-1.amazonaws.com #pragmaedge-com.mail.protection.outlook.com
+    port: 587 #25
+    username: AKIAWMHA7R2CYG76GRF7 #kiran.elupuru@pragmaedgee.com
+    cmks: BGtW8/EyoBAJSLAvVwFzt27bQMCJtpCv2wmiKfKN5vax
+    from: pcm-notifications-noreply@pragmaedge.com #kiran.elupuru@pragmaedge.com
+    app-contact-mail: pcmtechsupport@pragmaedge.com
+    mail-signature: IBM Partner Engagement Manager Community Manager Portal support team.
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: "*"
+  thymeleaf:
+    cache: true
+  servlet:
+    multipart:
+      max-file-size: 5120MB
+      max-request-size: 5120MB
+login:
+  sm:
+    enable: false
+    param-name: SM_USER
+  max-false-attempts: 5
+  reset-false-attempts: 3 #Minutes, after this period of time user attempts can be reset to zero
+
+jwt:
+  secretkey: CACE9E5A149ED201C4033C1A1E02C9BE
+  session-expire: 60 # Minutes
+#  scheduler-cron: "0 0 0 ? * *"
+
+sterling-b2bi:
+  sfg-v6-update: true
+  core-bp:
+    inbound: CM_MailBox_GET_RoutingRule_Inbound
+    outbound: CM_MailBox_GET_RoutingRule_Outbound
+  user:
+    cmks: Pragma05
+    cmks-validation: false
+    cmks-validation-profile: Kiran_test_df
+  b2bi-api: #IBM B2Bi API Config
+    active: true # IBM B2Bi API Enabled or not
+    auth-host:
+      '[SEAS Authentication]': 1
+    api: # IBM B2Bi rest API Config Details
+      username: cm_user
+      cmks: password #ENC(KKtUwo6lrp1At7pa/fUn4g==)
+      baseUrl: http://192.168.0.25:10074/B2BAPIs/svc #http://35.169.24.211:10074/B2BAPIs/svc #http://35.173.166.147:10074/B2BAPIs/svc
+    b2bi-sfg-api: #IBM B2B API with SFG
+      active: true
+      community-name: CM_PEMCommunity #SFG Community Name
+    sfg-api: #IBM V6 SFG API config
+      active: true
+      api: #IBM SFG API Config Details
+        username: cm_user
+        cmks: password #ENC(KKtUwo6lrp1At7pa/fUn4g==)
+        baseUrl: http://192.168.0.25:10074/sfgapis
+    as2: #true : If AS2 API Available in B2Bi APIs and if you want to use it from CM
+      active: false
+    cd:
+      net-map-name: Test_CD
+      proxy:
+        internal: # This info will be used to create Node in Internal Proxy when CM creates B2Bi-CONNECT-DIRECT
+          server-host: 10.0.0.1
+          server-port: 1364
+          secure-plus-option: ENABLED
+          ca-cert: CA_cd_0099
+          system-certificate: B2BHttp
+          security-protocol: TLS 1.2
+          cipher-suites: ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+        external: # This info will be used to create Node in External Proxy when CM creates B2Bi-CONNECT-DIRECT
+          server-host: 10.0.0.1
+          server-port: 1364
+          secure-plus-option: ENABLED
+          ca-cert: CA_cd_0099
+          system-certificate: B2BHttp
+          security-protocol: TLS 1.2
+          cipher-suites: ECDHE_RSA_WITH_3DES_EDE_CBC_SHA
+
+ssp: #IBM SSP API Configuration
+  active: true
+  api:
+    username: admin
+    cmks: password
+    baseUrl: https://52.202.223.170:6443/sspcmrest/sspcm/rest
+
+adapters: #Profiles Default Adapters Details Configuration
+  ftpServerAdapterName: PragmaFTPServerAdapter
+  ftpClientAdapterName: FTP Client Adapter
+  ftpsServerAdapterName: Pragma_FTPS_ServerAdapter
+  ftpsClientAdapterName: FTP Client Adapter
+  sftpServerAdapterName: Pragma_SFTPServerAdapter
+  sftpClientAdapterName: Pragma_SFTPClientAdapter
+  as2ServerAdapterName: Pragma_AS2ServerAdapter
+  as2ClientAdapterName: Pragma_AS2ClientAdapter
+  as2HttpClientAdapter: HTTPClientAdapter
+  cdClientAdapterName: Pragma_CDClientAdapter
+  httpServerAdapterName: Pragma_HTTPServerSync
+  httpsServerAdapterName: Pragma_HTTPSServerSync
+  mqAdapterName: Pragma_MQAdapter
+  wsServerAdapterName: Pragma_HTTPSServerSync
+  fsAdapter: PragmaFileSystem
+  sfgSftpClientAdapterName: Pragma_SFTPClientAdapter
+  sfgSftpServerAdapterName: Pragma_SFTPServerAdapter
+  sfgFtpClientAdapterName: Pragma_FTPClientAdapter
+  sfgFtpServerAdapterName: PragmaFTPServerAdapter
+  sfgFtpsClientAdapterName: Pragma_FTPSClientAdapter
+  sfgFtpsServerAdapterName: Pragma_FTPS_ServerAdapter
+
+alerts:
+  email:
+    enable:
+      create: false
+      update: false
+      delete: false
+      reports: false
+
+workFlow:
+  duplicate:
+    mft: true #Manage File Transfer setup to allow duplicates
+    docHandling: true #DocHandling setup to allow duplicates
+
+file-transfer:
+  search:
+    time-range: 24 #Hours, Time range in File Transfer search screen in UI
+
+saml:
+  jwt:
+    secret-key: yeWAgVDfb$!MFn@MCJVN7uqkznHbDLR#
+    session-expire: 60 # Minutes
+  idp:
+    metadata: D:\jks\FederationMetadata.xml #Provide the IDP metadata file location.
+    entity-id: PcmEntityIdp
+  scheme: https # Provide the PCM deployed protocol name.
+  host: 100.25.137.151 #Provide the Application deployed host.
+  url:
+    client: https://100.25.137.151:7080 #Provide the Application Access URL
+    entity: https://100.25.137.151:7080 #Provide the Application Access URL
+  ssl:
+    key-store: D:\jks\localhost-keystore.jks
+    key-cmks: pass@localhost
+    store-cmks: store@localhost
+    key-alias: pcm-localhost
+
+pem: #Configure external database integration
+  remote:
+    server:
+      pem-key: #Provide the absolute path of remote server pem-key
+      base-directory:
+        path: #Provide the base directory path
+      session-timeout: 5000 #Time in milliseconds
+  datasource: #External database details to connect VIA API
+    url: jdbc:oracle:thin:@sterlingdemo.c5vskyivl39w.us-east-1.rds.amazonaws.com:1521/ORCL
+    username: PCM_UAT
+    cmks: Pragma05
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  api-ws: #PEM API Configurations
+    active: true
+    base-url: https://34.236.128.171:29443/pemws/sponsors/pragma
+    username: aloksudhakar@pragmaedge.com
+    cmks: PEMPragmaedge@12
+file:
+  archive:
+    scheduler: #Scheduler to call delete script which can delete the files from source file and destination file archive according to the file age configured in PCM UI
+      cron: "0 0 0 ? * * *"  ## "0 0 0 ? * * *" => At 00:00:00am every day, "* * * * * ? *" => Every second, "0 * * ? * *" => Every minute
+      delete-files-job:
+        active: false
+        script-file-loc: /usr/CMArchiveDelete.sh #Absolute path of Delete script file
+    pgp:
+      private-key: privateWOP.pgp #Name PGP public key(under pgpkeys folder, pgpkeys folder should be placed together with PCM jar location) which will be used while decrypting PCM files set in the source file and destination file archive rules with encryption on
+      cmks: #PGP key passphrase
+    aes:
+      secret-key: 3p+KB8sEYgX7R6Jh0MJRSQ== #Key for decrypting PCM files set in the source file and destination file archive rules with encryption on
+      salt: 9XboGbY6CkAqYi6WB2tTiQ== #Salt value for decrypting PCM files set in the source file and destination file archive rules with encryption on
+
+logging:
+  config: classpath:logback-spring.xml #We should provide the absolute path of logback-spring.xml
+
+sso-ssp-seas:
+  ssp:
+    logout-endpoint: /Signon/logout.html #SSP Logout endpoint ,default value is : /Signon/logout.html
+    user-header-name: SM_USER #User header name config in SSP, default value is : SM_USER
+    token-cookie-name: SSOTOKEN #Token cookie name config in SSP, default value is : SSOTOKEN
+  seas:
+    auth-profile: ADPEMCM #communityManager #Authentication Profile Name in SEAS
+    host: 192.168.0.25 #SEAS Host Name
+    port: 61365 #61365 #SEAS Port , SSL port : 61366
+    ssl:
+      enabled: false #SSL enable or not in SEAS
+      protocol: TLSv1.2 #SEAS Protocol (Optional)
+      cipher-suits:  #SEAS Cipher Suits (Optional)
+      trust-store:
+        name: E:\certs\pcm-ssl-key-store\keystore.p12 #SEAS truststore file name (Absolute path)
+        cmks: Pragma@05 #SEAS truststore password
+        alias: seasssl #SEAS truststore alias
+        type: PKCS12 #SEAS truststore type
+      key-store:
+        name: E:\certs\seas-key-store\cmsseas-ssl.p12 #keystore file name (Absolute path)
+        cmks: Pragma@05 #keystore password.
+        alias: cm-ssl #keystore alias
+        type: PKCS12 #keystore type
+  user-request:
+    user: #Custom properties' config in SEAS
+      email: email #Email property name config in SEAS
+      role: role #Role property name config in SEAS
+      first-name: firstName #FirstName property name config in SEAS
+      last-name: lastName #LastName property name config in SEAS
+      phone: phone #Phone property name config in SEAS
+      external-id: externalId #FirstName property name config in SEAS
+      preferred-language: preferredLanguage #Language property name config in SEAS(Optional)
+    user-roles: #LDAP roles mapping to PCM (CM Role - LDAP Role)
+      super_admin: superAdmin
+      admin: Admin
+      on_boarder: creator
+      business_admin: bAdmin
+      business_user: bUser
+      data_processor: processor
+      data_processor_restricted: testDp
+    role-delimiter:
+file-upload:
+  si:
+    host: 23.22.96.149 #35.173.166.147
+    port: 13939 #13939 # ssp 43939
+    username: cm_user
+    cmks: password
+google:
+  application-name: demoserver-260223
+
+oauth2:
+  token-url: http://192.168.0.41:8080/auth/realms/master/protocol/openid-connect/token
+  grant-type: password
+  client-id: cm-proxy
+  client-secret: 4a67c676-39d0-45a6-b5b7-056745251745
+  username: kumar
+  cmks: Pragma
+  scope:
+  resource:
+  token:
+    response-parser:
+    prefix:
+    header:
+

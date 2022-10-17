@@ -1,0 +1,92 @@
+{
+  "MANAGE_CORRELATIONS": "Korrelationen verwalten",
+  "POLLING_INT": "Abrufintervall",
+  "FILE_JOB_SCH": "Dateiplan",
+  "SCH": "Zeitplan",
+
+  "FIELDS": {
+    "CORR1": "Korrelationsname1",
+    "CORR2": "Korrelationsname2",
+    "CORR3": "Korrelationsname3",
+    "CORR4": "Korrelationsname4",
+    "CORR5": "Korrelationsname5",
+    "CORR6": "Korrelationsname6",
+    "CORR7": "Korrelationsname7",
+    "CORR8": "Korrelationsname8",
+    "CORR9": "Korrelationsname9",
+    "CORR10": "Korrelationsname10",
+    "CORR11": "Korrelationsname11",
+    "CORR12": "Korrelationsname12",
+    "CORR13": "Korrelationsname13",
+    "CORR14": "Korrelationsname14",
+    "CORR15": "Korrelationsname15",
+    "CORR16": "Korrelationsname16",
+    "CORR17": "Korrelationsname17",
+    "CORR18": "Korrelationsname18",
+    "CORR19": "Korrelationsname19",
+    "CORR20": "Korrelationsname20",
+    "CORR21": "Korrelationsname21",
+    "CORR22": "Korrelationsname22",
+    "CORR23": "Korrelationsname23",
+    "CORR24": "Korrelationsname24",
+    "CORR25": "Korrelationsname25",
+    "CORR26": "Korrelationsname26",
+    "CORR27": "Korrelationsname27",
+    "CORR28": "Korrelationsname28",
+    "CORR29": "Korrelationsname29",
+    "CORR30": "Korrelationsname30",
+    "CORR31": "Korrelationsname31",
+    "CORR32": "Korrelationsname32",
+    "CORR33": "Korrelationsname33",
+    "CORR34": "Korrelationsname34",
+    "CORR35": "Korrelationsname35",
+    "CORR36": "Korrelationsname36",
+    "CORR37": "Korrelationsname37",
+    "CORR38": "Korrelationsname38",
+    "CORR39": "Korrelationsname39",
+    "CORR40": "Korrelationsname40",
+    "CORR41": "Korrelationsname41",
+    "CORR42": "Korrelationsname42",
+    "CORR43": "Korrelationsname43",
+    "CORR44": "Korrelationsname44",
+    "CORR45": "Korrelationsname45",
+    "CORR46": "Korrelationsname46",
+    "CORR47": "Korrelationsname47",
+    "CORR48": "Korrelationsname48",
+    "CORR49": "Korrelationsname49",
+    "CORR50": "Korrelationsname50"
+  },
+
+  "SCHEDULE": {
+    "FIELDS": {
+      "ACC_KEY_ID": "Zugriffsschlüssel-ID",
+      "SCR_KEY_ID": "Geheimschlüssel-ID",
+      "REGION": "Region",
+      "BKT_NAME": "Bucket Name",
+      "STATUS": "Status",
+      "FL_AGE": "Anzahl der Tage",
+      "CLD_NME": "Wolkentyp",
+      "ARC_LOC": "Archivspeicherort"
+    }
+  },
+
+  "BUTTONS": {
+    "CANCEL": "STORNIEREN",
+    "UPDATE_CORR": "Korrelationen aktualisieren",
+    "CREATE": "ERSTELLEN",
+    "EDIT": "BEARBEITEN",
+    "UPDATE": "AKTUALISIEREN",
+    "DELETE": "LÖSCHEN",
+    "ADD_POLLING_INT": "ABRUFINTERVALL HINZUFÜGEN",
+    "SAVE_POLLING_INT": "SPEICHERINTERVALL SPEICHERN"
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "INT_VALUE": "Intervallwert *",
+      "INT_NAME": "Intervallname *",
+      "DESCRIPTION": "Beschreibung",
+      "ACTION": "Aktion"
+    }
+  }
+}

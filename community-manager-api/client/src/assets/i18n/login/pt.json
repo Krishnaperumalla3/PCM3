@@ -1,0 +1,16 @@
+{
+  "TITLE": "Faça login na sua conta",
+  "AUTH_SITEMINDER": "Autenticando com o SiteMinder",
+  "HELPER_TEXT": "Digite suas credenciais abaixo",
+  "IN_UNAME": {
+    "LABEL": "Nome do usuário",
+    "HELPER_TXT": "Nome de usuário é requerido"
+  },
+  "IN_PWD": {
+    "LABEL": "Senha",
+    "HELPER_TXT": "Senha requerida"
+  },
+  "LOGIN_BTN": "Conecte-se",
+  "FORGOT_PWD": "Esqueceu a senha?",
+  "INVLD_LOGIN": "Login inválido"
+}

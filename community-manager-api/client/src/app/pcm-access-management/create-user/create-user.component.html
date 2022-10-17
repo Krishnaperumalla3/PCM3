@@ -1,0 +1,68 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h4 translate>{{!!userId ? "USERS.EDIT_USER" : "USERS.CREATE_USER"}}</h4>
+    <mat-card>
+      <form [formGroup]="createUserForm">
+        <div  class="user-form">
+          <ng-container *ngFor="let field of userFields">
+            <div class="field-container" [ngSwitch]="field.inputType">
+              <div *ngSwitchCase="'pcm-text'">
+                <mat-form-field *ngIf="field.formControlName === 'externalId' && activeProfile=== 'sso-ssp-seas'">
+                  <input matInput placeholder="{{field.placeholder | translate}}" formControlName="{{field.formControlName}}" name="{{field.formControlName}}" (keyup)="trimValue(this.createUserForm.get(field.formControlName))">
+                </mat-form-field>
+                <mat-form-field *ngIf="field.formControlName !== 'externalId'">
+                  <input matInput placeholder="{{field.placeholder | translate}}" formControlName="{{field.formControlName}}" name="{{field.formControlName}}" (keyup)="trimValue(this.createUserForm.get(field.formControlName))" [readonly]="field.formControlName === 'userId' && !!userId ? true : false">
+                </mat-form-field>
+              </div>
+              <div *ngSwitchCase="'pcm-select'">
+                <mat-form-field>
+                  <mat-select placeholder="{{field.placeholder | translate}}" formControlName="{{field.formControlName}}"
+                              [disabled]="(field.formControlName === 'status' && !userId) || (field.formControlName === 'userType')" >
+                    <mat-option *ngFor="let opt of field['options']" [value]="opt.value">{{opt.label}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div *ngIf="createUserForm.value['userRole'] !== roles.superAdmin && createUserForm.value['userRole'] !== roles.admin">
+          <div style="margin-top: 25px" *ngIf="partnerList && partnerList.length > 0" >
+            <h4>{{"USERS.ASSIGN_PARTNER" | translate}}</h4>
+            <pcm-pcm-list-box [data]="partnerList" [selected]="selectedPartnersList" valueField="key" [textField]="['value']"
+                              (onPartnerItemsMoved)="onPartnerItemsMoved($event)"></pcm-pcm-list-box>
+          </div>
+          <div style="margin-top: 25px" *ngIf="groupList && groupList.length > 0">
+            <h4>{{"USERS.ASSIGN_GROUP" | translate}}</h4>
+            <pcm-pcm-list-box [data]="groupList" [selected]="selectedGroupsList" valueField="key" [textField]="['value']"
+                              (onGroupItemsMoved)="onGroupItemsMoved($event)"></pcm-pcm-list-box>
+          </div>
+<!--          <div style="margin-top: 25px" *ngIf="transList && transList.length > 0">-->
+<!--            <h4>Assign Transactions</h4>-->
+<!--            <pcm-pcm-list-box [data]="transList" [selected]="selectedTransList" valueField="key" [textField]="['value']"-->
+<!--                              (onTransItemsMoved)="onTransItemsMoved($event)"></pcm-pcm-list-box>-->
+<!--          </div>-->
+        </div>
+        <div class="btn-grp sbmt-btn">
+          <button type="submit" class="btn btn-primary" (click)="create(createUserForm)" translate>{{!!userId ? "USERS.BUTTONS.EDIT_USER" : "USERS.BUTTONS.CREATE_USER"}}</button>
+          <button type="button" class="btn btn-info" (click)="cancel()">{{"USERS.BUTTONS.CANCEL" | translate}}</button>
+        </div>
+      </form>
+    </mat-card>
+  </mat-card>
+</div>

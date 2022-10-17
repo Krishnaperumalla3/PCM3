@@ -1,0 +1,73 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize application">
+  <mat-card>
+    <h4>{{ 'PARTNERS.MANAGE_PARTNER' | translate}}</h4>
+    <mat-card>
+      <form [formGroup]="managePartnerForm" class="partner-form">
+        <ng-container *ngFor="let field of managePartnerFields">
+          <div class="field-container" [ngSwitch]="field.inputType">
+            <div *ngSwitchCase="'pcm-text'">
+              <mat-form-field>
+                <input matInput placeholder="{{field.placeholder | translate}}" formControlName={{field.formControlName}} name="{{field.formControlName}}" (keyup)="trimValue(this.managePartnerForm.get(field.formControlName))"/>
+              </mat-form-field>
+            </div>
+            <div *ngSwitchCase="'pcm-select'">
+              <mat-form-field *ngIf="field.formControlName !== 'protocol'">
+                <mat-select placeholder="{{field.placeholder | translate}}" formControlName={{field.formControlName}} id="{{field.formControlName}}">
+                  <mat-option value="">Select</mat-option>
+                  <mat-option *ngFor="let opt of field.options" [value]="opt.value">{{opt.label}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field *ngIf="field.formControlName === 'protocol'">
+                <mat-select formControlName="{{field.formControlName}}" placeholder="{{ field.placeholder | translate}}">
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="search"
+                                           [formControl]="searchFilterCtrl[field.formControlName]"
+                                           [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                  </mat-option>
+
+                  <mat-option *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                              [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </ng-container>
+
+        <div class="btn-grp">
+          <button type="submit" class="btn btn-primary" (click)="onSubmit(managePartnerForm)">{{ 'PARTNERS.BUTTONS.SEARCH_PRTNR' | translate}}</button>
+          <button type="button" class="btn btn-info" (click)="resetForm()">{{ 'PARTNERS.BUTTONS.REST_SEARCH' | translate}}</button>
+        </div>
+      </form>
+    </mat-card>
+  </mat-card>
+  <mat-card *ngIf="showResults" class="mt-3">
+    <app-pcm-table (columnsChanged)="columnsChanged($event)" (pagination)="pagination($event)" (resStatus)="resFromTable($event)" (sortChange)="sort($event)"
+                   [actionMenu]="actionButtons" [currentPage]="currentPage" [protocolMap]="proLst"
+                   [dataSource]="searchResults" [displayedColumns]="displayedColumns"
+                   [headerColumns]="headerColumns" [page]="'manage partner'"
+                   [serachTblConfigRef]="serachTblConfigRef" [searchTblConfig]="serachTblConfig" [size]="qryParams['size']"
+                   [sortBy]='sortBy'
+                   [sortDir]='sortDir' [totalElements]='totalElements' [totalPages]='totalPages'>
+    </app-pcm-table>
+  </mat-card>
+</div>
+

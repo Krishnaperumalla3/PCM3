@@ -1,0 +1,94 @@
+{
+
+  "XCHGE_CRT": {
+    "LABEL": "Certificado de troca *"
+  },
+  "SIGN_CERT": {
+    "LABEL": "Certificado de assinatura *"
+  },
+  "IN_CERT_ID": {
+    "LABEL": "ID do certificado *"
+  },
+  "IN_UPLD_CRT": {
+    "LABEL": "Carregar certificado"
+  },
+  "IN_CA_CERT": {
+    "LABEL": "Certificação CA"
+  },
+  "IN_CERT_NME": {
+    "LABEL": "nome válido"
+  },
+  "IN_CA_CERT_NME": {
+    "LABEL": "Nome do CACert"
+  },
+  "IN_CIPHER_SUITS": {
+    "LABEL": "Cipher Suites"
+  },
+  "IN_USR_IDNT_KY_NME": {
+    "LABEL": "Nome da chave de identidade do usuário"
+  },
+  "IN_XCHNGE_CERT_UPLD": {
+    "LABEL": "Upload de certificado do Exchange"
+  },
+  "IN_KEY_CERT": {
+    "LABEL": "Certificado de chave *"
+  },
+  "IN_PVT_KEY_CERT": {
+    "LABEL": "Senha da chave privada *"
+  },
+  "IN_SING_CRT_UPLD": {
+    "LABEL": "Assinatura de carregamento de certificado:"
+  },
+  "IN_XCHANGE_CERT": {
+    "LABEL": "Certificado de troca"
+  },
+  "IN_EXCERT_NME": {
+    "LABEL": "Nome do ExchCert"
+  },
+  "IN_SIGN_CERT": {
+    "LABEL": "Certificado de assinatura"
+  },
+  "IN_SIGN_CERT_NME": {
+    "LABEL": "Nome da assinatura"
+  },
+  "IN_KEY_CERT_PASS": {
+    "LABEL": "Senha do certificado de chave"
+  },
+  "IN_SSL_TYPE": {
+    "LABEL": "Tipo SSL *"
+  },
+  "IN_PAYLOAD_SEC": {
+    "LABEL": "Segurança de carga útil *"
+  },
+  "IN_ENCRYPT_ALG": {
+    "LABEL": "Algoritmo de criptografia *"
+  },
+  "IN_SIGN_ALG": {
+    "LABEL": "Algoritmo de assinatura *"
+  },
+  "IN_MDN_REQ": {
+    "LABEL": "MDN obrigatório *"
+  },
+  "IN_MDN_TYPE": {
+    "LABEL": "Tipo MDN *"
+  },
+  "IN_MDN_ENCRYPT": {
+    "LABEL": "Criptografia MDN *"
+  },
+  "IN_RECPT_ADDR": {
+    "LABEL": "Endereço de recebimento para"
+  },
+  "IN_USR_IDNTY_KY_NME": {
+    "LABEL": "Nome da chave de identidade do usuário"
+  },
+  "IN_SSH_AUTH_USR_KEY": {
+    "LABEL": "Chave de usuário autorizado SSH"
+  },
+  "NOTE": "NOTA",
+  "UPLOAD_NOTE_1": "A importação verificará apenas o Nome da Ação do Fluxo de Trabalho, não as propriedades.",
+  "UPLOAD_NOTE_2": "Faça o upload da chave / certificado de dados criptografados Base64.",
+  "BUTTONS": {
+    "UPLOAD": "ENVIO",
+    "CLOSE": "Perto"
+  }
+}

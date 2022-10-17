@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <title th:text="#{email.otp.title(${appName})}">Your Community Manager Portal Account - Activation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+</head>
+<body>
+
+<p th:text="#{email.otp.greeting(${user.firstName})}">
+    Dear
+</p>
+<p th:text="#{email.otp.text1}">
+   OTP to change your Password is below. OTP valid for 24 Hours.
+</p>
+<p th:text="#{email.otp.code(${user.otp})}">
+    OTP:
+</p>
+<p th:text="#{email.activation.nottoreply(${contactMail})}">
+    *Please note: this e-mail was sent from an address that cannot accept incoming e-mail. Please use the email todo@pragmaedge.com to contact us with any questions on the Portal.
+</p>
+<p>
+    <span th:text="#{email.activation.text2}">Regards, </span>
+    <br/>
+    <em th:text="#{email.signature(${signature})}">Administrator.</em>
+</p>
+</body>
+</html>

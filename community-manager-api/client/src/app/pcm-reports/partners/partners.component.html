@@ -1,0 +1,48 @@
+<div class="pcm-content centralize partner">
+    <mat-card>
+      <h3 class="d-flex align-items-center">
+        <span>Inactive Partners without file transfers</span>
+      </h3>
+      <form [formGroup]="form" class="form__container">
+        <mat-form-field>
+          <mat-select placeholder="Period" formControlName="days">
+            <mat-option [value]="365">Last 12 Months</mat-option>
+            <mat-option [value]="730">Last 24 Months</mat-option>
+            <mat-option [value]="1095">Last 36 Months</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button type="button" class="btn btn-primary" (click)="submit()">
+          SUBMIT
+        </button>
+      </form>
+    </mat-card>
+  <mat-card class="mt-1" *ngIf="!!showResults">
+    <div>
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="S.No">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> S.No </th>
+          <td mat-cell *matCellDef="let row;let i = index;"> {{i + 1}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="profileName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Partner Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.profileName}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="emailId">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.emailId}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+          <td mat-cell *matCellDef="let row"> {{row.phone}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 25, 50, 75, 100]"></mat-paginator>
+    </div>
+  </mat-card>
+</div>

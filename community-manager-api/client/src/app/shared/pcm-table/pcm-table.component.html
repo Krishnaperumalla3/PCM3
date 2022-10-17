@@ -1,0 +1,203 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="table-toolbar">
+  <div>
+    <mat-form-field>
+      <mat-icon style="cursor: pointer;" matSuffix>{{'COMMON.TABLE.SRCH' | translate}}</mat-icon>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search ">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button *ngIf="fileResults.length > 0 && page === 'file search'" class="btn btn-pcm-7" [matMenuTriggerFor]="export">
+      {{'COMMON.TABLE.XPRT' | translate}}
+    </button>
+    <mat-menu #export="matMenu">
+      <mat-list>
+        <mat-list-item>
+          <button class="btn btn-pcm-2" (click)="exportPdf()">
+            {{'COMMON.TABLE.XPRT_PDF' | translate}}
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button class="btn btn-pcm-5" (click)="exportCsv()">
+            {{'COMMON.TABLE.XPRT_CSV' | translate}}
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+    <ng-container *ngIf="userRole !== 'data_processor_restricted'">
+      <button *ngIf="(selection.selected && selection.selected.length > 0 ) && (page === 'file search' && !!isB2bActive)"
+              class="btn btn-pcm-4" (click)="multipleReprocess()">
+        {{'COMMON.TABLE.REPROCESS' | translate}}
+      </button>
+      <span matTooltip="Please select checkbox"
+            *ngIf="(selection.selected && selection.selected.length === 0 ) && (page === 'file search' && !!isB2bActive)">
+      <button type="button" disabled class="btn btn-pcm-1">
+        {{'COMMON.TABLE.REPROCESS' | translate}}
+      </button>
+    </span>
+    </ng-container>
+    <button class="btn btn-pcm-1" (click)="openColumnConfig()" *ngIf="page !== 'manage group'">
+      {{'COMMON.TABLE.CONFG_COL' | translate}}
+    </button>
+  </div>
+</div>
+
+<div style="margin-top: 5px" *ngIf="colChanged">
+  <table mat-table  #TABLE [dataSource]="fileResults" matSort matSortActive="sortBy"
+         matSortDirection="sortDir" (matSortChange)="sortData($event)">
+    <!-- Column Configuartion -->
+    <ng-container *ngIf="(!!isB2bActive && page === 'file search') && userRole !== 'data_processor_restricted'">
+      <div matColumnDef="check_select">
+        <th style="width: 200px" mat-header-cell *cdkHeaderCellDef class="act-width">
+          <mat-checkbox (change)="$event ? masterToggle() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td style="width: 200px" mat-cell class="act-width" *cdkCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </div>
+    </ng-container>
+    <div matColumnDef="select" *ngIf="!!actionMenuButtons">
+      <th mat-header-cell class="act-width" *cdkHeaderCellDef>
+        {{'COMMON.TABLE.ACTN_COL' | translate}}
+      </th>
+      <td mat-cell class="act-width" *cdkCellDef="let row">
+        <mat-icon [matMenuTriggerFor]="menu" svgIcon="menu-bar"></mat-icon>
+        <mat-menu #menu="matMenu">
+          <mat-list>
+            <ng-container [ngSwitch]="page">
+              <ng-container *ngSwitchCase="'manage partner'">
+                <div *ngFor="let item of actionMenuButtons">
+                  <mat-list-item *ngIf="item.id != 'partDeactivate' && row.status === 'Inactive'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="item.id != 'partActivate' && row.status === 'Active'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                </div>
+              </ng-container>
+              <ng-container *ngSwitchCase="'manage user'">
+                <div *ngFor="let item of actionMenuButtons">
+                  <mat-list-item *ngIf="item.id != 'userDeactivate' && row.status === 'Inactive'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="item.id != 'userActivate' && row.status === 'Active'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                </div>
+                <div>
+                  <mat-list-item *ngIf="row.role === 'file_operator'">
+                    <button class="{{'btn btn-pcm-1'}}" (click)="menuClick({id: 'userPermissions'}, row)" mat-menu-item>PERMISSIONS</button>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="row.accountNonLocked === 'N'">
+                    <button class="{{'btn btn-pcm-6'}}" (click)="menuClick({id: 'userApprove'}, row)" mat-menu-item>APPROVE</button>
+                  </mat-list-item>
+                </div>
+              </ng-container>
+              <ng-container *ngSwitchCase="'manage application'">
+                <div *ngFor="let item of actionMenuButtons">
+                  <mat-list-item *ngIf="item.id != 'appDeactivate' && row.appIsActive === 'Inactive'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                  <mat-list-item *ngIf="item.id != 'appActivate' && row.appIsActive === 'Active'">
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                </div>
+              </ng-container>
+              <ng-container *ngSwitchDefault>
+                <div *ngFor="let item of actionMenuButtons">
+                  <mat-list-item>
+                    <button class="{{item.class}}" (click)="menuClick(item, row)" mat-menu-item>{{item.label | translate}}</button>
+                  </mat-list-item>
+                </div>
+              </ng-container>
+            </ng-container>
+          </mat-list>
+        </mat-menu>
+      </td>
+    </div>
+    <div *ngFor="let column of searchTblConfig" [cdkColumnDef]="column.key">
+      <ng-container *ngIf="column.header != '#'">
+        <th style="width: 200px" mat-header-cell mat-sort-header *cdkHeaderCellDef>{{ column.header | translate}}</th>
+      </ng-container>
+      <ng-container *ngIf="column.header === '#'">
+        <th style="width: 200px" mat-header-cell *cdkHeaderCellDef>{{ column.header | translate}}</th>
+      </ng-container>
+      <td mat-cell *cdkCellDef="let row">
+        <div [ngSwitch]="getHeader(column.header)">
+          <div *ngSwitchCase="'#'">
+            <!--            <pcm-link-widget matTooltip="Navigate to Data Flow" [value]="column.cell(row)" (click)="navigateRule(row)"></pcm-link-widget>-->
+            <span class="pcm-link" matTooltip="Navigate to Data Flow" (click)="navigateRule(row)">{{column.cell(row)}}</span>
+          </div>
+          <!-- link widget -->
+          <pcm-link-widget *ngSwitchCase="'Src. FileName'" (click)="viewFile(row, column.key)"
+                           [value]="column.cell(row)"></pcm-link-widget>
+          <!-- link widget -->
+          <pcm-link-widget *ngSwitchCase="'Dest. FileName'" (click)="viewFile(row, column.key)"
+                           [value]="column.cell(row)"></pcm-link-widget>
+          <div *ngSwitchCase="'File Arrived'">
+            {{ column.cell(row) | date:'medium' }}
+          </div>
+          <div *ngSwitchCase="'Status'">
+            <ng-container *ngIf="page === 'manage partner' || page === 'manage application' || page === 'manage user'">
+              <span [ngClass]="{'pcm-success' : row.status === 'Active', 'pcm-danger' : row.status === 'Inactive'}">{{column.cell(row)}}</span>
+            </ng-container>
+            <ng-container *ngIf="page === 'file search'">
+              <!--              <span>{{column.cell(row)}}</span>-->
+              <mat-select *ngIf="column.cell(row) !== 'Success' && column.cell(row) !== 'Reprocessed' && column.cell(row) !== 'Repicked' && column.cell(row) !== 'Redropped' && column.cell(row) !== 'No Action Required'" value="{{column.cell(row)}}" (selectionChange)="changeStatus($event.value, row)">
+                <mat-option value="Failed">Failed</mat-option>
+                <mat-option value="ManualReprocess">ManualReprocess</mat-option>
+                <mat-option value="MarkedSuccess">MarkedSuccess</mat-option>
+                <mat-option value="Under Review">Under Review</mat-option>
+                <mat-option value="No Action Required">No Action Required</mat-option>
+              </mat-select>
+              <span *ngIf="column.cell(row) === 'Success' || column.cell(row) === 'Reprocessed' || column.cell(row) === 'Repicked' || column.cell(row) === 'Redropped' || column.cell(row) === 'No Action Required'">{{column.cell(row)}}</span>
+            </ng-container>
+          </div>
+          <div *ngSwitchCase="'App Status'">
+            <span
+              [ngClass]="{'pcm-success' : row.appIsActive === 'Active', 'pcm-danger' : row.appIsActive === 'Inactive'}">{{column.cell(row)}}</span>
+          </div>
+          <div *ngSwitchCase="'Protocol'">
+            <span>{{getProtocol(column.cell(row))}}</span>
+          </div>
+          <!-- Default -->
+          <span *ngSwitchDefault>{{ column.cell(row) }}</span>
+        </div>
+      </td>
+    </div>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<div *ngIf="!!fileResults && fileResults.length === 0">
+  <h3 class="text-center p-5" style="color: #6d6c6cc4">
+    {{'COMMON.TABLE.NO_RSLT_FND' | translate}}
+  </h3>
+</div>
+<mat-paginator [pageIndex]="currentPage" [pageSizeOptions]="[10, 25, 50, 75, 100]" [length]="totalRecords"
+               [pageSize]="size"
+               (page)="changePage($event)" showFirstLastButtons>
+</mat-paginator>
+

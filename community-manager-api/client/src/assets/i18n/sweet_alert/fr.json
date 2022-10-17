@@ -1,0 +1,223 @@
+{
+  "ACTN_STATUS": "État de l'action",
+  "ERROR": {
+    "TITLE": "Erreur"
+  },
+  "CANCEL": {
+    "TITLE": "Êtes-vous sûr?",
+    "BODY": "vous souhaitez annuler?",
+    "CNFRM_TXT": "Oui, annulez-le!"
+  },
+  "IN_VALID": {
+    "TITLE": "Forme non valide",
+    "BODY": "(*) sont obligatoires pour soumettre."
+  },
+  "IN_VALID_PHONE": {
+    "TITLE": "Téléphone invalide",
+    "BODY": "Numéro de téléphone non valide."
+  },
+  "FL_TRANSFER": {
+    "SERCH": {
+      "TITLE": "Transfert de fichier"
+    },
+    "FL_STS": {
+      "TXT": "Voulez-vous vraiment modifier le processus de fichier?"
+    }
+  },
+  "APP": {
+    "TITLE": "Application",
+    "INVLD_EML": {
+      "TITLE": "Identifiant de messagerie",
+      "BODY": "L'identifiant de messagerie n'est pas valide."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Téléphone invalide",
+      "BODY": "Numéro de téléphone non valide."
+    },
+    "DIREC": {
+      "TITLE": "Partenaire",
+      "BODY": "Le champ de boîte aux lettres ou de répertoire doit commencer par /."
+    },
+    "ACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez activer cette application?",
+      "CNFRM_TXT": "Oui, activez-le"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez désactiver cette application?",
+      "CNFRM_TXT": "Oui, désactivez-le"
+    },
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez supprimer cette application?",
+      "CNFRM_TXT": "Oui, supprimez-le",
+      "SI_TXT": "supprimer dans SI"
+    }
+  },
+  "ENVELOP": {
+    "TITLE": "Enveloppe"
+  },
+  "SETTINGS": {
+    "CO_TITLE": "Corrélation",
+    "FILE_JOB_SCH": "Planification du travail de fichier"
+  },
+  "PARTNER": {
+    "TITLE": "Partenaire",
+    "INVLD_EML": {
+      "TITLE": "Email invalide",
+      "BODY": "L'identifiant de messagerie n'est pas valide."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Téléphone invalide",
+      "BODY": "Numéro de téléphone non valide."
+    },
+    "DIREC": {
+      "TITLE": "Partenaire",
+      "BODY": "Le champ de boîte aux lettres ou de répertoire doit commencer par /."
+    },
+    "ACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez activer ce partenaire?",
+      "CNFRM_TXT": "Oui, activez-le!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez désactiver ce partenaire?",
+      "CNFRM_TXT": "Oui, désactivez-le!"
+    },
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez supprimer ce partenaire?",
+      "SI_TXT": "supprimer dans SI",
+      "CNFRM_TXT": "Oui, supprimez-le!"
+    }
+  },
+  "DT_FLW": {
+    "SERCH": {
+      "TITLE": "Rapport de flux de données"
+    },
+    "RULE": {
+      "TITLE": "Règle"
+    },
+    "MAND_ERR": {
+      "TITLE": "Créer plusieurs flux de données",
+      "BODY": "* les champs obligatoires sont obligatoires"
+    },
+    "SLCT_ATLEAST": {
+      "TITLE": "Créer plusieurs flux de données",
+      "BODY": "Sélectionnez au bail un flux"
+    },
+    "WF_TITLE": "Flux de données",
+    "SERCH_WF": {
+      "TITLE": "Flux de données de recherche",
+      "BODY": "Oups ... Une erreur s'est produite, veuillez réessayer après un certain temps."
+    },
+    "DELETE_FLW": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez supprimer ce flux?",
+      "CNFRM_TXT": "Supprimer"
+    },
+    "COPY_WF": {
+      "TITLE": "Copier le flux de données",
+      "BODY": "flux de données copié avec succès, veuillez cliquer sur «Enregistrer le flux de travail» pour enregistrer!"
+    },
+    "EXP_WF": {
+      "TITLE": "flux de données exporté",
+      "BODY": "Veuillez télécharger le workflow exporté.",
+      "BTN_CA": "ANNULER",
+      "BTN_DW": "TÉLÉCHARGER LE flux de données"
+    },
+    "IMP_WF": {
+      "TITLE": "Importer un flux de données",
+      "BODY": "Le fichier a été importé avec succès"
+    },
+    "CANCEL_WF": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez annuler?",
+      "CNFRM": "Oui, annulez-le!"
+    }
+  },
+  "WRK_FLW": {
+    "TITLE": "Exporter le flux de données",
+    "ERROR": {
+      "BODY": "Une erreur s'est produite lors de l'importation."
+    },
+    "SUCCESS": {
+      "BODY": "Le fichier a été exporté avec succès."
+    }
+  },
+  "CERTIFICATE": {
+    "TITLE": "Certificat",
+    "WARN": {
+      "BODY": "(*) Les champs sont obligatoires pour créer"
+    }
+  },
+  "OVR_DUE": {
+    "SERCH": {
+      "TITLE": "Rapport en retard"
+    }
+  },
+  "LOGIN": {
+    "UN_AUTH": {
+      "TITLE": "Pas autorisé",
+      "BODY": "Vous n'êtes pas autorisé à ce service."
+    },
+    "PWD": {
+      "TITLE": "Mot de passe"
+    },
+    "FGRT_PWD": {
+      "TITLE": "Mot de passe oublié"
+    },
+    "UPD_PWD": {
+      "TITLE": "Mettre à jour le mot de passe"
+    },
+    "CHNGE_PWD": {
+      "TITLE": "Changer le mot de passe",
+      "BODY": "Le nouveau et l'ancien mot de passe ne doivent pas être identiques."
+    }
+  },
+  "RULE": {
+    "TITLE": "Règle",
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez supprimer cette règle?",
+      "CNFRM_TXT": "Oui, supprimez-le!"
+    }
+  },
+  "USER": {
+    "TITLE": "Utilisateur",
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous voulez supprimer cet utilisateur?",
+      "CNFRM_TXT": "Oui, supprimez-le!"
+    },
+    "ACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez activer cet utilisateur?",
+      "CNFRM_TXT": "Oui, activez-le!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous souhaitez désactiver cet utilisateur?",
+      "CNFRM_TXT": "Oui, désactivez-le!"
+    }
+  },
+  "GROUP": {
+    "TITLE": "User",
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "vous voulez supprimer ce groupe?",
+      "CNFRM_TXT": "Oui, supprimez-le!"
+    }
+  },
+  "POLLING_INT": {
+    "TITLE": "Intervalle d'interrogation",
+    "DELETE": {
+      "TITLE": "Êtes-vous sûr?",
+      "BODY": "Voulez-vous vraiment supprimer cet intervalle d'interrogation?",
+      "CNFRM_TXT": "ANNULER"
+    }
+
+  }
+}

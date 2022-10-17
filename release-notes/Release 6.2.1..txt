@@ -1,0 +1,20 @@
+Changes:
+    1. In Remote FTP/FTPS/SFTP Sterling Profile , UseImplicitSSL values we are inserting
+        into PCM "table.column" "PETPE_SFG_FTP.USE_IMPLICIT_SSL" as "SSL_IMPLICIT" or "SSL_EXPLICIT".
+    2. File edit and Upload from Transfer info search table
+    3. File Upload from Transfer info search table
+    4. File Upload to mailbox for User level login
+    5. File Download from mailbox for user level login
+    6. Permission screen enabled for PCM users
+    7. New Reports been enabled
+    8. Security Vulnerability fixes
+    9. Google Drive API enabled - Hold
+    10. Google Drive UI: where we need to upload and download the files - Hold
+    11. PEM API-> This need to check with Shameer
+    12. Download and Upload Large files upto 2GB
+    13. Upload largeFile: Chunk APIs enabled
+    14. API Connect Improvements
+    15. Multiple roles Implementation for SSO (SEAS)
+    16. PCM file upload and download by user
+    17.
+

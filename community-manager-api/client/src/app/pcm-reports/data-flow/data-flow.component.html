@@ -1,0 +1,267 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <div class="d-flex align-items-center">
+      <span></span>
+      <button type="button" class="btn btn-info ml-auto"
+              (click)="exportAllWorkFlow()">{{"REPORTS.BUTTONS.EXPORT_ALL_WORKFLOWS" | translate}}</button>
+    </div>
+    <mat-accordion class="mt-3">
+      <mat-expansion-panel [expanded]="searchPanel" (opened)="searchPanel = true" (closed)="searchPanel = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{"REPORTS.DATA_FLOW_REPORT" | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <form [formGroup]="form">
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.PARTNER_NAME.LABEL' | translate"
+                    formControlName="partnerName"
+                    name="partnerName"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    translate
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.APP_NAME.LABEL' | translate"
+                    formControlName="applicationName"
+                    name="applicationName"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <mat-select
+                    [placeholder]="'REPORTS.FIELDS.SEQ_TYPE.LABEL' | translate"
+                    formControlName="seqType"
+                    id="seqType"
+                  >
+                    <mat-option value=""><i>Select</i></mat-option>
+                    <mat-option value="DocHandling">DocHandling</mat-option>
+                    <mat-option value="MFT">MFT</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <mat-select
+                    [placeholder]="'REPORTS.FIELDS.FLOW.LABEL' | translate"
+                    formControlName="flow"
+                    id="flow"
+                  >
+                    <mat-option value=""><i>Select</i></mat-option>
+                    <mat-option value="Inbound">Inbound</mat-option>
+                    <mat-option value="Outbound">Outbound</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.FILE_NAME.LABEL' | translate"
+                    formControlName="fileType"
+                    name="fileType"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.DOC_TYPE.LABEL' | translate"
+                    formControlName="docType"
+                    name="docType"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.TRANSACTION.LABEL' | translate"
+                    formControlName="transaction"
+                    name="transaction"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.SENDER_ID.LABEL' | translate"
+                    formControlName="senderId"
+                    name="senderId"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.RECEIVER_ID.LABEL' | translate"
+                    formControlName="receiverId"
+                    name="receiverId"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.RULE_NAME.LABEL' | translate"
+                    formControlName="ruleName"
+                    name="ruleName"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="form-group col-md-3">
+                <mat-form-field>
+                  <input
+                    matInput
+                    type="text"
+                    [placeholder]="'REPORTS.FIELDS.RULE_VALUE.LABEL' | translate"
+                    formControlName="ruleValue"
+                    name="ruleValue"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel [expanded]="advSearchPanel" (opened)="advSearchPanel = true"
+                           (closed)="advSearchPanel = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{"REPORTS.AD_SRC" | translate}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="form-row">
+          <form [formGroup]="advanceForm" class="col-md-12">
+            <div  class="form-row">
+              <mat-form-field  class="form-group col-md-4">
+                <mat-select formControlName="ruleName" [placeholder]="'REPORTS.FIELDS.RULE_NAME.LABEL' | translate">
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="search"
+                                           [formControl]="searchFieldCtrl['ruleName']"
+                                           [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option value="">Select</mat-option>
+                  <mat-option
+                    *ngFor="let option of getSearchFilterOptions(ruleList, 'ruleName')"
+                    (click)="onRuleSelect(option)"
+                    value="{{option.ruleName}}">
+                    {{option.ruleName}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div formArrayName="propertyList">
+              <div *ngFor="let item of ruleProperties().controls; let ruleIndex=index" [formGroupName]="ruleIndex">
+                <div  class="form-row" *ngIf="formFields">
+                  <div class="form-group col-md-4" *ngFor="let field of formFields">
+                    <div [ngSwitch]="field['inputType']">
+                      <div  *ngSwitchCase="'pcm-select'">
+                        <mat-form-field>
+                          <mat-select formControlName="{{ field['formControlName'] }}"
+                                      placeholder="{{field.placeholder | translate}}">
+                            <mat-option>
+                              <ngx-mat-select-search placeholderLabel="search"
+                                                     [formControl]="searchFieldCtrl[field['formControlName']]"
+                                                     [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                            </mat-option>
+                            <mat-option value="">Select</mat-option>
+                            <mat-option
+                              *ngFor="let option of getSearchFilterOptions(field.options, field['formControlName'])"
+                              value="{{option.value}}">
+                              {{option.label}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </div>
+                      <div *ngSwitchCase="'pcm-text'">
+                        <mat-form-field>
+                          <input
+                            matInput
+                            placeholder="{{ field.placeholder | translate }}"
+                            formControlName="{{ field['formControlName'] }}"
+                            name="ruleValue"
+                          />
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <button class="pt-1 mx-2"  mat-mini-fab color="primary" (click)="addRuleList()">
+                      <mat-icon>add</mat-icon>
+                    </button>
+                    <button class="pt-1 mx-2" *ngIf="ruleIndex > 0"  mat-mini-fab color="warn" (click)="removeRuleList(ruleIndex)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <div class="d-flex align-items-center">
+    <span class="font-italic "
+          style="color:#dc3545; margin-top: 10px;">{{"REPORTS.NOTES.DF_NOTE.NOTE" | translate}}</span>
+    </div>
+    <div class="btn-grp sbmt-btn">
+      <button type="button" class="btn btn-primary" (click)="submit(form.value)">
+        {{"REPORTS.BUTTONS.SEARCH" | translate}}
+      </button>
+      <button type="button" class="btn btn-info"
+              (click)="reset()">{{"REPORTS.BUTTONS.RESET_SEARCH" | translate}}</button>
+    </div>
+  </mat-card>
+
+  <mat-card *ngIf="showResults" class="mt-3">
+    <app-pcm-table (columnsChanged)="columnsChanged($event)" (pagination)="pagination($event)"
+                   (sortChange)="sort($event)"
+                   [currentPage]="currentPage"
+                   [dataSource]="searchResults" [displayedColumns]="displayedColumns"
+                   [headerColumns]="headerColumns" [page]="'data_flow reports'"
+                   [serachTblConfigRef]="searchTblConfigRef" [searchTblConfig]="searchTblConfig"
+                   [size]="qryParams['size']"
+                   [sortBy]='sortBy'
+                   [sortDir]='sortDir' [totalElements]='totalElements' [totalPages]='totalPages'>
+    </app-pcm-table>
+  </mat-card>
+</div>

@@ -1,0 +1,16 @@
+{
+  "TITLE": "Melde dich in deinem Konto an",
+  "AUTH_SITEMINDER": "Authentifizierung mit SiteMinder",
+  "HELPER_TEXT": "Geben Sie unten Ihre Anmeldeinformationen ein",
+  "IN_UNAME": {
+    "LABEL": "Nutzername",
+    "HELPER_TXT": "Ein Benutzername wird benötigt"
+  },
+  "IN_PWD": {
+    "LABEL": "Passwort",
+    "HELPER_TXT": "Passwort wird benötigt"
+  },
+  "LOGIN_BTN": "Anmeldung",
+  "FORGOT_PWD": "Passwort vergessen?",
+  "INVLD_LOGIN": "Ungültiger Login"
+}

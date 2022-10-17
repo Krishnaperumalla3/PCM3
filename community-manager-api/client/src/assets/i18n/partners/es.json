@@ -1,0 +1,69 @@
+{
+  "CREATE_TITLE": "Crear socio/Puerta de enlace front-end",
+  "EDIT_TITLE": "Editar socio/Puerta de enlace front-end",
+  "CREATE_AS2_MAPPING": "AS2 Mapping",
+  "MANAGE_PARTNER": "Administrar socio/Puerta de enlace front-end",
+  "FIELDS": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Nombre del socio *"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "Identificación del socio *"
+    },
+    "IN_EMAIL": {
+      "LABEL": "Email *"
+    },
+    "IN_PHONE": {
+      "LABEL": "Teléfono *"
+    },
+    "IN_PGP_INFO": {
+      "LABEL": "Información de PGP"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protocolo *"
+    },
+    "IN_STATUS": {
+      "LABEL": "Estado *"
+    },
+    "IN_ADDR_LINE1": {
+      "LABEL": "Dirección Línea 1 "
+    },
+    "IN_ADDR_LINE2": {
+      "LABEL": "Dirección Línea 2"
+    },
+    "IN_ORG_NME": {
+      "LABEL": "Organización"
+    },
+    "IN_PRTR_NME": {
+      "LABEL": "Compañero"
+    }
+  },
+  "MODAL": {
+    "TITLE": "Relación As2"
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "PART_NME": "Nombre del socio",
+      "PART_ID": "Identificación del socio",
+      "PRTOCOL": "Protocolo",
+      "EMAIL": "Email",
+      "STATUS": "Estado"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "Enviar",
+    "CANCEL": "Cancelar",
+    "UPLOAD_CERT": "CARGAR EXERT CERT",
+    "CREATE_RELATION": "Crear relación",
+    "SEARCH_PRTNR": "Buscar socio",
+    "REST_SEARCH": "Restablecer búsqueda"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Historial de actividad",
+    "ACTVTY_ON": "Actividad activada",
+    "USR_NME": "Nombre de usuario",
+    "ACTVTY": "Actividad"
+  },
+  "PROTOCOL": "Protocolo",
+  "ACTIVITY": "Actividad"
+}

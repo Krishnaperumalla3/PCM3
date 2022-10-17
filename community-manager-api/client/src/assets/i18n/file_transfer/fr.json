@@ -1,0 +1,47 @@
+{
+  "FILE_TRNSFR_TITLE": "Recherche de transfert de fichiers",
+  "ADVNCE_SRCH": "Recherche Avancée",
+  "LABELS": {
+    "COR_NAME_NOT_AVL": "Les noms de corrélation ne sont pas disponibles.",
+    "CNFG_COR_NME": "Configurez les noms de corrélation."
+  },
+  "BUTTONS": {
+    "SRCH_ACTVTY": "Activité de recherche",
+    "REST_ACTVTY": "Réinitialiser la recherche"
+  },
+  "FIELDS": {
+    "FL_ARVD_FROM": "Fichier arrivé de",
+    "FL_ARVD_TO": "Fichier arrivé à",
+    "DIRCTN": "Direction",
+    "TRNSFR_TYPE": "Type de transfert",
+    "DOC_TYPE": "Type de document",
+    "STATUS": "Statut",
+    "SRC_PROTOCOL": "Protocole source",
+    "DEST_PROTOCOL": "Dest. Protocole",
+    "PRTNR": "Partenaire",
+    "APP": "Application",
+    "SNDR_ID": "Identifiant de l'expéditeur",
+    "RCVR_ID": "Identifiant du récepteur",
+    "TRNS": "Transaction",
+    "ERR_STATUS": "Statut d'erreur",
+    "SRC_FL_NME": "Nom du fichier Src.",
+    "DEST_FL_NME": "Nom du fichier de destination",
+    "FL_NME_REGX": "FileName RegExp"
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "FL_ARVD": "Fichier arrivé",
+      "PRTNR": "Partenaire",
+      "APP": "Application",
+      "SRC_FL_NME": "Nom du fichier Src.",
+      "DEST_FL_NME": "Nom du fichier de destination",
+      "SRC_FL_SIZE": "Src. FileSize",
+      "TRNSFR_FL": "Trans. Fichier",
+      "STATUS": "Statut",
+      "DIR": "Direction",
+      "TRNSACTN": "Transaction",
+      "SNDR_ID": "Identifiant de l'expéditeur",
+      "RCVR_ID": "Identifiant du récepteur"
+    }
+  }
+}

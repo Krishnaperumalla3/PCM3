@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="00000000000000" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/00000000000000_sequences_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000001" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000001_users_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000002" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000002_transactions_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000003" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000003_partner_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000004" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000004_application_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000005" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000005_protocol_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000006" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000006_so_partner_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000007" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000007_so_protocols_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000008" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000008_end_points_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="000000000000009" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/000000000000009_workflow_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000010" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000010_ocr_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000011" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000011_settings_schema.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000012" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000012_alter_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000013" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000013_indexs_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000014" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000014_insert_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000015" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000015_alter_rules_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000016" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000016_alter_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000017" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000017_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000018" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000018_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000019" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000019_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000020" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000020_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000021" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000021_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000022" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000022_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000023" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000023_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000024" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000024_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000025" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000025_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000026" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000026_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000027" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000027_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000028" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000028_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000029" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000029_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000030" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000030_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000031" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000031_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000032" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000032_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000033" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000033_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000034" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000034_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000035" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000035_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000036" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000036_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000037" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000037_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000038" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000038_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000039" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000039_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000040" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000040_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000041" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000041_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <!--42 script file needs to be added here -->
+
+    <changeSet id="0000000000000043" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000043_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000044" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000044_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000045" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000045_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000046" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000046_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000047" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000047_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000048" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000048_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000049" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000049_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000050" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000050_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000051" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000051_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000052" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000052_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000053" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000053_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000054" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000054_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000055" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000055_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000056" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000056_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000057" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000057_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000058" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000058_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000059" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000059_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000060" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000060_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000061" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000061_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000062" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000062_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000063" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000063_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000064" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000064_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000065" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000065_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000066" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000066_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000067" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000067_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000068" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000068_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000069" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000069_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000070" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000070_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000071" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000071_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000072" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000072_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000073" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000073_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000074" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000074_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000075" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000075_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000076" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000076_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000077" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000077_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000078" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000078_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000079" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000079_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000080" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000080_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000081" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000081_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000082" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000082_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000083" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000083_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000084" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000084_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000085" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000085_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="0000000000000086" author="community-manager">
+        <sqlFile path="config/liquibase/changelog/oracle/0000000000000086_script.sql" dbms="oracle"
+                 relativeToChangelogFile="false"
+                 endDelimiter=";" splitStatements="true" encoding="utf8" stripComments="true"/>
+    </changeSet>
+
+</databaseChangeLog>

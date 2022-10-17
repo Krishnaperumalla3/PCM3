@@ -1,0 +1,187 @@
+{
+  "CHNGE_PWD":"Cambia la password",
+  "LOGOUT":"Disconnettersi",
+  "PCM_TITLE":"PragmaEdge Community Manager",
+  "PAGE_TITLE":{
+    "FL_TRNSFR":"Trasferimenti di file",
+    "REPORTS":"Rapporti",
+    "ENVELOP":"Busta",
+    "PARTNER":"Compagno",
+    "APPLICATION":"Applicazione",
+    "DATA_FLW":"Flussi di dati",
+    "ACCESS_MNGNT":"gestione degli accessi",
+    "SETTINGS":"impostazioni"
+  },
+  "MENU":{
+    "FL_TRNSFR":{
+      "LABEL":"Trasferimenti di file",
+      "SUB_MENU":{
+        "SRCH":"Ricerca"
+      },
+      "ACTIONS":{
+        "VIEW_DTL":"VISUALIZZA DETTAGLI",
+        "COR_DTL":"COR ... DETTAGLI",
+        "VIEW_ACTVTY":"VISUALIZZA ATTIVITÀ",
+        "PCKUP_NW":"RITIRO ORA",
+        "REPROCESS":"REPROCESS",
+        "DRP_AGN":"SCENDI DI NUOVO"
+      }
+    },
+    "REPORTS":{
+      "LABEL":"Rapporti",
+      "SUB_MENU":{
+        "DT_FLW":"Flusso di dati",
+        "997_OVR_DUE":"997 In ritardo",
+        "TRNSCTN_VOL_RPT":"Rapporto sul volume delle transazioni",
+        "TRNSCTN_VOL_DOC":"Volume delle transazioni per DocType",
+        "VOL_BY_PRTNR":"Volumi dei partner",
+        "CHARGE_BACKS":"SFG ·",
+        "SFG_PCD":"SFG · + PCD ·",
+        "PCD":"PCD ·"
+      }
+    },
+    "ENVELOP":{
+      "LABEL":"Busta",
+      "SUB_MENU":{
+        "CRTE_X12":"Crea X12",
+        "MNGE_X12":"Gestisci X12"
+      }
+    },
+    "PARTNER":{
+      "LABEL":"Partner/FG",
+      "SUB_MENU":{
+        "CRTE_PRTNR":"Crea partner/FG",
+        "CRTE_AS2_REL":"Crea relazione AS2",
+        "MNGE_PRTNR":"Gestisci partner/FG"
+      },
+      "ACTIONS":{
+        "VIEW":"Visualizza",
+        "ACTVTE":"Attivare",
+        "DEACTVTE":"Disattivare",
+        "EDIT":"modificare",
+        "DELETE":"Elimina"
+      }
+    },
+    "APPLICATION":{
+      "LABEL":"Applicazione/BG",
+      "SUB_MENU":{
+        "CRTE_APP":"Crea applicazione/BG",
+        "MNGE_APP":"Gestisci applicazione/BG"
+      },
+      "ACTIONS":{
+        "VIEW":"Visualizza",
+        "ACTVTE":"Attivare",
+        "DEACTVTE":"Disattivare",
+        "EDIT":"modificare",
+        "DELETE":"Elimina"
+      }
+    },
+    "DATA_FLW":{
+      "LABEL":"Flussi di dati",
+      "SUB_MENU":{
+        "BLD_DT_FLW":"Crea flusso di dati",
+        "CRTE_RULE":"Crea regola",
+        "MNGE_RULE":"Gestisci regola"
+      },
+      "ACTIONS":{
+        "VIEW":"Visualizza",
+        "EDIT":"modificare",
+        "DELETE":"Elimina"
+      }
+    },
+    "ACCESS_MNGNT":{
+      "LABEL":"gestione degli accessi",
+      "SUB_MENU":{
+        "CRTE_USR":"Creare un utente",
+        "MNGE_USR":"Gestisci utente",
+        "CRTE_GRP":"Creare un gruppo",
+        "MNGE_GRP":"Gestisci utente",
+        "MNGE_CHB": "Gestisci il chargeback"
+      }
+    },
+    "SETTINGS":{
+      "LABEL":"impostazioni",
+      "SUB_MENU":{
+        "CORLTN_NME":"Nomi di correlazione",
+        "PIL_INTRVL":"Intervallo di polling",
+        "FILE_SCH": "File Job Scheduler"
+      }
+    }
+  },
+  "TABLE": {
+    "SRCH": "ricerca",
+    "XPRT": "Esportare",
+    "XPRT_PDF": "Esporta Pdf",
+    "XPRT_CSV": "Esporta CSV",
+    "REPROCESS": "Rielabora",
+    "CONFG_COL": "Configura colonne",
+    "ACTN_COL": "Azione",
+    "NO_RSLT_FND": "Nessun risultato trovato !",
+    "SELECT_ALL": "Seleziona tutto",
+    "BTN_OK": "Ok"
+  },
+  "MODAL":{
+    "CHNAGE_PWD":{
+      "TITLE":"Cambia la password",
+      "FIELDS":{
+        "OLD_PWD":{
+          "LABEL":"vecchia password",
+          "HELPER_TEXT":"È richiesta la vecchia password."
+        },
+        "NEW_PWD":{
+          "LABEL":"nuova password",
+          "HELPER_TEXT":"È richiesta una nuova password."
+        },
+        "CNFRM_PWD":{
+          "LABEL":"conferma password",
+          "HELPER_TEXT":"Password non corrispondenti."
+        }
+      },
+      "BUTTONS":{
+        "SUBMIT":"Invia",
+        "CLOSE":"Vicino"
+      }
+    },
+    "FORGOT_PWD":{
+      "TITLE":"Ha dimenticato la password",
+      "FIELDS":{
+        "IN_EMAIL":{
+          "LABEL":"E-mail*",
+          "HELPER_TXT_ENTER":"Per favore inserisci la tua email!",
+          "HELPER_TXT_VALID":"Please enter Valid Email!"
+        }
+      },
+      "BUTTONS":{
+        "SUBMINT":"Invia",
+        "CLOSE":"Vicino"
+      }
+    },
+    "VIEW_FLE":{
+      "BUTTONS":{
+        "DOWNLOAD":"Scarica",
+        "CLOSE":"Vicino"
+      }
+    },
+    "PWD_SHW":{
+      "TITLE":"Inserisci le tue credenziali di accesso.",
+      "FIELDS":{
+        "USR_NME":{
+          "LABEL":"Nome utente"
+        },
+        "PWD":{
+          "LABEL":"Parola d'ordine"
+        }
+      },
+      "BUTTONS":{
+        "VERIFY":"Verificare",
+        "CLOSE":"Vicino"
+      }
+    },
+    "FILE_SRCH":{
+      "TITLE":"Dettagli di Transazione"
+    },
+    "ACTVTY":{
+      "TITLE":"Attività"
+    }
+  }
+}

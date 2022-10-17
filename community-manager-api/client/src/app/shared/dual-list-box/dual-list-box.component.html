@@ -1,0 +1,97 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- <mat-card>
+  <div class="dual-list">
+    <div class="listbox">
+      <h3 style="margin-left: 25%">{{ sourceName }}</h3>
+      <div class="record-picker">
+        <ul
+          [ngStyle]="{ 'max-height': height, 'min-height': height }"
+          [ngClass]="{ over: available.dragOver }"
+          (drop)="drop($event, confirmed)"
+          (dragover)="allowDrop($event, available)"
+          (dragleave)="dragLeave()"
+        >
+          <li
+            *ngFor="let item of available.sift; let idx = index"
+            (click)="
+              selectItem(available.pick, item);
+              shiftClick($event, idx, available, item)
+            "
+            [ngClass]="{ selected: isItemSelected(available.pick, item) }"
+            draggable="true"
+            (dragstart)="drag($event, item, available)"
+            (dragend)="dragEnd(available)"
+          >
+            <label>{{ item._name }}</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="buttonbox">
+      <button
+        type="button"
+        class="btn btn-primary btn-block"
+        (click)="moveItem(available, confirmed)"
+        [disabled]="available.pick.length === 0"
+      >
+        ADD
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary btn-block"
+        (click)="moveItem(confirmed, available)"
+        [disabled]="confirmed.pick.length === 0"
+      >
+        REMOVE
+      </button>
+
+    </div>
+
+    <div class="listbox">
+      <h3 style="margin-left: 25%">{{ targetName }}</h3>
+      <div class="record-picker">
+        <ul
+          [ngStyle]="{ 'max-height': height, 'min-height': height }"
+          [ngClass]="{ over: confirmed.dragOver }"
+          (drop)="drop($event, available)"
+          (dragover)="allowDrop($event, confirmed)"
+          (dragleave)="dragLeave()"
+        >
+          <li
+            *ngFor="let item of confirmed.sift; let idx = index"
+            (click)="
+              selectItem(confirmed.pick, item);
+              shiftClick($event, idx, confirmed, item)
+            "
+            [ngClass]="{ selected: isItemSelected(confirmed.pick, item) }"
+            draggable="true"
+            (dragstart)="drag($event, item, confirmed)"
+            (dragend)="dragEnd(confirmed)"
+          >
+            <label>{{ item._name }}</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</mat-card> -->
+<mat-card>
+  <pcm-list-box></pcm-list-box>
+</mat-card>

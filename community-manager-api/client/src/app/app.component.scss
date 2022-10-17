@@ -1,0 +1,215 @@
+/*!
+ * Copyright (c) 2020 Pragma Edge Inc
+ *
+ * Licensed under the Pragma Edge Inc
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://pragmaedge.com/licenseagreement
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.pcm-menu-icon {
+    font-size: 2.3rem !important;
+    font-weight: 600 !important;
+}
+.pcm-sidenav-icon {
+  padding-top: 3px;
+  //color: #fff;
+}
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 55px !important;
+}
+.mat-list-base {
+  padding-top: 0 !important;
+}
+.simplert {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: none;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.simplert--shown {
+  display: flex;
+  align-items: center;
+}
+.simplert__header {
+  padding: 1em 0 0;
+}
+.simplert__title {
+  display: block;
+  font-size: 20px;
+}
+.simplert__content {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-animation-name: animateOpacity;
+  animation-name: animateOpacity;
+  -webkit-animation-duration: .4s;
+  animation-duration: .4s;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media only screen and (min-width: 768px) {
+  .simplert__content {
+    width: 30%;
+  }
+}
+.simplert__content--radius {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+.simplert__icon {
+  margin: 10px auto;
+  width: 80px;
+  height: 80px;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.simplert__icon--info {
+  border: 4px solid #C9DAE1;
+}
+.simplert__icon--success {
+  border: 4px solid #A5DC86;
+}
+.simplert__icon--warning {
+  border: 4px solid #F8BB86;
+}
+.simplert__icon--error {
+  border: 4px solid #F27474;
+}
+.simplert__line {
+  height: 5px;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 2;
+}
+.simplert__line--info {
+  background-color: #C9DAE1;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  left: 50%;
+  top: 19px;
+  border-radius: 50%;
+  margin-left: -3px;
+}
+.simplert__line--info-2 {
+  background-color: #C9DAE1;
+  position: absolute;
+  width: 5px;
+  height: 29px;
+  border-radius: 2px;
+  margin-left: -2px;
+  left: 50%;
+  bottom: 17px;
+}
+.simplert__line--success {
+  background-color: #A5DC86;
+  width: 25px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 14px;
+  top: 46px;
+}
+.simplert__line--success-2 {
+  background-color: #A5DC86;
+  width: 47px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
+  top: 38px;
+}
+.simplert__line--warning {
+  position: absolute;
+  width: 5px;
+  height: 47px;
+  left: 50%;
+  top: 10px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-left: -2px;
+  background-color: #F8BB86;
+}
+.simplert__line--warning-2 {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -3px;
+  left: 50%;
+  bottom: 10px;
+  background-color: #F8BB86;
+}
+.simplert__line--error {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 17px;
+  width: 47px;
+  background-color: #F27474;
+  top: 37px;
+}
+.simplert__line--error-2 {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 16px;
+  width: 47px;
+  background-color: #F27474;
+  top: 37px;
+}
+.simplert__footer {
+  padding: 0.5em 0;
+}
+.simplert__close {
+  display: inline-block;
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  background-color: #068AC9;
+  color: #fff;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.simplert__close--radius {
+  -webkit-border-radius: 0.3em;
+  -moz-border-radius: 0.3em;
+  border-radius: 0.3em;
+}
+@-webkit-keyframes animateOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animateOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

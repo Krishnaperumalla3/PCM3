@@ -1,0 +1,15 @@
+-------------------------------------------------------------
+--   ORACLE DDL STATEMENT FOR 	PETPE_TRANS_CLOUD_ARC
+-------------------------------------------------------------
+
+CREATE TABLE PETPE_TRANS_CLOUD_ARC
+(
+    PK_ID           VARCHAR2(20) NOT NULL ENABLE,
+    TRA_SCH_REF     VARCHAR2(20) NOT NULL ENABLE,
+    SRC_ROOT_DIR    VARCHAR2(155) NOT NULL ENABLE,
+    DEST_ROOT_DIR   VARCHAR2(155) NOT NULL ENABLE,
+    CREATED_BY      VARCHAR2(255),
+    LAST_UPDATED_BY VARCHAR2(255),
+    LAST_UPDATED_DT TIMESTAMP(6),
+    PRIMARY KEY (PK_ID)
+);

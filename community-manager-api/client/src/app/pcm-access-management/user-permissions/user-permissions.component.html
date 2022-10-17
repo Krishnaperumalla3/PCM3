@@ -1,0 +1,31 @@
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h4>{{!!pkId ? 'User Permissions' : 'User Permissions'}}</h4>
+    <mat-card>
+      <form [formGroup]="userPermissions" class="pcm-form">
+        <mat-form-field>
+          <input matInput placeholder='User Id' formControlName="userName" name="userName" required />
+        </mat-form-field>
+      </form>
+      <div style="margin-top: 10px" *ngIf="(groupList && groupList.length > 0)">
+        <h4>Groups:-</h4>
+        <pcm-pcm-list-box
+                          [data]="groupList" [selected]="selectedGroupsList"
+                          valueField="key" [textField]="['value']"
+                          (onGroupItemsMoved)="onGroupItemsMoved($event)"
+        ></pcm-pcm-list-box>
+      </div>
+      <div style="margin-top: 10px" *ngIf="mailboxList && mailboxList.length > 0">
+        <h4>Mailbox Permissions:-</h4>
+        <pcm-pcm-list-box [data]="mailboxList" [selected]="selectedPartnersList"
+                          valueField="key" [textField]="['value']"
+                          (onPartnerItemsMoved)="onPartnerItemsMoved($event)"
+        ></pcm-pcm-list-box>
+      </div>
+      <div class="btn-grp sbmt-btn">
+        <button type="button" class="btn btn-primary" (click)="submit(userPermissions)">UPDATE</button>
+        <button type="button" class="btn btn-info">CANCEL</button>
+      </div>
+    </mat-card>
+  </mat-card>
+</div>

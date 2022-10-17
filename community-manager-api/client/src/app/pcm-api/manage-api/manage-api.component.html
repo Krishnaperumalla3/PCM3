@@ -1,0 +1,46 @@
+<div class="pcm-content centralize application">
+  <mat-card>
+    <h4 class="font-weight-bold">Manage API</h4>
+    <form [formGroup]="manageApi">
+      <mat-card>
+        <div class="form-row mt-4">
+          <mat-form-field class="form-group col-md-4">
+            <input type="text" matInput placeholder="API Name" formControlName="apiName" />
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-4">
+            <mat-select placeholder="Web Method" formControlName="serverWebMethod">
+              <mat-option value="" >Select</mat-option>
+              <mat-option [value]="'GET'">Get</mat-option>
+              <mat-option [value]="'POST'">Post</mat-option>
+              <mat-option [value]="'PUT'">Put</mat-option>
+              <mat-option [value]="'DELETE'">Delete</mat-option>
+<!--              <mat-option [value]="'PATCH'">Patch</mat-option>-->
+<!--              <mat-option [value]="'COPY'">Copy</mat-option>-->
+<!--              <mat-option [value]="'HEAD'">Head</mat-option>-->
+<!--              <mat-option [value]="'OPTIONS'">Options</mat-option>-->
+<!--              <mat-option [value]="'LINK'">Link</mat-option>-->
+<!--              <mat-option [value]="'UNLINK'">UnLik</mat-option>-->
+<!--              <mat-option [value]="'PURGE'">Purge</mat-option>-->
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-4">
+            <input type="text" matInput placeholder="Server URL" formControlName="serverUrl" />
+          </mat-form-field>
+        </div>
+      </mat-card>
+    </form>
+    <div class="btn-grp mt-3">
+      <button type="button"  class="btn btn-primary" (click)="searchAPI()">search</button>
+      <button  type="button"  class="btn btn-danger" (click)="cancel()">cancel</button>
+    </div>
+  </mat-card>
+  <mat-card *ngIf="showResults" class="mt-3">
+    <app-pcm-table (columnsChanged)="columnsChanged($event)" (pagination)="pagination($event)"
+                   (resStatus)="resFromTable($event)" (sortChange)="sort($event)" [actionMenu]="actionButtons"
+                   [currentPage]="currentPage" [dataSource]="searchResults" [displayedColumns]="displayedColumns"
+                   [headerColumns]="headerColumns" [page]="'manage Api'" [serachTblConfigRef]="serachTblConfigRef"
+                   [searchTblConfig]="serachTblConfig" [size]="qryParams['size']" [sortBy]='sortBy' [sortDir]='sortDir'
+                   [totalElements]='totalElements' [totalPages]='totalPages'>
+    </app-pcm-table>
+  </mat-card>
+</div>

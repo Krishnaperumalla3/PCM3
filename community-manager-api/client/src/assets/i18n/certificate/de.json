@@ -1,0 +1,98 @@
+{
+    "CERT_TITL": "Zertifikate",
+    "XCHGE_CRT": {
+        "LABEL": "Zertifikat austauschen *"
+    },
+    "SIGN_CERT": {
+        "LABEL": "Unterzeichnungszertifikat *"
+    },
+    "IN_CERT_ID": {
+        "LABEL": "Zertifikat-ID *"
+    },
+    "IN_UPLD_CRT": {
+        "LABEL": "Zertifikat hochladen"
+    },
+    "IN_CA_CERT": {
+        "LABEL": "CA-Zertifizierung"
+    },
+    "IN_CERT_NME": {
+        "LABEL": "Zertifikatname"
+    },
+    "IN_CA_CERT_NME": {
+        "LABEL": "CACert Name"
+    },
+    "IN_CIPHER_SUITS": {
+        "LABEL": "Chiffresuiten"
+    },
+    "IN_USR_IDNT_KY_NME": {
+        "LABEL": "Name des Benutzeridentitätsschlüssels"
+    },
+    "IN_XCHNGE_CERT_UPLD": {
+        "LABEL": "Exchange Cert Upload"
+    },
+    "IN_KEY_CERT": {
+        "LABEL": "Schlüsselzertifikat *"
+    },
+    "IN_PVT_KEY_CERT": {
+        "LABEL": "Passwort für privaten Schlüssel *"
+    },
+    "IN_SING_CRT_UPLD": {
+        "LABEL": "Sign Upload des Zertifikats:"
+    },
+    "IN_XCHANGE_CERT": {
+        "LABEL": "Zertifikat austauschen"
+    },
+    "IN_EXCERT_NME": {
+        "LABEL": "ExchCert Name"
+    },
+    "IN_SIGN_CERT": {
+        "LABEL": "Unterzeichnungszertifikat"
+    },
+    "IN_SIGN_CERT_NME": {
+        "LABEL": "Cert Name signieren"
+    },
+    "IN_KEY_CERT_PASS": {
+        "LABEL": "Passphrase des Schlüsselzertifikats"
+    },
+    "IN_SSL_TYPE": {
+        "LABEL": "SSL-Typ *"
+    },
+    "IN_PAYLOAD_SEC": {
+        "LABEL": "Nutzlastsicherheit *"
+    },
+    "IN_ENCRYPT_ALG": {
+        "LABEL": "Verschlüsselungsalgorithmus *"
+    },
+    "IN_SIGN_ALG": {
+        "LABEL": "Signaturalgorithmus *"
+    },
+    "IN_MDN_REQ": {
+        "LABEL": "MDN erforderlich *"
+    },
+    "IN_MDN_TYPE": {
+        "LABEL": "MDN-Typ *"
+    },
+    "IN_MDN_ENCRYPT": {
+        "LABEL": "MDN-Verschlüsselung *"
+    },
+    "IN_RECPT_ADDR": {
+        "LABEL": "Quittung an Adresse"
+    },
+    "IN_USR_IDNTY_KY_NME": {
+        "LABEL": "Name des Benutzeridentitätsschlüssels"
+    },
+    "IN_SSH_AUTH_USR_KEY": {
+        "LABEL": "SSH Authorized User Key"
+    },
+    "NOTE": "NOTE",
+    "UPLOAD_NOTE_1": "Beim Importieren wird nur der Name der Workflow-Aktion überprüft, nicht die Eigenschaften.",
+    "UPLOAD_NOTE_2": "Bitte laden Sie das Base64 Encrypted Data Cert / Key hoch.",
+    "BUTTONS": {
+        "UPLOAD_CA_CRT": "CA CERT HOCHLADEN",
+        "UPLOAD_CERT": "CERT HOCHLADEN",
+        "UPLOAD_SYS_CERT": "SYSTEMCERT HOCHLADEN",
+        "UPLOAD_EXCH_CERT": "EXCH CERT HOCHLADEN",
+        "UPLOAD": "HOCHLADEN",
+        "CLOSE": "Schließen"
+    }
+}

@@ -1,0 +1,232 @@
+{
+  "TITLE": "Datenfluss erstellen",
+  "TABS": {
+    "INBOUND": {
+      "LABEL": "INBOUND File Handling"
+    },
+    "OUTBOUND": {
+      "LABEL": "OUTBOUND-Dateibehandlung"
+    },
+    "ACTIVITY": {
+      "LABEL": "AKTIVITÄT",
+      "CONTENT": "AKTIVITÄTSGESCHICHTE",
+      "ACTVTY_ON": "Aktivität Ein",
+      "USR_NME": "Nutzername",
+      "ACTVTY": "Aktivität"
+    }
+  },
+  "LABELS": {
+    "LOADIN": "Registerkarten laden...",
+    "PRCING_RL_DTL": "Details zu Verarbeitungsregeln",
+    "NO_DT_FND": "Kein Fluss gefunden",
+    "NO_RSLT_FND": "Keine Ergebnisse gefunden!"
+  },
+  "FIELDS": {
+    "PRTNR_PRDCR": {
+      "LABEL": "Partner/Frontend-Gateway "
+    },
+    "APP_CUST": {
+      "LABEL": "Anwendungs-/Backend-Gateway"
+    }
+  },
+  "MFT": {
+    "IN_FL_NME_REG_EXP": {
+      "LABEL": "Dateiname_Regularer Ausdruck *"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filter"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Flow hinzufügen"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Dateiname *",
+        "FLTR": "Filter"
+      }
+    }
+  },
+  "DocHandling": {
+    "IN_FLTR": {
+      "LABEL": "Filter"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Dokumententyp *"
+    },
+    "IN_VER": {
+      "LABEL": "Ausführung"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transaktion"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Absenderidentität *"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Empfänger-ID *"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Flow hinzufügen"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Dateiname",
+        "DOC_TYPE": "Dokumenttyp *",
+        "VERSION": "Ausführung",
+        "TRNSCTION": "Transaktion *",
+        "SNDR_ID": "Absenderidentität *",
+        "RCVR_ID": "Empfänger-ID *"
+      }
+    }
+  },
+  "COPY_DATA_FLOW": {
+    "TITLE": "Wählen Sie Partner- und Anwendungsprofile",
+    "IN_BND_LABEL": "Eingehende",
+    "OUT_BND_LABEL": "Ausgehend",
+    "FIELDS": {
+      "IN_SND_ID": {
+        "LABEL": "Absenderidentität",
+        "REQ_ERR": "Absender-ID ist erforderlich."
+      },
+      "IN_RCR_ID": {
+        "LABEL": "Empfänger-ID",
+        "REQ_ERR": "Empfänger-ID ist erforderlich."
+      }
+    }
+  },
+  "SEARCH_WORKFLOW": {
+    "IN_PRT_NME": {
+      "LABEL": "Partnername"
+    },
+    "IN_APP_NME": {
+      "LABEL": "Anwendungsname"
+    },
+    "IN_SEQ_TYPE": {
+      "LABEL": "SEQ-Typ"
+    },
+    "IN_FLW": {
+      "LABEL": "Fließen"
+    },
+    "IN_FL_NME": {
+      "LABEL": "Dateiname"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Dokumenttyp"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transaktion"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Absenderidentität"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Empfänger-ID"
+    }
+  },
+  "SRCH_MUL_WRK_FLW": {
+    "TITLE": " Erstellen Sie Flows aus mehreren Datenflüsse.",
+    "SRCH_TITLE": "Suchabläufe",
+    "NOTE": "Hinweis: Wählen Sie weiterhin mit mehreren Suchkriterien aus, bevor Sie auf Weiter klicken.",
+    "FIELDS":{
+      "INBUND_SNDR_ID": {
+        "LABEL": "ID des eingehenden Absenders"
+      },
+      "INBUN_RCVR_ID": {
+        "LABEL": "Eingangsempfänger-ID"
+      },
+      "OUTBUND_SNDR_ID": {
+        "LABEL": "ID des ausgehenden Absenders"
+      },
+      "OUTBUN_RCVR_ID": {
+        "LABEL": "dOutbound Receiver I."
+      }
+    },
+    "BUTTONS": {
+      "SRCH_WF": "Datenflüsse suchen",
+      "RESET_SRCH": "Suche zurücksetzen",
+      "NEXT": "NÄCHSTER",
+      "CANCEL": "STORNIEREN"
+    },
+    "TABLE": {
+      "COLUMNS": {
+        "SLCT": "Wählen",
+        "PRTNR_NME": "Partnername",
+        "APP_NME": "Anwendungsname",
+        "SEQ_TYPE": "SEQ-Typ",
+        "FLW": "Fließen",
+        "FL_NME": "Dateiname",
+        "DOC_TYPE": "Dokumenttyp",
+        "TRNSACTN": "Transaktion",
+        "SNDR_ID": "Absenderidentität",
+        "RCVR_ID": "Empfänger-ID"
+      },
+      "NO_RSLT_FND": "Keine Ergebnisse gefunden !"
+    }
+  },
+  "BUTTONS": {
+    "SRCH_WF": "SUCHEN SIE DEN DATENFLUSS",
+    "IMPRT_WF": "IMPORT DATENFLUSS",
+    "SETUP_WF": "SETUP DATENFLUSS",
+    "SETUP_WF_MUL_FLW": "SETUP AUS MEHREREN FLÜSSEN",
+    "RESET_SERCH": "SUCHE ZURÜCKSETZEN",
+    "EXPRT_WF": "EXPORT DATENFLUSS",
+    "CP_WF": "DATENFLUSS KOPIEREN",
+    "AD_FRM_MUL_FLW": "AUS MEHREREN FLÜSSEN HINZUFÜGEN",
+    "DEL_WF": "DATENFLUSS LÖSCHEN",
+    "SVE_WF": "DATENFLUSS SPEICHERN",
+    "CANCEL": "STORNIEREN",
+    "UPDATE": "AKTUALISIEREN"
+  },
+  "RULE": {
+    "TITLE": "Regeldetails",
+    "CREATE_TITLE": "Regel erstellen",
+    "EDIT_TITLE": "Regel bearbeiten",
+    "RULE_PRPTY_DTL": "Regeleigenschaftsdetails",
+    "RULE_NME": "Regelname",
+    "SERCH_RULE": "Suchregel",
+    "BUS_PROCSS": "Geschäftsprozess",
+    "HINT": "Verwenden Sie WildCard * für ein besseres Ergebnis.",
+    "FIELDS": {
+      "PROP_1": "Name des Anwesens1",
+      "PROP_2": "Name des Anwesens2",
+      "PROP_3": "Name des Anwesens3",
+      "PROP_4": "Name des Anwesens4",
+      "PROP_5": "Name des Anwesens5",
+      "PROP_6": "Name des Anwesens6",
+      "PROP_7": "Name des Anwesens7",
+      "PROP_8": "Name des Anwesens8",
+      "PROP_9": "Name des Anwesens9",
+      "PROP_10": "Name des Anwesens10",
+      "PROP_11": "Name des Anwesens11",
+      "PROP_12": "Name des Anwesens12",
+      "PROP_13": "Name des Anwesens13",
+      "PROP_14": "Name des Anwesens14",
+      "PROP_15": "Name des Anwesens15",
+      "PROP_16": "Name des Anwesens16",
+      "PROP_17": "Name des Anwesens17",
+      "PROP_18": "Name des Anwesens18",
+      "PROP_19": "Name des Anwesens19",
+      "PROP_20": "Name des Anwesens20",
+      "PROP_21": "Name des Anwesens21",
+      "PROP_22": "Name des Anwesens22",
+      "PROP_23": "Name des Anwesens23",
+      "PROP_24": "Name des Anwesens24",
+      "PROP_25": "Name des Anwesens25"
+    },
+    "MANGE_RULE": {
+      "HEADER": {
+        "RULE": "Regel",
+        "BP_ID": "BP Id"
+      }
+    },
+    "BUTTONS": {
+      "CREATE_RULE": "REGEL ERSTELLEN",
+      "UPDATE_RULE": "UPDATE-REGEL",
+      "SRCH_ACTN": "SUCHAKTION",
+      "RSET_SRCH": "SUCHE ZURÜCKSETZEN",
+      "CANCEL": "STORNIEREN"
+    }
+  }
+}

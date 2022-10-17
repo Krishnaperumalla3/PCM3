@@ -1,0 +1,98 @@
+{
+    "CERT_TITL": "Certificates",
+    "XCHGE_CRT": {
+        "LABEL": "Exchange Certificate *"
+    },
+    "SIGN_CERT": {
+        "LABEL": "Signing Certificate *"
+    },
+    "IN_CERT_ID": {
+        "LABEL": "Certificate Id *"
+    },
+    "IN_UPLD_CRT": {
+        "LABEL": "Upload Cert"
+    },
+    "IN_CA_CERT": {
+        "LABEL": "CA Certification"
+    },
+    "IN_CERT_NME": {
+        "LABEL": "Certificate Name"
+    },
+    "IN_CA_CERT_NME": {
+        "LABEL": "CACert Name"
+    },
+    "IN_CIPHER_SUITS": {
+        "LABEL": "Cipher Suites"
+    },
+    "IN_USR_IDNT_KY_NME": {
+        "LABEL": "User Identity Key Name"
+    },
+    "IN_XCHNGE_CERT_UPLD": {
+        "LABEL": "Exchange Cert Upload"
+    },
+    "IN_KEY_CERT": {
+        "LABEL": "Key Certificate *"
+    },
+    "IN_PVT_KEY_CERT": {
+        "LABEL": "Private Key Password *"
+    },
+    "IN_SING_CRT_UPLD": {
+        "LABEL": "Signing Cert Upload:"
+    },
+    "IN_XCHANGE_CERT": {
+        "LABEL": "Exchange Certificate"
+    },
+    "IN_EXCERT_NME": {
+        "LABEL": "ExchCert Name"
+    },
+    "IN_SIGN_CERT": {
+        "LABEL": "Signing Certificate"
+    },
+    "IN_SIGN_CERT_NME": {
+        "LABEL": "SigningCert Name"
+    },
+    "IN_KEY_CERT_PASS": {
+        "LABEL": "Key Certificate Passphrase"
+    },
+    "IN_SSL_TYPE": {
+        "LABEL": "SSL Type *"
+    },
+    "IN_PAYLOAD_SEC": {
+        "LABEL": "Payload Security *"
+    },
+    "IN_ENCRYPT_ALG": {
+        "LABEL": "Encryption Algorithm *"
+    },
+    "IN_SIGN_ALG": {
+        "LABEL": "Signing Algorithm *"
+    },
+    "IN_MDN_REQ": {
+        "LABEL": "MDN Required *"
+    },
+    "IN_MDN_TYPE": {
+        "LABEL": "MDN Type *"
+    },
+    "IN_MDN_ENCRYPT": {
+        "LABEL": "MDN Encryption *"
+    },
+    "IN_RECPT_ADDR": {
+        "LABEL": "Receipt To Address"
+    },
+    "IN_USR_IDNTY_KY_NME": {
+        "LABEL": "User Identity Key Name"
+    },
+    "IN_SSH_AUTH_USR_KEY": {
+        "LABEL": "SSH Authorized User Key"
+    },
+    "NOTE": "NOTE",
+    "UPLOAD_NOTE_1": "Import will only check the Workflow Action Names, not the properties.",
+    "UPLOAD_NOTE_2": "Please upload the Base64 Encrypted data cert/key.",
+    "BUTTONS": {
+        "UPLOAD_CA_CRT": "UPLOAD CA CERT",
+        "UPLOAD_CERT": "UPLOAD CERT",
+        "UPLOAD_SYS_CERT": "UPLOAD SYSTEM CERT",
+        "UPLOAD_EXCH_CERT": "UPLOAD EXCH CERT",
+        "UPLOAD": "UPLOAD",
+        "CLOSE": "Close"
+    }
+}

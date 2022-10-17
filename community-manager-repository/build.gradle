@@ -1,0 +1,11 @@
+group 'com.pe.pcm'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    implementation 'org.hibernate:hibernate-validator:7.0.3.Final'
+//    runtime 'org.hsqldb:hsqldb'
+    testCompileOnly 'org.hsqldb:hsqldb:2.6.1'
+    implementation project(':community-manager-common')
+}

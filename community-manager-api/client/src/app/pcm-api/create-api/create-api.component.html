@@ -1,0 +1,611 @@
+<div class="centralize application">
+  <mat-card>
+    <h4 class="font-weight-bold">{{!!pkId ? 'Update Endpoint' : 'Create Endpoint'}}</h4>
+    <mat-card class="mb-2">
+      <div class="form-row">
+        <mat-form-field class="form-group col-md-4">
+          <mat-label>API Name</mat-label>
+          <input type="text"  matInput [formControl]="apiName" />
+          <mat-error *ngIf="apiName.errors && apiName.errors.required">API Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field class="form-group col-md-4">
+          <mat-label>API Type</mat-label>
+          <mat-select [formControl]="apiType">
+            <mat-option value="CREATE_API">Create API</mat-option>
+            <mat-option value="INVOKE_API">Invoke API</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+
+      <form [formGroup]="proxyApi" *ngIf="apiType.value === 'CREATE_API'">
+        <div class="form-row mt-4">
+          <mat-form-field class="form-group col-md-3">
+            <mat-label>Proxy Web Method</mat-label>
+            <mat-select  formControlName="proxyWebMethod" (selectionChange)="proxyWebSelection($event)">
+              <mat-option [value]="'GET'">Get</mat-option>
+              <mat-option [value]="'POST'">Post</mat-option>
+              <mat-option [value]="'PUT'">Put</mat-option>
+              <mat-option [value]="'DELETE'">Delete</mat-option>
+<!--              <mat-option [value]="'PATCH'">Patch</mat-option>-->
+<!--              <mat-option [value]="'COPY'">Copy</mat-option>-->
+<!--              <mat-option [value]="'HEAD'">Head</mat-option>-->
+<!--              <mat-option [value]="'OPTIONS'">Options</mat-option>-->
+<!--              <mat-option [value]="'LINK'">Link</mat-option>-->
+<!--              <mat-option [value]="'UNLINK'">UnLik</mat-option>-->
+<!--              <mat-option [value]="'PURGE'">Purge</mat-option>-->
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-9">
+            <mat-label>Proxy URL</mat-label>
+            <input type="text"  matInput formControlName="proxyUrl" readonly/>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-3">
+            <mat-label>Server Web Method</mat-label>
+            <mat-select  formControlName="serverWebMethod" disabled>
+              <mat-option [value]="'GET'">Get</mat-option>
+              <mat-option [value]="'POST'">Post</mat-option>
+              <mat-option [value]="'PUT'">Put</mat-option>
+              <mat-option [value]="'DELETE'">Delete</mat-option>
+<!--              <mat-option [value]="'PATCH'">Patch</mat-option>-->
+<!--              <mat-option [value]="'COPY'">Copy</mat-option>-->
+<!--              <mat-option [value]="'HEAD'">Head</mat-option>-->
+<!--              <mat-option [value]="'OPTIONS'">Options</mat-option>-->
+<!--              <mat-option [value]="'LINK'">Link</mat-option>-->
+<!--              <mat-option [value]="'UNLINK'">UnLik</mat-option>-->
+<!--              <mat-option [value]="'PURGE'">Purge</mat-option>-->
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-9">
+            <mat-label>Server URL</mat-label>
+            <input type="text"  matInput formControlName="serverUrl"/>
+            <mat-error *ngIf="proxyApi.get('serverUrl').errors && proxyApi.get('serverUrl').errors.required">Server URL is required.</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-tab-group class="col-md-12">
+            <mat-tab label="Proxy Authorization">
+              <div class="colo-md-12 mx-0 text-center">
+                <mat-form-field class="mt-4 form-group col-md-4">
+                  <mat-select placeholder="Auth Type" formControlName="proxyAuthType">
+                    <mat-option [value]="'NO_AUTH'">No Auth</mat-option>
+                    <mat-option [value]="'BASIC_AUTH'">Basic Auth</mat-option>
+                    <mat-option [value]="'TOKEN_AUTH'">Token Auth</mat-option>
+<!--                    <mat-option [value]="'oauth1'">OAuth 1.0</mat-option>-->
+                    <mat-option [value]="'OAUTH2_2_0'">OAuth 2.0</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('proxyAuthType').value === 'BASIC_AUTH'">
+                <mat-divider></mat-divider>
+                <div class="col-md-12" formGroupName="proxyBasicAuth">
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="proxyApi.get('username')?.errors && proxyApi.get('username')?.errors.required">user Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="proxyApi.get('password')?.errors && proxyApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('proxyAuthType').value === 'TOKEN_AUTH'">
+                <mat-divider></mat-divider>
+                <div formGroupName="proxyTokenAuth">
+                  <mat-form-field class="form-group col-md-9 mt-4">
+                    <mat-label>Token URL</mat-label>
+                    <input type="text"  matInput formControlName="tokenApiUrl"/>
+                    <mat-error *ngIf="proxyApi.get('tokenApiUrl')?.errors && proxyApi.get('tokenApiUrl')?.errors.required">Token URL is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Key</mat-label>
+                    <input type="text"  matInput formControlName="tokenKey"/>
+                    <mat-error *ngIf="proxyApi.get('tokenKey')?.errors && proxyApi.get('tokenKey')?.errors.required">Token Key is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="proxyApi.get('username')?.errors && proxyApi.get('username')?.errors.required">User Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="proxyApi.get('password')?.errors && proxyApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Prefix</mat-label>
+                    <input type="text"  matInput formControlName="tokenPrefix"/>
+                    <!--                  <mat-error *ngIf="proxyApi.get('tokenPrefix')?.errors && proxyApi.get('tokenPrefix')?.errors.required">Token Prefix is required.</mat-error>-->
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Header</mat-label>
+                    <input type="text"  matInput formControlName="tokenHeader"/>
+                    <mat-error *ngIf="proxyApi.get('tokenHeader')?.errors && proxyApi.get('tokenHeader')?.errors.required">Token Header is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('proxyAuthType').value === 'OAUTH2_2_0'">
+                <mat-divider></mat-divider>
+                <div formGroupName="proxyOauth2Auth">
+                  <div formGroupName="forOauthToken">
+                    <mat-form-field class="form-group col-md-9 mt-4">
+                      <mat-label>Token API URL</mat-label>
+                      <input type="text" matInput formControlName="tokenApiUrl">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-3 mt-4">
+                      <mat-label>Token Key</mat-label>
+                      <input type="text" matInput formControlName="tokenKey">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Prefix</mat-label>
+                      <input type="text"  matInput formControlName="tokenPrefix"/>
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Header</mat-label>
+                      <input type="text"  matInput formControlName="tokenHeader"/>
+                    </mat-form-field>
+                  </div>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="username">
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client ID</mat-label>
+                    <input type="text"  matInput formControlName="clientID"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client Secret</mat-label>
+                    <input type="text"  matInput formControlName="clientSecret"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Grant Type</mat-label>
+                    <input type="text"  matInput formControlName="grantType"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Resource</mat-label>
+                    <input type="text"  matInput formControlName="resource"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>scope</mat-label>
+                    <input type="text"  matInput formControlName="scope"/>
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Server Authorization">
+              <div class="colo-md-12 mx-0 text-center">
+                <mat-form-field class="mt-4 form-group col-md-4">
+                  <mat-select placeholder="Auth Type" formControlName="serverAuthType">
+                    <mat-option [value]="'NO_AUTH'">No Auth</mat-option>
+                    <mat-option [value]="'BASIC_AUTH'">Basic Auth</mat-option>
+                    <mat-option [value]="'TOKEN_AUTH'">Token Auth</mat-option>
+<!--                    <mat-option [value]="'oauth1'">OAuth 1.0</mat-option>-->
+                    <mat-option [value]="'OAUTH2_2_0'">OAuth 2.0</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('serverAuthType').value === 'BASIC_AUTH'">
+                <mat-divider></mat-divider>
+                <div class="col-md-12" formGroupName="serverBasicAuth">
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="proxyApi.get('username')?.errors && proxyApi.get('username')?.errors.required">user Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="proxyApi.get('password')?.errors && proxyApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('serverAuthType').value === 'TOKEN_AUTH'">
+                <mat-divider></mat-divider>
+                <div formGroupName="serverTokenAuth">
+                  <mat-form-field class="form-group col-md-9 mt-4">
+                    <mat-label>Token URL</mat-label>
+                    <input type="text"  matInput formControlName="tokenApiUrl"/>
+                    <mat-error *ngIf="proxyApi.get('tokenApiUrl')?.errors && proxyApi.get('tokenApiUrl')?.errors.required">Token URL is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Key</mat-label>
+                    <input type="text"  matInput formControlName="tokenKey"/>
+                    <mat-error *ngIf="proxyApi.get('tokenKey')?.errors && proxyApi.get('tokenKey')?.errors.required">Token Key is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="proxyApi.get('username')?.errors && proxyApi.get('username')?.errors.required">User Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="proxyApi.get('password')?.errors && proxyApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Prefix</mat-label>
+                    <input type="text"  matInput formControlName="tokenPrefix"/>
+                    <!--                  <mat-error *ngIf="proxyApi.get('tokenPrefix')?.errors && proxyApi.get('tokenPrefix')?.errors.required">Token Prefix is required.</mat-error>-->
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Header</mat-label>
+                    <input type="text"  matInput formControlName="tokenHeader"/>
+                    <mat-error *ngIf="proxyApi.get('tokenHeader')?.errors && proxyApi.get('tokenHeader')?.errors.required">Token Header is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="proxyApi.get('serverAuthType').value === 'OAUTH2_2_0'">
+                <mat-divider></mat-divider>
+                <div formGroupName="serverOauth2Auth">
+                  <div formGroupName="forOauthToken">
+                    <mat-form-field class="form-group col-md-9 mt-4">
+                      <mat-label>Token API URL</mat-label>
+                      <input type="text" matInput formControlName="tokenApiUrl">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-3 mt-4">
+                      <mat-label>Token Key</mat-label>
+                      <input type="text" matInput formControlName="tokenKey">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Prefix</mat-label>
+                      <input type="text"  matInput formControlName="tokenPrefix"/>
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Header</mat-label>
+                      <input type="text"  matInput formControlName="tokenHeader"/>
+                    </mat-form-field>
+                  </div>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="username">
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client ID</mat-label>
+                    <input type="text"  matInput formControlName="clientID"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client Secret</mat-label>
+                    <input type="text"  matInput formControlName="clientSecret"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Grant Type</mat-label>
+                    <input type="text"  matInput formControlName="grantType"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Resource</mat-label>
+                    <input type="text"  matInput formControlName="resource"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>scope</mat-label>
+                    <input type="text"  matInput formControlName="scope"/>
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Params">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                  <th scope="col" class="text-center">Key</th>
+                  <th scope="col" class="text-center">Value</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Validation</th>
+                </tr>
+                </thead>
+                <tbody formArrayName="apiParamDataList">
+                  <tr *ngFor="let itemRow of proxyApi.controls.apiParamDataList['controls']; let i=index;let l=last"      [formGroupName] ="i">
+                  <td>
+                    <input type="text" class="form-control col-md-11" style="font-size: 14px" formControlName="key" placeholder="Key">
+                  </td>
+                  <td>
+                    <input formControlName="value" style="font-size: 14px" placeholder="Value" [ngClass]="{ 'is-invalid': proxyApi.controls.apiParamDataList['controls'][i].controls['value']['errors'] }" class="form-control col-md-11" [required]="proxyApi.controls.apiParamDataList['controls'][i].controls['key'].value !== '' && proxyApi.controls.apiParamDataList['controls'][i].controls['dynamicValue'].value === false">
+                    <div class="invalid-feedback" *ngIf="proxyApi.controls.apiParamDataList['controls'][i].controls['value']['errors']?.required">Value is required.</div>
+                  </td>
+                  <td>
+                    <input formControlName="description" style="font-size: 14px" placeholder="Description" class="form-control col-md-11">
+                  </td>
+                  <td>
+                    <section class="example-section">
+                      <mat-checkbox class="example-margin"  formControlName="required">Required</mat-checkbox>
+                      <mat-checkbox class="example-margin" formControlName="dynamicValue">Dynamic Value</mat-checkbox>
+                      <mat-icon class="col-md-1" *ngIf="proxyApi.controls.apiParamDataList['controls'].length > 1" style="font-size: 24px !important;" (click)="deleteProxyApiServerParamRow(i)">delete</mat-icon>
+                    </section>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <button type="button" (click)="addProxyApiServerParamNewRow()" class="btn btn-primary">Add</button>
+            </mat-tab>
+            <mat-tab label="Headers">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                  <th scope="col" class="text-center">Key</th>
+                  <th scope="col" class="text-center">Value</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Validation</th>
+                </tr>
+                </thead>
+                <tbody formArrayName="apiHeaderDataList">
+                  <tr *ngFor="let itemRow of proxyApi.controls.apiHeaderDataList['controls']; let i=index;let l=last" [formGroupName]="i">
+                  <td>
+                    <input type="text" class="form-control col-md-11" style="font-size: 14px" formControlName="key" placeholder="Key">
+                  </td>
+                  <td>
+                    <input formControlName="value" style="font-size: 14px" placeholder="Value" [ngClass]="{ 'is-invalid': proxyApi.controls.apiHeaderDataList['controls'][i].controls['value']['errors'] }" class="form-control col-md-11" [required]=" proxyApi.controls.apiHeaderDataList['controls'][i].controls['key'].value !== '' && proxyApi.controls.apiHeaderDataList['controls'][i].controls['dynamicValue'].value === false">
+                    <div class="invalid-feedback" *ngIf="proxyApi.controls.apiHeaderDataList['controls'][i].controls['value']['errors']?.required">Value is required.</div>
+                  </td>
+                  <td>
+                    <input formControlName="description" style="font-size: 14px" placeholder="Description" class="form-control col-md-11">
+                  </td>
+                  <td>
+                    <section class="example-section">
+                      <mat-checkbox class="example-margin"  formControlName="required">Required</mat-checkbox>
+                      <mat-checkbox class="example-margin" formControlName="dynamicValue">Dynamic Value</mat-checkbox>
+                      <mat-icon class="col-md-1" *ngIf="proxyApi.controls.apiHeaderDataList['controls'].length > 1" style="font-size: 24px !important;" (click)="deleteProxyApiServerHeaderRow(i)">delete</mat-icon>
+                    </section>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <button type="button" (click)="addProxyApiServerHeaderNewRow()" class="btn btn-primary">Add</button>
+            </mat-tab>
+<!--            <mat-tab label="Body" [disabled]="proxyApi.get('proxyWebMethod').value !== 'POST' && proxyApi.get('proxyWebMethod').value !== 'PUT'">-->
+<!--              <div class="colo-md-12 mx-0 text-center">-->
+<!--                <pcm-json-input formControlName="body"></pcm-json-input>-->
+<!--                <mat-error *ngIf="proxyApi.controls.body.errors && proxyApi.controls.body.errors.jsonParseError">please provide valid json body format.</mat-error>-->
+<!--              </div>-->
+<!--            </mat-tab>-->
+          </mat-tab-group>
+        </div>
+        <div class="btn-grp mt-3">
+          <button type="button"  class="btn btn-primary"  (click)="submitApi()">{{!!pkId ? 'Update' : 'Create'}}</button>
+          <button type="button"  class="btn btn-danger"  (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+
+      <form [formGroup]="serverApi" *ngIf="apiType.value === 'INVOKE_API'">
+        <div class="form-row mt-4">
+          <mat-form-field class="form-group col-md-3">
+            <mat-label>Server Web Method</mat-label>
+            <mat-select  formControlName="serverWebMethod" (selectionChange)="changeServerWebMethod($event)">
+              <mat-option [value]="'GET'">Get</mat-option>
+              <mat-option [value]="'POST'">Post</mat-option>
+              <mat-option [value]="'PUT'">Put</mat-option>
+              <mat-option [value]="'DELETE'">Delete</mat-option>
+<!--              <mat-option [value]="'PATCH'">Patch</mat-option>-->
+<!--              <mat-option [value]="'COPY'">Copy</mat-option>-->
+<!--              <mat-option [value]="'HEAD'">Head</mat-option>-->
+<!--              <mat-option [value]="'OPTIONS'">Options</mat-option>-->
+<!--              <mat-option [value]="'LINK'">Link</mat-option>-->
+<!--              <mat-option [value]="'UNLINK'">UnLink</mat-option>-->
+<!--              <mat-option [value]="'PURGE'">Purge</mat-option>-->
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-9">
+            <mat-label>Server URL</mat-label>
+            <input type="text"  matInput formControlName="serverUrl"/>
+            <mat-error *ngIf="serverApi.get('serverUrl').errors && serverApi.get('serverUrl').errors.required">Server URL is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-3" *ngIf="poolingInterval">
+            <mat-label>Pooling Interval</mat-label>
+            <mat-select  formControlName="poolingInterval">
+              <mat-option [value]="''">Select</mat-option>
+              <mat-option *ngFor="let opt of poolingIntervalList" [value]="opt.pkId">{{opt.interval}}</mat-option>
+            </mat-select>
+<!--            <mat-error *ngIf="serverApi.get('poolingInterval')?.errors && serverApi.get('poolingInterval')?.errors.required">Pooling Interval is required.</mat-error>-->
+          </mat-form-field>
+        </div>
+
+        <div class="form-row">
+          <mat-tab-group class="col-md-12">
+            <mat-tab label="Server Authorization">
+              <div class="colo-md-12 mx-0 text-center">
+                <mat-form-field class="mt-4 form-group col-md-4">
+                  <mat-select placeholder="Auth Type" formControlName="serverAuthType">
+                    <mat-option [value]="'NO_AUTH'">No Auth</mat-option>
+                    <mat-option [value]="'BASIC_AUTH'">Basic Auth</mat-option>
+                    <mat-option [value]="'TOKEN_AUTH'">Token Auth</mat-option>
+<!--                    <mat-option [value]="'oauth1'">OAuth 1.0</mat-option>-->
+                    <mat-option [value]="'OAUTH2_2_0'">OAuth 2.0</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="form-row mx-0" *ngIf="serverApi.get('serverAuthType').value === 'BASIC_AUTH'">
+                <mat-divider></mat-divider>
+                <div class="col-md-12" formGroupName="serverBasicAuth">
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="serverApi.get('username')?.errors && serverApi.get('username')?.errors.required">user Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="serverApi.get('password')?.errors && serverApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="serverApi.get('serverAuthType').value === 'TOKEN_AUTH'">
+                <mat-divider></mat-divider>
+                <div formGroupName="serverTokenAuth">
+                  <mat-form-field class="form-group col-md-9 mt-4">
+                    <mat-label>Token URL</mat-label>
+                    <input type="text"  matInput formControlName="tokenApiUrl"/>
+                    <mat-error *ngIf="serverApi.get('tokenApiUrl')?.errors && serverApi.get('tokenApiUrl')?.errors.required">Token URL is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Toke Key</mat-label>
+                    <input type="text"  matInput formControlName="tokenKey"/>
+                    <mat-error *ngIf="serverApi.get('tokenKey')?.errors && serverApi.get('tokenKey')?.errors.required">Token Key is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  matInput formControlName="username"/>
+                    <mat-error *ngIf="serverApi.get('username')?.errors && serverApi.get('username')?.errors.required">User Name is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                    <mat-error *ngIf="serverApi.get('password')?.errors && serverApi.get('password')?.errors.required">Password is required.</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Prefix</mat-label>
+                    <input type="text"  matInput formControlName="tokenPrefix"/>
+                    <!--                  <mat-error *ngIf="serverApi.get('tokenPrefix')?.errors && serverApi.get('tokenPrefix')?.errors.required">Token Prefix is required.</mat-error>-->
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Token Header</mat-label>
+                    <input type="text"  matInput formControlName="tokenHeader"/>
+                    <mat-error *ngIf="serverApi.get('tokenHeader')?.errors && serverApi.get('tokenHeader')?.errors.required">Token Header is required.</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="form-row mx-0" *ngIf="serverApi.get('serverAuthType').value === 'OAUTH2_2_0'">
+                <mat-divider></mat-divider>
+                <div formGroupName="serverOauth2Auth">
+                  <div formGroupName="forOauthToken">
+                    <mat-form-field class="form-group col-md-9 mt-4">
+                      <mat-label>Token API URL</mat-label>
+                      <input type="text" matInput formControlName="tokenApiUrl">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-3 mt-4">
+                      <mat-label>Token Key</mat-label>
+                      <input type="text" matInput formControlName="tokenKey">
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Prefix</mat-label>
+                      <input type="text"  matInput formControlName="tokenPrefix"/>
+                    </mat-form-field>
+                    <mat-form-field class="form-group col-md-6 mt-4">
+                      <mat-label>Token Header</mat-label>
+                      <input type="text"  matInput formControlName="tokenHeader"/>
+                    </mat-form-field>
+                  </div>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="username">
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Password</mat-label>
+                    <input type="password"  matInput formControlName="password"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client ID</mat-label>
+                    <input type="text"  matInput formControlName="clientID"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Client Secret</mat-label>
+                    <input type="text"  matInput formControlName="clientSecret"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Grant Type</mat-label>
+                    <input type="text"  matInput formControlName="grantType"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>Resource</mat-label>
+                    <input type="text"  matInput formControlName="resource"/>
+                  </mat-form-field>
+                  <mat-form-field class="form-group col-md-3 mt-4">
+                    <mat-label>scope</mat-label>
+                    <input type="text"  matInput formControlName="scope"/>
+                  </mat-form-field>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Params">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th scope="col" class="text-center">Key</th>
+                  <th scope="col" class="text-center">Value</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Validation</th>
+                </tr>
+                </thead>
+                <tbody formArrayName="apiParamDataList">
+                <tr *ngFor="let itemRow of serverApi.controls.apiParamDataList['controls']; let i=index;let l=last"      [formGroupName]="i">
+                  <td>
+                    <input type="text" class="form-control col-md-11" style="font-size: 14px" formControlName="key" placeholder="Key">
+                  </td>
+                  <td>
+                    <input formControlName="value" style="font-size: 14px" placeholder="Value" [ngClass]="{ 'is-invalid': serverApi.controls.apiParamDataList['controls'][i].controls['value']['errors'] }" class="form-control col-md-11" [required]="serverApi.controls.apiParamDataList['controls'][i].controls['key'].value !== '' && serverApi.controls.apiParamDataList['controls'][i].controls['dynamicValue'].value === false">
+                    <div class="invalid-feedback" *ngIf="serverApi.controls.apiParamDataList['controls'][i].controls['value']['errors']?.required">Value is required.</div>
+                  </td>
+                  <td>
+                    <input formControlName="description" style="font-size: 14px" placeholder="Description" class="form-control col-md-11">
+                  </td>
+                  <td>
+                    <section class="example-section">
+                      <mat-checkbox class="example-margin"  formControlName="required">Required</mat-checkbox>
+                      <mat-checkbox class="example-margin" formControlName="dynamicValue">Dynamic Value</mat-checkbox>
+                      <mat-icon class="col-md-1" *ngIf="serverApi.controls.apiParamDataList['controls'].length > 1" style="font-size: 24px !important;" (click)="deleteServerApiServerParamRow(i)">delete</mat-icon>
+                    </section>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <button type="button" (click)="addServerApiServerParamNewRow()" class="btn btn-primary">Add</button>
+            </mat-tab>
+            <mat-tab label="Headers">
+              <table class="table table-bordered">
+                <thead>
+                <tr>
+                  <th scope="col" class="text-center">Key</th>
+                  <th scope="col" class="text-center">Value</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Validation</th>
+                </tr>
+                </thead>
+                <tbody formArrayName="apiHeaderDataList">
+                <tr *ngFor="let itemRow of serverApi.controls.apiHeaderDataList['controls']; let i=index;let l=last" [formGroupName]="i">
+                  <td>
+                    <input type="text" class="form-control col-md-11" style="font-size: 14px" formControlName="key" placeholder="Key">
+                  </td>
+                  <td>
+                    <input formControlName="value" style="font-size: 14px" placeholder="Value" [ngClass]="{ 'is-invalid': serverApi.controls.apiHeaderDataList['controls'][i].controls['value']['errors'] }" class="form-control col-md-11" [required]=" serverApi.controls.apiHeaderDataList['controls'][i].controls['key'].value !== '' && serverApi.controls.apiHeaderDataList['controls'][i].controls['dynamicValue'].value === false">
+                    <div class="invalid-feedback" *ngIf="serverApi.controls.apiHeaderDataList['controls'][i].controls['value']['errors']?.required">Value is required.</div>
+                  </td>
+                  <td>
+                    <input formControlName="description" style="font-size: 14px" placeholder="Description" class="form-control col-md-11">
+                  </td>
+                  <td>
+                    <section class="example-section">
+                      <mat-checkbox class="example-margin"  formControlName="required">Required</mat-checkbox>
+                      <mat-checkbox class="example-margin" formControlName="dynamicValue">Dynamic Value</mat-checkbox>
+                      <mat-icon class="col-md-1" *ngIf="serverApi.controls.apiHeaderDataList['controls'].length > 1" style="font-size: 24px !important;" (click)="deleteServerApiServerHeaderRow(i)">delete</mat-icon>
+                    </section>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+              <button type="button" (click)="addServerApiServerHeaderNewRow()" class="btn btn-primary">Add</button>
+            </mat-tab>
+<!--            <mat-tab label="Body" [disabled]="serverApi.get('serverWebMethod').value !== 'POST' || serverApi.get('serverWebMethod').value !== 'PUT'">-->
+<!--              <div class="colo-md-12 mx-0 text-center">-->
+<!--                <pcm-json-input formControlName="body"></pcm-json-input>-->
+<!--                <mat-error *ngIf="serverApi.controls.body.errors && serverApi.controls.body.errors.jsonParseError">please provide valid json body format.</mat-error>-->
+<!--              </div>-->
+<!--            </mat-tab>-->
+          </mat-tab-group>
+        </div>
+        <div class="btn-grp mt-3">
+          <button type="button"  class="btn btn-primary"  (click)="submitApi()">{{!!pkId ? 'Update' : 'Create'}}</button>
+          <button type="button"  class="btn btn-danger"  (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+
+    </mat-card>
+  </mat-card>
+</div>

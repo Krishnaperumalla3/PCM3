@@ -1,0 +1,69 @@
+{
+  "CREATE_TITLE": "Créer un partenaire / une passerelle frontale",
+  "EDIT_TITLE": "Modifier le partenaire / la passerelle frontale",
+  "CREATE_AS2_MAPPING": "Cartographie AS2",
+  "MANAGE_PARTNER": "Gérer le partenaire / la passerelle frontale",
+  "FIELDS": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Nom du partenaire *"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "ID partenaire *"
+    },
+    "IN_EMAIL": {
+      "LABEL": "Email *"
+    },
+    "IN_PHONE": {
+      "LABEL": "Téléphone *"
+    },
+    "IN_PGP_INFO": {
+      "LABEL": "Infos PGP"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protocole *"
+    },
+    "IN_STATUS": {
+      "LABEL": "Statut *"
+    },
+    "IN_ADDR_LINE1": {
+      "LABEL": "Adresse Ligne 1 "
+    },
+    "IN_ADDR_LINE2": {
+      "LABEL": "Adresse Ligne 2"
+    },
+    "IN_ORG_NME": {
+      "LABEL": "Organisation"
+    },
+    "IN_PRTR_NME": {
+      "LABEL": "Partenaire"
+    }
+  },
+  "MODAL": {
+    "TITLE": "Relation As2"
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "PART_NME": "Nom du partenaire",
+      "PART_ID": "ID partenaire",
+      "PRTOCOL": "Protocole",
+      "EMAIL": "Email",
+      "STATUS": "Statut"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "Soumettre",
+    "CANCEL": "Annuler",
+    "UPLOAD_CERT": "TÉLÉCHARGER UN CERT D'ÉCHANGE",
+    "CREATE_RELATION": "Créer une relation",
+    "SEARCH_PRTNR": "Rechercher un partenaire",
+    "REST_SEARCH": "Réinitialiser la recherche"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Historique des activités",
+    "ACTVTY_ON": "Activité activée",
+    "USR_NME": "Nom d'utilisateur",
+    "ACTVTY": "Activité"
+  },
+  "PROTOCOL": "Protocole",
+  "ACTIVITY": "Activité"
+}

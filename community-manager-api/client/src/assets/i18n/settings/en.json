@@ -1,0 +1,92 @@
+{
+  "MANAGE_CORRELATIONS": "Manage Correlations",
+  "POLLING_INT": "Polling Interval",
+  "FILE_JOB_SCH": "File Schedule",
+  "SCH": "Schedule",
+
+  "FIELDS": {
+    "CORR1": "Correlation Name1",
+    "CORR2": "Correlation Name2",
+    "CORR3": "Correlation Name3",
+    "CORR4": "Correlation Name4",
+    "CORR5": "Correlation Name5",
+    "CORR6": "Correlation Name6",
+    "CORR7": "Correlation Name7",
+    "CORR8": "Correlation Name8",
+    "CORR9": "Correlation Name9",
+    "CORR10": "Correlation Name10",
+    "CORR11": "Correlation Name11",
+    "CORR12": "Correlation Name12",
+    "CORR13": "Correlation Name13",
+    "CORR14": "Correlation Name14",
+    "CORR15": "Correlation Name15",
+    "CORR16": "Correlation Name16",
+    "CORR17": "Correlation Name17",
+    "CORR18": "Correlation Name18",
+    "CORR19": "Correlation Name19",
+    "CORR20": "Correlation Name20",
+    "CORR21": "Correlation Name21",
+    "CORR22": "Correlation Name22",
+    "CORR23": "Correlation Name23",
+    "CORR24": "Correlation Name24",
+    "CORR25": "Correlation Name25",
+    "CORR26": "Correlation Name26",
+    "CORR27": "Correlation Name27",
+    "CORR28": "Correlation Name28",
+    "CORR29": "Correlation Name29",
+    "CORR30": "Correlation Name30",
+    "CORR31": "Correlation Name31",
+    "CORR32": "Correlation Name32",
+    "CORR33": "Correlation Name33",
+    "CORR34": "Correlation Name34",
+    "CORR35": "Correlation Name35",
+    "CORR36": "Correlation Name36",
+    "CORR37": "Correlation Name37",
+    "CORR38": "Correlation Name38",
+    "CORR39": "Correlation Name39",
+    "CORR40": "Correlation Name40",
+    "CORR41": "Correlation Name41",
+    "CORR42": "Correlation Name42",
+    "CORR43": "Correlation Name43",
+    "CORR44": "Correlation Name44",
+    "CORR45": "Correlation Name45",
+    "CORR46": "Correlation Name46",
+    "CORR47": "Correlation Name47",
+    "CORR48": "Correlation Name48",
+    "CORR49": "Correlation Name49",
+    "CORR50": "Correlation Name50"
+  },
+
+  "SCHEDULE": {
+    "FIELDS": {
+      "ACC_KEY_ID": "Access key id",
+      "SCR_KEY_ID": "Secret key id",
+      "REGION": "Region",
+      "BKT_NAME": "Bucket Name",
+      "STATUS": "Status",
+      "FL_AGE": "No Of Days",
+      "CLD_NME": "Cloud Type",
+      "ARC_LOC": "Archive Location"
+    }
+  },
+
+  "BUTTONS": {
+    "CANCEL": "CANCEL",
+    "UPDATE_CORR": "Update Correlations",
+    "CREATE": "CREATE",
+    "EDIT": "EDIT",
+    "UPDATE": "UPDATE",
+    "DELETE": "DELETE",
+    "ADD_POLLING_INT": "ADD POLLING INTERVAL",
+    "SAVE_POLLING_INT": "SAVE POLLING INTERVAL"
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "INT_VALUE": "Interval Value *",
+      "INT_NAME": "Interval Name *",
+      "DESCRIPTION": "Description",
+      "ACTION": "Action"
+    }
+  }
+}

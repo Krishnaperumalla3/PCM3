@@ -1,0 +1,539 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h3>View Partner / Producer</h3>
+    <mat-card>
+      <form [formGroup]="partnerForm" class="partner-form">
+        <ng-container *ngFor="let field of partnerFields; let i = index">
+          <div class="field-container" [ngSwitch]="field.inputType">
+            <div *ngSwitchCase="'pcm-text'">
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="{{ field.placeholder | translate }}"
+                  formControlName="{{ field.formControlName }}"
+                  (keyup)="changeValue(partnerForm);trimValue(this.partnerForm.get(field.formControlName))"
+                  [name]="field.formControlName"
+                  [readonly]="true"
+                />
+              </mat-form-field>
+            </div>
+            <div *ngSwitchCase="'pcm-select'">
+              <mat-form-field *ngIf="field.formControlName !== 'protocol'">
+                <mat-select
+                  placeholder="{{ field.placeholder | translate }}"
+                  formControlName="{{ field.formControlName }}"
+                  disabled
+                >
+                  <mat-option *ngIf="field.formControlName !== 'status'" value=""><i>Select</i></mat-option>
+                  <mat-option
+                    *ngFor="let opt of field.options"
+                    [value]="opt.value"
+                  >{{ opt.label }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field *ngIf="field.formControlName === 'protocol'">
+                <mat-select formControlName="{{field.formControlName}}" placeholder="{{ field.placeholder | translate }}" disabled>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="search"
+                                           [formControl]="searchFilterCtrl[field.formControlName]"
+                                           [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                  </mat-option>
+
+                  <mat-option *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                              [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div *ngSwitchCase="'pcm-textarea'">
+              <mat-form-field>
+                <textarea
+                  matInput
+                  placeholder="{{ field.placeholder | translate }}"
+                  formControlName="{{ field.formControlName }}"
+                  [name]="field.formControlName"
+                  (keyup)="trimValue(this.partnerForm.get(field.formControlName))"
+                  [readonly]="true"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </ng-container>
+      </form>
+    </mat-card>
+
+    <mat-card *ngIf="!!showProtocol" class="protocol-panel">
+      <mat-tab-group>
+        <mat-tab translate label="{{'PARTNERS.PROTOCOL' | translate}}">
+          <div *ngIf="partnerForm.value.protocol == 'AS2' || partnerForm.value.protocol == 'SFG_CONNECT_DIRECT'"
+               style="margin-top: 15px;">
+            <p *ngIf="partnerForm.value.protocol == 'AS2'" style="color: rgba(0,0,0,.42)">{{'PROTOCOLS.AS2.RD_ORGNME.LABEL' | translate}}</p>
+            <p *ngIf="partnerForm.value.protocol == 'SFG_CONNECT_DIRECT'" style="color: rgba(0,0,0,.42)">Sterling Secure Proxy (SSP)</p>
+            <mat-radio-group
+              name="orgSelected"
+              [value]="orgSelected"
+              (change)="changeFileType($event)"
+              disabled
+            >
+              <mat-radio-button *ngFor="let type of orgHandling" [value]="type">
+                {{ type }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div
+            *ngIf="partnerForm.value.protocol === 'SFGFTP' || partnerForm.value.protocol === 'SFGFTPS' ||  partnerForm.value.protocol === 'SFGSFTP'"
+            style="margin-top: 15px;">
+            <p style="color: rgba(0,0,0,.42)">Type</p>
+            <mat-radio-group
+              name="sfgTypeSelected"
+              [value]="sfgTypeSelected"
+              (change)="changeSFGFileType($event)"
+              disabled
+            >
+              <mat-radio-button *ngFor="let type of sfgTypeHandling" [value]="type">
+                {{ type }}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <form [formGroup]="protocolForm" style="margin-top: 15px;" class="partner-form">
+            <ng-container *ngFor="let field of protocolFields">
+              <div class="field-container" [ngSwitch]="field.inputType">
+                <div *ngSwitchCase="'pcm-text'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      placeholder="{{ field.placeholder | translate }}"
+                      formControlName="{{ field.formControlName }}" [readonly]="field.readonly"
+                      name="{{ field.formControlName }}"
+                      (keyup)="trimValue(this.protocolForm.get(field.formControlName))"
+                      [readonly]="true"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div *ngSwitchCase="'pcm-password'">
+                  <mat-form-field>
+                    <mat-label *ngIf="(protocolForm.value['preferredAuthenticationType'] === 'PASSWORD' && partnerForm.value.protocol === 'SFGSFTP' && sfgTypeSelected === 'HubConnToPartner') || (protocolForm.value['sshAuthentication'] === 'PASSWORD' && partnerForm.value.protocol === 'SFTP' && (sfgTypeSelected === 'HubConnToPartner' || sfgTypeSelected === 'PartnerConnToHub'))">{{ translate.instant(field.placeholder) }} *</mat-label>
+                    <mat-label *ngIf="(protocolForm.value['preferredAuthenticationType'] !== 'PASSWORD' && partnerForm.value.protocol === 'SFGSFTP' && sfgTypeSelected === 'HubConnToPartner') || (protocolForm.value['sshAuthentication'] !== 'PASSWORD' && partnerForm.value.protocol === 'SFTP' && (sfgTypeSelected === 'HubConnToPartner' || sfgTypeSelected === 'PartnerConnToHub'))">{{ translate.instant(field.placeholder) }}</mat-label>
+                    <mat-label *ngIf="(partnerForm.value.protocol !== 'SFGSFTP') && (partnerForm.value.protocol !== 'SFTP')">{{ translate.instant(field.placeholder) }}</mat-label>
+                    <mat-label *ngIf="(partnerForm.value.protocol === 'SFGSFTP' && sfgTypeSelected === 'PartnerConnToHub')">{{ translate.instant(field.placeholder) }}</mat-label>
+                    <input
+                      matInput
+                      [type]="hide ? 'password' : 'text'"
+                      formControlName="{{ field.formControlName }}"
+                      name="{{ field.formControlName }}"
+                      [readonly]="true"
+                    />
+                    <!--<span *ngIf="!!protocolForm.value['password']" mat-icon-button matSuffix (click)="showPassword()"-->
+                    <!--[attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+                    <!--<mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+                    <!--</span>-->
+                  </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'pcm-select'">
+                  <mat-form-field
+                    *ngIf="field.formControlName !== 'ecProtocolReference' && field.formControlName !== 'certificateId'">
+                    <mat-select
+                      placeholder="{{ field.placeholder | translate }}"
+                      formControlName="{{ field.formControlName }}"
+                      disabled
+                    >
+                      <mat-option value=""><i>Select</i></mat-option>
+                      <mat-option
+                        *ngFor="let opt of field.options"
+                        [value]="opt.value"
+                      >{{ opt.label }}</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field
+                    *ngIf="field.formControlName === 'ecProtocolReference' || field.formControlName === 'certificateId'">
+                    <mat-select formControlName="{{field.formControlName}}" placeholder="{{ field.placeholder | translate }}" disabled>
+                      <mat-option>
+                        <ngx-mat-select-search placeholderLabel="search"
+                                               [formControl]="searchFilterCtrl[field.formControlName]"
+                                               [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                      </mat-option>
+
+                      <mat-option *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                                  [value]="option.value">
+                        {{option.label}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div *ngSwitchCase="'pcm-checkbox'">
+                  <mat-checkbox class="pt_check" formControlName="{{ field.formControlName }}"
+                                name="{{ field.formControlName }}" disabled>{{field.placeholder | translate}}</mat-checkbox>
+                </div>
+                <div *ngSwitchCase="'pcm-numeric'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      placeholder="{{ field.placeholder | translate }}"
+                      [type]="'number'"
+                      formControlName="{{ field.formControlName }}" name="{{ field.formControlName }}"
+                      [readonly]="true"
+                    />
+                  </mat-form-field>
+                </div>
+
+                <div *ngSwitchCase="'pcm-radio'">
+                  <p style="color: rgba(0,0,0,.42)">{{ field.placeholder | translate }}</p>
+                  <mat-radio-group
+                    formControlName="{{ field.formControlName }}"
+                    [(ngModel)]="field.formControlName" name="{{ field.formControlName }}" disabled
+                  >
+                    <mat-radio-button
+                      *ngFor="let radio of field.options"
+                      value="{{ radio.value }}"
+                    >{{ radio.label }}</mat-radio-button
+                    >
+                  </mat-radio-group>
+                </div>
+
+                <div *ngSwitchCase="'pcm-textarea'">
+                  <mat-form-field>
+                    <textarea
+                      matInput
+                      placeholder="{{ field.placeholder | translate }}"
+                      formControlName="{{ field.formControlName }}"
+                      [name]="field.formControlName"
+                      (keyup)="trimValue(this.partnerForm.get(field.formControlName))"
+                      [readonly]="true"
+                    ></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+            </ng-container>
+          </form>
+
+          <div *ngIf="showSubFields && subFieldEle.length > 0">
+            <mat-card
+              style="margin-top: 10px"
+              *ngFor="let card of subFieldEle; let i = index"
+            >
+              <h3>{{ card.title | translate }}</h3>
+              <form [formGroup]="subForms[i]" class="partner-form">
+                <ng-container *ngFor="let item of card.subFields">
+                  <div class="field-container" [ngSwitch]="item.inputType">
+                    <div *ngSwitchCase="'pcm-select'">
+                      <div
+                        *ngIf="card.title !== 'CERTIFICATE.CERT_TITL' || partnerForm?.value?.protocol !== 'AS2' || item.selected.indexOf(orgSelected) > -1 || partnerForm?.value?.protocol == 'SFGFTPS' || partnerForm?.value?.protocol == 'SFGSFTP'">
+                        <div *ngIf="card.title !== 'CERTIFICATE.CERT_TITL'">
+                          <mat-form-field>
+                            <mat-select
+                              placeholder="{{ item.placeholder | translate }}"
+                              formControlName="{{ item.formControlName }}"
+                              disabled
+                            >
+                              <mat-option value=""><i>Select</i></mat-option>
+                              <mat-option
+                                *ngFor="let opt of item.options"
+                                value="{{opt.value}}"
+                              >{{ opt.label }}</mat-option
+                              >
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+
+                        <div *ngIf="card.title === 'CERTIFICATE.CERT_TITL'">
+                          <mat-form-field
+                            *ngIf="partnerForm?.value?.protocol !== 'SFGSFTP' && partnerForm?.value?.protocol !== 'SFG_CONNECT_DIRECT' && partnerForm?.value?.protocol !== 'SFTP' && partnerForm?.value?.protocol !== 'CONNECT_DIRECT'">
+                            <mat-select formControlName="{{item.formControlName}}" placeholder="{{ item.placeholder | translate}}" disabled>
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+
+                              <mat-option
+                                *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                value="{{option.value}}">
+                                {{option.label}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <mat-form-field
+                            *ngIf="(partnerForm?.value?.protocol === 'SFGSFTP' && sfgTypeSelected === 'HubConnToPartner') && partnerForm?.value?.protocol !== 'SFG_CONNECT_DIRECT' && partnerForm?.value?.protocol !== 'SFTP' && partnerForm?.value?.protocol !== 'CONNECT_DIRECT'">
+                            <mat-select formControlName="{{item.formControlName}}"
+                                        [required]="protocolForm?.value['preferredAuthenticationType'] ==='PUBLIC_KEY'"
+                                        placeholder="{{ item.placeholder | translate }}" disabled>
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+
+                              <mat-option
+                                *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                value="{{option.value}}">
+                                {{option.label}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <mat-form-field
+                            *ngIf="(partnerForm?.value?.protocol === 'SFGSFTP' && sfgTypeSelected === 'PartnerConnToHub')">
+                            <mat-select placeholder="{{ item.placeholder | translate }}" formControlName="{{item.formControlName}}"
+                                        [required]="protocolForm?.value['preferredAuthenticationType'] ==='PUBLIC_KEY'" multiple disabled>
+                              <mat-select-trigger>
+                                {{subForms[i].value[item.formControlName] ? subForms[i].value[item.formControlName][0] : ''}}
+                                <span *ngIf="subForms[i].value[item.formControlName]?.length > 1"
+                                      class="example-additional-selection">
+                                  (+{{subForms[i].value[item.formControlName].length - 1}} {{subForms[i].value[item.formControlName]?.length === 2 ? 'other' : 'others'}}
+                                  )
+                                </span>
+                              </mat-select-trigger>
+
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+                              <mat-option *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                          value="{{option.value}}">{{option.label}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <mat-form-field *ngIf="partnerForm?.value?.protocol === 'SFTP'">
+                            <mat-select formControlName="{{item.formControlName}}"
+                                        [required]="protocolForm?.value['sshAuthentication'] ==='PUBLIC KEY'"
+                                        placeholder="{{ item.placeholder | translate}}" disabled>
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+
+                              <mat-option
+                                *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                value="{{option.value}}">
+                                {{option.label}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <mat-form-field
+                            *ngIf="partnerForm?.value?.protocol === 'SFG_CONNECT_DIRECT'">
+                            <mat-select placeholder="{{ item.placeholder | translate }}" formControlName="{{item.formControlName}}"
+                                        [required]="protocolForm?.value['secure'] ===true" multiple disabled>
+                              <mat-select-trigger>
+                                {{subForms[i].value[item.formControlName] ? subForms[i].value[item.formControlName][0] : ''}}
+                                <span *ngIf="subForms[i].value[item.formControlName]?.length > 1"
+                                      class="example-additional-selection">
+                                  (+{{subForms[i].value[item.formControlName].length - 1}} {{subForms[i].value[item.formControlName]?.length === 2 ? 'other' : 'others'}}
+                                  )
+                                </span>
+                              </mat-select-trigger>
+
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+                              <mat-option *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                          value="{{option.value}}">{{option.label}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <mat-form-field
+                            *ngIf=" partnerForm?.value?.protocol === 'CONNECT_DIRECT'">
+                            <mat-select placeholder="{{ item.placeholder | translate }}" formControlName="{{item.formControlName}}"
+                                        [required]="protocolForm?.value['securePlus'] ===true" multiple disabled>
+                              <mat-select-trigger>
+                                {{subForms[i].value[item.formControlName] ? subForms[i].value[item.formControlName][0] : ''}}
+                                <span *ngIf="subForms[i].value[item.formControlName]?.length > 1"
+                                      class="example-additional-selection">
+                                  (+{{subForms[i].value[item.formControlName].length - 1}} {{subForms[i].value[item.formControlName]?.length === 2 ? 'other' : 'others'}}
+                                  )
+                                </span>
+                              </mat-select-trigger>
+
+                              <mat-option>
+                                <ngx-mat-select-search placeholderLabel="search"
+                                                       [formControl]="certFilterCtrl[item.formControlName]"
+                                                       [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                              </mat-option>
+                              <mat-option *ngFor="let option of getCertFilterOptions(item.options, item.formControlName)"
+                                          value="{{option.value}}">{{option.label}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                        <div class="buttons" *ngIf="item.buttons">
+                          <button *ngFor="let button of item.buttons" class="btn btn-info"
+                                  (click)="uploadCertificate(item.modal)"
+                                  [disabled]="true">{{button.title | translate}}</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div *ngSwitchCase="'pcm-text'">
+                      <mat-form-field>
+                        <input
+                          matInput
+                          placeholder="{{ item.placeholder | translate}}"
+                          formControlName="{{ item.formControlName }}"
+                          name="{{ item.formControlName }}"
+                          [readonly]="true"
+                        />
+                      </mat-form-field>
+                    </div>
+
+                    <div *ngSwitchCase="'pcm-password'">
+                      <mat-form-field>
+                        <input
+                          matInput
+                          placeholder="{{ item.placeholder | translate}}"
+                          [type]="'password'"
+                          formControlName="{{ item.formControlName }}"
+                          name="{{ item.formControlName }}"
+                          [readonly]="true"
+                        />
+                      </mat-form-field>
+                    </div>
+
+                    <div *ngSwitchCase="'pcm-checkbox'">
+                      <mat-checkbox formControlName="{{ item.formControlName }}" name="{{ item.formControlName }}"
+                                    required="{{item.required}}" disabled>{{item.placeholder | translate}}</mat-checkbox>
+                    </div>
+
+                    <div *ngSwitchCase="'pcm-textarea'">
+                      <mat-form-field>
+                    <textarea
+                      matInput
+                      placeholder="{{ item.placeholder | translate }}"
+                      formControlName="{{ item.formControlName }}"
+                      name="{{ item.formControlName }}"
+                      [readonly]="true"
+                    ></textarea>
+                      </mat-form-field>
+                    </div>
+
+                    <div *ngSwitchCase="'pcm-radio'">
+                      <p style="color: rgba(0,0,0,.42)">{{ item.placeholder | translate }}</p>
+                      <mat-radio-group formControlName="{{ item.formControlName }}" name="{{ item.formControlName }}">
+                        <mat-radio-button
+                          *ngFor="let radio of item.options"
+                          [value]="radio.value"
+                          disabled
+                        >{{ radio.label | translate }}</mat-radio-button
+                        >
+                      </mat-radio-group>
+                    </div>
+
+                  </div>
+                </ng-container>
+              </form>
+            </mat-card>
+          </div>
+
+          <form [formGroup]="adapterForm" class="partner-form" style="margin-top: 25px" *ngIf="showAdapter">
+            <ng-container *ngFor="let field of adapterFields">
+              <div class="field-container" [ngSwitch]="field.inputType">
+                <div>
+                  <div *ngSwitchCase="'pcm-select'">
+                    <mat-form-field>
+                      <mat-select formControlName="{{field.formControlName}}" placeholder="{{ field.placeholder | translate }}" disabled>
+                        <mat-option>
+                          <ngx-mat-select-search placeholderLabel="search"
+                                                 [formControl]="searchFilterCtrl[field.formControlName]"
+                                                 [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                        </mat-option>
+
+                        <mat-option *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                                    [value]="option.value">
+                          {{option.label}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div *ngSwitchCase="'pcm-text'">
+                  <mat-form-field>
+                    <input
+                      matInput
+                      placeholder="{{ field.placeholder | translate }}"
+                      formControlName="{{ field.formControlName }}" [readonly]="field.readonly"
+                      name="{{ field.formControlName }}"
+                      (keyup)="trimValue(this.adapterForm.get(field.formControlName))"
+                      [readonly]="true"
+                    />
+                  </mat-form-field>
+                </div>
+              </div>
+            </ng-container>
+          </form>
+        </mat-tab>
+        <mat-tab translate label="{{'PARTNERS.ACTIVITY' | translate}}" [disabled]="!pkId">
+          <div>
+            <h3 style="padding: 25px 0;" translate>{{'PARTNERS.ACTIVITY_HISTORY.TITLE'}}</h3>
+            <table mat-table [dataSource]="activityDetails" class="mat-elevation-z8" matSort
+                   (matSortChange)="sort($event)">
+
+              <ng-container matColumnDef="activityDt">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'PARTNERS.ACTIVITY_HISTORY.ACTVTY_ON' | translate}}</th>
+                <td mat-cell *matCellDef="let element"> {{element.activityDt | date: 'MM/dd/yyyy/ hh:mm:ss a'}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="userName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{'PARTNERS.ACTIVITY_HISTORY.USR_NME' | translate}}</th>
+                <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="activity">
+                <th mat-header-cell class="column__activity" *matHeaderCellDef> {{'PARTNERS.ACTIVITY_HISTORY.ACTVTY' | translate}}</th>
+                <td mat-cell *matCellDef="let element"> {{element.activity}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <mat-paginator [pageIndex]="currentPage" [pageSizeOptions]="[10, 25, 50, 75, 100]" [length]="totalElements"
+                         [pageSize]="size"
+                         (page)="pagination($event)" showFirstLastButtons>
+          </mat-paginator>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+
+    <div class="btn-grp sbmt-btn">
+<!--      <button type="button" class="btn btn-primary" (click)="submitPartner()">-->
+<!--        {{'PARTNERS.BUTTONS.SUBMIT' | translate}}-->
+<!--      </button>-->
+      <button type="button" class="btn btn-info" (click)="cancel()">{{'PARTNERS.BUTTONS.CANCEL'  | translate}}</button>
+    </div>
+  </mat-card>
+
+  <swal
+    #invalidSwal
+    title="{{'SWEET_ALERT.IN_VALID.TITLE' | translate}}"
+    text="{{'SWEET_ALERT.IN_VALID.BODY' | translate}}"
+    type="error"
+    [focusCancel]="true">
+  </swal>
+</div>
+
+

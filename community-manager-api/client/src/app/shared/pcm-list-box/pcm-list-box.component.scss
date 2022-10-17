@@ -1,0 +1,91 @@
+/*!
+ * Copyright (c) 2020 Pragma Edge Inc
+ *
+ * Licensed under the Pragma Edge Inc
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://pragmaedge.com/licenseagreement
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.main-list-container {
+  width: 850px;
+  margin: 0 auto;
+}
+.list-container {
+  display: grid;
+  grid-template-columns: 40% 10% 40% 10%;
+  grid-gap: 30px;
+}
+ul {
+  list-style-type: none;
+}
+.available-list, .selected-list {
+  border: solid 2px rgba(0,0,0,.14);
+  border-radius: 5px;
+  height: 350px !important;
+  overflow-y: auto;
+}
+.actions-list {
+  align-self: center;
+  display: grid;
+  grid-gap: 20px;
+}
+.active {
+  background-color: #efefef;
+}
+
+.list-box {
+  display: inline-block;
+  margin-right: 20px;
+  width: 40%;
+}
+.mat-form-field {
+  width: 100% !important;
+}
+.list-button-toggle {
+  width: 50%;
+  background-color: #f5f5f5
+}
+.list-button-toggle:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0 0 0 100px rgba(0, 0, 0, 0.05) inset;
+}
+
+.list-item {
+  height: 35px !important;
+}
+.list-icon {
+  width: 6px;
+  height: 15px;
+}
+.form-control {
+  height: 200px !important;
+  padding: 0px;
+  font-size: 1.4rem;
+  border: none !important;
+  border-bottom: 1px solid #bcbebf !important;
+}
+.form-control:focus {
+  outline: 0 !important;
+  border-color: transparent !important;
+  border-bottom-color: #009688 !important;
+  -webkit-box-shadow: 0 1px 0 #009688 !important;
+  box-shadow: 0 1px 0 #009688 !important;
+}
+
+.button-toggle-group {
+  width: 100%;
+  box-shadow: none !important;
+}
+option {
+  border-radius: 3px;
+  margin: 1px 0px;
+  padding: 8px 0 8px 15px;
+}

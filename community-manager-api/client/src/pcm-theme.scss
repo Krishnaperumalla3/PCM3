@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$pcm-primary: mat-palette($mat-indigo);
+$pcm-accent:  mat-palette($mat-indigo);
+$pcm-warn:    mat-palette($mat-red);
+
+$pcm-theme: mat-light-theme($pcm-primary, $pcm-accent, $pcm-warn);
+
+@include angular-material-theme($pcm-theme);

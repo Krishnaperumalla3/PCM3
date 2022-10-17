@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProfile name="default, cm-api, pcm, saml, sso-ssp-seas, cm">
+        <!--<property name="HOME" value="/pcm-logs" />-->
+        <appender name="DAILY_ROLLING_FILE_APPENDER"
+                  class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>community-manager-api.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>community-manager-api.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <!--community-manager-api.%d{MM-dd-yyyy HH}.%i.log-->
+                <maxHistory>1</maxHistory> <!--N Days-->
+<!--                <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+<!--                    <maxFileSize>10MB</maxFileSize>-->
+<!--                </timeBasedFileNamingAndTriggeringPolicy>-->
+            </rollingPolicy>
+            <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} - %msg%n</Pattern>
+            </encoder>
+        </appender>
+        <logger name="com.pe.pcm" level="debug"
+                additivity="false">
+            <appender-ref ref="DAILY_ROLLING_FILE_APPENDER"/>
+        </logger>
+        <root level="INFO">
+            <appender-ref ref="DAILY_ROLLING_FILE_APPENDER"/>
+        </root>
+        <!--        <root level="SQL">-->
+        <!--            <appender-ref ref="DAILY_ROLLING_FILE_APPENDER" />-->
+        <!--        </root>-->
+    </springProfile>
+
+</configuration>

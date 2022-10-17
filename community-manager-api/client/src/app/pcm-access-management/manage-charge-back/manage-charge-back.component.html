@@ -1,0 +1,197 @@
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <form [formGroup]="createChargebackForm">
+      <table id="tblMinCharge" style="margin-left:30%; width: 35%; border: 1px solid black; border-collapse: collapse" border="1">
+        <thead id="trSlab">
+        <th id="tdSlab" class="text-center">
+          Slab
+        </th>
+        <th id="tdValue" class="text-center">
+          Value
+        </th>
+        </thead>
+        <tr id="trMinCharge">
+          <td id="tdMinCharge" style="width: 70%;">
+            <label>Min Charge (a):</label>
+          </td>
+          <td id="tdtaMinCharge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="minCharge"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trFlatCharge">
+          <td id="tdFlatCharge">
+            <label>Flat Charge for 1GB (e):</label>
+          </td>
+          <td id="tdtaFlatCharge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="flat1"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trRate1to10Charge">
+          <td id="tdRate1to10Charge">
+            <label>Rate for 1GB to 10GB (b):</label>
+          </td>
+          <td id="tdtaRate1to10Charge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="rate110"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trFlat10Charge">
+          <td id="tdFlat10Charge">
+            <label>Flat Charge for 10GB (f):</label>
+          </td>
+          <td id="tdtaFlat10Charge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="flat10"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trRate10to25Charge">
+          <td id="tdRate10to25Charge">
+            <label>Rate per GB from 10GB to 25GB (c):</label>
+          </td>
+          <td id="tdtaRate10to25Charge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="rate1025"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trFlat25Charge">
+          <td id="tdFlat25Charge">
+            <label>Flat Charge for 25GB (g):</label>
+          </td>
+          <td id="tdtaFlat25Charge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="flat25"
+              tabindex="1"/>
+          </td>
+        </tr>
+        <tr id="trRate25Charge">
+          <td id="tdRate25Charge">
+            <label>Rate per GB beyond 25GB (d):</label>
+          </td>
+          <td id="tdtaRate25Charge">
+            <input
+              class="input-fld"
+              type="text"
+              matInput
+              formControlName="rateAbove25"
+              tabindex="1"/>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <div class="sbmt-btn my-4" style="margin-left: 30%;">
+      <button type="button" class="btn btn-primary" (click)="this.createChargebackForm.enable()" style="min-width:105px">Edit</button>
+      <button type="button" class="btn btn-info" (click)="updateChargeBacks(this.createChargebackForm.value)" style="min-width:105px">Save</button>
+      <!--<button type="button" class="btn btn-danger" (click)="cancel()" style="min-width:105px">Cancel</button> -->
+    </div>
+    <table style="width:100%; border: 1px solid black; border-collapse: collapse" border="1" *ngIf="charge">
+      <thead>
+      <th>Slab</th>
+      <th>Substituted Formula</th>
+      <th>Formula</th>
+      </thead>
+      <tr>
+        <td style="width: 20%">
+          <label class="ml-1">upto 1GB</label>
+        </td>
+        <td style="width: 40%">
+          <label class="ml-1">{{createChargebackForm.get('minCharge').value}}</label>
+        </td>
+        <td style="width: 40%">
+          <label class="ml-1">a</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1">1 - 10 GB</label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('minCharge').value}} + ({{createChargebackForm.get('rate110').value}} * Filesize)</label>
+        </td>
+        <td>
+          <label class="ml-1">a + (b * Filesize)</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1">10 GB</label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('flat10').value}}</label>
+        </td>
+        <td>
+          <label class="ml-1">f</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1">10 - 25GB </label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('minCharge').value}} + ({{createChargebackForm.get('rate110').value}} * 10) + ({{createChargebackForm.get('rate1025').value}} * (Filesize - 10))</label>
+        </td>
+        <td>
+          <label class="ml-1">a + (b * 10) + (c * (Filesize - 10))</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1">25GB </label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('flat25').value}}</label>
+        </td>
+        <td>
+          <label class="ml-1">g</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1"> > 25GB </label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('minCharge').value}} + ({{createChargebackForm.get('rate110').value}} * 10) + ({{createChargebackForm.get('rate1025').value}} * 15) + ({{createChargebackForm.get('rateAbove25').value}} * (Filesize - 25)) </label>
+        </td>
+        <td>
+          <label class="ml-1">a + (b * 10) + (c * 15) + (d * (Filesize -25))</label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label class="ml-1">Other / 0 GB </label>
+        </td>
+        <td>
+          <label class="ml-1">{{createChargebackForm.get('minCharge').value}}</label>
+        </td>
+        <td>
+          <label class="ml-1">a</label>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+
+</div>

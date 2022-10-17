@@ -1,0 +1,952 @@
+{
+  "CONNECT_DIRECT": {
+    "IN_LCL_ND_NME": {
+      "LABEL": "Nome nodo locale"
+    },
+    "IN_RMTE_ND_NME": {
+      "LABEL": "Nome nodo remoto"
+    },
+    "IN_RMTE_HST": {
+      "LABEL": "Host remoto"
+    },
+    "IN_RMTE_PRT": {
+      "LABEL": "Porta remota"
+    },
+    "IN_RMTE_USR": {
+      "LABEL": "Utente remoto"
+    },
+    "IN_RMTE_PWD": {
+      "LABEL": "Password remota"
+    },
+    "IN_DCB_PARAMS": {
+      "LABEL": "DCB Params"
+    },
+    "IN_LCL_X": {
+      "LABEL": "Local X Late"
+    },
+    "IN_SYS_OPTS": {
+      "LABEL": "Sys Opts"
+    },
+    "IN_TRNSFR_NME": {
+      "LABEL": "Tipo di trasferimento"
+    },
+    "IN_CD_PG_FRM": {
+      "LABEL": "Pagina codice da"
+    },
+    "IN_CD_PG_TO": {
+      "LABEL": "Code Page To"
+    },
+    "IN_SEC_PRTCL": {
+      "LABEL": "Protocollo di sicurezza"
+    },
+    "IN_SEC": {
+      "LABEL": "sicuro +"
+    },
+    "IN_CA_CERT": {
+      "LABEL": "Certificazione CA"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "FTP": {
+    "IN_HST_NME": {
+      "LABEL": "Nome host *"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Numero di porta*"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Tipo di trasferimento"
+    },
+    "IN_USR_ID": {
+      "LABEL": "ID utente *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD su"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Citazione"
+    },
+    "IN_SITE": {
+      "LABEL": "Posto"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Tipo di connessione"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Cassetta postale di destinazione"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Ricerca nella casella di posta di destinazione"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Crea utente in SI"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Crea directory in SI"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "FTPS": {
+    "IN_HST_NME": {
+      "LABEL": "Nome host *"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Numero di porta*"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Tipo di trasferimento"
+    },
+    "IN_USR_ID": {
+      "LABEL": "ID utente *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD su"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Citazione"
+    },
+    "IN_SITE": {
+      "LABEL": "Posto"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Tipo di connessione"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Cassetta postale di destinazione"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Ricerca nella casella di posta di destinazione"
+    },
+    "IN_SSL_SOC": {
+      "LABEL": "Socket SSL"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Crea utente in SI"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_SSL_CIPHER": {
+      "LABEL": "Crittografia SSL"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Crea directory in SI"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_CRT_ID": {
+      "LABEL": "ID certificato *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "SFTP": {
+    "IN_HST_NME": {
+      "LABEL": "Nome host *"
+    },
+    "IN_PRT_NUM": {
+      "LABEL": "Numero di porta*"
+    },
+    "TRBSFR_TYPE": {
+      "LABEL": "Tipo di trasferimento"
+    },
+    "IN_USR_ID": {
+      "LABEL": "ID utente *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_SSH_CIPHER": {
+      "LABEL": "SSH Cipher"
+    },
+    "IN_SSH_COMP": {
+      "LABEL": "SSH Compression"
+    },
+    "IN_SSH_MAC": {
+      "LABEL": "SSH Mac"
+    },
+    "IN_CWD_UP": {
+      "LABEL": "CWD su"
+    },
+    "IN_QUOTE": {
+      "LABEL": "Citazione"
+    },
+    "IN_SITE": {
+      "LABEL": "Posto"
+    },
+    "IN_CONCTN_TYPE": {
+      "LABEL": "Tipo di connessione"
+    },
+    "IN_DESTN_MAIL": {
+      "LABEL": "Cassetta postale di destinazione"
+    },
+    "IN_DESTN_MAIL_LKUP": {
+      "LABEL": "Ricerca nella casella di posta di destinazione"
+    },
+    "IN_CRTE_USR_SI": {
+      "LABEL": "Crea utente in SI"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Crea directory in SI"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_SSH_AUTH": {
+      "LABEL": "Autenticazione SSH"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_KNWN_HST_KY": {
+      "LABEL": "Chiave host nota"
+    },
+    "IN_SSH_IDNTY_KY": {
+      "LABEL": "Chiave di identità SSH"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "HTTP": {
+    "IN_IN_MIL_BX": {
+      "LABEL": "Nella casella di posta"
+    },
+    "IN_OUTBND_URL": {
+      "LABEL": "URL in uscita"
+    },
+    "IN_OUTBND_URL_REQ": {
+      "LABEL": "URL in uscita *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "HTTPS": {
+    "IN_IN_MIL_BX": {
+      "LABEL": "Nella casella di posta"
+    },
+    "IN_OUTBND_URL": {
+      "LABEL": "URL in uscita"
+    },
+    "IN_OUTBND_URL_REQ": {
+      "LABEL": "URL in uscita *"
+    },
+    "IN_CERT_ID": {
+      "LABEL": "ID certificato*"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "SFG_CONNECT_DIRECT": {
+    "IN_LCL_ND_NME": {
+      "LABEL": "Nome nodo locale *"
+    },
+    "IN_ND_NME": {
+      "LABEL": "Nome nodo *"
+    },
+    "IN_RMT_FL_NME": {
+      "LABEL": "Nome file remoto"
+    },
+    "IN_SNDID": {
+      "LABEL": "SNODEID (se richiesto)"
+    },
+    "IN_SNDPW": {
+      "LABEL": "Password SNODEID"
+    },
+    "IN_DIR_FLDR": {
+      "LABEL": "Nella directory / cartella"
+    },
+    "IN_CN_TYPE": {
+      "LABEL": "Spinta in entrata"
+    },
+    "OUT_CN_TYPE": {
+      "LABEL": "Tirata in uscita"
+    },
+    "OUT_DIR_FLDR": {
+      "LABEL": "Directory / cartella in uscita"
+    },
+    "IN_OPR_SYS": {
+      "LABEL": "Sistema operativo *"
+    },
+    "IN_DCB_PAR": {
+      "LABEL": "DCB Params"
+    },
+    "IN_DSN_NME": {
+      "LABEL": "Nome DSN"
+    },
+    "IN_UNT": {
+      "LABEL": "Unità"
+    },
+    "IN_STRG_CLS": {
+      "LABEL": "Classe di archiviazione"
+    },
+    "IN_SPC": {
+      "LABEL": "Spazio"
+    },
+    "IN_HSTNME_IP": {
+      "LABEL": "Nome host / IP *"
+    },
+    "IN_PRT": {
+      "LABEL": "Porta *"
+    },
+    "IN_CPY_SYS": {
+      "LABEL": "Copia SYSOPTS"
+    },
+    "IN_CHK_PT": {
+      "LABEL": "posto di controllo"
+    },
+    "IN_COMP_LVL": {
+      "LABEL": "Livello di compressione"
+    },
+    "IN_DISP": {
+      "LABEL": "DISPOSIZIONE"
+    },
+    "IN_SUB": {
+      "LABEL": "Invia"
+    },
+    "IN_RN_JB": {
+      "LABEL": "Esegui lavoro"
+    },
+    "IN_RN_TSK": {
+      "LABEL": "Esegui attività"
+    },
+    "IN_SRTY_PROT": {
+      "LABEL": "Protocollo di sicurezza"
+    },
+    "IN_SEC": {
+      "LABEL": "sicuro +*"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "FileSystem": {
+    "IN_USR_NME": {
+      "LABEL": "Nome utente"
+    },
+    "IN_PW": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_DEL_AFTR_COLL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "ExistingConnection": {
+    "IN_PRTCL": {
+      "LABEL": "Protocollo *"
+    },
+    "IN_PRTCL_REF": {
+      "LABEL": "Riferimento al protocollo *"
+    }
+  },
+  "AS2": {
+    "RD_ORGNME": {
+      "LABEL": "Organizzazione"
+    },
+    "IN_PRFL_NME": {
+      "LABEL": "Nome del profilo"
+    },
+    "IN_AS2_IDNFR": {
+      "LABEL": "Identificatore AS2 *"
+    },
+    "IN_EML_ADDR": {
+      "LABEL": "Indirizzo email"
+    },
+    "SENDER_ID": {
+      "LABEL": "Identità del mittente"
+    },
+    "SENDER_QLFR": {
+      "LABEL": "Qualificatore mittente"
+    },
+    "END_PT": {
+      "LABEL": "Punto finale *"
+    },
+    "RESP_TIMEOUT": {
+      "LABEL": "Timeout di risposta*"
+    },
+    "HTTP_CLNT_ADPTR": {
+      "LABEL": "Adattatore client HTTP *"
+    },
+    "CMPRESS_DATA": {
+      "LABEL": "Comprimi dati *"
+    },
+    "PAYLOAD_TYPE": {
+      "LABEL": "Tipo di carico utile *"
+    },
+    "MIME_TYPE": {
+      "LABEL": "Tipo Mimo *"
+    },
+    "MIME_SUB_TYPE": {
+      "LABEL": "Sottotipo Mime *"
+    },
+    "CIPHER_STRNGTH": {
+      "LABEL": "Cipher Strength *"
+    }
+  },
+  "Webservice": {
+    "IN_NME": {
+      "LABEL": "Nome *"
+    },
+    "IN_OUT_BND_URL": {
+      "LABEL": "URL in uscita"
+    },
+    "IN_IN_MLBX": {
+      "LABEL": "Nella casella di posta *"
+    },
+    "IN_CER_ID": {
+      "LABEL": "ID certificato*"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "Mailbox": {
+    "IN_IN_MLBX_REQ": {
+      "LABEL": "Nella casella di posta *"
+    },
+    "IN_OUT_MLBX": {
+      "LABEL": "Out Mailbox"
+    },
+    "IN_IN_MLBX": {
+      "LABEL": "Nella casella di posta"
+    },
+    "IN_OUT_MLBX_REQ": {
+      "LABEL": "Out Mailbox *"
+    },
+    "IN_CRTE_MLBX_IN_SI": {
+      "LABEL": "Crea cassetta postale in SI"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filtro"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    }
+  },
+  "MQ": {
+    "IN_HST_NME": {
+      "LABEL": "Nome host *"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_PORT": {
+      "LABEL": "Porta"
+    },
+    "CH_NME": {
+      "LABEL": "nome del canale"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nome utente"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_QUE_MNGR": {
+      "LABEL": "Queue Manager*"
+    },
+    "IN_QUE_NME": {
+      "LABEL": "Nome coda *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "SAP": {
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    },
+    "IN_SAP_RTE": {
+      "LABEL": "Percorso SAP *"
+    }
+  },
+  "SMTP": {
+    "IN_NME": {
+      "LABEL": "Nome"
+    },
+    "IN_ACS_PRTCL": {
+      "LABEL": "Protocollo di accesso"
+    },
+    "IN_CON_RETRS": {
+      "LABEL": "Tentativi di connessione *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nome utente"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_RTRY_INTRVL": {
+      "LABEL": "Riprova intervallo *"
+    },
+    "IN_MAIL_SVR": {
+      "LABEL": "Posta elettronica del server"
+    },
+    "IN_MAIL_SVR_PRT": {
+      "LABEL": "Porta server MAIL"
+    },
+    "IN_MX_MSG": {
+      "LABEL": "Max messaggi *"
+    },
+    "IN_RMV_MAIL": {
+      "LABEL": "Rimuovi messaggi"
+    },
+    "IN_SSL": {
+      "LABEL": "SSL *"
+    },
+    "IN_KY_CRT_PS": {
+      "LABEL": "Key Cert PassPhrase *"
+    },
+    "IN_CPHR_STRGT": {
+      "LABEL": "Cipher Strength *"
+    },
+    "IN_KEY_CRT": {
+      "LABEL": "Certificato chiave *"
+    },
+    "IN_CA_CRT": {
+      "LABEL": "Certificati CA *"
+    },
+    "IN_URI_NME": {
+      "LABEL": "Nome URI *"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    }
+  },
+  "SFGFTP": {
+    "IN_CON_TYPE": {
+      "LABEL": "Tipo di connessione *"
+    },
+    "IN_REMT_HST": {
+      "LABEL": "Host remoto *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Porta remota *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nome utente *"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Unisci utente"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_NUM_RTRY": {
+      "LABEL": "Numero di tentativi *"
+    },
+    "IN_RTRY_INVT": {
+      "LABEL": "Riprova intervallo *"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Pattern file remoto"
+    },
+    "IN_USR_ID": {
+      "LABEL": "ID utente *"
+    },
+    "IN_TRNSFR_TYP": {
+      "LABEL": "Tipo di trasferimento *"
+    },
+    "IN_CRTE_MLBX_IN_SI": {
+      "LABEL": "Crea cassetta postale in SI"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_DL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "SFGFTPS": {
+    "IN_CON_TYPE": {
+      "LABEL": "Tipo di connessione *"
+    },
+    "IN_REMT_HST": {
+      "LABEL": "Host remoto *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Porta remota *"
+    },
+    "IN_ENCRYPT_STRNGTH": {
+      "LABEL": "Forza di crittografia *"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nome utente *"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Unisci utente"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_US_CCC": {
+      "LABEL": "Usa CCC (Clear Command Channel)"
+    },
+    "IN_RTRY_INTVL": {
+      "LABEL": "Riprova intervallo *"
+    },
+    "IN_NUM_RTRY": {
+      "LABEL": "Numero di tentativi *"
+    },
+    "IN_USE_IMPLCT_SSL": {
+      "LABEL": "Use Implicit SSL"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Pattern file remoto"
+    },
+    "IN_CRT_ID": {
+      "LABEL": "ID certificato *"
+    },
+    "IN_USR_ID": {
+      "LABEL": "ID utente *"
+    },
+    "IN_CRTE_MLBX_IN_SI": {
+      "LABEL": "Crea cassetta postale in SI"
+    },
+    "IN_FL_TYP": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_TRNSFR_TYP": {
+      "LABEL": "Tipo di trasferimento *"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "SFGSFTP": {
+    "IN_REMT_HST": {
+      "LABEL": "Host remoto *"
+    },
+    "IN_REMT_PRT": {
+      "LABEL": "Porta remota *"
+    },
+    "IN_PREFER_MAC_ALG": {
+      "LABEL": "Algoritmo Mac preferito"
+    },
+    "IN_REMT_USR": {
+      "LABEL": "Utente remoto *"
+    },
+    "IN_SSH_PWD": {
+      "LABEL": "Password SSH"
+    },
+    "IN_CHAR_ENCOD": {
+      "LABEL": "Codifica dei caratteri"
+    },
+    "IN_LCL_PRT": {
+      "LABEL": "Port Range locale"
+    },
+    "IN_COMP": {
+      "LABEL": "Compressione"
+    },
+    "IN_RTRY_DLY": {
+      "LABEL": "Ritardo tentativo"
+    },
+    "IN_CON_RTRY_CNT": {
+      "LABEL": "Conteggio tentativi di connessione"
+    },
+    "IN_PRFRD_CPHR": {
+      "LABEL": "Cipher preferito"
+    },
+    "IN_RESP_TME_OUT": {
+      "LABEL": "Tempo di risposta scaduto"
+    },
+    "IN_REMT_FL_PTRN": {
+      "LABEL": "Pattern file remoto"
+    },
+    "IN_USR_IDNTY_KY": {
+      "LABEL": "Chiave di identità dell'utente"
+    },
+    "IN_KNWN_HST_KY": {
+      "LABEL": "Chiave host nota"
+    },
+    "IN_USR_NME": {
+      "LABEL": "Nome utente *"
+    },
+    "IN_PWD": {
+      "LABEL": "Parola d'ordine"
+    },
+    "IN_MRG_USR": {
+      "LABEL": "Unisci utente"
+    },
+    "IN_PTH_PWD": {
+      "LABEL": "Parola d'ordine *"
+    },
+    "IN_TRNSFR_TYPE": {
+      "LABEL": "Tipo di trasferimento *"
+    },
+    "IN_IN_DIR_REQ": {
+      "LABEL": "In Directory *"
+    },
+    "IN_OUT_DIR": {
+      "LABEL": "Directory in uscita"
+    },
+    "IN_IN_DIR": {
+      "LABEL": "In Directory"
+    },
+    "IN_OUT_DIR_REQ": {
+      "LABEL": "Directory in uscita *"
+    },
+    "IN_CRTE_DIR_SI": {
+      "LABEL": "Crea directory in SI"
+    },
+    "IN_FL_TYPE": {
+      "LABEL": "Tipo di file"
+    },
+    "IN_AUTH_TYPE": {
+      "LABEL": "Tipo di autenticazione*"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    },
+    "IN_SSH_AUTH_USR_KEYS": {
+      "LABEL": "Chiavi utente autorizzate SSH"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Nome adattatore *"
+    }
+  },
+  "OracleEBS": {
+    "IN_NME": {
+      "LABEL": "Nome *"
+    },
+    "IN_PARTNR_NME": {
+      "LABEL": "Nome del partner *"
+    },
+    "IN_TIME_OUT": {
+      "LABEL": "Tempo scaduto"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling  *"
+    }
+  },
+  "AWS_S3": {
+    "IN_SRC_PATH": {
+      "LABEL": "Percorso di origine"
+    },
+    "IN_BCKT_NME": {
+      "LABEL": "Bucket Name *"
+    },
+    "IN_FL_NME": {
+      "LABEL": "Nome del file"
+    },
+    "IN_ACS_KEY": {
+      "LABEL": "Chiave di accesso*"
+    },
+    "IN_SCRT_KEY": {
+      "LABEL": "Chiave segreta *"
+    },
+    "IN_MAIL_BOX": {
+      "LABEL": "Nella casella di posta"
+    },
+    "IN_POLNG_INTRVL": {
+      "LABEL": "Intervallo di polling *"
+    },
+    "IN_END_PT": {
+      "LABEL": "Punto finale Url"
+    },
+    "IN_REGN": {
+      "LABEL": "Regione"
+    },
+    "IN_CN_TYPE": {
+      "LABEL": "Spinta in entrata"
+    },
+    "OUT_CN_TYPE": {
+      "LABEL": "Tirata in uscita"
+    },
+    "IN_QNAME": {
+      "LABEL": "Queue Name"
+    },
+    "IN_ADPTR_NME": {
+      "LABEL": "Adapter Name"
+    },
+    "IN_FOLDER_NAME": {
+      "LABEL": "Folder Name"
+    },
+    "IN_DEL_COL": {
+      "LABEL": "Elimina dopo la raccolta"
+    }
+  },
+  "CUSTOM_PROTOC0L": {
+    "PRT_NME": {
+      "LABEL": "Custom Protocol Name *"
+    },
+    "PRT_EXT": {
+      "LABEL": "Custom Protocol Extension *"
+    },
+    "AUTH_TYPE": {
+      "LABEL": "Authentication Type *"
+    },
+    "USR_NME": {
+      "LABEL": "Nome utente *"
+    },
+    "PWD": {
+      "LABEL": "Password *"
+    }
+  },
+  "ManagePartnerFields": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Nome del partner"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "Id del partner"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protocollo"
+    },
+    "IN_STATUS": {
+      "LABEL": "Stato"
+    }
+  }
+}

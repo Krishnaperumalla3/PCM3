@@ -1,0 +1,69 @@
+{
+  "CREATE_TITLE": "Partner-/Frontend-Gateway erstellen",
+  "EDIT_TITLE": "Partner/Frontend-Gateway bearbeiten",
+  "CREATE_AS2_MAPPING": "AS2-Zuordnung",
+  "MANAGE_PARTNER": "Partner-/Frontend-Gateway verwalten",
+  "FIELDS": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Partnername *"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "Partner-ID *"
+    },
+    "IN_EMAIL": {
+      "LABEL": "Email *"
+    },
+    "IN_PHONE": {
+      "LABEL": "Telefon *"
+    },
+    "IN_PGP_INFO": {
+      "LABEL": "PGP Info"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protokoll *"
+    },
+    "IN_STATUS": {
+      "LABEL": "Status *"
+    },
+    "IN_ADDR_LINE1": {
+      "LABEL": "Anschrift Zeile 1 "
+    },
+    "IN_ADDR_LINE2": {
+      "LABEL": "Anschrift Zeile 2"
+    },
+    "IN_ORG_NME": {
+      "LABEL": "Organisation"
+    },
+    "IN_PRTR_NME": {
+      "LABEL": "Partner"
+    }
+  },
+  "MODAL": {
+    "TITLE": "As2 Beziehung"
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "PART_NME": "Partnername",
+      "PART_ID": "Partner-ID",
+      "PRTOCOL": "Protokoll",
+      "EMAIL": "Email",
+      "STATUS": "Status"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "einreichen",
+    "CANCEL": "Stornieren",
+    "UPLOAD_CERT": "EXCHANGE CERT HOCHLADEN",
+    "CREATE_RELATION": "Beziehung erstellen",
+    "SEARCH_PRTNR": "Suchpartner",
+    "REST_SEARCH": "Suche zurücksetzen"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Aktivitätsverlauf",
+    "ACTVTY_ON": "Aktivität Ein",
+    "USR_NME": "Nutzername",
+    "ACTVTY": "Aktivität"
+  },
+  "PROTOCOL": "Protokoll",
+  "ACTIVITY": "Aktivität"
+}

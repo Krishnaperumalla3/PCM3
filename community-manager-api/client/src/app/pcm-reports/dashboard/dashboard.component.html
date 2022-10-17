@@ -1,0 +1,91 @@
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h3 class="d-flex align-items-center">
+      <span>Transactions Count Report</span>
+    </h3>
+
+    <mat-card >
+      <form [formGroup]="searchReport" class="form__container">
+        <mat-form-field>
+          <mat-select formControlName="direction" placeholder="Direction">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="Inbound">Inbound</mat-option>
+            <mat-option value="Outbound">Outbound</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="transferType" placeholder="Transfer Type">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="MFT">MFT</mat-option>
+            <mat-option value="DocHandling">DocHandling</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="docType" placeholder="Doc Type">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="EDIFACT">EDIFACT</mat-option>
+            <mat-option value="FLATFILE">FLATFILE</mat-option>
+            <mat-option value="XML">XML</mat-option>
+            <mat-option value="X12">X12</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="status" placeholder="Status">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="Success">Success</mat-option>
+            <mat-option value="Failed">Failed</mat-option>
+            <mat-option value="Reprocessed">Reprocessed</mat-option>
+            <mat-option value="ManualReprocess">ManualReprocess</mat-option>
+            <mat-option value="Repicked">Repicked</mat-option>
+            <mat-option value="Redropped">Redropped</mat-option>
+            <mat-option value="MarkedSuccess">MarkedSuccess</mat-option>
+            <mat-option value="No Action Required">No Action Required</mat-option>
+            <mat-option value="Under Review">Under Review</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Partner" formControlName="partner" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Transaction" formControlName="transaction" />
+        </mat-form-field>
+      </form>
+    </mat-card>
+    <div class="btn-grp sbmt-btn mt-3">
+      <button type="button" class="btn btn-primary" (click)="submit()">
+        SUBMIT
+      </button>
+      <!--      <button type="button" class="btn btn-info" (click)="reset()">RESET</button>-->
+    </div>
+  </mat-card>
+
+  <mat-card class="mt-4" *ngIf="showReport">
+    <mat-card-content >
+      <h4>All Transactions Details</h4>
+      <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'10px'">
+        <mat-grid-tile class="gradient-green">
+          <p>{{hour['count']}}<br>
+            This Hour Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-amber">
+          <p>{{day['count']}}<br>
+          Today Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-brown">
+          <p>{{week['count']}}<br>
+          This Week Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-gray">
+          <p>{{month['count']}}<br>
+          This Month Transactions</p>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </mat-card-content>
+  </mat-card>
+</div>

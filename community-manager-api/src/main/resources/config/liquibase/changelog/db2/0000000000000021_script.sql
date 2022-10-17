@@ -1,0 +1,92 @@
+/*
+ * Copyright (c) 2020 Pragma Edge Inc
+ *
+ * Licensed under the Pragma Edge Inc
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://pragmaedge.com/licenseagreement
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+--------------------------------------------------------
+--  DDL for Table PETPE_CD
+--------------------------------------------------------
+RENAME
+TABLE PETPE_CD TO PETPE_SFG_CD;
+
+CREATE TABLE PETPE_CD
+(
+    PK_ID             VARCHAR(20)  NOT NULL,
+    SUBSCRIBER_TYPE   VARCHAR(5)   NOT NULL,
+    SUBSCRIBER_ID     VARCHAR(20)  NOT NULL,
+    REMOTE_HOST       VARCHAR(255) NOT NULL,
+    REMOTE_PORT       VARCHAR(10)  NOT NULL,
+    REMOTE_USER       VARCHAR(255),
+    REMOTE_PASSWORD   VARCHAR(50),
+    TRANSFER_TYPE     VARCHAR(20),
+    LOCAL_NODE_NAME   VARCHAR(255),
+    REMOTE_NODE_NAME  VARCHAR(255),
+    CODE_PAGE_FROM    VARCHAR(20),
+    CODE_PAGE_TO      VARCHAR(20),
+    LOCAL_XLATE       VARCHAR(255),
+    DCB               VARCHAR(255),
+    SYS_OPTS          VARCHAR(255),
+    SECURITY_PROTOCOL VARCHAR(100),
+    SECURE_PLUS       VARCHAR(100),
+    CA_CERTIFICATE    VARCHAR(100),
+    CIPHER_SUITS      VARCHAR(555),
+    ADAPTER_NAME      VARCHAR(100),
+    POLLING_INTERVAL  VARCHAR(20),
+    IS_ACTIVE         VARCHAR(1)   NOT NULL DEFAULT 'N',
+    IS_HUB_INFO       VARCHAR(1)   NOT NULL DEFAULT 'N',
+    CREATED_BY        VARCHAR(100) NOT NULL,
+    LAST_UPDATED_BY   VARCHAR(100),
+    LAST_UPDATED_DT   TIMESTAMP(6),
+    PRIMARY KEY (PK_ID)
+) IN PCMTBSPACE;
+
+UPDATE PETPE_TRADINGPARTNER
+SET TP_PROTOCOL = 'SFG_CONNECT_DIRECT'
+WHERE TP_PROTOCOL = 'Connect:Direct';
+UPDATE PETPE_APPLICATION
+SET APP_INTEGRATION_PROTOCOL = 'SFG_CONNECT_DIRECT'
+WHERE APP_INTEGRATION_PROTOCOL = 'Connect:Direct';
+COMMIT;
+
+--------------------------------------------------------
+--  DDL for Table PETPE_FTP
+--------------------------------------------------------
+ALTER TABLE PETPE_FTP
+    ALTER COLUMN TRANSFER_TYPE DROP NOT NULL;
+ALTER TABLE PETPE_FTP
+    ADD COLUMN CWD_UP VARCHAR(20);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN QUOTE VARCHAR(255);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SITE VARCHAR(255);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN CONNECTION_TYPE VARCHAR(15);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN MB_DESTINATION VARCHAR(255);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN MB_DESTINATION_LOOKUP VARCHAR(50);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSL_SOCKET VARCHAR(40);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSL_CIPHER VARCHAR(255);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSH_AUTHENTICATION VARCHAR(40);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSH_CIPHER VARCHAR(40);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSH_COMPRESSION VARCHAR(40);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSH_MAC VARCHAR(40);
+ALTER TABLE PETPE_FTP
+    ADD COLUMN SSH_IDENTITY_KEY_ID VARCHAR(255);

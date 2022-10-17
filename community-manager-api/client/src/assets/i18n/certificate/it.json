@@ -1,0 +1,94 @@
+{
+
+  "XCHGE_CRT": {
+    "LABEL": "Certificato di scambio *"
+  },
+  "SIGN_CERT": {
+    "LABEL": "Certificato di firma *"
+  },
+  "IN_CERT_ID": {
+    "LABEL": "ID certificato *"
+  },
+  "IN_UPLD_CRT": {
+    "LABEL": "Carica certificato"
+  },
+  "IN_CA_CERT": {
+    "LABEL": "Certificazione CA"
+  },
+  "IN_CERT_NME": {
+    "LABEL": "Nome del certificato"
+  },
+  "IN_CA_CERT_NME": {
+    "LABEL": "Nome CACert"
+  },
+  "IN_CIPHER_SUITS": {
+    "LABEL": "Cipher Suites"
+  },
+  "IN_USR_IDNT_KY_NME": {
+    "LABEL": "Nome chiave identità utente"
+  },
+  "IN_XCHNGE_CERT_UPLD": {
+    "LABEL": "Exchange Cert Upload"
+  },
+  "IN_KEY_CERT": {
+    "LABEL": "Certificato chiave *"
+  },
+  "IN_PVT_KEY_CERT": {
+    "LABEL": "Password chiave privata *"
+  },
+  "IN_SING_CRT_UPLD": {
+    "LABEL": "Caricamento certificato di firma:"
+  },
+  "IN_XCHANGE_CERT": {
+    "LABEL": "Certificato di scambio"
+  },
+  "IN_EXCERT_NME": {
+    "LABEL": "Nome ExchCert"
+  },
+  "IN_SIGN_CERT": {
+    "LABEL": "Certificato di firma"
+  },
+  "IN_SIGN_CERT_NME": {
+    "LABEL": "SigningCert Name"
+  },
+  "IN_KEY_CERT_PASS": {
+    "LABEL": "Passphrase del certificato chiave"
+  },
+  "IN_SSL_TYPE": {
+    "LABEL": "Tipo SSL *"
+  },
+  "IN_PAYLOAD_SEC": {
+    "LABEL": "Payload Security *"
+  },
+  "IN_ENCRYPT_ALG": {
+    "LABEL": "Algoritmo di crittografia *"
+  },
+  "IN_SIGN_ALG": {
+    "LABEL": "Algoritmo di firma *"
+  },
+  "IN_MDN_REQ": {
+    "LABEL": "MDN richiesto *"
+  },
+  "IN_MDN_TYPE": {
+    "LABEL": "Tipo MDN *"
+  },
+  "IN_MDN_ENCRYPT": {
+    "LABEL": "Crittografia MDN *"
+  },
+  "IN_RECPT_ADDR": {
+    "LABEL": "Ricevuta a indirizzo"
+  },
+  "IN_USR_IDNTY_KY_NME": {
+    "LABEL": "Nome chiave identità utente"
+  },
+  "IN_SSH_AUTH_USR_KEY": {
+    "LABEL": "Chiave utente autorizzata SSH"
+  },
+  "NOTE": "NOTE",
+  "UPLOAD_NOTE_1": "L'importazione controllerà solo il nome dell'azione del flusso di lavoro, non le proprietà.",
+  "UPLOAD_NOTE_2": "Carica il certificato / chiave dati crittografati Base64.",
+  "BUTTONS": {
+    "UPLOAD": "CARICARE",
+    "CLOSE": "Vicina"
+  }
+}

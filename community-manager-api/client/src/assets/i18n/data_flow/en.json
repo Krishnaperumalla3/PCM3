@@ -1,0 +1,232 @@
+{
+  "TITLE": "Build Data Flow",
+  "TABS": {
+    "INBOUND": {
+      "LABEL": "INBOUND File Handling"
+    },
+    "OUTBOUND": {
+      "LABEL": "OUTBOUND File Handling"
+    },
+    "ACTIVITY": {
+      "LABEL": "ACTIVITY",
+      "CONTENT": "ACITVITY HISTORY",
+      "ACTVTY_ON": "Activity On",
+      "USR_NME": "User Name",
+      "ACTVTY": "Activity"
+    }
+  },
+  "LABELS": {
+    "LOADIN": "Loading tabs...",
+    "PRCING_RL_DTL": "Processing Rule Details",
+    "NO_DT_FND": "No flow found",
+    "NO_RSLT_FND": "No results found!"
+  },
+  "FIELDS": {
+    "PRTNR_PRDCR": {
+      "LABEL": "Partner/Frontend Gateway"
+    },
+    "APP_CUST": {
+      "LABEL": "Application/Backend Gateway"
+    }
+  },
+  "MFT": {
+    "IN_FL_NME_REG_EXP": {
+      "LABEL": "File Name_Regular Expression *"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filter"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Add Flow"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "File Name *",
+        "FLTR": "Filter"
+      }
+    }
+  },
+  "DocHandling": {
+    "IN_FLTR": {
+      "LABEL": "Filter"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Document Type *"
+    },
+    "IN_VER": {
+      "LABEL": "Version"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transaction"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Sender Id *"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Receiver Id *"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Add Flow"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "File Name",
+        "DOC_TYPE": "Doc Type *",
+        "VERSION": "Version",
+        "TRNSCTION": "Transaction *",
+        "SNDR_ID": "Sender Id *",
+        "RCVR_ID": "Receiver Id *"
+      }
+    }
+  },
+  "COPY_DATA_FLOW": {
+    "TITLE": "Select Partner and Application Profiles",
+    "IN_BND_LABEL": "Inbound",
+    "OUT_BND_LABEL": "Outbound",
+    "FIELDS": {
+      "IN_SND_ID": {
+        "LABEL": "Sender Id",
+        "REQ_ERR": "Sender Id is required."
+      },
+      "IN_RCR_ID": {
+        "LABEL": "Receiver Id",
+        "REQ_ERR": "Receiver Id is required."
+      }
+    }
+  },
+  "SEARCH_WORKFLOW": {
+    "IN_PRT_NME": {
+      "LABEL": "Partner Name"
+    },
+    "IN_APP_NME": {
+      "LABEL": "Application Name"
+    },
+    "IN_SEQ_TYPE": {
+      "LABEL": "SEQ Type"
+    },
+    "IN_FLW": {
+      "LABEL": "Flow"
+    },
+    "IN_FL_NME": {
+      "LABEL": "FileName"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Doc Type"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transaction"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Sender Id"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "Receiver Id"
+    }
+  },
+  "SRCH_MUL_WRK_FLW": {
+    "TITLE": " Create Flows from multiple dataflows.",
+    "SRCH_TITLE": "Search Flows",
+    "NOTE": "Note: Continues to select with multiple search criteria before you click Next.",
+    "FIELDS": {
+      "INBUND_SNDR_ID": {
+        "LABEL": "Inbound Sender Id"
+      },
+      "INBUN_RCVR_ID": {
+        "LABEL": "Inbound Receiver Id"
+      },
+      "OUTBUND_SNDR_ID": {
+        "LABEL": "Outbound Sender Id"
+      },
+      "OUTBUN_RCVR_ID": {
+        "LABEL": "Outbound Receiver Id"
+      }
+    },
+    "BUTTONS": {
+      "SRCH_WF": "Search dataflows",
+      "RESET_SRCH": "Reset Search",
+      "NEXT": "NEXT",
+      "CANCEL": "CANCEL"
+    },
+    "TABLE": {
+      "COLUMNS": {
+        "SLCT": "Select",
+        "PRTNR_NME": "Partner Name",
+        "APP_NME": "Application Name",
+        "SEQ_TYPE": "SEQ Type",
+        "FLW": "Flow",
+        "FL_NME": "File Name",
+        "DOC_TYPE": "Doc Type",
+        "TRNSACTN": "Transaction",
+        "SNDR_ID": "Sender Id",
+        "RCVR_ID": "Receiver Id"
+      },
+      "NO_RSLT_FND": "No results found !"
+    }
+  },
+  "BUTTONS": {
+    "SRCH_WF": "SEARCH DATAFLOW",
+    "IMPRT_WF": "IMPORT DATAFLOW",
+    "SETUP_WF": "SETUP DATAFLOW",
+    "SETUP_WF_MUL_FLW": "SETUP FROM MULTIPLE FLOWS",
+    "RESET_SERCH": "RESET SEARCH",
+    "EXPRT_WF": "EXPORT DATAFLOW",
+    "CP_WF": "COPY DATAFLOW",
+    "AD_FRM_MUL_FLW": "ADD FROM MULTIPLE FLOWS",
+    "DEL_WF": "DELETE DATAFLOW",
+    "SVE_WF": "SAVE DATAFLOW",
+    "CANCEL": "CANCEL",
+    "UPDATE": "UPDATE"
+  },
+  "RULE": {
+    "TITLE": "Rule Details",
+    "CREATE_TITLE": "Create Rule",
+    "EDIT_TITLE": "Edit Rule",
+    "RULE_PRPTY_DTL": "Rule Property Details",
+    "RULE_NME": "Rule Name",
+    "SERCH_RULE": "Search Rule",
+    "BUS_PROCSS": "Business Process",
+    "HINT": "Use WildCard * for better result.",
+    "FIELDS": {
+      "PROP_1": "PropertyName1",
+      "PROP_2": "PropertyName2",
+      "PROP_3": "PropertyName3",
+      "PROP_4": "PropertyName4",
+      "PROP_5": "PropertyName5",
+      "PROP_6": "PropertyName6",
+      "PROP_7": "PropertyName7",
+      "PROP_8": "PropertyName8",
+      "PROP_9": "PropertyName9",
+      "PROP_10": "PropertyName10",
+      "PROP_11": "PropertyName11",
+      "PROP_12": "PropertyName12",
+      "PROP_13": "PropertyName13",
+      "PROP_14": "PropertyName14",
+      "PROP_15": "PropertyName15",
+      "PROP_16": "PropertyName16",
+      "PROP_17": "PropertyName17",
+      "PROP_18": "PropertyName18",
+      "PROP_19": "PropertyName19",
+      "PROP_20": "PropertyName20",
+      "PROP_21": "PropertyName21",
+      "PROP_22": "PropertyName22",
+      "PROP_23": "PropertyName23",
+      "PROP_24": "PropertyName24",
+      "PROP_25": "PropertyName25"
+    },
+    "MANGE_RULE": {
+      "HEADER": {
+        "RULE": "Rule",
+        "BP_ID": "BP Id"
+      }
+    },
+    "BUTTONS": {
+      "CREATE_RULE": "CREATE RULE",
+      "UPDATE_RULE": "UPDATE RULE",
+      "SRCH_ACTN": "SEARCH ACTION",
+      "RSET_SRCH": "RESET SEARCH",
+      "CANCEL": "CANCEL"
+    }
+  }
+}

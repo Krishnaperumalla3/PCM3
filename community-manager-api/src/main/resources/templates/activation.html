@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>User Activation</title>
+    <link rel="icon" type="image/x-icon"
+          href="https://www.pragmaedge.com/wp-content/uploads/2018/12/Site-Logo-Just-Px2.png">
+</head>
+<body style="text-align: center;
+    margin: 10px;
+    padding: 10px;">
+
+<div th:switch="${#request.getAttribute('type')}">
+    <p th:case="'success'"> Hello! Your Account Activated successfully.
+        <br>
+        Login details has been sent to your Registered E-mail.
+    </p>
+    <p th:case="'fail'"> Hello! Your Account Already Activated. </p>
+    <!--<p th:case="*" th:text=${writer.name}>Other Writer</p>-->
+</div>
+
+<p>Please follow <a th:href="${#request.getAttribute('url')}">CM Login</a></p>
+</body>
+</html>

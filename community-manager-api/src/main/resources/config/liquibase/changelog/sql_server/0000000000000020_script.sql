@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DML for Table PETPE_PEM_TEMP
+--------------------------------------------------------
+CREATE TABLE PETPE_PEM_TEMP
+    ( PROCESS_DOC_PK_ID VARCHAR(30) NOT NULL,
+        SEQ_ID VARCHAR(20) ,
+		PARTNER_PROFILE VARCHAR(30),
+		APPLICATION_PROFILE VARCHAR(30) ,
+		SEQ_TYPE VARCHAR(20) ,
+		FILE_NAME VARCHAR(100) ,
+		FLOW_TYPE VARCHAR(20) ,
+		DOC_TYPE VARCHAR(20) ,
+		SENDER_ID VARCHAR(100) ,
+		RECEIVER_ID VARCHAR(100), 
+		"TRANSACTION" VARCHAR(20), PRIMARY KEY (PROCESS_DOC_PK_ID)
+    );

@@ -1,0 +1,19 @@
+apply plugin: 'org.springframework.boot'
+
+group = 'com.pe.pcm'
+version = '1.0.0'
+
+sourceCompatibility = 1.8
+
+bootJar {
+    mainClassName = 'com.pe.pcm.CommunityManagerApiApplication'
+    manifest {
+        attributes 'MainClass': 'org.springframework.boot.loader.PropertiesLauncher'
+    }
+}
+
+dependencies {
+    implementation project(':community-manager-common')
+    implementation project(':community-manager-repository')
+    implementation project(':community-manager-service')
+}

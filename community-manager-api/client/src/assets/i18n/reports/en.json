@@ -1,0 +1,155 @@
+{
+  "997_OVERDUE_REPORT": "997 Overdue Report",
+  "DATA_FLOW_REPORT": "DataFlow Reports",
+  "TRANS_VAL_REPORT": "Transaction Volume Reports",
+  "DOC_TYPE_REPORT": "Document Type Reports",
+  "PARTNERS_VAL_REPORT": "Partners Volume Reports",
+  "AD_SRC": "Advanced Search",
+  "SFG": "SFG",
+  "SFG_PCD": "SFG+PCD",
+  "PCD": "PCD",
+
+  "FIELDS": {
+    "PARTNER_NAME": {
+      "LABEL": "Partner Name"
+    },
+    "APP_NAME": {
+      "LABEL": "Application Name"
+    },
+    "SEQ_TYPE": {
+      "LABEL": "SEQ Type"
+    },
+    "FLOW": {
+      "LABEL": "Flow"
+    },
+    "FILE_NAME": {
+      "LABEL": "File Name"
+    },
+    "DOC_TYPE": {
+      "LABEL": "Doc Type"
+    },
+    "TRANSACTION": {
+      "LABEL": "Transaction"
+    },
+    "SENDER_ID": {
+      "LABEL": "Sender ID"
+    },
+    "RECEIVER_ID": {
+      "LABEL": "Receiver ID"
+    },
+    "RULE_NAME": {
+      "LABEL": "Rule Name"
+    },
+    "RULE_VALUE": {
+      "LABEL": "Rule Value"
+    },
+    "FILE_ARRIVED_FROM": {
+      "LABEL": "File Arrived From"
+    },
+    "FILE_ARRIVED_TO": {
+      "LABEL": "File Arrived To"
+    },
+    "PARTNER": {
+      "LABEL": "Partner"
+    },
+    "DEST_FILE_NAME": {
+      "LABEL": "Dest.File Name"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "GROUP_COUNT": {
+      "LABEL": "Group Count"
+    },
+    "REPORTS_STARTS_FROM": {
+      "LABEL": "Report Starts from *"
+    },
+    "REPORTS_END_TO": {
+      "LABEL": "Report ends to *"
+    },
+    "DOC_TRANS": {
+      "LABEL": "Doc Trans"
+    },
+    "RULE_PRP_NME": {"LABEL": "Rule Property Name"},
+    "RULE_PRP_VAL": {"LABEL": "Rule Property Value"},
+    "PRODUCER": {"LABEL": "Producer"},
+    "CONSUMER": {"LABEL": "Consumer"},
+    "FILESIZE": {"LABEL": "Filesize"},
+    "TOPPRODUCER": {"LABEL": "Top Producer"},
+    "TOPCONSUMER": {"LABEL": "Top Consumer"},
+    "TOPFILESIZE": {"LABEL": "Top Filesize"},
+    "TOPCHARGEBACK": {"LABEL": "Top Charge back"},
+    "UID": {"LABEL": "UID"},
+    "APP": {"LABEL": "APP"},
+    "BU": {"LABEL": "BU"},
+    "PNODE": {"LABEL": "PNODE"},
+    "SNODE": {"LABEL": "SNODE"}
+  },
+
+
+  "BUTTONS": {
+    "RESET_SEARCH": "RESET SEARCH",
+    "GEN_REPORT": "GENERATE REPORT",
+    "SEARCH": "SEARCH",
+    "EXPORT_ALL_WORKFLOWS": "EXPORT ALL DATAFLOWS",
+    "GEN_DETL": "GENERATE DETAILS"
+  },
+
+
+  "TABLE": {
+    "OVERDUE_COLUMNS": {
+      "FILE_ARRIVED": "File Arrived",
+      "DEST_FILE_NAME": "Dest.File Name",
+      "PARTNER": "Partner",
+      "TRANSACTION": "Transaction",
+      "GS_COUNT": "Gs Count",
+      "SENDER_ID": "Sender Id",
+      "RECEIVER_ID": "Receiver Id",
+      "STATUS": "Status",
+      "OVERDUE": "Overdue"
+    },
+    "DATAFLOW_COLUMNS": {
+      "PARTNER": "Partner",
+      "APPLICATION": "Application",
+      "FLOW": "Flow",
+      "SEQ_TYPE": "Seq Type",
+      "FILE_NAME": "File Name",
+      "DOC_TYPE": "Doc Type",
+      "TRANSACTION": "Transaction",
+      "SENDER_ID": "Sender Id",
+      "RECEIVER_ID": "Receiver Id",
+      "RULE_NAME": "Rule Name",
+      "BP_ID": "Business Process Id",
+      "RP1": "Rule Property1",
+      "RP2": "Rule Property2",
+      "RP3": "Rule Property3",
+      "RP4": "Rule Property4",
+      "RP5": "Rule Property5",
+      "RP6": "Rule Property6",
+      "RP7": "Rule Property7",
+      "RP8": "Rule Property8",
+      "RP9": "Rule Property9",
+      "RP10": "Rule Property10",
+      "RP11": "Rule Property11",
+      "RP12": "Rule Property12",
+      "RP13": "Rule Property13",
+      "RP14": "Rule Property14",
+      "RP15": "Rule Property15",
+      "RP16": "Rule Property16",
+      "RP17": "Rule Property17",
+      "RP18": "Rule Property18",
+      "RP19": "Rule Property19",
+      "RP20": "Rule Property20",
+      "RP21": "Rule Property21",
+      "RP22": "Rule Property22",
+      "RP23": "Rule Property23",
+      "RP24": "Rule Property24",
+      "RP25": "Rule Property25"
+    }
+  },
+  "NOTES": {
+    "DF_NOTE": {
+      "NOTE": "Note: Export All WorkFlows :- Download will take several minutes based on number of setups."
+    }
+  }
+}

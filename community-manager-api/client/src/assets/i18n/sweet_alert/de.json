@@ -1,0 +1,223 @@
+{
+  "ACTN_STATUS": "Aktionsstatus",
+  "ERROR": {
+    "TITLE": "Error"
+  },
+  "CANCEL": {
+    "TITLE": "Bist du sicher?",
+    "BODY": "Sie möchten stornieren?",
+    "CNFRM_TXT": "Ja, stornieren Sie es!"
+  },
+  "IN_VALID": {
+    "TITLE": "Ungültiges Formular",
+    "BODY": "(*) Feld sind erforderlich, um einzureichen."
+  },
+  "IN_VALID_PHONE": {
+    "TITLE": "Ungültiges Telefon",
+    "BODY": "Telefonnummer nicht gültig."
+  },
+  "FL_TRANSFER": {
+    "SERCH": {
+      "TITLE": "Datei Übertragung"
+    },
+    "FL_STS": {
+      "TXT": "Möchten Sie den Dateiprozess wirklich ändern?"
+    }
+  },
+  "APP": {
+    "TITLE": "Anwendung",
+    "INVLD_EML": {
+      "TITLE": "E-Mail-ID",
+      "BODY": "E-Mail-ID nicht gültig."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Partnerformular",
+      "BODY": "Telefonnummer nicht gültig."
+    },
+    "DIREC": {
+      "TITLE": "Partner",
+      "BODY": "Mailbox oder Verzeichnisfeld sollte mit / beginnen."
+    },
+    "ACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diese Anwendung aktivieren?",
+      "CNFRM_TXT": "Ja, aktiviere es"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diese Anwendung deaktivieren?",
+      "CNFRM_TXT": "Ja, deaktivieren Sie es"
+    },
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diese Anwendung löschen?",
+      "CNFRM_TXT": "Ja, löschen Sie es",
+      "SI_TXT": "in SI löschen"
+    }
+  },
+  "ENVELOP": {
+    "TITLE": "Briefumschlag"
+  },
+  "SETTINGS": {
+    "CO_TITLE": "Korrelation",
+    "FILE_JOB_SCH": "Dateiauftragszeitplan"
+  },
+  "PARTNER": {
+    "TITLE": "Partner",
+    "INVLD_EML": {
+      "TITLE": "Ungültige E-Mail",
+      "BODY": "E-Mail-ID nicht gültig."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Ungültiges Telefon",
+      "BODY": "Telefonnummer nicht gültig."
+    },
+    "DIREC": {
+      "TITLE": "Partner",
+      "BODY": "Mailbox oder Verzeichnisfeld sollte mit / beginnen."
+    },
+    "ACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Partner aktivieren?",
+      "CNFRM_TXT": "Ja, aktiviere es!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Partner deaktivieren?",
+      "CNFRM_TXT": "Ja, deaktiviere es!"
+    },
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Partner löschen?",
+      "SI_TXT": "in SI löschen",
+      "CNFRM_TXT": "Ja, lösche es!"
+    }
+  },
+  "DT_FLW": {
+    "SERCH": {
+      "TITLE": "Datenflussbericht"
+    },
+    "RULE": {
+      "TITLE": "Regel"
+    },
+    "MAND_ERR": {
+      "TITLE": "Erstellen Sie mehrere Datenfluss",
+      "BODY": "* Pflichtfelder sind erforderlich"
+    },
+    "SLCT_ATLEAST": {
+      "TITLE": "Erstellen Sie mehrere Datenfluss",
+      "BODY": "Wählen Sie mindestens einen Flow aus"
+    },
+    "WF_TITLE": "Arbeitsablauf",
+    "SERCH_WF": {
+      "TITLE": "Datenfluss suchen",
+      "BODY": "Ups ..., etwas ist schief gelaufen, bitte versuchen Sie es nach einiger Zeit."
+    },
+    "DELETE_FLW": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Flow löschen?",
+      "CNFRM_TXT": "Löschen"
+    },
+    "COPY_WF": {
+      "TITLE": "Datenfluss kopieren",
+      "BODY": "Datenfluss erfolgreich kopiert, klicken Sie zum Speichern auf 'Datenfluss speichern'!"
+    },
+    "EXP_WF": {
+      "TITLE": "Exportierter Datenfluss",
+      "BODY": "Bitte laden Sie den exportierten Workflow herunter.",
+      "BTN_CA": "Stornieren",
+      "BTN_DW": "Datenfluss HERUNTERLADEN"
+    },
+    "IMP_WF": {
+      "TITLE": "Datenfluss importieren",
+      "BODY": "Datei wurde erfolgreich importiert"
+    },
+    "CANCEL_WF": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten stornieren?",
+      "CNFRM": "Ja, stornieren Sie es!"
+    }
+  },
+  "WRK_FLW": {
+    "TITLE": "Datenfluss exportieren",
+    "ERROR": {
+      "BODY": "Beim Importieren ist ein Fehler aufgetreten."
+    },
+    "SUCCESS": {
+      "BODY": "Datei wurde erfolgreich exportiert."
+    }
+  },
+  "CERTIFICATE": {
+    "TITLE": "Zertifikat",
+    "WARN": {
+      "BODY": "(*) Zum Erstellen sind Felder erforderlich"
+    }
+  },
+  "OVR_DUE": {
+    "SERCH": {
+      "TITLE": "Überfälliger Bericht"
+    }
+  },
+  "LOGIN": {
+    "UN_AUTH": {
+      "TITLE": "Nicht berechtigt",
+      "BODY": "Sie sind nicht zu diesem Service berechtigt."
+    },
+    "PWD": {
+      "TITLE": "Passwort"
+    },
+    "FGRT_PWD": {
+      "TITLE": "Passwort vergessen"
+    },
+    "UPD_PWD": {
+      "TITLE": "Passwort erneuern"
+    },
+    "CHNGE_PWD": {
+      "TITLE": "Ändere das Passwort",
+      "BODY": "Neues und altes Passwort sollten nicht identisch sein."
+    }
+  },
+  "RULE": {
+    "TITLE": "Regel",
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diese Regel löschen?",
+      "CNFRM_TXT": "Ja, lösche es!"
+    }
+  },
+  "USER": {
+    "TITLE": "User",
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Benutzer löschen?",
+      "CNFRM_TXT": "Ja, lösche es!"
+    },
+    "ACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diesen Benutzer aktivieren?",
+      "CNFRM_TXT": "Ja, aktiviere es!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "vuoi disattivare questo utente?",
+      "CNFRM_TXT": "Ja, deaktiviere es!"
+    }
+  },
+  "GROUP": {
+    "TITLE": "Gruppe",
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sie möchten diese Gruppe löschen?",
+      "CNFRM_TXT": "Ja, lösche es!"
+    }
+  },
+  "POLLING_INT": {
+    "TITLE": "Polling Interval",
+    "DELETE": {
+      "TITLE": "Bist du sicher?",
+      "BODY": "Sind Sie sicher, dass Sie dieses Abfrageintervall löschen möchten?",
+      "CNFRM_TXT": "Stornieren"
+    }
+
+  }
+}

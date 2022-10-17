@@ -1,0 +1,232 @@
+{
+  "ACTN_STATUS": "Action Status",
+  "ERROR": {
+    "TITLE": "Error"
+  },
+  "CANCEL": {
+    "TITLE": "Are you sure ?",
+    "BODY": "you want to cancel ?",
+    "CNFRM_TXT": "Yes, cancel it!"
+  },
+  "IN_VALID": {
+    "TITLE": "Invalid Form",
+    "BODY": "(*) field are required to submit."
+  },
+  "IN_VALID_PHONE": {
+    "TITLE": "Invalid Phone",
+    "BODY": "Phone Number not valid."
+  },
+  "FL_TRANSFER": {
+    "SERCH": {
+      "TITLE": "File Transfer"
+    },
+    "FL_STS": {
+      "TXT": "Are you sure want to change file process?"
+    }
+  },
+  "APP": {
+    "TITLE": "Application",
+    "INVLD_EML": {
+      "TITLE": "Email Id",
+      "BODY": "Email Id not valid."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Partner Form",
+      "BODY": "Phone Number not valid."
+    },
+    "DIREC": {
+      "TITLE": "Partner",
+      "BODY": "Mailbox or directory field should start with /."
+    },
+    "ACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to activate this application?",
+      "CNFRM_TXT": "Yes, activate it"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to deactivate this application?",
+      "CNFRM_TXT": "Yes, deactivate it",
+      "DELETE": {
+        "TITLE": "Are you sure?",
+        "BODY": "you want to delete this application?",
+        "CNFRM_TXT": "Yes, delete it"
+      }
+    },
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this application?",
+      "CNFRM_TXT": "Yes, delete it!",
+      "USR_TXT": "delete user",
+      "MB_TXT": "delete mailboxes",
+      "SI_TXT": "delete in SI"
+    }
+  },
+  "ENVELOP": {
+    "TITLE": "Envelope"
+  },
+  "SETTINGS": {
+    "CO_TITLE": "Correlation",
+    "FILE_JOB_SCH": "File Job Schedule"
+  },
+  "PARTNER": {
+    "TITLE": "Partner",
+    "INVLD_EML": {
+      "TITLE": "Invalid Email",
+      "BODY": "Email Id not valid."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Invalid phone",
+      "BODY": "Phone Number not valid."
+    },
+    "DIREC": {
+      "TITLE": "Partner",
+      "BODY": "Mailbox or directory field should start with /."
+    },
+    "ACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to activate this partner?",
+      "CNFRM_TXT": "Yes, activate it!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to deactivate this partner?",
+      "CNFRM_TXT": "Yes, deactivate it!"
+    },
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this partner?",
+      "SI_TXT": "delete in SI",
+      "CNFRM_TXT": "Yes, delete it!",
+      "USR_TXT": "delete user",
+      "MB_TXT": "delete mailboxes"
+    }
+  },
+  "DT_FLW": {
+    "SERCH": {
+      "TITLE": "Data Flow Report"
+    },
+    "RULE": {
+      "TITLE": "Rule"
+    },
+    "MAND_ERR": {
+      "TITLE": "Create Multiple DataFlow",
+      "BODY": "*mandatory fields are required"
+    },
+    "SLCT_ATLEAST": {
+      "TITLE": "Create Multiple DataFlow",
+      "BODY": "Select at lease one flow"
+    },
+    "WF_TITLE": "Dataflow",
+    "SERCH_WF": {
+      "TITLE": "Search Dataflow",
+      "BODY": "Oops..., Something went wrong please try after sometime."
+    },
+    "DELETE_FLW": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this Flow?",
+      "CNFRM_TXT": "Delete"
+    },
+    "COPY_WF": {
+      "TITLE": "Copy Dataflow",
+      "BODY": "Data flow copied successfully, please click on 'Save Dataflow' to save !"
+    },
+    "EXP_WF": {
+      "TITLE": "Exported Dataflow",
+      "BODY": "Please download exported Dataflow.",
+      "BTN_CA": "CANCEL",
+      "BTN_DW": "DOWNLOAD DATAFLOW"
+    },
+    "IMP_WF": {
+      "TITLE": "Import Dataflow",
+      "BODY": "File got imported successfully"
+    },
+    "CANCEL_WF": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to cancel?",
+      "CNFRM": "Yes, cancel it!"
+    }
+  },
+  "WRK_FLW": {
+    "TITLE": "Export Dataflow",
+    "ERROR": {
+      "BODY": "Error occured while importing."
+    },
+    "SUCCESS": {
+      "BODY": "File got exported successfully."
+    }
+  },
+  "CERTIFICATE": {
+    "TITLE": "Certificate",
+    "WARN": {
+      "BODY": "(*) Fields are required to create"
+    }
+  },
+  "OVR_DUE": {
+    "SERCH": {
+      "TITLE": "Overdue Report"
+    }
+  },
+  "LOGIN": {
+    "UN_AUTH": {
+      "TITLE": "Not Authorized",
+      "BODY": "You are not authorized this service."
+    },
+    "PWD": {
+      "TITLE": "Password"
+    },
+    "FGRT_PWD": {
+      "TITLE": "Forgot Password"
+    },
+    "UPD_PWD": {
+      "TITLE": "Update Password"
+    },
+    "CHNGE_PWD": {
+      "TITLE": "Change Password",
+      "BODY": "New and Old Password should not be same."
+    }
+  },
+  "RULE": {
+    "TITLE": "Rule",
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this rule?",
+      "CNFRM_TXT": "Yes, delete it!"
+    }
+  },
+  "USER": {
+    "TITLE": "User",
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this user?",
+      "CNFRM_TXT": "Yes, delete it!"
+    },
+    "ACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to activate this user?",
+      "CNFRM_TXT": "Yes, activate it!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to deactivate this user?",
+      "CNFRM_TXT": "Yes, deactivate it!"
+    }
+  },
+  "GROUP": {
+    "TITLE": "Group",
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "you want to delete this group?",
+      "CNFRM_TXT": "Yes, delete it!"
+    }
+  },
+  "POLLING_INT": {
+    "TITLE": "Polling Interval",
+    "DELETE": {
+      "TITLE": "Are you sure?",
+      "BODY": "Are you sure that you want to delete this Polling Interval?",
+      "CNFRM_TXT": "CANCEL"
+    }
+
+  }
+}

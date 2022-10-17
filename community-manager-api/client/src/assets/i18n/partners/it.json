@@ -1,0 +1,69 @@
+{
+  "CREATE_TITLE": "Crea partner / gateway frontend",
+  "EDIT_TITLE": "Modifica partner/gateway frontend",
+  "CREATE_AS2_MAPPING": "Mappatura AS2",
+  "MANAGE_PARTNER": "Gestisci partner/gateway frontend",
+  "FIELDS": {
+    "IN_PARTNR_NME": {
+      "LABEL": "Nome del partner *"
+    },
+    "IN_PARTNR_ID": {
+      "LABEL": "Id del partner *"
+    },
+    "IN_EMAIL": {
+      "LABEL": "E-mail *"
+    },
+    "IN_PHONE": {
+      "LABEL": "Telefono *"
+    },
+    "IN_PGP_INFO": {
+      "LABEL": "Informazioni PGP"
+    },
+    "IN_PROTOCOL": {
+      "LABEL": "Protocollo *"
+    },
+    "IN_STATUS": {
+      "LABEL": "Stato *"
+    },
+    "IN_ADDR_LINE1": {
+      "LABEL": "Indirizzo Linea 1 "
+    },
+    "IN_ADDR_LINE2": {
+      "LABEL": "indirizzo 2"
+    },
+    "IN_ORG_NME": {
+      "LABEL": "Organizzazione"
+    },
+    "IN_PRTR_NME": {
+      "LABEL": "Compagno"
+    }
+  },
+  "MODAL": {
+    "TITLE": "Relazione As2"
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "PART_NME": "Nome del partner",
+      "PART_ID": "Id del partner",
+      "PRTOCOL": "Protocollo",
+      "EMAIL": "E-mail",
+      "STATUS": "Stato"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "Invia",
+    "CANCEL": "Annulla",
+    "UPLOAD_CERT": "CARICA EXCH CERT",
+    "CREATE_RELATION": "Crea relazione",
+    "SEARCH_PRTNR": "Cerca partner",
+    "REST_SEARCH": "Reimposta ricerca"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Cronologia attività",
+    "ACTVTY_ON": "Attività attiva",
+    "USR_NME": "Nome utente",
+    "ACTVTY": "Attività"
+  },
+  "PROTOCOL": "Protocollo",
+  "ACTIVITY": "Attività"
+}

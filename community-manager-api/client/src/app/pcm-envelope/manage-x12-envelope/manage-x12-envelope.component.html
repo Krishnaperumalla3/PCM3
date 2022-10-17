@@ -1,0 +1,88 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<mat-card class="pcm-content centralize partner">
+  <form [formGroup]="form">
+
+    <mat-card class="my-3">
+      <h2 class="d-flex align-items-center mb-3">
+        <span>Manage X12 Envelope</span>
+      </h2>
+      <div class="container__formView p-3">
+        <section class="form__container mt-2 ">
+          <ng-container *ngFor="let field of formFields">
+            <div class="field-container" [ngSwitch]="field.inputType">
+              <div *ngSwitchCase="'pcm-text'">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="{{ field.placeholder }}"
+                    formControlName="{{ field.formControlName }}"
+                    [required]="field.required"
+                  />
+                </mat-form-field>
+              </div>
+              <div *ngSwitchCase="'pcm-textarea'">
+                <mat-form-field>
+                <textarea
+                  matInput
+                  placeholder="{{ field.placeholder }}"
+                  formControlName="{{ field.formControlName }}"
+                  [required]="field.required"
+                ></textarea>
+                </mat-form-field>
+              </div>
+              <div *ngSwitchCase="'pcm-select'">
+                <mat-form-field>
+                  <mat-select
+                    placeholder="{{ field.placeholder }}"
+                    formControlName="{{ field.formControlName }}"
+                    [required]="field.required"
+                  >
+                    <mat-option value=""><i>Select</i></mat-option>
+                    <mat-option
+                      *ngFor="let opt of field.options"
+                      [value]="opt.value"
+                    >{{ opt.label }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </section>
+      </div>
+
+      <div class="btn-grp sbmt-btn">
+        <button type="button" class="btn btn-primary" (click)="searchManageEnvelopes(form)">
+          Search
+        </button>
+        <button type="button" class="btn btn-info" (click)="resetForm()">Reset</button>
+      </div>
+    </mat-card>
+  </form>
+  <mat-card *ngIf="showResults" class="mt-3">
+    <app-pcm-table (columnsChanged)="columnsChanged($event)" (pagination)="pagination($event)"
+                   (resStatus)="resFromTable($event)" (sortChange)="sort($event)"
+                   [actionMenu]="actionButtons" [currentPage]="currentPage"
+                   [dataSource]="searchResults" [displayedColumns]="displayedColumns"
+                   [headerColumns]="headerColumns" [page]="'manage envelop'"
+                   [serachTblConfigRef]="serachTblConfigRef" [searchTblConfig]="serachTblConfig" [size]="qryParams.size"
+                   [sortBy]='sortBy'
+                   [sortDir]='sortDir' [totalElements]='totalElements' [totalPages]='totalPages'>
+    </app-pcm-table>
+  </mat-card>
+</mat-card>

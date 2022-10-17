@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: true
+        id:
+          new_generator_mappings: true
+jwt:
+  secretkey:  CACE9E5A149ED201C4033C1A1E02C9BE
+si:
+  api:
+    username:
+    password:
+    baseUrl:

@@ -1,0 +1,155 @@
+{
+  "997_OVERDUE_REPORT": "Relatório de Atraso 997",
+  "DATA_FLOW_REPORT": "Relatórios DataFlow",
+  "TRANS_VAL_REPORT": "Relatórios DataFlow",
+  "DOC_TYPE_REPORT": "Relatórios de tipo de documento",
+  "PARTNERS_VAL_REPORT": "Relatórios de volume de parceiros",
+  "AD_SRC": "Pesquisa Avançada",
+  "SFG": "SFG",
+  "SFG_PCD": "SFG+PCD",
+  "PCD": "PCD",
+
+  "FIELDS": {
+    "PARTNER_NAME": {
+      "LABEL": "Nome do Parceiro"
+    },
+    "APP_NAME": {
+      "LABEL": "Nome da Aplicação"
+    },
+    "SEQ_TYPE": {
+      "LABEL": "Tipo SEQ"
+    },
+    "FLOW": {
+      "LABEL": "Fluxo"
+    },
+    "FILE_NAME": {
+      "LABEL": "Nome do arquivo"
+    },
+    "DOC_TYPE": {
+      "LABEL": "Tipo de Documento"
+    },
+    "TRANSACTION": {
+      "LABEL": "Transação"
+    },
+    "SENDER_ID": {
+      "LABEL": "ID do remetente"
+    },
+    "RECEIVER_ID": {
+      "LABEL": "ID do receptor"
+    },
+    "RULE_NAME": {
+      "LABEL": "Nome da regra"
+    },
+    "RULE_VALUE": {
+      "LABEL": "Valor da regra"
+    },
+    "FILE_ARRIVED_FROM": {
+      "LABEL": "Arquivo recebido de"
+    },
+    "FILE_ARRIVED_TO": {
+      "LABEL": "Arquivo chegou a"
+    },
+    "PARTNER": {
+      "LABEL": "Parceiro"
+    },
+    "DEST_FILE_NAME": {
+      "LABEL": "Dest.File Name"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "GROUP_COUNT": {
+      "LABEL": "Contagem de Grupo"
+    },
+    "REPORTS_STARTS_FROM": {
+      "LABEL": "O relatório começa em *"
+    },
+    "REPORTS_END_TO": {
+      "LABEL": "Relatório termina em *"
+    },
+    "DOC_TRANS": {
+      "LABEL": "Doc Trans"
+    },
+    "RULE_PRP_NME": {"LABEL": "Nome da propriedade da regra"},
+    "RULE_PRP_VAL": {"LABEL": "Valor da propriedade da regra"},
+
+    "PRODUCER": {"LABEL": "Produtor"},
+    "CONSUMER": {"LABEL": "Consumidor"},
+    "FILESIZE": {"LABEL": "Filesize"},
+    "TOPPRODUCER": {"LABEL": "Produtor-superior"},
+    "TOPCONSUMER": {"LABEL": "Melhor consumidor"},
+    "TOPFILESIZE": {"LABEL": "Top Filesize"},
+    "TOPCHARGEBACK": {"LABEL": "Top Charge de volta"},
+    "UID": {"LABEL": "UID"},
+    "APP": {"LABEL": "APLICAÇÃO"},
+    "BU": {"LABEL": "BU"},
+    "PNODE": {"LABEL": "PNODE"},
+    "SNODE": {"LABEL": "SNODE"}
+  },
+
+
+  "BUTTONS": {
+    "RESET_SEARCH": "Reiniciar pesquisa",
+    "GEN_REPORT": "GERAR RELATÓRIO",
+    "SEARCH": "PROCURAR",
+    "EXPORT_ALL_WORKFLOWS": "EXPORTAR TODOS OS FLUXOS DE DADOS"
+  },
+
+
+  "TABLE": {
+    "OVERDUE_COLUMNS": {
+      "FILE_ARRIVED": "Chegou o arquivo",
+      "DEST_FILE_NAME": "Dest.File Name",
+      "PARTNER": "Parceiro",
+      "TRANSACTION": "Transação",
+      "GS_COUNT": "Contagem de Gs",
+      "SENDER_ID": "ID do remetente",
+      "RECEIVER_ID": "Id do receptor",
+      "STATUS": "Status",
+      "OVERDUE": "Em atraso"
+    },
+    "DATAFLOW_COLUMNS": {
+      "PARTNER": "Parceiro",
+      "APPLICATION": "Inscrição",
+      "FLOW": "Fluxo",
+      "SEQ_TYPE": "Tipo Seq",
+      "FILE_NAME": "Nome do arquivo",
+      "DOC_TYPE": "Tipo de Documento",
+      "TRANSACTION": "Transação",
+      "SENDER_ID": "ID do remetente",
+      "RECEIVER_ID": "Id do receptor",
+      "RULE_NAME": "Nome da regra",
+      "BP_ID": "Id do Processo de Negócios",
+      "RP1": "Propriedade da regra1",
+      "RP2": "Propriedade da regra2",
+      "RP3": "Propriedade da regra3",
+      "RP4": "Propriedade da regra4",
+      "RP5": "Propriedade da regra5",
+      "RP6": "Propriedade da regra6",
+      "RP7": "Propriedade da regra7",
+      "RP8": "Propriedade da regra8",
+      "RP9": "Propriedade da regra9",
+      "RP10": "Propriedade da regra10",
+      "RP11": "Propriedade da regra11",
+      "RP12": "Propriedade da regra12",
+      "RP13": "Propriedade da regra13",
+      "RP14": "Propriedade da regra14",
+      "RP15": "Propriedade da regra15",
+      "RP16": "Propriedade da regra16",
+      "RP17": "Propriedade da regra17",
+      "RP18": "Propriedade da regra18",
+      "RP19": "Propriedade da regra19",
+      "RP20": "Propriedade da regra20",
+      "RP21": "Propriedade da regra21",
+      "RP22": "Propriedade da regra22",
+      "RP23": "Propriedade da regra23",
+      "RP24": "Propriedade da regra24",
+      "RP25": "Propriedade da regra25"
+    }
+  },
+  "NOTES": {
+    "DF_NOTE": {
+      "NOTE": "Nota: Exportar todos os fluxos de trabalho: - O download levará vários minutos com base no número de configurações."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+    "CREATE_TITLE": "Create Partner / Frontend Gateway",
+    "EDIT_TITLE": "Edit Partner / Frontend Gateway",
+    "CREATE_AS2_MAPPING": "AS2 Mapping",
+    "MANAGE_PARTNER": "Manage Partner / Frontend Gateway",
+    "FIELDS": {
+        "IN_PARTNR_NME": {
+            "LABEL": "Partner Name *"
+        },
+        "IN_PARTNR_ID": {
+            "LABEL": "Partner Id *"
+        },
+        "IN_EMAIL": {
+            "LABEL": "Email *"
+        },
+        "IN_PHONE": {
+            "LABEL": "Phone *"
+        },
+        "IN_PGP_INFO": {
+            "LABEL": "PGP Info"
+        },
+        "IN_PROTOCOL": {
+            "LABEL": "Protocol *"
+        },
+        "IN_STATUS": {
+            "LABEL": "Status *"
+        },
+        "IN_ADDR_LINE1": {
+            "LABEL": "Address Line 1 "
+        },
+        "IN_ADDR_LINE2": {
+            "LABEL": "Address Line 2"
+        },
+        "IN_ORG_NME": {
+            "LABEL": "Organization"
+        },
+        "IN_PRTR_NME": {
+            "LABEL": "Partner"
+        }
+    },
+    "MODAL": {
+        "TITLE": "As2 Relation"
+    },
+    "TABLE": {
+        "COLUMNS": {
+            "PART_NME": "Partner Name",
+            "PART_ID": "Partner Id",
+            "PRTOCOL": "Protocol",
+            "EMAIL": "Email",
+            "STATUS": "Status"
+        }
+    },
+    "BUTTONS": {
+        "SUBMIT": "Submit",
+        "CANCEL": "Cancel",
+        "UPLOAD_CERT": "UPLOAD EXCH CERT",
+        "CREATE_RELATION": "Create Relation",
+        "SEARCH_PRTNR": "Search Partner",
+        "REST_SEARCH": "Reset Search"
+    },
+    "ACTIVITY_HISTORY": {
+      "TITLE": "Activity History",
+      "ACTVTY_ON": "Activity On",
+      "USR_NME": "User Name",
+      "ACTVTY": "Activity"
+    },
+    "PROTOCOL": "Protocol",
+    "ACTIVITY": "Activity"
+}

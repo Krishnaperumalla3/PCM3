@@ -1,0 +1,57 @@
+{
+    "CREATE_TITLE": "Create Application / Backend Gateway",
+    "EDIT_TITLE": "Edit Application / Backend Gateway",
+    "MANGE_TITLE": "Manage Application / Backend Gateway",
+    "FIELDS": {
+        "APP_NME_REQ": {
+            "LABEL": "Application Name *"
+        } ,
+        "APP_ID_REQ": {
+            "LABEL": "Application Id *"
+        } ,
+        "EMAIL_REQ": {
+            "LABEL": "Email *"
+        } ,
+        "PHONE_REQ": {
+            "LABEL": "Phone *"
+        } ,
+        "PROTOCOL_REQ": {
+            "LABEL": "Protocol *"
+        } ,
+        "APP_NME": {
+            "LABEL": "Application Name"
+        } ,
+        "APP_ID": {
+            "LABEL": "Application Id"
+        } ,
+        "PROTOCOL": {
+            "LABEL": "Protocol"
+        } ,
+        "STATUS": {
+            "LABEL": "Status"
+        }
+    },
+    "TABLE": {
+        "COLUMNS": {
+            "APP_NME": "Application Name",
+            "APP_ID": "Application Id",
+            "PRTOCOL": "Protocol",
+            "EMAIL": "Email",
+            "STATUS": "App Status"
+        }
+    },
+    "BUTTONS": {
+        "SUBMIT": "Submit",
+        "CANCEL": "Cancel",
+        "SEARCH_APP": "Search Application",
+        "REST_SEARCH": "Reset Search"
+    },
+    "ACTIVITY_HISTORY": {
+        "TITLE": "Activity History",
+        "ACTVTY_ON": "Activity On",
+        "USR_NME": "User Name",
+        "ACTVTY": "Activity"
+    },
+    "PROTOCOL": "Protocol",
+    "ACTIVITY": "Activity"
+}

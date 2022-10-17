@@ -1,0 +1,127 @@
+/*
+ *
+ *  * Copyright (c) 2020 Pragma Edge Inc
+ *  *
+ *  * Licensed under the Pragma Edge Inc
+ *  * you may not use this file except in compliance with the License.
+ *  * You may obtain a copy of the License at
+ *  *
+ *  * https://pragmaedge.com/licenseagreement
+ *  *
+ *  * Unless required by applicable law or agreed to in writing, software
+ *  * distributed under the License is distributed on an "AS IS" BASIS,
+ *  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  * See the License for the specific language governing permissions and
+ *  * limitations under the License.
+ *
+ *
+ */
+
+--------------------------------------------------------
+--  DDL STATEMENTS FOR PETPE_TRANSFERINFO_STAGING
+--------------------------------------------------------
+
+CREATE TABLE PETPE_TRANSFERINFO_STAGING
+(
+    SEQID                NUMBER(11, 0) NOT NULL ENABLE,
+    FILEARRIVED          TIMESTAMP(6),
+    FLOWINOUT            VARCHAR2(120),
+    TYPEOFTRANSFER       VARCHAR2(100),
+    SENDERID             VARCHAR2(255),
+    RECIVERID            VARCHAR2(255),
+    APPLICATION          VARCHAR2(100),
+    APPINTSTATUS         VARCHAR2(100),
+    PARTNERACKSTATUS     VARCHAR2(100),
+    SRCPROTOCOL          VARCHAR2(100),
+    SRCFILENAME          VARCHAR2(255),
+    SRCARCFILELOC        VARCHAR2(500),
+    DESTFILENAME         VARCHAR2(255),
+    DESTARCFILELOC       VARCHAR2(500),
+    DESTPROTOCOL         VARCHAR2(100),
+    DOCTYPE              VARCHAR2(100),
+    PICKBPID             VARCHAR2(100),
+    COREBPID             VARCHAR2(100),
+    DELIVERYBPID         VARCHAR2(100),
+    STATUS               VARCHAR2(100),
+    ERRORSTATUS          VARCHAR2(500),
+    ADVERRORSTATUS       VARCHAR2(300),
+    PARTNER              VARCHAR2(100),
+    DOCTRANS             VARCHAR2(255),
+    CORRELATION_VALUE_1  CLOB,
+    CORRELATION_VALUE_2  CLOB,
+    CORRELATION_VALUE_3  CLOB,
+    CORRELATION_VALUE_4  CLOB,
+    CORRELATION_VALUE_5  CLOB,
+    CORRELATION_VALUE_6  CLOB,
+    CORRELATION_VALUE_7  CLOB,
+    CORRELATION_VALUE_8  CLOB,
+    CORRELATION_VALUE_9  CLOB,
+    CORRELATION_VALUE_10 CLOB,
+    CORRELATION_VALUE_11 CLOB,
+    CORRELATION_VALUE_12 CLOB,
+    CORRELATION_VALUE_13 CLOB,
+    CORRELATION_VALUE_14 CLOB,
+    CORRELATION_VALUE_15 CLOB,
+    CORRELATION_VALUE_16 CLOB,
+    CORRELATION_VALUE_17 CLOB,
+    CORRELATION_VALUE_18 CLOB,
+    CORRELATION_VALUE_19 CLOB,
+    CORRELATION_VALUE_20 CLOB,
+    CORRELATION_VALUE_21 CLOB,
+    CORRELATION_VALUE_22 CLOB,
+    CORRELATION_VALUE_23 CLOB,
+    CORRELATION_VALUE_24 CLOB,
+    CORRELATION_VALUE_25 CLOB,
+    TRANSFILE            VARCHAR2(200),
+    STATUS_COMMENTS      VARCHAR2(500),
+    IS_ENCRYPTED         VARCHAR2(1),
+    CORRELATION_VALUE_26 CLOB,
+    CORRELATION_VALUE_27 CLOB,
+    CORRELATION_VALUE_28 CLOB,
+    CORRELATION_VALUE_29 CLOB,
+    CORRELATION_VALUE_30 CLOB,
+    CORRELATION_VALUE_31 CLOB,
+    CORRELATION_VALUE_32 CLOB,
+    CORRELATION_VALUE_33 CLOB,
+    CORRELATION_VALUE_34 CLOB,
+    CORRELATION_VALUE_35 CLOB,
+    CORRELATION_VALUE_36 CLOB,
+    CORRELATION_VALUE_37 CLOB,
+    CORRELATION_VALUE_38 CLOB,
+    CORRELATION_VALUE_39 CLOB,
+    CORRELATION_VALUE_40 CLOB,
+    CORRELATION_VALUE_41 CLOB,
+    CORRELATION_VALUE_42 CLOB,
+    CORRELATION_VALUE_43 CLOB,
+    CORRELATION_VALUE_44 CLOB,
+    CORRELATION_VALUE_45 CLOB,
+    CORRELATION_VALUE_46 CLOB,
+    CORRELATION_VALUE_47 CLOB,
+    CORRELATION_VALUE_48 CLOB,
+    CORRELATION_VALUE_49 CLOB,
+    CORRELATION_VALUE_50 CLOB,
+    ISA_CTL              VARCHAR2(15),
+    GS_CTL               VARCHAR2(15),
+    ST_CTL               VARCHAR2(15),
+    FA_REQ               VARCHAR2(1),
+    SEG_CNT              VARCHAR2(9),
+    APP_TRAN_NUM         VARCHAR2(50),
+    APP_FA               VARCHAR2(15),
+    XREF_NAME            VARCHAR2(30),
+    XREF_LOOKUP          VARCHAR2(15),
+    SRC_CHAR_CNT         VARCHAR2(20),
+    TP_ISA_ID            VARCHAR2(50),
+    MY_ISA_ID            VARCHAR2(50),
+    APP_FA_STUS          VARCHAR2(15),
+    APP_FA_DTM           VARCHAR2(15),
+    DST_CHAR_CNT         VARCHAR2(20),
+    DST_PROCL_CNT        VARCHAR2(20),
+    BU_DIVNAME           VARCHAR2(20),
+    TP_REF_ID            VARCHAR2(50),
+    FA_DTM               VARCHAR2(50),
+    DLE_DTM              VARCHAR2(15),
+    PGP_KEY_NAME         VARCHAR2(200),
+    PASS_PHRASE          VARCHAR2(100),
+    ENC_TYPE             VARCHAR2(50),
+    PRIMARY KEY (SEQID)
+);

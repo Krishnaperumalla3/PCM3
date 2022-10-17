@@ -1,0 +1,93 @@
+CM101,Append_CRLF,CM_CRLF_Append,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM102,CHAR_REPLACE,CM_CHAR_REPLACE,Char1,Char1Type,Char1Replace,Char1ReplaceType,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM103,DeferredEnvelope,CM_DEFERREDEnvelope,SenderId,ReceiverId,AccepterLookupAlias,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM104,DocumentExtraction,Pragma_DocExtraction,MapName,Mailbox,ClientName,Transaction,TransMapName,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM105,DocumentExtraction_MQ,CM_DocExtraction_MQ,MapName,Mailbox,QueueManager,Queuename,Transmap name,Client name,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM106,EmailDocSend,CM_EmailDocSend,EmailAddress,Subject,FromEmail,HostName,Port,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM107,EmailNotification,CM_EmailNotification,EmailAddress,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM108,Encode,CM_Encode,InputEncodeing,OutputEncodeing,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM109,EncodeSJIS,CM_EncodeSJIS,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM110,Encrypt,CM_Encrypt,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM111,FileRename,CM_RenameFile,FileName,DataFormate,Extention,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM112,File_Archive,CM_Archive,Archive Directory,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM113,Lock Service,CM_SingleThreadLockService,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM114,PGPDecrypt,CM_PGPDecrypt,profile_name,conv_keymap_name,secret_keymap_name,tmpdir,workingDir,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM144,PGPEncrypt,CM_PGPEncrypt,profile_name,secret_keymap_name,public_user,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM115,DeEnvelope,CM_DeEnvelop,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM116,DestFileArchive,CM_DestFileArchive,FilePreFix,DateTimeFormate,Extension,LocationofArchive,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM117,DropProcess,CM_DropProcess,Protocol,ProtocolReference,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM118,EdifactEnvelope,CM_EDIFACT_Envelope,SenderId,ReceiverId,AccepterLookupAlias,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM119,Edifact_Deenvelope,CM_Edifact_Deenvelope,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM120,Envelope,CM_Envelop,SenderId,ReceiverId,AccepterLookupAlias,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM121,SourceFileArchive,CM_SrcFileArchive,FilePreFix,DateTimeFormate,Extension,LocationofArchive,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM122,Transaction_flow,CM_Transaction_flow,Flow,Transaction,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM123,Translation,CM_Transalation,MapName,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM124,ReleaseObjects,CM_ReleaseObjects,ObjectName,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM125,RemoveCRLF,CM_RemoveCRLF,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM126,TransalationWithUOM,CM_TransalationUOM,MapName,UOM MAP,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM127,Unlock Service,CM_ThreadUnLockService,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM128,Wait Service,CM_Wait,WaitTime,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM129,SAPOutboundIDoc,CM_SAPOutboundIDoc,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM130,SAPOutboundALE,CM_SAPOutboundALE,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM131,SAPInboundIDoc,CM_SAPInboundIDoc,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM132,SAPinbDelivery,CM_SAPinbDelivery,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM133,SAPALEDelivery,CM_SAPALEDelivery,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM134,MultiDrop,CM_MultiDrop,MailboxPath,Messagename Prefix,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM135,InboundEDISplit,CM_InboundEDISplit,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM136,Http_send,CM_Http_send,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM137,ITXADeEnvelope,CM_ITXADeEnvelope,Sample,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM138,ITXADeenvAndTranslate,CM_ITXADeEnvandTrans,ITXA MapName,Number of OutCards,Variant,CTT,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM139,ITXAEnvelopeCreate,CM_ITXAEnvelopeCreate,ITXA MapName,Number of OutCards,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM140,ITXAImmediateEnvelope,CM_ITXAImmediateEnvelope,DocExtractMap,ITXAMapName,NumberofOutputCards,Variant,SegDelimiter,EleDelimiter,CompEleDelimiter,CTT,Sender,Receiver,AccepterLookupAlias,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM141,ITXADeferredEnvelope,CM_ITXADeferredEnvelope,DocExtractMap,ITXAMapName,NumberofOutputCards,Variant,SegDelimiter,EleDelimiter,CompEleDelimiter,CTT,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM142,ITXATranslate,CM_ITXATranslate,ITXA MapName,Number of OutCards,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM143,DocPriority,CM_DocPriority,Priority,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM145,MultiSAPALEDelivery,CM_MultiSAPALEDelivery,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM146,Translation_AckTieBack,CM_Translation_AckTieBack,Correlation Mapname,Status Mapname,Envelop Mode,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null
+
+CM147,SAPTranslation_Envelope_Mode,CM_SAPTranslation_Envelope_Mode,Mapname,Senderid,Receiverid,Acceptorlookup,Envelopmode,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null

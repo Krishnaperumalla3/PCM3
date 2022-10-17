@@ -1,0 +1,163 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize application">
+  <mat-card>
+    <div class="pooling-container">
+      <div class="pooling-tool">
+        <h3><b>{{"SETTINGS.POLLING_INT" | translate}}</b></h3>
+        <div>
+            <button
+            type="button"
+            class="btn btn-primary pooling-btn"
+            style="font-size: 12px"
+            (click)="savePoolingInterval()"
+            cdkFocusInitial
+          >
+            {{"SETTINGS.BUTTONS.SAVE_POLLING_INT" | translate}}
+          </button>
+          <button type="button" [disabled]="addNew" (click)="onAddNew()" class="btn btn-pcm-1 pooling-btn">
+            {{"SETTINGS.BUTTONS.ADD_POLLING_INT" | translate}}
+          </button>
+        </div>
+      </div>
+      <table class="pooling-table">
+        <tbody
+          cdkDropList
+          class="interval-list"
+          (cdkDropListDropped)="drop($event)"
+        >
+        <tr class="interval-box cdk-drag ng-star-inserted pooling-header">
+          <th class="pooling-th">#</th>
+          <th class="pooling-th">{{"SETTINGS.TABLE.COLUMNS.INT_VALUE" | translate}}</th>
+          <th class="pooling-th">{{"SETTINGS.TABLE.COLUMNS.INT_NAME" | translate}}</th>
+          <th class="pooling-th">{{"SETTINGS.TABLE.COLUMNS.DESCRIPTION" | translate}}</th>
+          <th class="pooling-th">{{"SETTINGS.TABLE.COLUMNS.ACTION" | translate}}</th>
+        </tr>
+        <tr *ngIf="addNew">
+            <td class="pooling-td" style="width: 6%">
+                <span>{{newInterval.seq}}</span>
+            </td>
+            <td class="pooling-td" style="width: 13%">
+                <input
+                  autofocus
+                  class="input-fld"
+                  type="text"
+                  matInput
+                  tabindex="1"
+                  [(ngModel)]="newInterval.pkId"
+                  (keyup)="trimValue($event)"
+                />
+            </td>
+            <td class="pooling-td" style="width: 18%">
+                <input
+                  class="input-fld"
+                  type="text"
+                  tabindex="2"
+                  matInput
+                  [(ngModel)]="newInterval.interval"
+                  (keyup)="trimValue($event)"
+                />
+            </td>
+            <td class="pooling-td" style="width: 18%">
+                <input
+                  class="input-fld"
+                  type="text"
+                  matInput
+                  tabindex="3"
+                  [(ngModel)]="newInterval.description"
+                  (keyup)="trimValue($event)"
+                />
+            </td>
+            <td class="pooling-td" style="width: 13%">
+                <span (click)="onAdd()" class="actions">
+                {{"SETTINGS.BUTTONS.CREATE" | translate}}
+                </span>
+                <span (click)="addNew = false" class="actions">{{"SETTINGS.BUTTONS.CANCEL" | translate}}</span>
+            </td>
+        </tr>
+        <tr
+          class="interval-box"
+          *ngFor="let interval of poolingInterVal; let i = index"
+          cdkDrag
+          [ngClass]="{'slected-row': i=== selected}"
+
+        >
+          <td class="pooling-td" style="width: 6%">
+            <span>{{ interval.seq }}</span>
+          </td>
+          <td class="pooling-td" style="width: 13%">
+            <span *ngIf="i !== selected">{{ interval.pkId }}</span>
+
+            <input
+              *ngIf="i === selected"
+                autofocus
+                class="input-fld"
+                type="text"
+                matInput
+                [(ngModel)]="interval.pkId"
+              />
+          </td>
+          <td class="pooling-td" style="width: 18%">
+            <span *ngIf="i !== selected">{{ interval.interval }}</span>
+
+            <input
+              *ngIf="i === selected"
+              class="input-fld"
+              type="text"
+              matInput
+              [(ngModel)]="interval.interval"
+            />
+          </td>
+          <td class="pooling-td"  style="width: 18%">
+            <span *ngIf="i !== selected">{{ interval.description }}</span>
+
+            <input
+              *ngIf="i === selected"
+              class="input-fld"
+              type="text"
+              matInput
+              [(ngModel)]="interval.description"
+            />
+          </td>
+          <td class="pooling-td" style="width: 13%">
+            <span (click)="onEdit(i)" class="actions">
+              {{i === selected ? update_btn : "SETTINGS.BUTTONS.EDIT" | translate}}
+            </span>
+            <span (click)="onDelete(i, selected)" class="actions">
+                {{i === selected ? cancel_btn : "SETTINGS.BUTTONS.DELETE" | translate}}
+            </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- <div >
+        <div >{{interval.interval}}</div>
+      </div> -->
+    </div>
+    <!-- <div class="btn-grp" style="justify-content: center; margin-top: 10px">
+      <button
+        type="button"
+        class="btn btn-primary"
+        style="font-size: 12px"
+        (click)="savePoolingInterval()"
+        cdkFocusInitial
+      >
+        SAVE
+      </button>
+    </div> -->
+  </mat-card>
+</div>

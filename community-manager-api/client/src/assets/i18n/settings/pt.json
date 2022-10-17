@@ -1,0 +1,92 @@
+{
+  "MANAGE_CORRELATIONS": "Gerenciar correlações",
+  "POLLING_INT": "Intervalo de votação",
+  "FILE_JOB_SCH": "Agendamento de arquivo",
+  "SCH": "Agenda",
+
+  "FIELDS": {
+    "CORR1": "Nome da Correlação1",
+    "CORR2": "Nome da Correlação2",
+    "CORR3": "Nome da Correlação3",
+    "CORR4": "Nome da Correlação4",
+    "CORR5": "Nome da Correlação5",
+    "CORR6": "Nome da Correlação6",
+    "CORR7": "Nome da Correlação7",
+    "CORR8": "Nome da Correlação8",
+    "CORR9": "Nome da Correlação9",
+    "CORR10": "Nome da Correlação10",
+    "CORR11": "Nome da Correlação11",
+    "CORR12": "Nome da Correlação12",
+    "CORR13": "Nome da Correlação13",
+    "CORR14": "Nome da Correlação14",
+    "CORR15": "Nome da Correlação15",
+    "CORR16": "Nome da Correlação16",
+    "CORR17": "Nome da Correlação17",
+    "CORR18": "Nome da Correlação18",
+    "CORR19": "Nome da Correlação19",
+    "CORR20": "Nome da Correlação20",
+    "CORR21": "Nome da Correlação21",
+    "CORR22": "Nome da Correlação22",
+    "CORR23": "Nome da Correlação23",
+    "CORR24": "Nome da Correlação24",
+    "CORR25": "Nome da Correlação25",
+    "CORR26": "Nome da Correlação26",
+    "CORR27": "Nome da Correlação27",
+    "CORR28": "Nome da Correlação28",
+    "CORR29": "Nome da Correlação29",
+    "CORR30": "Nome da Correlação30",
+    "CORR31": "Nome da Correlação31",
+    "CORR32": "Nome da Correlação32",
+    "CORR33": "Nome da Correlação33",
+    "CORR34": "Nome da Correlação34",
+    "CORR35": "Nome da Correlação35",
+    "CORR36": "Nome da Correlação36",
+    "CORR37": "Nome da Correlação37",
+    "CORR38": "Nome da Correlação38",
+    "CORR39": "Nome da Correlação39",
+    "CORR40": "Nome da Correlação40",
+    "CORR41": "Nome da Correlação41",
+    "CORR42": "Nome da Correlação42",
+    "CORR43": "Nome da Correlação43",
+    "CORR44": "Nome da Correlação44",
+    "CORR45": "Nome da Correlação45",
+    "CORR46": "Nome da Correlação46",
+    "CORR47": "Nome da Correlação47",
+    "CORR48": "Nome da Correlação48",
+    "CORR49": "Nome da Correlação49",
+    "CORR50": "Nome da Correlação50"
+  },
+
+  "SCHEDULE": {
+    "FIELDS": {
+      "ACC_KEY_ID": "ID da chave de acesso",
+      "SCR_KEY_ID": "ID da chave secreta",
+      "REGION": "Região",
+      "BKT_NAME": "Nome do intervalo",
+      "STATUS": "Status",
+      "FL_AGE": "Nº de dias",
+      "CLD_NME": "Tipo de nuvem",
+      "ARC_LOC": "Local do Arquivo"
+    }
+  },
+
+  "BUTTONS": {
+    "CANCEL": "CANCELAR",
+    "UPDATE_CORR": "Correlações de atualização",
+    "CREATE": "CRIO",
+    "EDIT": "EDITAR",
+    "UPDATE": "ATUALIZAR",
+    "DELETE": "EXCLUIR",
+    "ADD_POLLING_INT": "ADICIONAR INTERVALO DE VOTAÇÃO",
+    "SAVE_POLLING_INT": "SALVAR INTERVALO DE VOTAÇÃO"
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "INT_VALUE": "Valor do intervalo *",
+      "INT_NAME": "Nome do intervalo *",
+      "DESCRIPTION": "Descrição",
+      "ACTION": "Açao"
+    }
+  }
+}

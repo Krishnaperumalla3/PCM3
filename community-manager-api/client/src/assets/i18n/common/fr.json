@@ -1,0 +1,111 @@
+{
+  "CHNGE_PWD": "Changer le mot de passe",
+  "LOGOUT": "Se déconnecter",
+  "PCM_TITLE": "Gestionnaire de communauté PragmaEdge",
+  "PAGE_TITLE": {
+    "FL_TRNSFR": "Transferts de fichiers",
+    "REPORTS": "Rapports",
+    "ENVELOP": "Enveloppe",
+    "PARTNER": "Partenaire",
+    "APPLICATION": "Application",
+    "DATA_FLW": "Flux de données",
+    "ACCESS_MNGNT": "Gestion des accès",
+    "SETTINGS": "Paramètres"
+  },
+  "MENU": {
+    "FL_TRNSFR": {
+      "LABEL": "Transfert de fichiers",
+      "SUB_MENU": {
+        "SRCH": "Chercher"
+      },
+      "ACTIONS": {
+        "VIEW_DTL": "VOIR LES DÉTAILS",
+        "COR_DTL": "COR ... DÉTAILS",
+        "VIEW_ACTVTY": "VOIR L'ACTIVITÉ",
+        "PCKUP_NW": "RAMASSER MAINTENANT",
+        "REPROCESS": "RETRAITER",
+        "DRP_AGN": "RETIRER"
+      }
+    },
+    "REPORTS": {
+      "LABEL": "Rapports",
+      "SUB_MENU": {
+        "DT_FLW": "Flux de données",
+        "997_OVR_DUE": "997 en retard",
+        "TRNSCTN_VOL_RPT": "Rapport sur le volume des transactions",
+        "TRNSCTN_VOL_DOC": "Volume de transactions par DocType",
+        "VOL_BY_PRTNR": "Volumes par partenaires",
+        "CHARGE_BACKS":"Le",
+        "SFG_PCD":"Le + PCD",
+        "PCD":"PCD"
+      }
+    },
+    "ENVELOP": {
+      "LABEL": "Enveloppe",
+      "SUB_MENU": {
+        "CRTE_X12": "Créer X12",
+        "MNGE_X12": "Gérer X12"
+      }
+    },
+    "PARTNER": {
+      "LABEL": "Partenaire/FG",
+      "SUB_MENU": {
+        "CRTE_PRTNR": "Créer un partenaire/FG",
+        "CRTE_AS2_REL": "Créer une relation AS2",
+        "MNGE_PRTNR": "Gérer le partenaire/FG"
+      },
+      "ACTIONS": {
+        "VIEW": "Vue",
+        "ACTVTE": "Activer",
+        "DEACTVTE": "Désactiver",
+        "EDIT": "Éditer",
+        "DELETE": "Supprimer"
+      }
+    },
+    "APPLICATION": {
+      "LABEL": "application/BG",
+      "SUB_MENU": {
+        "CRTE_APP": "Créer une application/BG",
+        "MNGE_APP": "Gérer l'application/BG"
+      },
+      "ACTIONS": {
+        "VIEW": "Vue",
+        "ACTVTE": "Activer",
+        "DEACTVTE": "Désactiver",
+        "EDIT": "Éditer",
+        "DELETE": "Supprimer"
+      }
+    },
+    "DATA_FLW": {
+      "LABEL": "Flux de données",
+      "SUB_MENU": {
+        "BLD_DT_FLW": "Créer un flux de données",
+        "CRTE_RULE": "Créer une règle",
+        "MNGE_RULE": "Gérer la règle"
+      },
+      "ACTIONS": {
+        "VIEW": "Vue",
+        "EDIT": "Éditer",
+        "DELETE": "Supprimer"
+      }
+    },
+    "ACCESS_MNGNT": {
+      "LABEL": "Gestion des accès",
+      "SUB_MENU": {
+        "CRTE_USR": "Créer un utilisateur",
+        "MNGE_USR": "Gérer l'utilisateur",
+        "CRTE_GRP": "Créer un groupe",
+        "MNGE_GRP": "Gérer l'groupe",
+        "MNGE_CHB": "Gérer la rétrofacturation"
+      }
+    },
+    "SETTINGS": {
+      "LABEL": "Paramètres",
+      "SUB_MENU": {
+        "CORLTN_NME": "Noms de corrélation",
+        "PIL_INTRVL": "Intervalle d'interrogation",
+        "FILE_SCH": "Planificateur de travaux de fichiers"
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h3 class="d-flex align-items-center">
+      <span>{{"REPORTS.TRANS_VAL_REPORT" | translate}}</span>
+    </h3>
+    <mat-card>
+      <form [formGroup]="form" class="form__container">
+
+        <mat-form-field>
+          <!--<span>Report Starts from</span>-->
+          <input matInput class="pcm-date-field" [owlDateTime]="from" [owlDateTimeTrigger]="from"
+                 placeholder='{{"REPORTS.FIELDS.REPORTS_STARTS_FROM.LABEL" | translate}}'
+                 formControlName="start"
+                 name="start"
+          >
+          <owl-date-time #from></owl-date-time>
+        </mat-form-field>
+
+        <mat-form-field>
+          <!--<span>Report ends to</span>-->
+          <input matInput class="pcm-date-field" [owlDateTime]="to" [owlDateTimeTrigger]="to"
+                 placeholder='{{"REPORTS.FIELDS.REPORTS_END_TO.LABEL" | translate}}'
+                 formControlName="end"
+                 name="end">
+          <owl-date-time #to></owl-date-time>
+        </mat-form-field>
+        <div class="btn-grp sbmt-btn">
+          <button type="submit" class="btn btn-primary" (click)="generateReports()">
+            {{"REPORTS.BUTTONS.GEN_REPORT" | translate}}
+          </button>
+          <button type="button" class="btn btn-info" (click)="reset()">{{"REPORTS.BUTTONS.RESET_SEARCH" | translate}}</button>
+        </div>
+      </form>
+    </mat-card>
+
+    <!--<div class="p-3 container__charts">-->
+      <!--<mat-card>-->
+        <!--<div id="chartContainer" style="width: 100%; height: 327px;"></div>-->
+      <!--</mat-card>-->
+      <!--<mat-card >-->
+        <!--<div id="chartContainer1" style="width: 100%; height: 327px;"></div>-->
+      <!--</mat-card>-->
+    <!--</div>-->
+    <!---->
+    <!--<mat-card>-->
+      <!--<div id="chartContainer2" style="height: 450px; width: 50%;"></div>-->
+    <!--</mat-card>-->
+
+    <div class="p-3 container__charts" *ngIf="!!hasData">
+      <mat-card *ngIf="!!successAndFailure && showSuccessReport">
+        <canvas baseChart
+                [datasets]="successAndFailure.data"
+                [labels]="successAndFailure.labels"
+                [options]="successAndFailure.options"
+                [plugins]="successAndFailure.plugins"
+                [legend]="successAndFailure.legend"
+                [chartType]="successAndFailure.type"
+                (chartHover)="chartHovered($event)">
+        </canvas>
+      </mat-card>
+
+      <mat-card *ngIf="!!inAndOutBound && showInandOutReport">
+        <canvas baseChart
+                [data]="inAndOutBound.data"
+                [labels]="inAndOutBound.labels"
+                [options]="inAndOutBound.options"
+                [plugins]="inAndOutBound.plugins"
+                [legend]="inAndOutBound.legend"
+                [chartType]="inAndOutBound.type"
+                (chartHover)="chartHovered($event)">
+        </canvas>
+      </mat-card>
+
+      <mat-card class="card__transaction-reports" *ngIf="!!transactionReports && showTransactionReport">
+        <canvas baseChart
+                [data]="transactionReports.data"
+                [labels]="transactionReports.labels"
+                [options]="transactionReports.options"
+                [plugins]="transactionReports.plugins"
+                [legend]="transactionReports.legend"
+                [chartType]="transactionReports.type"
+                (chartHover)="chartHovered($event)">
+        </canvas>
+      </mat-card>
+    </div>
+
+    <div *ngIf="hasData === false" class="mt-3">
+      <mat-card>
+        <h3 class="text-center p-5" style="color: #6d6c6cc4">No results found !</h3>
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <swal
+    #invalidSwal
+    title="Invalid Form Submit"
+    text="(*) field are required to submit"
+    type="error"
+    [focusCancel]="true">
+  </swal>
+</div>

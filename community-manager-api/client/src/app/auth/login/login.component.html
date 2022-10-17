@@ -1,0 +1,140 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="ui__login"
+     *ngIf="(activeProfile === 'pcm' || activeProfile === 'cm'|| activeProfile === 'sso-ssp-seas') && !isSSP">
+  <div class="ui__login__container">
+    <mat-card *ngIf="!isSMLogin">
+      <header>
+        <div class="icon">
+          <mat-icon>perm_identity</mat-icon>
+        </div>
+        <h3>Login to your account</h3>
+        <p>
+          Enter your credentials below
+        </p>
+      </header>
+
+      <form [formGroup]="loginForm">
+        <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <mat-icon matSuffix>info</mat-icon>
+          <input matInput placeholder="User Name" formControlName="username"/>
+          <mat-error *ngIf="!isUsernameValid">
+            User Name is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>lock</mat-icon>
+          <mat-icon matSuffix>info</mat-icon>
+          <input
+            matInput
+            [type]="hide ? 'text' : 'password'"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <span class="password" *ngIf="!!loginForm.value['password']" mat-icon-button matSuffix (click)="hide = !hide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+          </span>
+          <mat-error *ngIf="!isPasswordValid">
+            Password is required
+          </mat-error>
+        </mat-form-field>
+        <button class="btn__login" mat-flat-button color="warn" [class.spinner]="loading" [disabled]="loading"
+                (click)="doLogin(false)">Login
+        </button>
+        <a *ngIf="activeProfile !== 'sso-ssp-seas'" class="navigate" style="cursor: pointer;"
+           (click)="forgotPassword()">Forgot
+          Password?</a>
+      </form>
+    </mat-card>
+
+    <mat-card *ngIf="isSMLogin" class="sm__login">
+      <mat-tab-group>
+        <mat-tab label="SM Authentication" class="mt-5">
+          <mat-card>
+            <header class="local__auth">
+              <div class="icon">
+                <mat-icon>perm_identity</mat-icon>
+              </div>
+              <h3>Authenticating With SiteMinder</h3>
+              <button mat-flat-button class="mt-3" color="primary" (click)="doLogin(true)">
+                Login
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </button>
+            </header>
+          </mat-card>
+        </mat-tab>
+        <mat-tab label="Local Authentication">
+          <mat-card style="padding: 14px">
+            <header>
+              <div class="icon">
+                <mat-icon>perm_identity</mat-icon>
+              </div>
+              <h3>Login to your account</h3>
+              <p>
+                Enter your credentials below
+              </p>
+            </header>
+            <form [formGroup]="loginForm" style="width: 300px">
+              <mat-form-field style="width: 90%">
+                <mat-icon matPrefix>account_circle</mat-icon>
+                <mat-icon matSuffix>info</mat-icon>
+                <input matInput placeholder="User Name" formControlName="username"/>
+                <mat-error *ngIf="!isUsernameValid">
+                  User Name is required
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field style="width: 90%">
+                <mat-icon matPrefix>lock</mat-icon>
+                <mat-icon matSuffix>info</mat-icon>
+                <input
+                  matInput
+                  [type]="hide ? 'text' : 'password'"
+                  placeholder="Password"
+                  formControlName="password"
+                />
+                <span class="password" *ngIf="!!loginForm.value['password']" mat-icon-button matSuffix
+                      (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                </span>
+                <mat-error *ngIf="!isPasswordValid">
+                  Password is required
+                </mat-error>
+              </mat-form-field>
+              <button class="btn__login" mat-flat-button color="warn" [class.spinner]="loading" [disabled]="loading"
+                      (click)="doLogin(false)">Login
+              </button>
+            </form>
+          </mat-card>
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-card>
+  </div>
+</div>
+
+<swal
+  #invalidSwal
+  title="Invalid Login"
+  text="{{LoginError}}"
+  type="error"
+  [focusCancel]="true">
+</swal>
+

@@ -1,0 +1,70 @@
+/*
+ * Copyright (c) 2020 Pragma Edge Inc
+ *
+ * Licensed under the Pragma Edge Inc
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://pragmaedge.com/licenseagreement
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+-------------------------------------------------------------
+--  DML STATEMENT FOR PETPE_SO_USERS, PETPE_SO_USERS_ATTEMPTS
+-------------------------------------------------------------
+
+ALTER TABLE PETPE_SO_USERS
+    ADD COLUMN ACCOUNT_NON_LOCKED VARCHAR(1);
+
+ALTER TABLE PETPE_SO_USERS
+    ADD COLUMN ACCOUNT_NON_EXPIRED VARCHAR(1);
+
+ALTER TABLE PETPE_SO_USERS
+    ADD COLUMN CREDENTIALS_NON_EXPIRED VARCHAR(1);
+
+CREATE SEQUENCE SEQ_PETPE_SO_USERS_ATTEMPTS START WITH 1 INCREMENT BY 1 NO MAXVALUE NO CYCLE CACHE 20;
+
+CREATE TABLE PETPE_SO_USERS_ATTEMPTS
+(
+    ID            BIGINT       NOT NULL,
+    USERNAME      VARCHAR(100) NOT NULL,
+    ATTEMPTS      SMALLINT     NOT NULL,
+    LAST_MODIFIED TIMESTAMP(6) NOT NULL,
+    CONSTRAINT USER_ATT_UNI UNIQUE (USERNAME),
+    PRIMARY KEY (ID)
+);
+
+UPDATE PETPE_SO_USERS
+SET ACCOUNT_NON_LOCKED = 'Y';
+
+UPDATE PETPE_SO_USERS
+SET ACCOUNT_NON_EXPIRED = 'Y';
+
+UPDATE PETPE_SO_USERS
+SET CREDENTIALS_NON_EXPIRED = 'Y';
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN ACCOUNT_NON_LOCKED SET NOT NULL;
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN ACCOUNT_NON_EXPIRED SET NOT NULL;
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN CREDENTIALS_NON_EXPIRED SET NOT NULL;
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN ACCOUNT_NON_LOCKED SET DEFAULT 'Y';
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN ACCOUNT_NON_EXPIRED SET DEFAULT 'Y';
+
+ALTER TABLE PETPE_SO_USERS
+    ALTER COLUMN CREDENTIALS_NON_EXPIRED SET DEFAULT 'Y';
+
+CALL SYSPROC.ADMIN_CMD('REORG TABLE PETPE_SO_USERS');
+   

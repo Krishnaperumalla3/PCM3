@@ -1,0 +1,51 @@
+<div class="pcm-content centralize partner">
+  <mat-card class="mt-4">
+    <mat-card-content >
+      <h4>Upload Transactions Details</h4>
+      <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'10px'">
+        <mat-grid-tile class="gradient-green">
+          <p>{{uploadData?.thisHourCount}}<br>
+            This Hour Upload Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-amber">
+          <p>{{uploadData?.thisDayCount}}<br>
+            Today Upload Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-brown">
+          <p>{{uploadData?.thisWeekCount}}<br>
+            This Week Upload Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-gray">
+          <p>{{uploadData?.thisMonthCount}}<br>
+            This Month Upload Transactions</p>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="mt-4">
+    <mat-card-content >
+      <h4>Download Transactions Details</h4>
+      <mat-grid-list cols="4" rowHeight="100px" [gutterSize]="'10px'">
+        <mat-grid-tile class="gradient-green">
+          <p>{{downloadData?.thisHourCount}}<br>
+            This Hour Download Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-amber">
+          <p>{{downloadData?.thisDayCount}}<br>
+            Today Download Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-brown">
+          <p>{{downloadData?.thisWeekCount}}<br>
+            This Week Download Transactions</p>
+        </mat-grid-tile>
+        <mat-grid-tile class="gradient-gray">
+          <p>{{downloadData?.thisMonthCount}}<br>
+            This Month Download Transactions</p>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+    </mat-card-content>
+  </mat-card>
+</div>

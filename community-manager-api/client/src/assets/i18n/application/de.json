@@ -1,0 +1,57 @@
+{
+  "CREATE_TITLE": "Anwendungs-/Backend-Gateway erstellen",
+  "EDIT_TITLE": "Anwendung/Backend-Gateway bearbeiten",
+  "MANGE_TITLE": "Anwendungs-/Backend-Gateway verwalten",
+  "FIELDS": {
+    "APP_NME_REQ": {
+      "LABEL": "Anwendungsname *"
+    } ,
+    "APP_ID_REQ": {
+      "LABEL": "Anwendungs-ID *"
+    } ,
+    "EMAIL_REQ": {
+      "LABEL": "Email *"
+    } ,
+    "PHONE_REQ": {
+      "LABEL": "Telefon *"
+    } ,
+    "PROTOCOL_REQ": {
+      "LABEL": "Protokoll *"
+    } ,
+    "APP_NME": {
+      "LABEL": "Anwendungsname"
+    } ,
+    "APP_ID": {
+      "LABEL": "Anwendungs-ID"
+    } ,
+    "PROTOCOL": {
+      "LABEL": "Protokoll"
+    } ,
+    "STATUS": {
+      "LABEL": "Status"
+    }
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "APP_NME": "Anwendungsname",
+      "APP_ID": "Anwendungs-ID",
+      "PRTOCOL": "Protokoll",
+      "EMAIL": "Email",
+      "STATUS": "App-Status"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "einreichen",
+    "CANCEL": "Stornieren",
+    "SEARCH_APP": "Anwendung suchen",
+    "REST_SEARCH": "Suche zurücksetzen"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Aktivitätsverlauf",
+    "ACTVTY_ON": "Aktivität Ein",
+    "USR_NME": "Nutzername",
+    "ACTVTY": "Aktivität"
+  },
+  "PROTOCOL": "Protokoll",
+  "ACTIVITY": "Aktivität"
+}

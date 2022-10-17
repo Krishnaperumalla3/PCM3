@@ -1,0 +1,156 @@
+{
+  "997_OVERDUE_REPORT": "997 Überfälliger Bericht",
+  "DATA_FLOW_REPORT": "DataFlow-Berichte",
+  "TRANS_VAL_REPORT": "Transaktionsvolumenberichte",
+  "DOC_TYPE_REPORT": "Dokumenttypberichte",
+  "PARTNERS_VAL_REPORT": "Volumenberichte der Partner",
+  "AD_SRC": "Erweiterte Suche",
+  "SFG": "sfg",
+  "SFG_PCD": "sfg+pcd",
+  "PCD": "pcd",
+
+  "FIELDS": {
+    "PARTNER_NAME": {
+      "LABEL": "Partnername"
+    },
+    "APP_NAME": {
+      "LABEL": "Anwendungsname"
+    },
+    "SEQ_TYPE": {
+      "LABEL": "SEQ-Typ"
+    },
+    "FLOW": {
+      "LABEL": "Fließen"
+    },
+    "FILE_NAME": {
+      "LABEL": "Datei Name"
+    },
+    "DOC_TYPE": {
+      "LABEL": "Dokumenttyp"
+    },
+    "TRANSACTION": {
+      "LABEL": "Transaktion"
+    },
+    "SENDER_ID": {
+      "LABEL": "Absenderidentität"
+    },
+    "RECEIVER_ID": {
+      "LABEL": "Empfänger-ID"
+    },
+    "RULE_NAME": {
+      "LABEL": "Regelname"
+    },
+    "RULE_VALUE": {
+      "LABEL": "Regelwert"
+    },
+    "FILE_ARRIVED_FROM": {
+      "LABEL": "Datei angekommen von"
+    },
+    "FILE_ARRIVED_TO": {
+      "LABEL": "Datei angekommen in"
+    },
+    "PARTNER": {
+      "LABEL": "Partner"
+    },
+    "DEST_FILE_NAME": {
+      "LABEL": "Dest.File Name"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "GROUP_COUNT": {
+      "LABEL": "Gruppenanzahl"
+    },
+    "REPORTS_STARTS_FROM": {
+      "LABEL": "Bericht beginnt ab *"
+    },
+    "REPORTS_END_TO": {
+      "LABEL": "Bericht endet bis *"
+    },
+    "DOC_TRANS": {
+      "LABEL": "Doc Trans"
+    },
+    "RULE_PRP_NME": {"LABEL": "Name der Regeleigenschaft"},
+    "RULE_PRP_VAL": {"LABEL": "Regeleigenschaftswert"},
+
+    "PRODUCER": {"LABEL": "seisan mono"},
+    "CONSUMER": {"LABEL": "shohi mono"},
+    "FILESIZE": {"LABEL": "filis"},
+    "TOPPRODUCER": {"LABEL": "top producer"},
+    "TOPCONSUMER": {"LABEL": "top shohi mono"},
+    "TOPFILESIZE": {"LABEL": "top filis"},
+    "TOPCHARGEBACK": {"LABEL": "top charge back"},
+    "UID": {"LABEL": "uid"},
+    "APP": {"LABEL": "apri"},
+    "BU": {"LABEL": "bu"},
+    "PNODE": {"LABEL": "pnode"},
+    "SNODE": {"LABEL": "node"}
+
+  },
+
+
+  "BUTTONS": {
+    "RESET_SEARCH": "SUCHE ZURÜCKSETZEN",
+    "GEN_REPORT": "BERICHT GENERIEREN",
+    "SEARCH": "SUCHE",
+    "EXPORT_ALL_WORKFLOWS": "EXPORTIEREN SIE ALLE DATENFLÜSSE"
+  },
+
+
+  "TABLE": {
+    "OVERDUE_COLUMNS": {
+      "FILE_ARRIVED": "Datei angekommen",
+      "DEST_FILE_NAME": "Dest.File Name",
+      "PARTNER": "Partner",
+      "TRANSACTION": "Transaktion",
+      "GS_COUNT": "Gs Count",
+      "SENDER_ID": "Absenderidentität",
+      "RECEIVER_ID": "Empfänger-ID",
+      "STATUS": "Status",
+      "OVERDUE": "Überfällig"
+    },
+    "DATAFLOW_COLUMNS": {
+      "PARTNER": "Partner",
+      "APPLICATION": "Anwendung",
+      "FLOW": "Fließen",
+      "SEQ_TYPE": "Seq Type",
+      "FILE_NAME": "Dateiname",
+      "DOC_TYPE": "Dokumenttyp",
+      "TRANSACTION": "Transaktion",
+      "SENDER_ID": "Absenderidentität",
+      "RECEIVER_ID": "Empfänger-ID",
+      "RULE_NAME": "Regelname",
+      "BP_ID": "Geschäftsprozess-ID",
+      "RP1": "Regeleigenschaft1",
+      "RP2": "Regeleigenschaft2",
+      "RP3": "Regeleigenschaft3",
+      "RP4": "Regeleigenschaft4",
+      "RP5": "Regeleigenschaft5",
+      "RP6": "Regeleigenschaft6",
+      "RP7": "Regeleigenschaft7",
+      "RP8": "Regeleigenschaft8",
+      "RP9": "Regeleigenschaft9",
+      "RP10": "Regeleigenschaft10",
+      "RP11": "Regeleigenschaft11",
+      "RP12": "Regeleigenschaft12",
+      "RP13": "Regeleigenschaft13",
+      "RP14": "Regeleigenschaft14",
+      "RP15": "Regeleigenschaft15",
+      "RP16": "Regeleigenschaft16",
+      "RP17": "Regeleigenschaft17",
+      "RP18": "Regeleigenschaft18",
+      "RP19": "Regeleigenschaft19",
+      "RP20": "Regeleigenschaft20",
+      "RP21": "Regeleigenschaft21",
+      "RP22": "Regeleigenschaft22",
+      "RP23": "Regeleigenschaft23",
+      "RP24": "Regeleigenschaft24",
+      "RP25": "Regeleigenschaft25"
+    }
+  },
+  "NOTES": {
+    "DF_NOTE": {
+      "NOTE": "Hinweis: Alle WorkFlows exportieren: - Der Download dauert je nach Anzahl der Setups einige Minuten."
+    }
+  }
+}

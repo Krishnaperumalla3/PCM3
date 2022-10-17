@@ -1,0 +1,17 @@
+
+{
+  "TITLE": "Accedi al tuo account",
+  "AUTH_SITEMINDER": "Autenticazione con SiteMinder",
+  "HELPER_TEXT": "Inserisci le tue credenziali di seguito",
+  "IN_UNAME": {
+    "LABEL": "Nome utente",
+    "HELPER_TXT": "È richiesto uno username"
+  },
+  "IN_PWD": {
+    "LABEL": "Parola d'ordine",
+    "HELPER_TXT": "E 'richiesta la password"
+  },
+  "LOGIN_BTN": "Accesso",
+  "FORGOT_PWD": "Ha dimenticato la password?",
+  "INVLD_LOGIN": "Login non valido"
+}

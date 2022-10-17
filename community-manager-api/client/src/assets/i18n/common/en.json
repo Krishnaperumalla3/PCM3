@@ -1,0 +1,187 @@
+{
+    "CHNGE_PWD":"Change Password",
+    "LOGOUT":"Logout",
+    "PCM_TITLE":"PragmaEdge Community Manager",
+    "PAGE_TITLE":{
+       "FL_TRNSFR":"File Transfers",
+       "REPORTS":"Reports",
+       "ENVELOP":"Envelope",
+       "PARTNER":"Partner / Frontend Gateway",
+       "APPLICATION":"Application / Backend Gateway",
+       "DATA_FLW":"Data Flows",
+       "ACCESS_MNGNT":"Access Management",
+       "SETTINGS":"Settings"
+    },
+    "MENU":{
+       "FL_TRNSFR":{
+          "LABEL":"File Transfers",
+          "SUB_MENU":{
+             "SRCH":"Search"
+          },
+          "ACTIONS":{
+             "VIEW_DTL":"VIEW DETAILS",
+             "COR_DTL":"COR... DETAILS",
+             "VIEW_ACTVTY":"VIEW ACTIVITY",
+             "PCKUP_NW":"PICKUP NOW",
+             "REPROCESS":"REPROCESS",
+             "DRP_AGN":"DROP AGAIN"
+          }
+       },
+       "REPORTS":{
+          "LABEL":"Reports",
+          "SUB_MENU":{
+             "DT_FLW":"Data Flow",
+             "997_OVR_DUE":"997 Overdue",
+             "TRNSCTN_VOL_RPT":"Transactions Volume",
+             "TRNSCTN_VOL_DOC":"Transactions Volume By DocType",
+             "VOL_BY_PRTNR":"Volumes By Partners",
+             "CHARGE_BACKS":"SFG",
+             "SFG_PCD":"SFG + PCD",
+             "PCD":"PCD"
+          }
+       },
+       "ENVELOP":{
+          "LABEL":"Envelope",
+          "SUB_MENU":{
+             "CRTE_X12":"Create X12",
+             "MNGE_X12":"Manage X12"
+          }
+       },
+       "PARTNER":{
+          "LABEL":"Partner/FG",
+          "SUB_MENU":{
+             "CRTE_PRTNR":"Create Partner/FG",
+             "CRTE_AS2_REL":"Create AS2 Relationship",
+             "MNGE_PRTNR":"Manage Partner/FG"
+          },
+          "ACTIONS":{
+             "VIEW":"View",
+             "ACTVTE":"Activate",
+             "DEACTVTE":"Deactivate",
+             "EDIT":"Edit",
+             "DELETE":"Delete"
+          }
+       },
+       "APPLICATION":{
+          "LABEL":"Application/BG",
+          "SUB_MENU":{
+             "CRTE_APP":"Create Application/BG",
+             "MNGE_APP":"Manage Application/BG"
+          },
+          "ACTIONS":{
+             "VIEW":"View",
+             "ACTVTE":"Activate",
+             "DEACTVTE":"Deactivate",
+             "EDIT":"Edit",
+             "DELETE":"Delete"
+          }
+       },
+       "DATA_FLW":{
+          "LABEL":"Data Flows",
+          "SUB_MENU":{
+             "BLD_DT_FLW":"Build Data Flow",
+             "CRTE_RULE":"Create Rule",
+             "MNGE_RULE":"Manage Rule"
+          },
+          "ACTIONS":{
+             "VIEW":"View",
+             "EDIT":"Edit",
+             "DELETE":"Delete"
+          }
+       },
+       "ACCESS_MNGNT":{
+          "LABEL":"Access Management",
+          "SUB_MENU":{
+             "CRTE_USR":"Create User",
+             "MNGE_USR":"Manage User",
+             "CRTE_GRP":"Create Group",
+             "MNGE_GRP":"Manage Group",
+             "MNGE_CHB": "Manage Charge Back"
+          }
+       },
+       "SETTINGS":{
+          "LABEL":"Settings",
+          "SUB_MENU":{
+             "CORLTN_NME":"Correlation Names",
+             "PIL_INTRVL":"Polling Interval",
+             "FILE_SCH": "File Job Scheduler"
+          }
+       }
+    },
+    "TABLE": {
+      "SRCH": "search",
+      "XPRT": "Export",
+      "XPRT_PDF": "Export Pdf",
+      "XPRT_CSV": "Export CSV",
+      "REPROCESS": "Reprocess",
+      "CONFG_COL": "Configure Columns",
+      "ACTN_COL": "Action",
+      "NO_RSLT_FND": "No results found !",
+      "SELECT_ALL": "Select All",
+      "BTN_OK": "Ok"
+    },
+    "MODAL":{
+       "CHNAGE_PWD":{
+          "TITLE":"Change Password",
+          "FIELDS":{
+             "OLD_PWD":{
+                "LABEL":"Old Password",
+                "HELPER_TEXT":"Old Password is required. "
+             },
+             "NEW_PWD":{
+                "LABEL":"New Password",
+                "HELPER_TEXT":"New Password is required."
+             },
+             "CNFRM_PWD":{
+                "LABEL":"Confirm Password",
+                "HELPER_TEXT":"Passwords Not Matched."
+             }
+          },
+          "BUTTONS":{
+             "SUBMIT":"Submit",
+             "CLOSE":"Close"
+          }
+       },
+       "FORGOT_PWD":{
+          "TITLE":"Forgot Password",
+          "FIELDS":{
+             "IN_EMAIL":{
+                "LABEL":"Email*",
+                "HELPER_TXT_ENTER":"Please enter your Email!",
+                "HELPER_TXT_VALID":"Please enter Valid Email!"
+             }
+          },
+          "BUTTONS":{
+             "SUBMINT":"Submit",
+             "CLOSE":"Close"
+          }
+       },
+       "VIEW_FLE":{
+          "BUTTONS":{
+             "DOWNLOAD":"Download",
+             "CLOSE":"Close"
+          }
+       },
+       "PWD_SHW":{
+          "TITLE":"Please enter your login credentials.",
+          "FIELDS":{
+             "USR_NME":{
+                "LABEL":"User Name"
+             },
+             "PWD":{
+                "LABEL":"Password"
+             }
+          },
+          "BUTTONS":{
+             "VERIFY":"Verify",
+             "CLOSE":"Close"
+          }
+       },
+       "FILE_SRCH":{
+          "TITLE":"Transaction Details"
+       },
+       "ACTVTY":{
+          "TITLE":"Activity"
+       }
+    }
+ }

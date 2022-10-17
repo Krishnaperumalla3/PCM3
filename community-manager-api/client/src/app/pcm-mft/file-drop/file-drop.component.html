@@ -1,0 +1,136 @@
+<div class="centralize application pt-0">
+  <mat-card>
+    <div class="row mx-3">
+      <div class="leftPannel">
+        <mat-card class="p-0" style="height: 75vh">
+          <h4 class="p-4 text-center"><b>Available Mailboxes</b></h4>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action p-4" (click)="selectMailbox(item); selectedItem = item" [ngClass]="{'active': selectedItem === item}" *ngFor="let item of typesOfMailbox">
+              {{item}}
+            </a>
+          </div>
+        </mat-card>
+      </div>
+      <div class="rightPannel">
+        <mat-card class="p-0" *ngIf="!!selectedItem">
+          <h4 class="p-4"><b>Upload to {{selectedItem}}</b></h4>
+          <div class="col-md-12  pb-4">
+            <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+              <input type="file" #fileDropRef [multiple]="true" (change)="fileBrowseHandler($event)" />
+              <span>Drag and drop file or click to select</span>
+            </div>
+          </div>
+          <div *ngIf="dataSource.data.length > 0" class="col-md-12 p-0">
+
+            <!-- multiple file upload -->
+            <table mat-table [dataSource]="dataSource">
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> File Name </th>
+                <td mat-cell *matCellDef="let element"> {{element?.file.name}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="size">
+                <th mat-header-cell *matHeaderCellDef> File Size </th>
+                <td mat-cell *matCellDef="let element"> {{formatBytes(element?.file.size)}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="progress">
+                <th mat-header-cell *matHeaderCellDef> Progress </th>
+                <td mat-cell *matCellDef="let element"> {{element.progress+'%'}} </td>
+              </ng-container>
+
+<!--              <ng-container matColumnDef="status">-->
+<!--                <th mat-header-cell *matHeaderCellDef> Status </th>-->
+<!--                <td mat-cell *matCellDef="let element">-->
+<!--                  <span *ngIf="element.isPending()" class="tag tag-default"></span>-->
+<!--                  <span *ngIf="element.isSuccess()" class="tag tag-success"></span>-->
+<!--                  <span *ngIf="element.inProgress()" class="tag tag-warning"></span>-->
+<!--                  <span *ngIf="element.isError()" class="tag tag-danger"></span>-->
+<!--                </td>-->
+<!--              </ng-container>-->
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element; let i = index;">
+                  <mat-icon style="font-size: 20px !important" (click)="element.upload()" *ngIf="element.isUploadable()">upload</mat-icon>
+                  <mat-icon style="font-size: 20px !important" (click)="element.cancel()" *ngIf="element.inProgress()">cancel</mat-icon>
+                  <mat-icon style="font-size: 20px !important" (click)="element.remove()" *ngIf="!element.inProgress()">delete</mat-icon>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <div class="btn-grp mt-3">
+              <button type="submit" (click)="uploader.uploadAll()" class="btn btn-primary">UPLOAD ALL FILES</button>
+              <button type="button" (click)="uploader.clearQueue()" class="btn btn-info">CANCEL ALL FILES</button>
+            </div>
+            <!-- End multiple file upload -->
+          <!-- chunck file upload -->
+<!--            <table mat-table [dataSource]="uploadData">-->
+<!--              &lt;!&ndash; Position Column &ndash;&gt;-->
+<!--              <ng-container matColumnDef="name">-->
+<!--                <th mat-header-cell *matHeaderCellDef> File Name </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{element?.name}} </td>-->
+<!--              </ng-container>-->
+
+<!--              <ng-container matColumnDef="size">-->
+<!--                <th mat-header-cell *matHeaderCellDef> File Size </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{formatBytes(element?.size)}} </td>-->
+<!--              </ng-container>-->
+
+<!--              <ng-container matColumnDef="progress">-->
+<!--                <th mat-header-cell *matHeaderCellDef> Progress </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{element.progress}} </td>-->
+<!--              </ng-container>-->
+<!--              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>-->
+<!--              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+<!--            </table>-->
+            <!-- End chunck file upload -->
+          </div>
+        </mat-card>
+        <mat-card class="p-0 mt-3" *ngIf="!!showResults">
+          <h4 class="p-4"><b>Activity of {{selectedItem}}</b></h4>
+          <div class="col-md-12 p-0">
+            <table mat-table [dataSource]="activityDataSource">
+              <!-- Position Column -->
+              <ng-container matColumnDef="activityDt">
+                <th mat-header-cell *matHeaderCellDef> Activity Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.activityDt}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="activityBy">
+                <th mat-header-cell *matHeaderCellDef> User Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.activityBy}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="bpname">
+                <th mat-header-cell *matHeaderCellDef> File Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.bpname}} </td>
+              </ng-container>
+
+<!--              <ng-container matColumnDef="bpid">-->
+<!--                <th mat-header-cell *matHeaderCellDef> File Size </th>-->
+<!--                <td mat-cell *matCellDef="let element"> {{element.bpid}} </td>-->
+<!--              </ng-container>-->
+
+              <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef> Details </th>
+                <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="noData">
+                <td mat-footer-cell [colSpan]="mailboxActivityColumns.length" class="text-center" *matFooterCellDef>No records found.</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="mailboxActivityColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: mailboxActivityColumns;"></tr>
+              <tr mat-footer-row [hidden]="activityDataSource.data.length > 0" *matFooterRowDef="['noData']"></tr>
+            </table>
+            <mat-paginator  [hidden]="activityDataSource.data.length === 0" [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,85 @@
+{
+  "CREATE_USER": "Create User",
+  "EDIT_USER": "Update User",
+  "SEARCH_USER": "Search User",
+  "ASSIGN_PARTNER": "Assign Partner",
+  "ASSIGN_GROUP": "Assign Group",
+  "CREATE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "User Id *"
+    },
+    "FIRST_NAME": {
+      "LABEL": "First Name *"
+    },
+    "MIDDLE_NAME": {
+      "LABEL": "Middle Name"
+    },
+    "LAST_NAME": {
+      "LABEL": "Last Name *"
+    },
+    "EMAIL": {
+      "LABEL": "Email *"
+    },
+    "PHONE": {
+      "LABEL": "Phone *"
+    },
+    "ROLE": {
+      "LABEL": "Role *"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "SEL_LANG": {
+      "LABEL": "Preferred language"
+    },
+    "USER_TYPE": {
+      "LABEL": "User Type"
+    },
+    "EXTERNAL_ID": {
+      "LABEL": "ExternalId *"
+    }
+  },
+  "MANAGE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "User Id"
+    },
+    "FIRST_NAME": {
+      "LABEL": "First Name"
+    },
+    "LAST_NAME": {
+      "LABEL": "Last Name"
+    },
+    "EMAIL": {
+      "LABEL": "Email"
+    },
+    "ROLE": {
+      "LABEL": "Role"
+    },
+    "STATUS": {
+      "LABEL": "Status"
+    },
+    "USER_TYPE": {
+      "LABEL": "User Type"
+    }
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "USER_NAME": "User Name",
+      "FIRST_NAME": "First Name",
+      "LAST_NAME": "Last Name",
+      "ROLE": "Role",
+      "STATUS": "Status"
+    }
+  },
+  "BUTTONS": {
+    "CREATE_USER": "CREATE USER",
+    "EDIT_USER": "UPDATE USER",
+    "SEARCH_USER": "SEARCH USER",
+    "RESET_SEARCH": "RESET SEARCH",
+    "ACTIVATE": "ACTIVATE",
+    "DEACTIVATE": "DEACTIVATE",
+    "EDIT": "EDIT",
+    "DELETE": "DELETE",
+    "CANCEL": "CANCEL"
+  }
+}

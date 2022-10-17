@@ -1,0 +1,365 @@
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h3 class="d-flex align-items-center">
+      <span>{{"REPORTS.SFG" | translate}}</span>
+    </h3>
+    <mat-card>
+      <form [formGroup]="form" class="form__container">
+        <div class="form-row">
+          <div class="col-md-4">
+            <mat-form-field class="float-right">
+              <!--<span>Report Starts from</span>-->
+              <input matInput class="pcm-date-field" [owlDateTime]="from" [owlDateTimeTrigger]="from"
+                     placeholder='{{"REPORTS.FIELDS.REPORTS_STARTS_FROM.LABEL" | translate}}'
+                     formControlName="dateRangeStart"
+                     name="dateRangeStart"
+              >
+              <owl-date-time #from></owl-date-time>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field class="float-right">
+              <!--<span>Report ends to</span>-->
+              <input matInput class="pcm-date-field" [owlDateTime]="to" [owlDateTimeTrigger]="to"
+                     placeholder='{{"REPORTS.FIELDS.REPORTS_END_TO.LABEL" | translate}}'
+                     formControlName="dateRangeEnd"
+                     name="dateRangeEnd">
+              <owl-date-time #to></owl-date-time>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 field-container" *ngIf="producerData && !restrict">
+            <mat-form-field>
+              <mat-select
+                formControlName="partner"
+                multiple
+                [placeholder]="'REPORTS.FIELDS.PRODUCER.LABEL' | translate">
+                <mat-option *ngFor="let option of producerData" [value]="option.name">{{option.name}} -- {{(option.count)}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="!restrict">
+          <div class="col-md-4 field-container Drpdownid" *ngIf="consumerData">
+            <mat-form-field>
+              <mat-select
+                formControlName="application"
+                multiple
+                [placeholder]="'REPORTS.FIELDS.CONSUMER.LABEL' | translate">
+                <mat-option *ngFor="let option of consumerData" [value]="option.name">{{option.name}} -- {{(option.count)}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 field-container Drpdownid" *ngIf="UIDData">
+            <mat-form-field>
+              <mat-select
+                formControlName="uid"
+                multiple
+                [placeholder]="'REPORTS.FIELDS.UID.LABEL' | translate">
+                <mat-option  *ngFor="let option of UIDData" [value]="option.name">{{ option.name }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 field-container Drpdownid" *ngIf="APP">
+            <mat-form-field>
+              <mat-select
+                formControlName="app"
+                multiple
+                [placeholder]="'REPORTS.FIELDS.APP.LABEL' | translate">
+                <mat-option *ngFor="let option of APP" [value]="option.name">{{option.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="form-row" *ngIf="!restrict">
+          <div class="col-md-4 field-container Drpdownid" *ngIf="BU">
+            <mat-form-field>
+              <mat-select
+                formControlName="bu"
+                multiple
+                [placeholder]="'REPORTS.FIELDS.BU.LABEL' | translate">
+                <mat-option *ngFor="let option of BU" [value]="option.name">{{option.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4 field-container" *ngIf="consumerData">
+            <mat-form-field>
+              <input matInput formControlName="srcFileName" placeholder="FileName Search" name="fileNameSearch"/>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="btn-grp sbmt-btn btn-block text-right">
+          <button type="submit" class="btn btn-primary" (click)="toGenerateReport(form);">
+            {{"REPORTS.BUTTONS.GEN_REPORT" | translate}}
+          </button>
+          <button type="button" class="btn btn-info" (click)="reset()">{{"REPORTS.BUTTONS.RESET_SEARCH" | translate}}</button>
+        </div>
+        <div class="field-container card-deck btn-block" *ngIf="totalCountsData && !restrict">
+          <mat-card class="mr-3 ml-4 cardWidth">
+            <mat-card-content>
+              <p>Total Charge Back</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalCountsData?.totalChargeback}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="mr-3 cardWidth">
+            <mat-card-content>
+              <p>Total Files</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalCountsData?.totalFileCount}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="mr-3 cardWidth" *ngIf="totalCountsData">
+            <mat-card-content>
+              <p>FileSizes (GB)</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalCountsData?.totalFileSize}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="mr-3 cardWidth" *ngIf="totalCountsData">
+            <mat-card-content>
+              <p>Max. File Size (GB)</p>
+            </mat-card-content>
+            <mat-card-title>{{totalCountsData?.maxFileSize}}
+            </mat-card-title>
+            <mat-card-header style="margin-left: -10%">
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="cardWidth" *ngIf="totalCountsData">
+            <mat-card-content>
+              <p>Min. File Size (GB)</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalCountsData?.minFileSize}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        <div class="field-container card-deck btn-block" *ngIf="totalIntExtCountsData && !restrict">
+          <mat-card class="mr-3 ml-4 cardWidth" >
+            <mat-card-content>
+              <p>Total Internal Producers</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalIntExtCountsData?.internalProducerCount}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="mr-3 cardWidth">
+            <mat-card-content>
+              <p>Total External Consumers</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalIntExtCountsData?.externalConsumerCount}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="mr-3 cardWidth">
+            <mat-card-content>
+              <p>Total External Producers
+              </p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalIntExtCountsData?.externalProducerCount}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+          <mat-card class="cardWidth">
+            <mat-card-content>
+              <p>Total Internal Consumers</p>
+            </mat-card-content>
+            <mat-card-header style="margin-left: -10%">
+              <mat-card-title>{{totalIntExtCountsData?.internalConsumerCount}}
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </div>
+        <div class="row" style="width: 100%" *ngIf="!restrict">
+          <div class="col-sm-3 col-md-3 col-lg-3">
+            <h4 *ngIf="dataSourceProducer" class="my-2 text-center">Top Producers</h4>
+            <div class="mat-elevation-z8" *ngIf="dataSourceProducer">
+              <table mat-table [dataSource]="dataSourceProducer">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name. </th>
+                  <td mat-cell *matCellDef="let element" style="word-break: break-word"> {{element.name}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsProducer"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsProducer;"></tr>
+              </table>
+              <mat-paginator class="paginatordiv" #paginator #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                             showFirstLastButtons></mat-paginator>
+            </div>
+
+            <h4 *ngIf="dataSourceConsumer" class="mt-5 mb-1 text-center">Top Consumers</h4>
+            <div class="mat-elevation-z8" style="" *ngIf="dataSourceConsumer">
+              <table mat-table [dataSource]="dataSourceConsumer">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Name. </th>
+                  <td mat-cell *matCellDef="let element" style="word-break: break-word"> {{element.name}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsConsumers"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsConsumers;"></tr>
+              </table>
+              <mat-paginator class="paginatordiv" #paginator1 #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                             showFirstLastButtons></mat-paginator>
+            </div>
+
+            <h4 *ngIf="dataSourceFileSize" class="mt-5 mb-1 text-center">Top FileSizes(GB)</h4>
+            <div class="mat-elevation-z8" style="" *ngIf="dataSourceFileSize">
+              <table mat-table [dataSource]="dataSourceFileSize">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> File Size. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsFileSize"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsFileSize;"></tr>
+              </table>
+
+              <mat-paginator class="paginatordiv" #paginator2 #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                             showFirstLastButtons></mat-paginator>
+            </div>
+
+            <h4 *ngIf="dataSourceChargeBack" class="mt-5 mb-1 text-center">Top Charge Backs</h4>
+            <div class="mat-elevation-z8" style="" *ngIf="dataSourceChargeBack">
+              <table mat-table [dataSource]="dataSourceChargeBack">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="name">
+                  <th mat-header-cell *matHeaderCellDef> Charge Backs. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsChargeBack"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsChargeBack;"></tr>
+              </table>
+
+              <mat-paginator  class="paginatordiv" #paginator3 #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                              showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+          <div class="col-sm-9 col-md-9 col-lg-9">
+            <div class="field-container">
+              <div *ngIf="lineChartData1" id="lineChartdiv"></div>
+            </div>
+            <h4 *ngIf="GPData">Producer/Consumer and FilesCount</h4>
+            <div *ngIf="GPData" id="chartdiv"></div>
+            <h4 *ngIf="dataSourceMonthlyData" class="mt-5 mb-1 text-center">Monthly Data</h4>
+            <div class="mat-elevation-z8" style="" *ngIf="dataSourceMonthlyData">
+              <table mat-table [dataSource]="dataSourceMonthlyData">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date">
+                  <th mat-header-cell *matHeaderCellDef> TimeStamp (Year Monthly) </th>
+                  <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileCount">
+                  <th mat-header-cell *matHeaderCellDef> File Count. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fileCount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileSize">
+                  <th mat-header-cell *matHeaderCellDef> File Size. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fileSize}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="chargeback">
+                  <th mat-header-cell *matHeaderCellDef> Charge Back. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.chargeback}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsMonthlyData"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsMonthlyData;"></tr>
+              </table>
+
+              <mat-paginator #paginator4 #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                             showFirstLastButtons></mat-paginator>
+            </div>
+
+
+            <h4 *ngIf="dataSourceQuarterlyData" class="mt-5 mb-1 text-center">Quarterly Data</h4>
+            <div class="mat-elevation-z8" style="" *ngIf="dataSourceQuarterlyData">
+              <table mat-table [dataSource]="dataSourceQuarterlyData">
+                <ng-container matColumnDef="Sno">
+                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                  <td mat-cell *matCellDef="let element; let i = index;"> {{(paginatorRef.pageIndex * paginatorRef.pageSize) + (i + 1)}}. </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date">
+                  <th mat-header-cell *matHeaderCellDef> TimeStamp (Year Quarter). </th>
+                  <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileCount">
+                  <th mat-header-cell *matHeaderCellDef> File Count. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fileCount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileCountPercentage">
+                  <th mat-header-cell *matHeaderCellDef> % </th>
+                  <td mat-cell *matCellDef="let element"> {{(element.fileCount / totalFileCount) * 100 | number:'1.0-2'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileSize">
+                  <th mat-header-cell *matHeaderCellDef> File Size. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fileSize}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="fileSizePercentage">
+                  <th mat-header-cell *matHeaderCellDef> % </th>
+                  <td mat-cell *matCellDef="let element"> {{(element.fileSize / totalFileSize) * 100 | number:'1.0-2'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="chargeback">
+                  <th mat-header-cell *matHeaderCellDef> Charge Back. </th>
+                  <td mat-cell *matCellDef="let element"> {{element.chargeback}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="chargebackPercentage">
+                  <th mat-header-cell *matHeaderCellDef> % </th>
+                  <td mat-cell *matCellDef="let element"> {{(element.chargeback / totalChargeback) * 100 | number:'1.0-2'}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsQuarterlyData"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsQuarterlyData;"></tr>
+              </table>
+
+              <mat-paginator #paginator5 #paginatorRef [pageSizeOptions]="[2, 4, 6]"
+                             showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </form>
+      <h1 *ngIf="restrict" class="text-center">No Data Found</h1>
+    </mat-card>
+  </mat-card>
+</div>

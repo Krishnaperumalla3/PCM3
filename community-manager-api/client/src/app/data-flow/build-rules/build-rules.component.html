@@ -1,0 +1,68 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="rules-box">
+    <h2 mat-dialog-title>APPLY RULES AND PROVIDE PROPERTIES</h2>
+    <mat-dialog-content>
+      <!-- <dual-list
+        [source]="source"
+        [key]="key"
+        [display]="display"
+        [(destination)]="confirmed"
+        height="265px"
+      ></dual-list>
+
+      <pcm-custom-listbox
+        [source]="source"
+        [key]="key"
+        [display]="display"
+        [(destination)]="confirmed"
+        height="350px"
+        (selectChange)="showMessage($event)"
+        sourceName="Available Rules"
+        targetName="Rules Applied"
+        [sort]="true"
+        [compare]="compare"
+      ></pcm-custom-listbox>
+
+
+      <pcm-dual-list-box
+        [source]="source"
+        [key]="key"
+        [display]="display"
+        [(destination)]="confirmed"
+        height="350px"
+        (selectChange)="showMessage($event)"
+        sourceName="Available Rules"
+        targetName="Rules Applied"
+        [sort]="true"
+        [compare]="compare"
+      ></pcm-dual-list-box> -->
+
+      <pcm-list-box [exstngLst]="exstngLst"  (selectedList)="selectedRules($event)"></pcm-list-box>
+
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button
+        type="button"
+        [mat-dialog-close]="selected | json"
+        class="btn btn-primary"
+      >
+        ADD
+      </button>
+    </mat-dialog-actions>
+  </div>

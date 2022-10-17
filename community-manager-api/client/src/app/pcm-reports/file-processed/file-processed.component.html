@@ -1,0 +1,148 @@
+<div class="pcm-content centralize partner">
+  <mat-card>
+    <h3 class="d-flex align-items-center">
+      <span>File Processed</span>
+    </h3>
+
+    <mat-card >
+      <form [formGroup]="searchReport" class="form__container">
+        <mat-form-field>
+          <input matInput class="pcm-date-field" [owlDateTime]="from" [owlDateTimeTrigger]="from"
+                 placeholder='From Date'
+                 formControlName="dateRangeStart" name="dateRangeStart">
+          <owl-date-time #from></owl-date-time>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput class="pcm-date-field" [owlDateTime]="to" [owlDateTimeTrigger]="to"
+                 placeholder='To Date'
+                 formControlName="dateRangeEnd" name="dateRangeEnd">
+          <owl-date-time #to></owl-date-time>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="direction" placeholder="Direction">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="Inbound">Inbound</mat-option>
+            <mat-option value="Outbound">Outbound</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="transferType" placeholder="Transfer Type">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="MFT">MFT</mat-option>
+            <mat-option value="DocHandling">DocHandling</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="docType" placeholder="Doc Type">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="EDIFACT">EDIFACT</mat-option>
+            <mat-option value="FLATFILE">FLATFILE</mat-option>
+            <mat-option value="XML">XML</mat-option>
+            <mat-option value="X12">X12</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="status" placeholder="Status">
+            <mat-option value=""><i>Select</i></mat-option>
+            <mat-option value="Success">Success</mat-option>
+            <mat-option value="Failed">Failed</mat-option>
+            <mat-option value="Reprocessed">Reprocessed</mat-option>
+            <mat-option value="ManualReprocess">ManualReprocess</mat-option>
+            <mat-option value="Repicked">Repicked</mat-option>
+            <mat-option value="Redropped">Redropped</mat-option>
+            <mat-option value="MarkedSuccess">MarkedSuccess</mat-option>
+            <mat-option value="No Action Required">No Action Required</mat-option>
+            <mat-option value="Under Review">Under Review</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Partner" formControlName="partner" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Transaction" formControlName="transaction" />
+        </mat-form-field>
+      </form>
+    </mat-card>
+    <div class="btn-grp sbmt-btn mt-3">
+      <button type="button" class="btn btn-primary" (click)="submit()">
+        SUBMIT
+      </button>
+<!--      <button type="button" class="btn btn-info" (click)="reset()">RESET</button>-->
+    </div>
+  </mat-card>
+
+  <mat-card class="mt-2" *ngIf="showReport" class="mt-2">
+    <div class="grid-container">
+      <mat-grid-list cols="1" rowHeight="350">
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <h4>Number of files processed by Hour for last 30 Days</h4>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div echarts [options]="last30DaysFiles"></div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="2" rowHeight="450">
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <h4>Number of files processed by Day for last 12 months</h4>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div echarts [options]="last12MonthsFiles"></div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <h4>Number of files processed by Month for last 36 months</h4>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div echarts [options]="last36MonthsFiles"></div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="1" rowHeight="350">
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <h4>Number of files processed by Day in a week, Average of last 4 weeks by day</h4>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div echarts [options]="last4WeeksFiles"></div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <mat-grid-list cols="1" rowHeight="350">
+        <mat-grid-tile>
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <h4>Identify the Peak hour of file process for last 31 days</h4>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+              <div echarts [options]="last31DaysFiles"></div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </mat-card>
+
+</div>

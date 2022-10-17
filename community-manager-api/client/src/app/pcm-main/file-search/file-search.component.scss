@@ -1,0 +1,132 @@
+.pcm-content {
+  padding: 1%;
+  width: auto;
+  grid-template-rows: 10% auto;
+  grid-gap: 10px;
+}
+.pcm-date-contnr {
+  &:focus {
+    color: #6f42c1;
+  }
+}
+
+.pcm-date-field {
+  border: none;
+  border-bottom: solid 1px;
+  width: 100%;
+  color: #6c757db8;
+
+  &:focus {
+    outline: none;
+    border-bottom: solid 2px #6f42c1;
+  }
+
+  &:valid {
+    color: #000000 !important;
+  }
+}
+
+.owl-dt-inline-container,
+.owl-dt-popup-container {
+  position: relative;
+  width: 21em !important;
+}
+
+.sbmt-btn {
+  margin-top: 2%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-header-cell {
+  font-size: 1.1rem !important;
+  color: #002e56 !important;
+  font-weight: 600 !important;
+  flex: 1 1 10rem;
+}
+
+mat-cell {
+  flex: 1 1 10rem;
+}
+
+.act-width {
+  flex: 1 0 120px !important;
+}
+
+.mat-sort-header-container {
+  color: #000000 !important;
+}
+
+div.mat-menu-content {
+  display: flex;
+}
+
+.pcm-success {
+  color: white;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background-color: #4CAF50;
+}
+
+.pcm-danger {
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  background-color: #F44336;
+}
+
+.act-danger {
+  background-color: #F44336 !important;
+}
+
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  padding-right: 20px !important;
+  font-size: 1.4rem !important;
+  width: 213px;
+}
+
+th.mat-header-cell {
+  color: #002e56 !important;
+  font-weight: 600 !important;
+  //border-top: solid 1px rgba(0,0,0,0.2) !important;
+  //border-bottom: solid 1px rgba(0,0,0,0.2) !important;
+}
+
+.mat-cell, .mat-footer-cell {
+  //border-bottom: solid 1px rgba(0,0,0,0.2) !important;
+}
+
+button.mat-sort-header-button {
+  margin-left: 16% !important;
+}
+
+.mat-sort-header-button {
+  margin-left: 16% !important;
+}
+
+table {
+  display: block !important;
+  overflow-x: auto !important;
+  white-space: nowrap !important;
+}
+tr.mat-header-row {
+  height: 40px !important;
+}
+tr.mat-footer-row, tr.mat-row {
+  height: 40px !important;
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .pcm-tbl-wrapper {
+    width: 115px;
+  }
+}
+
+::ng-deep .mat-select-value {
+  max-width: max-content !important;
+}

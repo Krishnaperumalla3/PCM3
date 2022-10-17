@@ -1,0 +1,98 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<div class="pcm-content centralize application">
+  <mat-card>
+    <h4 class="font-weight-bold">{{"SETTINGS.FILE_JOB_SCH" | translate}}</h4>
+    <form [formGroup]="schedulerForm" #form>
+      <mat-card>
+        <div class="form-row">
+          <mat-form-field class="form-group col-md-4">
+            <input type="number" matInput placeholder="{{'SETTINGS.SCHEDULE.FIELDS.FL_AGE' | translate}}" min="1" formControlName="fileAge" id="fileAge" (keypress)="numberOnly($event)" required/>
+            <mat-error *ngIf="schedulerForm.controls['fileAge'].errors && schedulerForm.controls['fileAge'].errors.required">No of days is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-4">
+            <mat-select placeholder="{{'SETTINGS.SCHEDULE.FIELDS.CLD_NME' | translate}}" formControlName="cloudName" id="cloudName" required>
+              <mat-option value="">Select</mat-option>
+              <mat-option *ngFor="let opt of cloudList" value="{{opt.name}}">{{opt.name}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="schedulerForm.controls['cloudName'].errors && schedulerForm.controls['cloudName'].errors.required">Cloud name is required.</mat-error>
+          </mat-form-field>
+          <mat-form-field class="form-group col-md-4">
+            <mat-select placeholder="{{'SETTINGS.SCHEDULE.FIELDS.STATUS' | translate}}" formControlName="active" id="status">
+              <mat-option [value]="true">Active</mat-option>
+              <mat-option [value]="false">Inactive</mat-option>
+            </mat-select>
+<!--            <mat-error *ngIf="schedulerForm.controls['active'].errors && schedulerForm.controls['active'].errors.required">Status is required.</mat-error>-->
+          </mat-form-field>
+        </div>
+      </mat-card>
+
+      <mat-card class="mt-2" *ngIf="schedulerForm.value.cloudName === 'AWS-S3'">
+        <h4 class="font-weight-bold">AWS S3</h4>
+        <ng-container formGroupName="s3SchedulerConfig">
+          <div class="form-row">
+            <mat-form-field class="form-group col-md-3">
+              <mat-select formControlName="region" placeholder="{{'SETTINGS.SCHEDULE.FIELDS.REGION' | translate}}" id="region" required>
+                <mat-option>
+                  <ngx-mat-select-search placeholderLabel="search" [formControl]="searchFilterCtrl" [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                </mat-option>
+                <mat-option value="">Select</mat-option>
+                <mat-option *ngFor="let opt of getSearchFilterOptions(regionList)" value="{{opt.key}}">
+                  {{opt.value}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="schedulerForm.get('s3SchedulerConfig').get('region').errors && schedulerForm.get('s3SchedulerConfig').get('region').hasError('required')">Region is required.</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-3">
+              <input matInput type="text" placeholder="{{'SETTINGS.SCHEDULE.FIELDS.BKT_NAME' | translate}}" formControlName="bucketName" id="bucketName" required>
+              <mat-error *ngIf="schedulerForm.get('s3SchedulerConfig').get('bucketName').errors && schedulerForm.get('s3SchedulerConfig').get('bucketName').hasError('required')">Bucket name is required.</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-3">
+              <input matInput type="text" placeholder="{{'SETTINGS.SCHEDULE.FIELDS.ACC_KEY_ID' | translate}}" formControlName="accessKeyId" id="accessKeyId" required/>
+              <mat-error *ngIf="schedulerForm.get('s3SchedulerConfig').get('accessKeyId').errors && schedulerForm.get('s3SchedulerConfig').get('accessKeyId').hasError('required')">Access key id is required.</mat-error>
+            </mat-form-field>
+            <mat-form-field class="form-group col-md-3">
+              <input matInput type="password" placeholder="{{'SETTINGS.SCHEDULE.FIELDS.SCR_KEY_ID' | translate}}" formControlName="secretKeyId" id="secretKeyId" required/>
+              <mat-error *ngIf="schedulerForm.get('s3SchedulerConfig').get('secretKeyId').errors && schedulerForm.get('s3SchedulerConfig').get('secretKeyId').hasError('required')">Secret key id is required.</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="form-row" formArrayName="filesPathDetails">
+            <ng-container *ngFor="let itemRow of filesPathDetails.controls; let i=index;let l=last" [formGroupName] ="i">
+              <mat-form-field class="form-group col-md-4">
+                <input matInput type="text" placeholder="Source Path" formControlName="sourcePath" id="sourcePath{{i}}" required>
+                <mat-error *ngIf="schedulerForm.controls.s3SchedulerConfig['controls'].filesPathDetails.controls[i].controls.sourcePath.errors && schedulerForm.controls.s3SchedulerConfig['controls'].filesPathDetails.controls[i].controls.sourcePath.errors?.required">Source path is required.</mat-error>
+                <mat-error *ngIf="itemRow['controls'].sourcePath.errors?.unique">Source path should be unique.</mat-error>
+              </mat-form-field>
+              <mat-form-field class="form-group col-md-4">
+                <input matInput type="text" placeholder="Dest Path" formControlName="destPath" id="destPath{{i}}" required>
+                <mat-error *ngIf="schedulerForm.controls.s3SchedulerConfig['controls'].filesPathDetails.controls[i].controls.destPath.errors && schedulerForm.controls.s3SchedulerConfig['controls'].filesPathDetails.controls[i].controls.destPath.errors?.required">Dest path is required.</mat-error>
+              </mat-form-field>
+              <div class="col-md-4">
+                <mat-icon class="pt-5" style="font-size: 24px !important;" (click)="addPathDetails()">add_box</mat-icon>
+                <mat-icon class="pt-5 mx-2" *ngIf="i > 0" style="font-size: 24px !important;" (click)="deletePathDetails(i)">delete</mat-icon>
+              </div>
+            </ng-container>
+          </div>
+        </ng-container>
+      </mat-card>
+    </form>
+    <div class="btn-grp mt-3">
+      <button *ngIf="!pkId" type="button" (click)="onSubmit(schedulerForm)" class="btn btn-primary">{{"SETTINGS.BUTTONS.CREATE" | translate}}</button>
+      <button *ngIf="pkId" type="button" (click)="onSubmit(schedulerForm)" class="btn btn-primary">{{"SETTINGS.BUTTONS.UPDATE" | translate}}</button>
+<!--      <button *ngIf="pkId" type="button" class="btn btn-danger" (click)="delete()">{{"SETTINGS.BUTTONS.DELETE" | translate}}</button>-->
+    </div>
+  </mat-card>
+</div>

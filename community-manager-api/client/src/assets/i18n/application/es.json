@@ -1,0 +1,57 @@
+{
+  "CREATE_TITLE": "Crear aplicación/puerta de enlace back-end",
+  "EDIT_TITLE": "Editar aplicación/Puerta de enlace back-end",
+  "MANGE_TITLE": "Administrar aplicación/puerta de enlace back-end",
+  "FIELDS": {
+    "APP_NME_REQ": {
+      "LABEL": "Nombre de la aplicación *"
+    } ,
+    "APP_ID_REQ": {
+      "LABEL": "ID de aplicación *"
+    } ,
+    "EMAIL_REQ": {
+      "LABEL": "Email *"
+    } ,
+    "PHONE_REQ": {
+      "LABEL": "Teléfono *"
+    } ,
+    "PROTOCOL_REQ": {
+      "LABEL": "Protocolo *"
+    } ,
+    "APP_NME": {
+      "LABEL": "Nombre de la aplicación"
+    } ,
+    "APP_ID": {
+      "LABEL": "ID de aplicación"
+    } ,
+    "PROTOCOL": {
+      "LABEL": "Protocolo"
+    } ,
+    "STATUS": {
+      "LABEL": "Estado"
+    }
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "APP_NME": "Nombre de la aplicación",
+      "APP_ID": "ID de aplicación",
+      "PRTOCOL": "Protocolo",
+      "EMAIL": "Email",
+      "STATUS": "Estado de la aplicación"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "Enviar",
+    "CANCEL": "Cancelar",
+    "SEARCH_APP": "Solicitud de búsqueda",
+    "REST_SEARCH": "restablecer búsqueda"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Historial de actividad",
+    "ACTVTY_ON": "Actividad activada",
+    "USR_NME": "Nombre de usuario",
+    "ACTVTY": "Actividad"
+  },
+  "PROTOCOL": "Protocolo",
+  "ACTIVITY": "Actividad"
+}

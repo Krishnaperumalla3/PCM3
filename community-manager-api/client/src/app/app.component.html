@@ -1,0 +1,127 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-container" [ngClass]="{'page__login': !(isUserLoggedIn) }">
+  <mat-toolbar *ngIf="isUserLoggedIn" class="header">
+    <div *ngIf="!appInfo['cmDeployment']" class="logo-holder">
+      <img class="logo-img" [src]="base64Image" alt="logo"/>
+    </div>
+    <div *ngIf="appInfo['cmDeployment']" class="logo-ibm-holder">
+      <img class="logo-ibm" src="../assets/img/ibm-logo.png" alt="logo"/>
+    </div>
+    <div style="flex: 1;">
+      <button style="left: 7%" mat-icon-button (click)="toggleSideMenu()" disableRipple>
+        <mat-icon class="pcm-menu-icon">menu</mat-icon>
+      </button>
+    </div>
+
+    <div class="header-user">
+      <button mat-button [matMenuTriggerFor]="ngxtrans">
+        <mat-icon style="font-size: 2.3rem !important">translate</mat-icon>
+      </button>
+      <mat-menu #ngxtrans="matMenu">
+        <button mat-menu-item *ngFor="let lng of supportedLang" (click)="onLangSelect(lng.value)">{{lng.label}}</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon style="font-size: 2.3rem !important">account_box</mat-icon>
+        {{userService.name}}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button *ngIf="(activeProfile === 'pcm' || activeProfile === 'cm')" mat-menu-item
+                (click)="passwordChange()">{{'COMMON.CHNGE_PWD' | translate}}</button>
+        <button mat-menu-item (click)=" doLogout() ">{{'COMMON.LOGOUT' | translate}}</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+  <mat-drawer-container>
+    <mat-drawer *ngIf="isUserLoggedIn"
+                [ngClass]="{'black-side-nav': menuColour === 'black',
+                'green-side-nav': menuColour === 'green',
+                'red-side-nav': menuColour === 'red',
+                'grey-side-nav': menuColour === 'grey',
+                'yellow-side-nav': menuColour === 'yellow'}" [opened]="true" [mode]="'side'">
+      <div class="user-holder">
+        <img class="user-img" src="../assets/img/user_bg.jpg" alt="logo"/>
+        <div class="user-detail">
+          <mat-icon class="user-detail-logo">account_box</mat-icon>
+          <div class="user-detail-logo user-detail-logo-1">
+            <span>{{userService.name}}</span>
+          </div>
+          <div class="user-detail-logo user-detail-logo-2">
+            <span>{{appInfo['appCustomName']}}</span>
+          </div>
+          <div class="user-detail-logo user-detail-logo-3">
+            <span>{{appInfo['appVersion']}}</span>
+          </div>
+        </div>
+      </div>
+      <ng-container *ngFor="let nav of menuLst">
+        <mat-nav-list (click)="menuSelected(nav.menuId)"
+                      [ngClass]="{'active-black': selected === nav.menuId && menuColour === 'black',
+                      'active-green': selected === nav.menuId && menuColour === 'green',
+                      'active-grey': selected === nav.menuId && menuColour === 'grey',
+                      'active-red': selected === nav.menuId && menuColour === 'red',
+                      'active-yellow': selected === nav.menuId && menuColour === 'yellow'}">
+          <a mat-list-item>
+            <span style="color: #fff">
+              <mat-icon class="pcm-sidenav-icon">{{ nav.iconCls }}</mat-icon>
+            </span>
+            <span class="side-nav-itm">{{ nav.menu | translate}}</span>
+            <span *ngIf="nav.subMenu">
+              <mat-icon class="pcm-sidenav-icon" *ngIf="selected === nav.menuId">keyboard_arrow_down</mat-icon>
+              <mat-icon class="pcm-sidenav-icon" *ngIf="selected !== nav.menuId">keyboard_arrow_right</mat-icon>
+            </span>
+          </a>
+        </mat-nav-list>
+        <div class="side-sub--menu" *ngIf="selected && selected === nav.menuId">
+          <mat-nav-list class="side-nav-sub-menu" *ngFor="let subMenu of nav.subMenu">
+            <a class="sub-nav-content" mat-list-item routerLink="{{ subMenu.route }}"
+               (click)="selectedMenu(subMenu.label)">
+              <span class="sub-nav-icon">
+                <mat-icon *ngIf="subMenu['iconCls']"
+                          class="pcm-sidenav-icon">{{subMenu['iconCls']}}</mat-icon>
+              </span>
+              <span class="side-nav-itm" style="color: #fff; margin-left: 3px">{{ subMenu.label | translate }}</span>
+            </a>
+          </mat-nav-list>
+        </div>
+      </ng-container>
+    </mat-drawer>
+
+    <mat-drawer-content>
+      <div class="module-header" *ngIf="isUserLoggedIn">
+        <mat-card style="height: 55px">
+          <div style="display: flex;align-items: center;">
+            <mat-icon routerLink="/pcm/home" svgIcon="home" style="margin-right: 1%; margin-bottom: 0.7%;"></mat-icon>
+            <h3><b>Home</b> / {{moduleName$ | async | translate}}</h3>
+          </div>
+        </mat-card>
+      </div>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+
+<ngx-loading *ngIf="isUserLoggedIn" [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+
+<swal
+  #invalidSwal
+  title="Session time out"
+  text="{{idleState}}"
+  type="warning"
+  [focusCancel]="true">
+  (click)=""
+</swal>

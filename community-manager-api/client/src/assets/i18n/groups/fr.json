@@ -1,0 +1,26 @@
+{
+  "CREATE_GROUP": "Créer un groupe",
+  "EDIT_GROUP": "Modifier le groupe",
+  "SEARCH_GROUP": "Groupe de recherche",
+  "ASSIGN_PARTNER": "Attribuer un partenaire",
+
+  "FIELDS": {
+    "LABEL": "Nom de groupe"
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "GROUP_NAME": "Nom de groupe"
+    }
+  },
+
+  "BUTTONS": {
+    "CREATE_GROUP": "Créer un groupe",
+    "UPDATE_GROUP": "GROUPE DE MISE À JOUR",
+    "SEARCH_GROUPS": "GROUPES DE RECHERCHE",
+    "RESET_SEARCH": "RÉINITIALISER LA RECHERCHE",
+    "CANCEL": "ANNULER",
+    "EDIT": "ÉDITER",
+    "DELETE": "SUPPRIMER"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "TITLE": "Crea flusso di dati",
+  "TABS": {
+    "INBOUND": {
+      "LABEL": "Gestione dei file in entrata"
+    },
+    "OUTBOUND": {
+      "LABEL": "Gestione dei file IN USCITA"
+    },
+    "ACTIVITY": {
+      "LABEL": "ATTIVITÀ",
+      "CONTENT": "STORIA DELL'ATTIVITÀ",
+      "ACTVTY_ON": "Attività attiva",
+      "USR_NME": "Nome utente",
+      "ACTVTY": "Attività"
+    }
+  },
+  "LABELS": {
+    "LOADIN": "Caricamento schede ...",
+    "PRCING_RL_DTL": "Dettagli della regola di elaborazione",
+    "NO_DT_FND": "Nessun flusso trovato",
+    "NO_RSLT_FND": "Nessun risultato trovato!"
+  },
+  "FIELDS": {
+    "PRTNR_PRDCR": {
+      "LABEL": "Partner/Gateway Frontend"
+    },
+    "APP_CUST": {
+      "LABEL": "Applicazione/gateway di back-end"
+    }
+  },
+  "MFT": {
+    "IN_FL_NME_REG_EXP": {
+      "LABEL": "Nome file_Espressione regolare *"
+    },
+    "IN_FLTR": {
+      "LABEL": "Filtro"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Aggiungi flusso"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Nome del file *",
+        "FLTR": "Filtro"
+      }
+    }
+  },
+  "DocHandling": {
+    "IN_FLTR": {
+      "LABEL": "Filtro"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "tipo di documento *"
+    },
+    "IN_VER": {
+      "LABEL": "Versione"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transazione"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Identità del mittente *"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "ID destinatario *"
+    },
+    "TABLE": {
+      "ACTIONS": {
+        "ADD_FLW": "Aggiungi flusso"
+      },
+      "COLUMNS": {
+        "S_NO": "S.No",
+        "FL_NME": "Nome del file",
+        "DOC_TYPE": "Tipo di documento *",
+        "VERSION": "Versione",
+        "TRNSCTION": "Transazione *",
+        "SNDR_ID": "Identità del mittente *",
+        "RCVR_ID": "ID destinatario *"
+      }
+    }
+  },
+  "COPY_DATA_FLOW": {
+    "TITLE": "Seleziona i profili dei partner e delle applicazioni",
+    "IN_BND_LABEL": "In entrata",
+    "OUT_BND_LABEL": "In uscita",
+    "FIELDS": {
+      "IN_SND_ID": {
+        "LABEL": "Identità del mittente",
+        "REQ_ERR": "L'ID mittente è obbligatorio."
+      },
+      "IN_RCR_ID": {
+        "LABEL": "ID destinatario",
+        "REQ_ERR": "L'ID del destinatario è obbligatorio."
+      }
+    }
+  },
+  "SEARCH_WORKFLOW": {
+    "IN_PRT_NME": {
+      "LABEL": "Nome del partner"
+    },
+    "IN_APP_NME": {
+      "LABEL": "Nome dell'applicazione"
+    },
+    "IN_SEQ_TYPE": {
+      "LABEL": "Tipo SEQ"
+    },
+    "IN_FLW": {
+      "LABEL": "Flusso"
+    },
+    "IN_FL_NME": {
+      "LABEL": "Nome del file"
+    },
+    "IN_DOC_TYPE": {
+      "LABEL": "Tipo di documento"
+    },
+    "IN_TRNS": {
+      "LABEL": "Transazione"
+    },
+    "IN_SND_ID": {
+      "LABEL": "Identità del mittente"
+    },
+    "IN_RCR_ID": {
+      "LABEL": "ID destinatario"
+    }
+  },
+  "SRCH_MUL_WRK_FLW": {
+    "TITLE": "Crea flussi da più flussi di dati.",
+    "SRCH_TITLE": "Flussi di ricerca",
+    "NOTE": "Nota: continua a selezionare con più criteri di ricerca prima di fare clic su Avanti.",
+    "FIELDS":{
+      "INBUND_SNDR_ID": {
+        "LABEL": "ID mittente in entrata"
+      },
+      "INBUN_RCVR_ID": {
+        "LABEL": "ID destinatario in entrata"
+      },
+      "OUTBUND_SNDR_ID": {
+        "LABEL": "ID mittente in uscita"
+      },
+      "OUTBUN_RCVR_ID": {
+        "LABEL": "ID destinatario in uscita"
+      }
+    },
+    "BUTTONS": {
+      "SRCH_WF": "Cerca flussi di dati",
+      "RESET_SRCH": "Reimposta ricerca",
+      "NEXT": "IL PROSSIMO",
+      "CANCEL": "ANNULLA"
+    },
+    "TABLE": {
+      "COLUMNS": {
+        "SLCT": "Selezionare",
+        "PRTNR_NME": "Nome del partner",
+        "APP_NME": "Nome dell'applicazione",
+        "SEQ_TYPE": "Tipo SEQ",
+        "FLW": "Flusso",
+        "FL_NME": "Nome del file",
+        "DOC_TYPE": "Tipo di documento",
+        "TRNSACTN": "Transazione",
+        "SNDR_ID": "Identità del mittente",
+        "RCVR_ID": "ID destinatario"
+      },
+      "NO_RSLT_FND": "nessun risultato trovato !"
+    }
+  },
+  "BUTTONS": {
+    "SRCH_WF": "RICERCA FLUSSO DATI",
+    "IMPRT_WF": "IMPORTA FLUSSO DATI",
+    "SETUP_WF": "FLUSSO DATI DI IMPOSTAZIONE",
+    "SETUP_WF_MUL_FLW": "IMPOSTAZIONE DA FLUSSI MULTIPLI",
+    "RESET_SERCH": "RESETTA LA RICERCA",
+    "EXPRT_WF": "ESPORTA FLUSSO DI DATI",
+    "CP_WF": "COPIA FLUSSO DATI",
+    "AD_FRM_MUL_FLW": "AGGIUNGI DA MOLTEPLICI FLUSSI",
+    "DEL_WF": "ELIMINA FLUSSO DATI",
+    "SVE_WF": "SALVA FLUSSO DATI",
+    "CANCEL": "ANNULLA",
+    "UPDATE": "AGGIORNARE"
+  },
+  "RULE": {
+    "TITLE": "Dettagli regola",
+    "CREATE_TITLE": "Crea regola",
+    "EDIT_TITLE": "Modifica regola",
+    "RULE_PRPTY_DTL": "Dettagli proprietà regola",
+    "RULE_NME": "Nome regola",
+    "SERCH_RULE": "Regola di ricerca",
+    "BUS_PROCSS": "Processo di business",
+    "HINT": "Usa WildCard * per risultati migliori.",
+    "FIELDS": {
+      "PROP_1": "Nome della proprietà1",
+      "PROP_2": "Nome della proprietà2",
+      "PROP_3": "Nome della proprietà3",
+      "PROP_4": "Nome della proprietà4",
+      "PROP_5": "Nome della proprietà5",
+      "PROP_6": "Nome della proprietà6",
+      "PROP_7": "Nome della proprietà7",
+      "PROP_8": "Nome della proprietà8",
+      "PROP_9": "Nome della proprietà9",
+      "PROP_10": "Nome della proprietà10",
+      "PROP_11": "Nome della proprietà11",
+      "PROP_12": "Nome della proprietà12",
+      "PROP_13": "Nome della proprietà13",
+      "PROP_14": "Nome della proprietà14",
+      "PROP_15": "Nome della proprietà15",
+      "PROP_16": "Nome della proprietà16",
+      "PROP_17": "Nome della proprietà17",
+      "PROP_18": "Nome della proprietà18",
+      "PROP_19": "Nome della proprietà19",
+      "PROP_20": "Nome della proprietà20",
+      "PROP_21": "Nome della proprietà21",
+      "PROP_22": "Nome della proprietà22",
+      "PROP_23": "Nome della proprietà23",
+      "PROP_24": "Nome della proprietà24",
+      "PROP_25": "Nome della proprietà25"
+    },
+    "MANGE_RULE": {
+      "HEADER": {
+        "RULE": "Regola",
+        "BP_ID": "BP Id"
+      }
+    },
+    "BUTTONS": {
+      "CREATE_RULE": "CREA REGOLA",
+      "UPDATE_RULE": "REGOLA DI AGGIORNAMENTO",
+      "SRCH_ACTN": "RICERCA AZIONE",
+      "RSET_SRCH": "RESETTA LA RICERCA",
+      "CANCEL": "ANNULLA"
+    }
+  }
+}

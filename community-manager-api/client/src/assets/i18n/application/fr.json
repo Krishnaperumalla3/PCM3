@@ -1,0 +1,57 @@
+{
+  "CREATE_TITLE": "Créer une application/une passerelle principale",
+  "EDIT_TITLE": "Modifier l'application/la passerelle principale",
+  "MANGE_TITLE": "Gérer l'application / la passerelle principale",
+  "FIELDS": {
+    "APP_NME_REQ": {
+      "LABEL": "Nom de l'application *"
+    } ,
+    "APP_ID_REQ": {
+      "LABEL": "ID d'application *"
+    } ,
+    "EMAIL_REQ": {
+      "LABEL": "Email *"
+    } ,
+    "PHONE_REQ": {
+      "LABEL": "Téléphone *"
+    } ,
+    "PROTOCOL_REQ": {
+      "LABEL": "Protocole *"
+    } ,
+    "APP_NME": {
+      "LABEL": "Nom de l'application"
+    } ,
+    "APP_ID": {
+      "LABEL": "ID d'application"
+    } ,
+    "PROTOCOL": {
+      "LABEL": "Protocole"
+    } ,
+    "STATUS": {
+      "LABEL": "Statut"
+    }
+  },
+  "TABLE": {
+    "COLUMNS": {
+      "APP_NME": "Nom de l'application",
+      "APP_ID": "ID d'application",
+      "PRTOCOL": "Protocol",
+      "EMAIL": "Email",
+      "STATUS": "Statut de l'application"
+    }
+  },
+  "BUTTONS": {
+    "SUBMIT": "Soumettre",
+    "CANCEL": "Annuler",
+    "SEARCH_APP": "Rechercher une application",
+    "REST_SEARCH": "Réinitialiser la recherche"
+  },
+  "ACTIVITY_HISTORY": {
+    "TITLE": "Historique des activités",
+    "ACTVTY_ON": "Activité activée",
+    "USR_NME": "Nom d'utilisateur",
+    "ACTVTY": "Activité"
+  },
+  "PROTOCOL": "Protocol",
+  "ACTIVITY": "Activité"
+}

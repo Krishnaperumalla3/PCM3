@@ -1,0 +1,223 @@
+{
+  "ACTN_STATUS": "estado de acción",
+  "ERROR": {
+    "TITLE": "Error"
+  },
+  "CANCEL": {
+    "TITLE": "¿Estás seguro?",
+    "BODY": "quieres cancelar?",
+    "CNFRM_TXT": "¡Sí, cancélelo!"
+  },
+  "IN_VALID": {
+    "TITLE": "Forma invalida",
+    "BODY": "(*) se requieren campos para enviar."
+  },
+  "IN_VALID_PHONE": {
+    "TITLE": "Teléfono inválido",
+    "BODY": "Número de teléfono no válido"
+  },
+  "FL_TRANSFER": {
+    "SERCH": {
+      "TITLE": "Transferencia de archivos"
+    },
+    "FL_STS": {
+      "TXT": "¿Está seguro de que desea cambiar el proceso del archivo?"
+    }
+  },
+  "APP": {
+    "TITLE": "solicitud",
+    "INVLD_EML": {
+      "TITLE": "Identificación de correo",
+      "BODY": "ID de correo electrónico no válido."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Formulario de socio",
+      "BODY": "Número de teléfono no válido"
+    },
+    "DIREC": {
+      "TITLE": "compañero",
+      "BODY": "El campo de buzón o directorio debe comenzar con /."
+    },
+    "ACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres activar esta aplicación?",
+      "CNFRM_TXT": "Sí, actívalo"
+    },
+    "DEACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "¿Quieres desactivar esta aplicación?",
+      "CNFRM_TXT": "Sí, desactívelo"
+    },
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "¿Quieres eliminar esta aplicación?",
+      "CNFRM_TXT": "Si, elimínalo",
+      "SI_TXT": "eliminar en SI"
+    }
+  },
+  "ENVELOP": {
+    "TITLE": "Sobre"
+  },
+  "SETTINGS": {
+    "CO_TITLE": "Correlación",
+    "FILE_JOB_SCH": "Programación de trabajos de archivo"
+  },
+  "PARTNER": {
+    "TITLE": "compañero",
+    "INVLD_EML": {
+      "TITLE": "Email inválido",
+      "BODY": "ID de correo electrónico no válido."
+    },
+    "INVLD_PHONE": {
+      "TITLE": "Teléfono inválido",
+      "BODY": "Número de teléfono no válido"
+    },
+    "DIREC": {
+      "TITLE": "compañero",
+      "BODY": "El campo de buzón o directorio debe comenzar con /."
+    },
+    "ACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres activar este compañero?",
+      "CNFRM_TXT": "¡Sí, actívelo!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres desactivar este socio?",
+      "CNFRM_TXT": "¡Sí, desactívelo!"
+    },
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres eliminar este socio?",
+      "SI_TXT": "eliminar en SI",
+      "CNFRM_TXT": "Sí, bórralo!"
+    }
+  },
+  "DT_FLW": {
+    "SERCH": {
+      "TITLE": "Informe de flujo de datos"
+    },
+    "RULE": {
+      "TITLE": "regla"
+    },
+    "MAND_ERR": {
+      "TITLE": "Crear múltiples flujo de datos",
+      "BODY": "* los campos obligatorios son obligatorios"
+    },
+    "SLCT_ATLEAST": {
+      "TITLE": "Crear múltiples flujo de datos",
+      "BODY": "Seleccione al menos un flujo"
+    },
+    "WF_TITLE": "flujo de datos",
+    "SERCH_WF": {
+      "TITLE": "Buscar flujo de datos",
+      "BODY": "Vaya ..., algo salió mal, por favor intente después de algún tiempo."
+    },
+    "DELETE_FLW": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres eliminar este flujo?",
+      "CNFRM_TXT": "Borrar"
+    },
+    "COPY_WF": {
+      "TITLE": "Copiar flujo de datos",
+      "BODY": "El flujo de datos se copió correctamente, haga clic en 'Guardar flujo de datos' para guardar."
+    },
+    "EXP_WF": {
+      "TITLE": "Flujo de datos exportado",
+      "BODY": "Descargue el flujo de datos exportado.",
+      "BTN_CA": "Cancelar",
+      "BTN_DW": "DESCARGAR Flujo de datos"
+    },
+    "IMP_WF": {
+      "TITLE": "Flujo de datos de importación",
+      "BODY": "El archivo se importó correctamente"
+    },
+    "CANCEL_WF": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres cancelar?",
+      "CNFRM": "¡Sí, cancélelo!"
+    }
+  },
+  "WRK_FLW": {
+    "TITLE": "Flujo de datos de exportación",
+    "ERROR": {
+      "BODY": "Se produjo un error al importar."
+    },
+    "SUCCESS": {
+      "BODY": "El archivo se exportó correctamente."
+    }
+  },
+  "CERTIFICATE": {
+    "TITLE": "Certificado",
+    "WARN": {
+      "BODY": "(*) Se requieren campos para crear"
+    }
+  },
+  "OVR_DUE": {
+    "SERCH": {
+      "TITLE": "Informe atrasado"
+    }
+  },
+  "LOGIN": {
+    "UN_AUTH": {
+      "TITLE": "No autorizado",
+      "BODY": "No está autorizado este servicio."
+    },
+    "PWD": {
+      "TITLE": "Contraseña"
+    },
+    "FGRT_PWD": {
+      "TITLE": "Se te olvidó tu contraseña"
+    },
+    "UPD_PWD": {
+      "TITLE": "Actualiza contraseña"
+    },
+    "CHNGE_PWD": {
+      "TITLE": "Cambia la contraseña",
+      "BODY": "La contraseña nueva y antigua no debe ser la misma."
+    }
+  },
+  "RULE": {
+    "TITLE": "regla",
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres eliminar esta regla?",
+      "CNFRM_TXT": "Sí, bórralo!"
+    }
+  },
+  "USER": {
+    "TITLE": "User",
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres eliminar este usuario?",
+      "CNFRM_TXT": "Sí, bórralo!"
+    },
+    "ACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres activar este usuario?",
+      "CNFRM_TXT": "¡Sí, actívelo!"
+    },
+    "DEACTIVATE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres desactivar este usuario?",
+      "CNFRM_TXT": "¡Sí, desactívelo!"
+    }
+  },
+  "GROUP": {
+    "TITLE": "grupo",
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "quieres eliminar este grupo?",
+      "CNFRM_TXT": "Sí, bórralo!"
+    }
+  },
+  "POLLING_INT": {
+    "TITLE": "Polling Interval",
+    "DELETE": {
+      "TITLE": "¿Estás seguro?",
+      "BODY": "¿Está seguro de que desea eliminar este intervalo de sondeo?",
+      "CNFRM_TXT": "Cancelar"
+    }
+
+  }
+}

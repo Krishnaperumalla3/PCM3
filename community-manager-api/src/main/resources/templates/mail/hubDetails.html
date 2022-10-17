@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title th:if="${subject}" th:text="#{email.hub.text5(${subject})}">subject : {0}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+</head>
+<p>
+    Hi Team,
+</p>
+<p th:text="#{email.hub.text6(${desc!= null} ? (${desc != ''} ? ${desc} : 'IBM Partner Engagement Manager Community Manager Hub Details -') : 'IBM Partner Engagement Manager Community Manager Hub Details -' )}">
+    description : {0}
+</p>
+<p th:if="${host != '' && host != null}" th:text="#{email.hub.text1(${host})}">
+    host : {0}
+</p>
+<p th:if="${user != '' && user != null}" th:text="#{email.hub.text2(${user})}">
+    user : {0}
+</p>
+<p th:if="${password != '' && password != null}" th:text="#{email.hub.text3(${password})}">
+    password : {0}
+</p>
+<p th:if="${port != '' && port != null}" th:text="#{email.hub.text4(${port})}">
+    port : {0}
+</p>
+<p th:text="#{email.hub.text7(${note!= null}? (${note != ''} ? ${note} : '*Please note: this e-mail was sent from an address that cannot accept incoming e-mail.' ): '*Please note: this e-mail was sent from an address that cannot accept incoming e-mail.' )}">
+    note : {0}
+</p>
+<!--<p th:text="#{email.hub.nottoreply}">
+    *Please note: this e-mail was sent from an address that cannot accept incoming e-mail. Please use the email pemtechsupport@pragmaedge.com to contact us with any questions on the Portal.
+</p>-->
+<p>
+    <span>Regards, </span>
+    <br/>
+    <em>Administrator.</em>
+</p>
+</body>
+</html>

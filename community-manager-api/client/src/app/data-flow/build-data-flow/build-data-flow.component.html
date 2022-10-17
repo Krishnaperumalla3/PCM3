@@ -1,0 +1,184 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<div class="pcm-content centralize">
+  <mat-card>
+    <mat-card>
+      <mat-panel-title>
+        <!--<h3>Partner/Producer and Application/Consumer Profiles</h3>-->
+        <h3>{{'DATA_FLOW.TITLE' | translate}}</h3>
+      </mat-panel-title>
+      <form
+        [formGroup]="appProfileForm"
+        class="partner-form"
+        style="margin-top: 20px;"
+      >
+        <ng-container *ngFor="let field of appProfileField">
+          <div class="field-container" [ngSwitch]="field.inputType">
+            <div *ngSwitchCase="'pcm-select'">
+              <mat-form-field *ngIf="!!searchFilterCtrl[field.formControlName]">
+                <mat-select [disabled]="appPrflFound" formControlName="{{field.formControlName}}"
+                            placeholder="{{ getFieldName(field) | translate }}" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="search"
+                                           [formControl]="searchFilterCtrl[field.formControlName]"
+                                           [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                              [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field *ngIf="!searchFilterCtrl[field.formControlName]">
+                <mat-select [disabled]="appPrflFound" formControlName="{{field.formControlName}}"
+                            placeholder="{{ getFieldName(field) | translate }}" #singleSelect>
+                  <mat-option>
+                    <ngx-mat-select-search placeholderLabel="search"
+                                           [noEntriesFoundLabel]="'no data found'"></ngx-mat-select-search>
+                  </mat-option>
+                  <mat-option *ngFor="let option of field.options"
+                              [value]="option.value">
+                    {{option.label}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </ng-container>
+        <div>
+          <button
+            type="button"
+            *ngIf="!appPrflFound"
+            [disabled]="appProfileForm.invalid"
+            class="btn btn-primary"
+            (click)="searchForApp()"
+          >
+           {{'DATA_FLOW.BUTTONS.SRCH_WF' | translate}}
+          </button>
+        </div>
+      </form>
+      <div
+        *ngIf="noAppPrfl"
+        class="build-action">
+        <button
+          type="button"
+          class="btn btn-pcm-3"
+          (click)="importWorkFlow()"
+        >
+        {{'DATA_FLOW.BUTTONS.IMPRT_WF' | translate}}
+      </button>
+        <button type="button" [disabled]="disableSetWF" class="btn btn-pcm-1" (click)="setUPWorkFlow()">
+          {{'DATA_FLOW.BUTTONS.SETUP_WF' | translate}}
+        </button>
+        <button type="button" class="btn btn-pcm-6" (click)="multipleWF()">
+          {{'DATA_FLOW.BUTTONS.SETUP_WF_MUL_FLW' | translate}}
+        </button>
+        <button type="button" class="btn btn-info" (click)="reset()">
+          {{'DATA_FLOW.BUTTONS.RESET_SERCH' | translate}}
+        </button>
+      </div>
+      <div *ngIf="appPrflFound" class="build-action">
+        <button type="button" class="btn btn-pcm-3" (click)="exportWF()">
+          {{'DATA_FLOW.BUTTONS.EXPRT_WF' | translate}}
+        </button>
+        <button type="button" class="btn btn-pcm-1" (click)="copyWF()">
+          {{'DATA_FLOW.BUTTONS.CP_WF' | translate}}
+        </button>
+        <button type="button" [disabled]="addFlowDisable" class="btn btn-pcm-6" (click)="addFlow()">
+          {{'DATA_FLOW.BUTTONS.AD_FRM_MUL_FLW' | translate}}
+        </button>
+        <button type="button" class="btn btn-danger" (click)="deleteWF()">
+          {{'DATA_FLOW.BUTTONS.DEL_WF' | translate}}
+        </button>
+        <button type="button" class="btn btn-info" (click)="reset()">
+          {{'DATA_FLOW.BUTTONS.RESET_SERCH' | translate}}
+        </button>
+      </div>
+    </mat-card>
+
+    <ng-container *ngIf="(asyncTabs | async) === null">
+      {{'DATA_FLOW.LABELS.LOADIN' | translate}}
+    </ng-container>
+    <div *ngIf="openWorkFlow">
+      <div style="margin-top: 24px;">
+        <h3>{{'DATA_FLOW.LABELS.PRCING_RL_DTL' | translate}}</h3>
+      </div>
+      <mat-card>
+        <mat-tab-group *ngIf="showFlowDtls" [(selectedIndex)]="currentTab" (selectedIndexChange)="changeTab($event)">
+          <mat-tab *ngFor="let tab of (asyncTabs | async)">
+            <ng-template mat-tab-label>{{ tab.label | translate}}</ng-template>
+            <ng-container *ngIf="getHeader(tab.label) !== 'ACTIVITY'">
+              <div>
+                <h3 style="margin: 1%; margin-top: 24px;">{{ tab.content | translate}}</h3>
+                <div class="data-flow-body">
+                  <div class="tool-bar">
+                    <div class="type-form">
+                      <label style="margin-right: 20px">{{ tab.label | translate}}</label>
+                      <mat-radio-group
+                        [value]="fileHandling"
+                        (change)="changeFileType($event)"
+                      >
+                        <mat-radio-button
+                          *ngFor="let type of fileHandlings"
+                          [value]="type"
+                        >
+                          {{ type }}
+                        </mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                  </div>
+                  <div>
+                    <ng2-smart-table *ngIf="fileHandling === 'MFT'"
+                                     [source]="data"
+                                     [settings]="settingsMFT"
+                                     (custom)="rules($event)"
+                                     (deleteConfirm)="onDeleteConfirm($event)"
+                                     (editConfirm)="onSaveConfirm($event)"
+                                     (createConfirm)="onCreateConfirm($event)"
+                    ></ng2-smart-table>
+                    <ng2-smart-table *ngIf="fileHandling === 'DocHandling'"
+                                     [source]="data"
+                                     [settings]="settingsDocHandling"
+                                     (deleteConfirm)="onDeleteConfirm($event)"
+                                     (editConfirm)="onSaveConfirm($event)"
+                                     (createConfirm)="onCreateConfirm($event)"
+                                     (custom)="rules($event)"
+                    ></ng2-smart-table>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="getHeader(tab.label) === 'ACTIVITY'">
+              <pcm-wf-activity [partnerPkId]="appProfileForm.value.partnerProfile"
+                               [applicationPkId]="appProfileForm.value.applicationProfile"></pcm-wf-activity>
+            </ng-container>
+
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card>
+    </div>
+    <div *ngIf="openWorkFlow" class="build-action">
+      <button type="button" class="btn btn-primary" (click)="saveWorkFlow()">
+        {{'DATA_FLOW.BUTTONS.SVE_WF' | translate}}
+      </button>
+      <button type="button" (click)="cancel()" class="btn btn-info">
+        {{'DATA_FLOW.BUTTONS.CANCEL' | translate}}
+      </button>
+    </div>
+  </mat-card>
+</div>

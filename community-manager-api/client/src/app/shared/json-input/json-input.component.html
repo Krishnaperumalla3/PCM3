@@ -1,0 +1,9 @@
+<div class="form-group">
+  <mat-form-field class="form-group col-md-6 rounded-0">
+    <textarea matInput rows="10" [value]="jsonString"
+              placeholder="ex:- { 'hello': 'text' }"
+              (change)="onChange($event)"
+              (keyup)="onChange($event)">
+  </textarea>
+  </mat-form-field>
+</div>

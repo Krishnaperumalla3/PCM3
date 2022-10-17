@@ -1,0 +1,267 @@
+<!--
+  ~ Copyright (c) 2020 Pragma Edge Inc
+  ~
+  ~ Licensed under the Pragma Edge Inc
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ https://pragmaedge.com/licenseagreement
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<mat-accordion style="font-size: 12px;">
+  <div>
+    <h3 style="opacity:.7; margin-bottom: 10px;">
+      APPLY RULES AND PROVIDE PROPERTIES
+    </h3>
+  </div>
+
+  <mat-expansion-panel [expanded]="rulesPanel" [disabled]="!rulesPanel">
+    <mat-expansion-panel-header class="panel-header">
+      <mat-panel-title>
+        RULES
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="main-list-container">
+      <div class="list-container">
+        <div class="field-container1">
+          <div>
+            <h4 class="title">{{ fromName }}</h4>
+          </div>
+          <div>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Search"
+                (keyup)="searchThru($event, 'from')"
+              />
+            </mat-form-field>
+          </div>
+          <div class="available-list">
+            <ul>
+              <li
+                *ngFor="let item of available"
+                (click)="selectItem(item, 'from')"
+                class="rule-list"
+                [ngClass]="{ active: item[key] === selectedItem[key] }"
+              >{{ item[display] }}</li
+              >
+            </ul>
+          </div>
+        </div>
+        <div class="actions-list">
+          <ng-container *ngIf="!viewMode">
+            <button
+              type="button"
+              [disabled]="!enableAdd || available.length === 0"
+              class="btn btn-pcm-1"
+              (click)="addTo()"
+            >
+              ADD
+              <!-- <mat-icon>arrow_forward</mat-icon> -->
+            </button>
+            <button
+              type="button"
+              [disabled]="!enableRemove || !enableEdit"
+              class="btn btn-danger"
+              (click)="removeFrom()"
+            >
+              REMOVE
+              <!-- <mat-icon>arrow_back</mat-icon> -->
+            </button>
+
+            <button
+              type="button"
+              [disabled]="!enableEdit"
+              class="btn btn-pcm-3"
+              (click)="move('up')"
+              matTooltip="Move up"
+            >
+              UP
+              <!-- <mat-icon>arrow_upward</mat-icon> -->
+            </button>
+            <button
+              type="button"
+              [disabled]="!enableEdit"
+              class="btn btn-pcm-3"
+              (click)="move('down')"
+              matTooltip="Move down"
+            >
+              DOWN
+              <!-- <mat-icon>arrow_downward</mat-icon> -->
+            </button>
+            <button
+              type="button"
+              [disabled]="!enableEdit"
+              class="btn btn-info"
+              (click)="togglePanel()"
+              matTooltip="Edit Rule"
+            >
+              EDIT
+            </button>
+          </ng-container>
+          <ng-container *ngIf="viewMode">
+            <button
+              type="button"
+              [disabled]="!enableEdit"
+              class="btn btn-success"
+              (click)="togglePanel()"
+              matTooltip="View Rule"
+            >
+              View
+            </button>
+          </ng-container>
+        </div>
+        <div class="field-container1">
+          <div>
+            <h4 class="title">{{ toName }}</h4>
+          </div>
+          <div>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Search"
+                (keyup)="searchThru($event, 'to')"
+              />
+            </mat-form-field>
+          </div>
+          <div class="selected-list">
+            <ul>
+              <li
+                *ngFor="let item of selected"
+                (click)="editSlected(item)"
+                class="rule-list"
+                [ngClass]="{ active: item[key] === editRule[key] }"
+              >
+                {{ item[display] }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="propertyPanel" [disabled]="!propertyPanel">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        PROPERTIES
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div>
+      <div>
+        <h4>Rule Details</h4>
+        <div class="rule-dtl">
+          <div class="rule-fields">
+            <label >Rule Name : </label>
+            <span style="margin-left: 4px;font-weight: 600; color: #2196F3">{{
+              enableEdit ? editRule.ruleName : selectedItem.ruleName
+              }}</span>
+          </div>
+          <div class="rule-fields">
+            <label >Business Process : </label>
+            <span style="margin-left: 4px;font-weight: 600; color: #2196F3">{{
+              enableEdit ? editRule.businessProcessId : selectedItem.businessProcessId
+              }}</span>
+          </div>
+        </div>
+        <h4>Rule Property Details</h4>
+        <form [formGroup]="propertyForm" class="property-form" style="max-height: 275px; overflow-y: auto">
+          <ng-container *ngFor="let field of displayFields">
+            <div class="field-container" [ngSwitch]="field.inputType">
+              <div *ngSwitchCase="'pcm-text'">
+                <mat-form-field>
+                  <input
+                    matInput
+                    placeholder="{{ field.placeholder }}"
+                    formControlName="{{ field.formControlName }}"
+                    (keyup)="trimValue(this.propertyForm.get(field.formControlName))"
+                    [readonly]="viewMode"
+                  />
+                </mat-form-field>
+              </div>
+              <div *ngSwitchCase="'pcm-select'">
+                <mat-form-field>
+                  <mat-select
+                    placement="bottom"
+                    formControlName="{{field.formControlName}}"
+                    placeholder="{{ field.placeholder }}" [disabled]="viewMode">
+                    <mat-option>
+                      <ngx-mat-select-search placeholderLabel="search"
+                                             [formControl]="searchFilterCtrl[field.formControlName]"></ngx-mat-select-search>
+                    </mat-option>
+
+                    <mat-option
+                      *ngFor="let option of getSearchFilterOptions(field.options, field.formControlName)"
+                      placement="bottom"
+                      [value]="option.value">
+                      {{option.label}}
+                    </mat-option>
+                  </mat-select>
+
+                </mat-form-field>
+              </div>
+              <div *ngSwitchCase="'pcm-password'">
+                <mat-form-field>
+                  <input matInput placeholder="{{ field.placeholder }}" [type]="hide ? 'password' : 'text'" formControlName="{{ field.formControlName }}">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </form>
+        <div class="btn-grp" style="justify-content: center;">
+          <button
+            *ngIf="!viewMode"
+            type="button"
+            class="btn btn-primary"
+            style="font-size: 12px"
+            (click)="saveProperty()"
+            cdkFocusInitial
+          >
+            SAVE
+          </button>
+          <button type="button" (click)="onCancelClick()" class="btn btn-info">
+            CANCEL
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div class="btn-grp">
+  <button
+    *ngIf="!rulesPanel && !viewMode"
+    type="button"
+    matTooltip="Please save the rules"
+    class="btn btn-inactive"
+  >
+    SAVE
+  </button>
+  <button
+    *ngIf="rulesPanel && !viewMode"
+    type="button"
+    [mat-dialog-close]="selected"
+    class="btn btn-primary"
+  >
+    SAVE
+  </button>
+  <button type="button" (click)="closeModal()" class="btn btn-info">
+    CANCEL
+  </button>
+</div>
+
+
+<swal
+  #invalidSwal
+  title="Invalid Form Submit"
+  text="(*) field are required to submit"
+  type="error"
+  [focusCancel]="true">
+</swal>

@@ -1,0 +1,92 @@
+{
+  "CREATE_USER": "Créer un utilisateur",
+  "EDIT_USER": "Modifier l'utilisateur",
+  "SEARCH_USER": "Rechercher un utilisateur",
+  "ASSIGN_PARTNER": "Attribuer un partenaire",
+  "ASSIGN_GROUP": "Attribuer un groupe",
+
+  "CREATE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "Identifiant d'utilisateur *"
+    },
+    "FIRST_NAME": {
+      "LABEL": "Prénom *"
+    },
+    "MIDDLE_NAME": {
+      "LABEL": "Deuxième nom"
+    },
+    "LAST_NAME": {
+      "LABEL": "Nom de famille *"
+    },
+    "EMAIL": {
+      "LABEL": "Email *"
+    },
+    "PHONE": {
+      "LABEL": "Téléphone *"
+    },
+    "ROLE": {
+      "LABEL": "Rôle *"
+    },
+    "STATUS": {
+      "LABEL": "Statut"
+    },
+    "SEL_LANG": {
+      "LABEL": "langue préférée"
+    },
+    "USER_TYPE": {
+      "LABEL": "Type d'utilisateur"
+    },
+    "EXTERNAL_ID": {
+      "LABEL": "Identifiant externe"
+    }
+  },
+
+  "MANAGE_FIELDS": {
+    "USER_ID": {
+      "LABEL": "Identifiant d'utilisateur"
+    },
+    "FIRST_NAME": {
+      "LABEL": "Prénom"
+    },
+    "LAST_NAME": {
+      "LABEL": "Nom de famille"
+    },
+    "ROLE": {
+      "LABEL": "Rôle"
+    },
+    "STATUS": {
+      "LABEL": "Statut"
+    },
+    "SEL_LANG": {
+      "LABEL": "langue préférée"
+    },
+    "USER_TYPE": {
+      "LABEL": "Type d'utilisateur"
+    },
+    "EXTERNAL_ID": {
+      "LABEL": "Identifiant externe"
+    }
+  },
+
+  "TABLE": {
+    "COLUMNS": {
+      "USER_NAME": "Nom d'utilisateur",
+      "FIRST_NAME": "Prénom",
+      "LAST_NAME": "Nom de famille",
+      "ROLE": "Rôle",
+      "STATUS": "Statut"
+    }
+  },
+
+  "BUTTONS": {
+    "CREATE_USER": "CRÉER UN UTILISATEUR",
+    "EDIT_USER": "MODIFIER L'UTILISATEUR",
+    "SEARCH_USER": "RECHERCHE UTILISATEUR",
+    "RESET_SEARCH": "RÉINITIALISER LA RECHERCHE",
+    "ACTIVATE": "ACTIVER",
+    "DEACTIVATE": "DÉSACTIVER",
+    "EDIT": "ÉDITER",
+    "DELETE": "SUPPRIMER",
+    "CANCEL": "ANNULER"
+  }
+}

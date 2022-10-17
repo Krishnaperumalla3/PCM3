@@ -1,0 +1,21 @@
+group 'com.pe.pcm'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+
+sonarqube {
+    properties {
+        property "sonar.exclusions", "src/main/java/com/pe/pcm/si/pwd/**/*"
+    }
+}
+
+dependencies {
+    implementation files('libs/ojdbc8-12.2.0.1.jar')
+    implementation files('libs/db2jcc_license_cu.jar')
+    implementation group: 'com.ibm.db2.jcc', name: 'db2jcc', version: 'db2jcc4'
+    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '7.2.2.jre8'
+}

@@ -1,0 +1,46 @@
+/*
+ * Copyright (c) 2020 Pragma Edge Inc
+ *
+ * Licensed under the Pragma Edge Inc
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * https://pragmaedge.com/licenseagreement
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.pe.pcm.sterling.yfs;
+
+import com.pe.pcm.sterling.yfs.entity.YfsResourceEntity;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
+import java.util.Optional;
+
+/**
+ * @author Chenchu Kiran.
+ */
+public interface YfsResourceRepository extends CrudRepository<YfsResourceEntity, String> {
+
+
+    Optional<YfsResourceEntity> findFirstByResourceDesc(String resourceDesc);
+
+    List<YfsResourceEntity> findAllByResourceKeyIn(List<String> resourceKeys);
+
+    @Modifying
+    @Query("delete from YfsResourceEntity r where r.resourceId = :resourceId")
+    void deleteAllByResourceId(@Param("resourceId") String resourceId);
+
+    Optional<YfsResourceEntity> findFirstByResourceId(String resourceId);
+
+    List<YfsResourceEntity> findAllByResourceDescIn(List<String> resourceDescList);
+
+}
