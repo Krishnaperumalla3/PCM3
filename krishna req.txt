@@ -1,0 +1,219 @@
+Access Token Generator
+Community Manager Token Resource	 
+
+
+creaing a partner in pcm and user in si
+
+Partner Profile with IBM Sterling B2B Integrator FTP/FTPS/SFTP
+IBM Sterling B2B Integrator FTP/FTPS/SFTP Partner Resource
+
+get api from user
+
+IBM Sterling B2B Integrator User Account
+IBM Sterling B2B Integrator User Account Resource
+
+
+partner model is nested user model
+
+
+
+SterlingFtpPartnerResource(controller)
+
+ public ResponseEntity<CommunityManagerResponse> save(@Validated @RequestBody RemoteProfileModel remoteProfileModel) {
+        sterlingFtpPartnerService.create(remoteProfileModel);
+        return ResponseEntity.ok(OK.apply(PARTNER_CREATE));
+    }
+
+
+
+YfsUserResource
+
+ @GetMapping("get-Yfs-User")
+    public ResponseEntity<YfsUserModel> getYfsUser(String username) {
+        return ResponseEntity.ok(yfsUserService.getYfsUser(username));
+    }
+
+
+
+userDetails
+
+create user 
+update user
+get user
+delete user
+
+partner savinf(patnermodel  pm){
+
+if(pm.userdetails!=null){
+create.save(pm.userdetails);
+
+}
+}
+
+getuser(user name){
+
+
+}
+
+{
+  "adapterName": "CM_SFTPServerAdapter",
+  "addressLine1": "test",
+  "addressLine2": "test",
+  "asciiArmor": true,
+  "authenticationHost": "string",
+  "authenticationType": "string",
+  "authorizedUserKeys": [
+    {
+      "name": ""
+    }
+  ],
+  "caCertificateNames": [
+    {
+      "name": ""
+    }
+  ],
+  "certificateId": "string",
+  "characterEncoding": "string",
+  "city": "string",
+  "compression": "string",
+  "connectionRetryCount": "string",
+  "connectionType": "string",
+  "country": "string",
+  "createDirectoryInSI": true,
+  "createProducerProfile": true,
+  "createSfgProfile": true,
+  "createUserInSI": true,
+  "customProfileName": "string",
+  "deleteAfterCollection": true,
+  "doesRequireEncryptedData": true,
+  "doesRequireSignedData": true,
+  "doesUseSSH": true,
+  "emailId": "a@gmail.com",
+  "encryptionStrength": "string",
+  "fileType": "",
+  "givenName": "string",
+  "groups": [
+    {
+      "name": "string"
+    }
+  ],
+  "hubInfo": true,
+  "inDirectory": "/in",
+  "ipWhiteList": "string",
+  "isInitiatingConsumer": true,
+  "isInitiatingProducer": true,
+  "isListeningConsumer": true,
+  "isListeningProducer": true,
+  "isSIProfile": true,
+  "keyCertificateNames": [
+    {
+      "name": ""
+    }
+  ],
+  "knownHostKey": "string",
+  "knownHostKeyNames": [
+    {
+      "name": ""
+    }
+  ],
+  "like": true,
+  "localPortRange": "string",
+  "mergeUser": false,
+  "noOfRetries": "string",
+  "onlyPCM": false,
+  "outDirectory": "/out",
+  "password": "testingabcd",
+  "patch": true,
+  "pemIdentifier": "string",
+  "permissions": [
+    {
+      "name": "string"
+    }
+  ],
+  "pgpInfo": "",
+  "phone": "1231231230",
+  "pkId": "",
+  "poolingInterval": "ON",
+  "preferredAuthenticationType": "PASSWORD",
+  "preferredCipher": "string",
+  "preferredMacAlgorithm": "string",
+  "profileId": "TPTestAut",
+  "profileName": "TPTest56A",
+  "profileUserName": "string",
+  "profileUserPassword": "string",
+  "protocol": "SFGFTP",
+  "pwdPolicy": "string",
+  "remoteHost": "string",
+  "remotePort": "string",
+  "resetPermissions": true,
+  "responseTimeOut": "string",
+  "retryDelay": "string",
+  "retryInterval": "string",
+  "routingRuleName": "string",
+  "secondaryMail": "string",
+  "sessionTimeout": "string",
+  "siteCommand": "string",
+  "state": "string",
+  "status": true,
+  "surname": "string",
+  "textMode": true,
+  "transferType": "Binary",
+  "useBaseDirectoryForVirtualRoot": true,
+  "useCCC": true,
+  "useImplicitSSL": true,
+  "userDetails": {
+    "authenticationHost": "SEAS Authentication",
+    "authorizedUserKeys": [
+      "SSH_cus.pragma_sftp_n_NonProd_auk"
+    ],
+    "emailId": "test@gmail.com",
+    "givenName": "pavan",
+    "groups": [
+      "MAILBOX"
+    ],
+    "mergeUser": false,
+    "parentUserKey": "test",
+    "password": "",
+    "pcmUserLogin": true,
+    "permissions": [
+      "/2540_JPMChaseEFT", "/2540_JPMChaseEFT/In", "/2540_JPMChaseEFT/Out", "/2709_Jet_Airways"
+    ],
+    "policy": "test",
+    "pwdPolicyId": "test",
+    "resetPermissions": true,
+    "sessionTimeOut": 0,
+    "surname": "pavan",
+    "userIdentity": "kalyan",
+    "userName": "pavankal8901",
+    "userType": "External"
+  },
+  "userIdentity": "string",
+  "userIdentityKey": "string",
+  "userName": "testingpartner123",
+  "virtualRoot": "/Demo_EDI",
+  "zipCode": "string"
+}
+
+
+
+get user
+{
+  "userName": "pk1",
+  "userType": "External",
+  "parentUserKey": "test",
+  "sessionTimeOut": 0,
+  "mergeUser": false,
+  "userIdentity": "pk1",
+  "groups": [
+    "MAILBOX"
+  ],
+  "permissions": [
+    "/2540_JPMChaseEFT",
+    "/2540_JPMChaseEFT/In",
+    "/2540_JPMChaseEFT/Out",
+    "/2709_Jet_Airways"
+  ],
+  "authorizedUserKeys": [],
+  "resetPermissions": false,
+  "pcmUserLogin": false
+}
